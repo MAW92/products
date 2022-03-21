@@ -1,12 +1,14 @@
 module.exports = {
   content: [
-    "./main.html"
+    './index.html'
   ],
   theme: {
     extend: {},
   },
   plugins: [
     require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/line-clamp'),
     require('@tailwindcss/aspect-ratio'),
   ],
 }

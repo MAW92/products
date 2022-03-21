@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  #slogo {
+    @apply w-24 h-24 mx-auto mb-2 mt-2 rounded-full brightness-125;
+  }
+
+  #navbar {
+    @apply grid grid-cols-2 md:grid-flow-col md:grid-cols-4 text-2xl mx-auto max-w-screen-sm;
+  }
+
+  a {
+    @apply py-3 h-11 mx-auto text-white border-b-2 border-b-white hover:border-0 font-semibold;
+  }
+
+  main {
+    @apply mx-auto my-24 relative px-5 sm:px-0 md:m-1;
+  }
+
+  section {
+    @apply mx-auto sm:p-2 lg:p-4 max-w-full sm:max-w-7xl md:max-w-6xl lg:max-w-4xl;
+  }
+
+  img {
+    @apply w-full mx-auto rounded-lg object-cover object-center sm:object-scale-down;
+    width: 500px;
+    height: auto;
+    max-width: 100%;
+  }
+}
