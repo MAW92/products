@@ -20,20 +20,315 @@
 		}
 
 		.backdrop {
-			backdrop-filter: blur(9px);
+			backdrop-filter: blur(12px);
 		}
 
 		.text-shadow {
 			text-shadow: 3px 1px 7px rgba(0, 0, 0, 1.2);
 		}
 
-		img {
-			width: 100%;
-			max-width: 100%;
-			height: 96px;
-			max-height: 396px;
+		#currentPrice::before {
+			content: '$';
+		}
+	</style>
+	<style>
+		.float-right {
+			float: right;
 		}
 
+		.float-left {
+			float: left;
+		}
+
+		.mx-auto {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.-mt-2 {
+			margin-top: -0.5rem;
+		}
+
+		.block {
+			display: block;
+		}
+
+		.inline {
+			display: inline;
+		}
+
+		.flex {
+			display: flex;
+		}
+
+		.grid {
+			display: grid;
+		}
+
+		.max-h-72 {
+			max-height: 18rem;
+		}
+
+		.max-h-fit {
+			max-height: -moz-fit-content;
+			max-height: fit-content;
+		}
+
+		.min-h-screen {
+			min-height: 100vh;
+		}
+
+		.w-fit {
+			width: -moz-fit-content;
+			width: fit-content;
+		}
+
+		.w-full {
+			width: 100%;
+		}
+
+		.grid-cols-1 {
+			grid-template-columns: repeat(1, minmax(0, 1fr));
+		}
+
+		.flex-col {
+			flex-direction: column;
+		}
+
+		.flex-wrap {
+			flex-wrap: wrap;
+		}
+
+		.items-center {
+			align-items: center;
+		}
+
+		.justify-center {
+			justify-content: center;
+		}
+
+		.gap-1 {
+			gap: 0.25rem;
+		}
+
+		.gap-5 {
+			gap: 1.25rem;
+		}
+
+		.overflow-clip {
+			overflow: clip;
+		}
+
+		.rounded-lg {
+			border-radius: 0.5rem;
+		}
+
+		.rounded-xl {
+			border-radius: 0.75rem;
+		}
+
+		.rounded-t-md {
+			border-top-left-radius: 0.375rem;
+			border-top-right-radius: 0.375rem;
+		}
+
+		.border {
+			border-width: 1px;
+		}
+
+		.border-b {
+			border-bottom-width: 1px;
+		}
+
+		.border-zinc-100 {
+			--tw-border-opacity: 1;
+			border-color: rgb(244 244 245 / var(--tw-border-opacity));
+		}
+
+		.from-transparent {
+			--tw-gradient-from: transparent;
+			--tw-gradient-to: rgb(0 0 0 / 0);
+			--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+		}
+
+		.via-neutral-300 {
+			--tw-gradient-to: rgb(212 212 212 / 0);
+			--tw-gradient-stops: var(--tw-gradient-from), #d4d4d4, var(--tw-gradient-to);
+		}
+
+		.to-transparent {
+			--tw-gradient-to: transparent;
+		}
+
+		.bg-cover {
+			background-size: cover;
+		}
+
+		.bg-fixed {
+			background-attachment: fixed;
+		}
+
+		.bg-top {
+			background-position: top;
+		}
+
+		.object-cover {
+			object-fit: cover;
+		}
+
+		.object-top {
+			object-position: top;
+		}
+
+		.p-1 {
+			padding: 0.25rem;
+		}
+
+		.px-3 {
+			padding-left: 0.75rem;
+			padding-right: 0.75rem;
+		}
+
+		.py-10 {
+			padding-top: 2.5rem;
+			padding-bottom: 2.5rem;
+		}
+
+		.text-base {
+			font-size: 1rem;
+			line-height: 1.5rem;
+		}
+
+		.text-lg {
+			font-size: 1.125rem;
+			line-height: 1.75rem;
+		}
+
+		.text-sm {
+			font-size: 0.875rem;
+			line-height: 1.25rem;
+		}
+
+		.font-bold {
+			font-weight: 700;
+		}
+
+		.font-semibold {
+			font-weight: 600;
+		}
+
+		.italic {
+			font-style: italic;
+		}
+
+		.text-white {
+			--tw-text-opacity: 1;
+			color: rgb(255 255 255 / var(--tw-text-opacity));
+		}
+
+		.blur {
+			--tw-blur: blur(8px);
+			filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+		}
+
+		.backdrop-filter {
+			-webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+			backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+		}
+
+		.transition-transform {
+			transition-property: transform;
+			transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+			transition-duration: 150ms;
+		}
+
+		.duration-300 {
+			transition-duration: 300ms;
+		}
+
+		.duration-500 {
+			transition-duration: 500ms;
+		}
+
+		.hover\:-translate-y-1:hover {
+			--tw-translate-y: -0.25rem;
+			transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+		}
+
+		.hover\:bg-gradient-to-b:hover {
+			background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+		}
+
+		.hover\:shadow-xl:hover {
+			--tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+			--tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+			box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+		}
+
+		.hover\:shadow-zinc-800:hover {
+			--tw-shadow-color: #27272a;
+			--tw-shadow: var(--tw-shadow-colored);
+		}
+
+		@media (min-width: 640px) {
+			.sm\:grid-cols-2 {
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+			}
+		}
+
+		@media (min-width: 768px) {
+			.md\:grid-cols-3 {
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+			}
+		}
+
+		@media (min-width: 1024px) {
+			.lg\:grid-cols-4 {
+				grid-template-columns: repeat(4, minmax(0, 1fr));
+			}
+		}
+
+		@media (min-width: 1280px) {
+			.xl\:grid-cols-5 {
+				grid-template-columns: repeat(5, minmax(0, 1fr));
+			}
+		}
+
+		.container {
+			width: 100%;
+		}
+
+		@media (min-width: 640px) {
+			.container {
+				max-width: 640px;
+			}
+		}
+
+		@media (min-width: 768px) {
+			.container {
+				max-width: 768px;
+			}
+		}
+
+		@media (min-width: 1024px) {
+			.container {
+				max-width: 1024px;
+			}
+		}
+
+		@media (min-width: 1280px) {
+			.container {
+				max-width: 1280px;
+			}
+		}
+
+		@media (min-width: 1536px) {
+			.container {
+				max-width: 1536px;
+			}
+		}
+	</style>
+	<style>
 		/* ! tailwindcss v3.2.6 | MIT License | https://tailwindcss.com */
 
 		/*
@@ -253,7 +548,7 @@ Remove the inheritance of text transform in Edge and Firefox.
 		[type='button'],
 		[type='reset'],
 		[type='submit'] {
-			--webkit-appearance: button;
+			-webkit-appearance: button;
 			/* 1 */
 			background-color: transparent;
 			/* 2 */
@@ -300,7 +595,7 @@ Correct the cursor style of increment and decrement buttons in Safari.
 */
 
 		[type='search'] {
-			--webkit-appearance: textfield;
+			-webkit-appearance: textfield;
 			/* 1 */
 			outline-offset: -2px;
 			/* 2 */
@@ -540,235 +835,6 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 			--tw-backdrop-saturate: ;
 			--tw-backdrop-sepia: ;
 		}
-
-		.float-right {
-			float: right;
-		}
-
-		.float-left {
-			float: left;
-		}
-
-		.m-1 {
-			margin: 0.25rem;
-		}
-
-		.mx-auto {
-			margin-left: auto;
-			margin-right: auto;
-		}
-
-		.-mt-2 {
-			margin-top: -0.5rem;
-		}
-
-		.inline-block {
-			display: inline-block;
-		}
-
-		.flex {
-			display: flex;
-		}
-
-		.grid {
-			display: grid;
-		}
-
-		.min-h-screen {
-			min-height: 100vh;
-		}
-
-		.w-full {
-			width: 100%;
-		}
-
-		.flex-col {
-			flex-direction: column;
-		}
-
-		.flex-wrap {
-			flex-wrap: wrap;
-		}
-
-		.items-center {
-			align-items: center;
-		}
-
-		.justify-center {
-			justify-content: center;
-		}
-
-		.gap-1 {
-			gap: 0.25rem;
-		}
-
-		.gap-5 {
-			gap: 1.25rem;
-		}
-
-		.rounded-lg {
-			border-radius: 0.5rem;
-		}
-
-		.rounded-xl {
-			border-radius: 0.75rem;
-		}
-
-		.rounded-t-md {
-			border-top-left-radius: 0.375rem;
-			border-top-right-radius: 0.375rem;
-		}
-
-		.border {
-			border-width: 1px;
-		}
-
-		.border-b {
-			border-bottom-width: 1px;
-		}
-
-		.border-zinc-100 {
-			--tw-border-opacity: 1;
-			border-color: rgb(244 244 245 / var(--tw-border-opacity));
-		}
-
-		.bg-zinc-500 {
-			--tw-bg-opacity: 1;
-			background-color: rgb(113 113 122 / var(--tw-bg-opacity));
-		}
-
-		.from-transparent {
-			--tw-gradient-from: transparent;
-			--tw-gradient-to: rgb(0 0 0 / 0);
-			--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-		}
-
-		.via-neutral-300 {
-			--tw-gradient-to: rgb(212 212 212 / 0);
-			--tw-gradient-stops: var(--tw-gradient-from), #d4d4d4, var(--tw-gradient-to);
-		}
-
-		.to-transparent {
-			--tw-gradient-to: transparent;
-		}
-
-		.bg-cover {
-			background-size: cover;
-		}
-
-		.bg-fixed {
-			background-attachment: fixed;
-		}
-
-		.bg-top {
-			background-position: top;
-		}
-
-		.object-center {
-			object-position: center;
-		}
-
-		.p-1 {
-			padding: 0.25rem;
-		}
-
-		.p-2 {
-			padding: 0.5rem;
-		}
-
-		.px-5 {
-			padding-left: 1.25rem;
-			padding-right: 1.25rem;
-		}
-
-		.py-10 {
-			padding-top: 2.5rem;
-			padding-bottom: 2.5rem;
-		}
-
-		.text-xs {
-			font-size: 0.75rem;
-			line-height: 1rem;
-		}
-
-		.font-bold {
-			font-weight: 700;
-		}
-
-		.font-semibold {
-			font-weight: 600;
-		}
-
-		.italic {
-			font-style: italic;
-		}
-
-		.text-white {
-			--tw-text-opacity: 1;
-			color: rgb(255 255 255 / var(--tw-text-opacity));
-		}
-
-		.blur {
-			--tw-blur: blur(8px);
-			filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-		}
-
-		.backdrop-filter {
-			-webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-			backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-		}
-
-		.transition-transform {
-			transition-property: transform;
-			transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-			transition-duration: 150ms;
-		}
-
-		.duration-300 {
-			transition-duration: 300ms;
-		}
-
-		.duration-500 {
-			transition-duration: 500ms;
-		}
-
-		.group:hover .group-hover\:-translate-y-1 {
-			--tw-translate-y: -0.25rem;
-			transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-		}
-
-		.group:hover .group-hover\:bg-gradient-to-b {
-			background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
-		}
-
-		.group:hover .group-hover\:shadow-xl {
-			--tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-			--tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
-			box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-		}
-
-		.group:hover .group-hover\:shadow-zinc-800 {
-			--tw-shadow-color: #27272a;
-			--tw-shadow: var(--tw-shadow-colored);
-		}
-
-		@media (min-width: 640px) {
-			.sm\:grid-cols-2 {
-				grid-template-columns: repeat(2, minmax(0, 1fr));
-			}
-		}
-
-		@media (min-width: 768px) {
-			.md\:grid-cols-3 {
-				grid-template-columns: repeat(3, minmax(0, 1fr));
-			}
-		}
-
-		@media (min-width: 1280px) {
-			.xl\:grid-cols-5 {
-				grid-template-columns: repeat(5, minmax(0, 1fr));
-			}
-		}
 	</style>
 </head>
 
@@ -777,850 +843,857 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 	<main class="bg-image min-h-screen bg-top bg-cover bg-fixed flex-wrap items-center justify-center">
 
 
-		<div id="product-container" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 py-10">
-			<div id="product-card" class="rounded-xl transition-transform duration-500 hover:bg-gradient-to-b from-transparent to-transparent via-neutral-300 mx-auto">
+		<div id="product-container" class="flex-wrap grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 py-10 px-3">
+
+			<div id="product-card" class="w-fit max-w-72 max-h-fit rounded-xl transition-transform duration-500 hover:bg-gradient-to-b from-transparent to-transparent via-neutral-300 mx-auto">
 				<a id="viewItemURL" href="" title="View on eBay">
-					<div class="w-fit h-fit card border border-zinc-100 backdrop hover:shadow-zinc-800 hover:shadow-xl hover:-translate-y-1 transition-transform duration-300 flex flex-col gap-1 rounded-lg">
-						<img id="galleryURL" src="" class="border-b border-zinc-100 rounded-t-md object-top" />
-						<h1 id="title" class="text-shadow text-white p-1 font-bold"></h1>
-						<p id="sellerUserName" class="text-shadow text-xs text-white font-semibold italic p-1 -mt-2"></p>
-						<p id="currentPrice" class="text-shadow text-xs text-white font-semibold italic p-1 my-2"></p>
+					<div class="w-fit max-w-72 max-h-fit card border border-zinc-100 backdrop hover:shadow-zinc-800 hover:shadow-xl hover:-translate-y-1 transition-transform duration-300 flex flex-col gap-1 rounded-lg">
+
+						<img id="galleryURL" src="" class="border-b border-zinc-100 rounded-t-md object-top object-cover w-full max-h-72 overflow-clip mx-auto" />
+
+						<h1 id="title" class="text-lg text-shadow text-white p-1 font-bold"></h1>
+						<div class="inline flex-wrap">
+							<p class="float-left text-shadow text-sm text-white font-semibold italic p-1">Near Mint</p>
+							<p class="float-right text-shadow text-sm text-white font-semibold italic p-1">Shipping</p>
+						</div>
+						<div class="inline flex-wrap">
+							<p id="currentPrice" class="float-left text-shadow text-base text-white font-semibold italic p-1 -mt-2">
+							</p>
+							<p class="float-right text-shadow text-base text-white font-semibold italic p-1 -mt-2">$0.60</p>
+
+						</div>
+
 					</div>
+				</a>
 			</div>
-			</a>
-		</div>
+			<script>
+				const productData = [
+					{
+						"itemId": 354434274670,
+						"title": "Dragonite (4) 1st Edition Holo Rare Pokemon Fossil 1999",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/lpkAAOSwOuRj8vqB/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Dragonite-4-1st-Edition-Holo-Rare-Pokemon-Fossil-1999-/354434274670",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 184.69
+					},
+					{
+						"itemId": 354434182543,
+						"title": "Yugioh Chaos Goddess DUOV-EN079 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/DTIAAOSwDH5jPOym/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Chaos-Goddess-DUOV-EN079-1st-Edition-Ultra-Rare-/354434182543",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.72
+					},
+					{
+						"itemId": 354434274684,
+						"title": "Yugioh Tyrant Dragon LOD-034 First Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/B7sAAOSwjn9j6Den/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Tyrant-Dragon-LOD-034-First-Edition-Ultra-Rare-/354434274684",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 13.84
+					},
+					{
+						"itemId": 354434182695,
+						"title": "Yugioh Super Quantal Mech Beast Lusterrex DANE-EN037 1st Edition Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/YdgAAOSwiW9jP25F/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Super-Quantal-Mech-Beast-Lusterrex-DANE-EN037-1st-Edition-Super-Rare-/354434182695",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.81
+					},
+					{
+						"itemId": 354434182701,
+						"title": "Yugioh Kuriboh FL1-EN003 Limited Secret Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/uw4AAOSwaOVj5pmE/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Kuriboh-FL1-EN003-Limited-Secret-Rare-/354434182701",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 12.12
+					},
+					{
+						"itemId": 354434182718,
+						"title": "Yugioh Number 21: Frozen Lady Justice PGL2-EN018 1st Edition Secret Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/G0oAAOSwqLhi9DOn/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Number-21-Frozen-Lady-Justice-PGL2-EN018-1st-Edition-Secret-Rare-/354434182718",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.69
+					},
+					{
+						"itemId": 354434182612,
+						"title": "Yugioh Penumbral Soldier Lady SOD-EN033 Unlimited Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/nXsAAOSwH9ljP25D/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Penumbral-Soldier-Lady-SOD-EN033-Unlimited-Super-Rare-/354434182612",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.3
+					},
+					{
+						"itemId": 354434182577,
+						"title": "Yugioh Cyber Larva LC02-EN007 Limited Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/vtAAAOSw7NpjPOyl/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Cyber-Larva-LC02-EN007-Limited-Ultra-Rare-/354434182577",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.03
+					},
+					{
+						"itemId": 354434182563,
+						"title": "Yugioh GranSolfachord Musecia DAMA-EN048 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/KFEAAOSwC7pjPOym/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-GranSolfachord-Musecia-DAMA-EN048-1st-Edition-Ultra-Rare-/354434182563",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.26
+					},
+					{
+						"itemId": 354588496327,
+						"title": "Yugioh Desert Twister TAEV-EN034 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/QtMAAOSw~qBjPOyk/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Desert-Twister-TAEV-EN034-1st-Edition-Ultra-Rare-/354588496327",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.24
+					},
+					{
+						"itemId": 354434182547,
+						"title": "Yugioh Celtic Guard of Noble Arms MVP1-ENG48 1st Edition Gold Secret Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/7C0AAOSw3ldjPOyl/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Celtic-Guard-Noble-Arms-MVP1-ENG48-1st-Edition-Gold-Secret-Rare-/354434182547",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.28
+					},
+					{
+						"itemId": 354434182527,
+						"title": "Yugioh Armageddon Knight THSF-EN035 Unlimited Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/RjkAAOSw7CZjP25D/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Armageddon-Knight-THSF-EN035-Unlimited-Super-Rare-/354434182527",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.35
+					},
+					{
+						"itemId": 354434274667,
+						"title": "Yugioh Smashing Ground PGL2-EN075 1st Edition Gold Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/2LQAAOSwTChi9DOn/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Smashing-Ground-PGL2-EN075-1st-Edition-Gold-Rare-/354434274667",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 3.46
+					},
+					{
+						"itemId": 354434182671,
+						"title": "Yugioh Soul Pendulum DUPO-EN013 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/XBoAAOSw8wVjP25D/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Soul-Pendulum-DUPO-EN013-1st-Edition-Ultra-Rare-/354434182671",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.22
+					},
+					{
+						"itemId": 354434274671,
+						"title": "Yugioh Winged Kuriboh DR3-EN185 Unlimited Super Rare NM",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/0asAAOSw3iti9DOn/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Winged-Kuriboh-DR3-EN185-Unlimited-Super-Rare-NM-/354434274671",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 18.56
+					},
+					{
+						"itemId": 354434274664,
+						"title": "Yugioh Double Spell MFC-106 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/LrQAAOSwZ0Nj8XgQ/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Double-Spell-MFC-106-1st-Edition-Ultra-Rare-/354434274664",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 17.69
+					},
+					{
+						"itemId": 354434182662,
+						"title": "Yugioh Kuribeh BROL-EN004 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/np0AAOSwQA5jP25D/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Kuribeh-BROL-EN004-1st-Edition-Ultra-Rare-/354434182662",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.18
+					},
+					{
+						"itemId": 354434182595,
+						"title": "Yugioh Galaxy-Eyes Full Armor Photon Dragon MP16-EN044 1st Edition Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/N2EAAOSwRz9jP25B/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Galaxy-Eyes-Full-Armor-Photon-Dragon-MP16-EN044-1st-Edition-Super-Rare-/354434182595",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.91
+					},
+					{
+						"itemId": 354588496336,
+						"title": "Yugioh Performapal King Bear YS16-EN002 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/5HwAAOSwujhjPOym/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Performapal-King-Bear-YS16-EN002-1st-Edition-Ultra-Rare-/354588496336",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.17
+					},
+					{
+						"itemId": 354434182722,
+						"title": "Yugioh Tactical Exchanger DUPO-EN026 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/btgAAOSw4UpjP25C/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Tactical-Exchanger-DUPO-EN026-1st-Edition-Ultra-Rare-/354434182722",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.56
+					},
+					{
+						"itemId": 354434274688,
+						"title": "Yugioh Volcanic Doomfire CT04-EN004 Limited Secret Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/0d0AAOSwm7Bi9DOo/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Volcanic-Doomfire-CT04-EN004-Limited-Secret-Rare-/354434274688",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 6
+					},
+					{
+						"itemId": 354434182542,
+						"title": "Yugioh Dramaturge of Despia GFP2-EN098 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/5c4AAOSw7DBi9DOm/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Dramaturge-Despia-GFP2-EN098-1st-Edition-Ultra-Rare-/354434182542",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.35
+					},
+					{
+						"itemId": 354434182632,
+						"title": "Yugioh Starlight Road PGL2-EN091 1st Edition Gold Secret Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/fvAAAOSwOcRjPOym/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Starlight-Road-PGL2-EN091-1st-Edition-Gold-Secret-Rare-/354434182632",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.54
+					},
+					{
+						"itemId": 354434182646,
+						"title": "Yugioh Thunder Dragonhawk MP19-EN168 1st Edition Prismatic Secret Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/kfkAAOSwWR5i9DOp/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Thunder-Dragonhawk-MP19-EN168-1st-Edition-Prismatic-Secret-Rare-/354434182646",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 4.44
+					},
+					{
+						"itemId": 354434182635,
+						"title": "Yugioh Green Gadget FIGA-EN006 1st Edition Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/~OgAAOSwP3xjP25B/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Green-Gadget-FIGA-EN006-1st-Edition-Super-Rare-/354434182635",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.15
+					},
+					{
+						"itemId": 354434182525,
+						"title": "Yugioh Dark Requiem Xyz Dragon GFTP-EN099 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/ymoAAOSwh-VjPOyn/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Dark-Requiem-Xyz-Dragon-GFTP-EN099-1st-Edition-Ultra-Rare-/354434182525",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.28
+					},
+					{
+						"itemId": 354588496298,
+						"title": "Yugioh Dragonic Tactics LC02-EN012 Limited Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/14MAAOSwZvZjP24-/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Dragonic-Tactics-LC02-EN012-Limited-Ultra-Rare-/354588496298",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 3.83
+					},
+					{
+						"itemId": 354434182679,
+						"title": "Yugioh Vampire Familiar DASA-EN001 Unlimited Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/RF4AAOSwlqhjP25D/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Vampire-Familiar-DASA-EN001-Unlimited-Super-Rare-/354434182679",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.69
+					},
+					{
+						"itemId": 354434182624,
+						"title": "Yugioh Linkslayer YS17-EN004 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/wfMAAOSwxN9i9DOm/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Linkslayer-YS17-EN004-1st-Edition-Ultra-Rare-/354434182624",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.38
+					},
+					{
+						"itemId": 354434182645,
+						"title": "Yugioh Madolche Fresh Sistart GFTP-EN104 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/x1gAAOSwfaZjPOyo/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Madolche-Fresh-Sistart-GFTP-EN104-1st-Edition-Ultra-Rare-/354434182645",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.32
+					},
+					{
+						"itemId": 354434182573,
+						"title": "Yugioh Hieratic Dragon of Tefnuit DUPO-EN080 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/oUwAAOSw-xxjP25F/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Hieratic-Dragon-Tefnuit-DUPO-EN080-1st-Edition-Ultra-Rare-/354434182573",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.51
+					},
+					{
+						"itemId": 354434182622,
+						"title": "Yugioh Evolzar Dolkka KICO-EN043 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/yXAAAOSwbF5i9DOp/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Evolzar-Dolkka-KICO-EN043-1st-Edition-Ultra-Rare-/354434182622",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.82
+					},
+					{
+						"itemId": 354434182678,
+						"title": "Yugioh Vision HERO Witch Raider BLHR-EN060 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/qz0AAOSwx6hjP25E/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Vision-HERO-Witch-Raider-BLHR-EN060-1st-Edition-Ultra-Rare-/354434182678",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.57
+					},
+					{
+						"itemId": 354434182655,
+						"title": "Yugioh Djinn Disserere of Rituals THSF-EN040 1st Edition Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/sfsAAOSwHy9jP25E/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Djinn-Disserere-Rituals-THSF-EN040-1st-Edition-Super-Rare-/354434182655",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.01
+					},
+					{
+						"itemId": 354434182609,
+						"title": "Yugioh F.A. Dawn Dragster MP19-EN061 1st Edition Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/P7QAAOSwxUpi9DOm/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-F-A-Dawn-Dragster-MP19-EN061-1st-Edition-Super-Rare-/354434182609",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 3.49
+					},
+					{
+						"itemId": 354588496338,
+						"title": "Yugioh Theinen the Great Sphinx EP1-EN001 Limited Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/iegAAOSwDX1jPOyl/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Theinen-Great-Sphinx-EP1-EN001-Limited-Ultra-Rare-/354588496338",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.03
+					},
+					{
+						"itemId": 354434182668,
+						"title": "Yugioh Witchcrafter Madame Verre DUOV-EN073 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/3UwAAOSwvBpjP25D/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Witchcrafter-Madame-Verre-DUOV-EN073-1st-Edition-Ultra-Rare-/354434182668",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.72
+					},
+					{
+						"itemId": 354588496369,
+						"title": "Yugioh Inspiration BP03-EN232 1st Edition Mosaic Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/gdwAAOSwvVRjCTZf/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Inspiration-BP03-EN232-1st-Edition-Mosaic-Rare-/354588496369",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.05
+					},
+					{
+						"itemId": 354434182520,
+						"title": "Yugioh Andro Sphinx EP1-EN002 Unlimited Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/tCYAAOSwErdjPOyl/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Andro-Sphinx-EP1-EN002-Unlimited-Ultra-Rare-/354434182520",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.31
+					},
+					{
+						"itemId": 354434182636,
+						"title": "Yugioh Reinforcement of the Army PGLD-EN058 1st Edition Gold Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/1AYAAOSwwcpi9DOp/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Reinforcement-Army-PGLD-EN058-1st-Edition-Gold-Rare-/354434182636",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.66
+					},
+					{
+						"itemId": 354434182682,
+						"title": "Yugioh Super Quantal Mech King Great Magnus DUPO-EN093 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/AN0AAOSwqXdi9DOn/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Super-Quantal-Mech-King-Great-Magnus-DUPO-EN093-1st-Edition-Ultra-Rare-/354434182682",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.65
+					},
+					{
+						"itemId": 354434182663,
+						"title": "Yugioh Mahaama the Fairy Dragon MP21-EN218 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/0FsAAOSwqJZjPOyj/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Mahaama-Fairy-Dragon-MP21-EN218-1st-Edition-Ultra-Rare-/354434182663",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.55
+					},
+					{
+						"itemId": 354434182567,
+						"title": "Yugioh Dark Hunter TDGS-EN033 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/m5cAAOSwPKdjPOyk/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Dark-Hunter-TDGS-EN033-1st-Edition-Ultra-Rare-/354434182567",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.34
+					},
+					{
+						"itemId": 354434274665,
+						"title": "Yugioh Sephylon, the Ultimate Timelord GLD5-EN029 Limited Gold Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/TEsAAOSwCWxjPOyk/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Sephylon-Ultimate-Timelord-GLD5-EN029-Limited-Gold-Rare-/354434274665",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.56
+					},
+					{
+						"itemId": 354588496287,
+						"title": "Yugioh Vampire Domination DASA-EN011 Unlimited Secret Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/t4YAAOSwb3xi9DOn/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Vampire-Domination-DASA-EN011-Unlimited-Secret-Rare-/354588496287",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.6
+					},
+					{
+						"itemId": 354588496360,
+						"title": "Yugioh Krystal Dragon MVP1-ENSV2 Limited Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/XAgAAOSwItljP25C/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Krystal-Dragon-MVP1-ENSV2-Limited-Ultra-Rare-/354588496360",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 3.98
+					},
+					{
+						"itemId": 354434182538,
+						"title": "Yugioh Borrelend Dragon GFP2-EN006 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/5MkAAOSw4F9i9DOn/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Borrelend-Dragon-GFP2-EN006-1st-Edition-Ultra-Rare-/354434182538",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.73
+					},
+					{
+						"itemId": 354434274679,
+						"title": "Yugioh Enishi, Shien's Chancellor GLAS-EN032 Unlimited Ultimate Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/QxIAAOSwdcRj8XXG/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Enishi-Shiens-Chancellor-GLAS-EN032-Unlimited-Ultimate-Rare-/354434274679",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 18.2
+					},
+					{
+						"itemId": 354588496275,
+						"title": "Yugioh Battlewasp - Pin the Bullseye BLHR-EN031 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/0eoAAOSwGK1i9DOn/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Battlewasp-Pin-Bullseye-BLHR-EN031-1st-Edition-Ultra-Rare-/354588496275",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 3.68
+					},
+					{
+						"itemId": 354434182584,
+						"title": "Yugioh Inspector Boarder DUDE-EN031 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/h6kAAOSw3yxjPOyk/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Inspector-Boarder-DUDE-EN031-1st-Edition-Ultra-Rare-/354434182584",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.82
+					},
+					{
+						"itemId": 354434182710,
+						"title": "Yugioh Strike Ninja SHVA-EN021 1st Edition Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/i6EAAOSw3ldjP25E/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Strike-Ninja-SHVA-EN021-1st-Edition-Super-Rare-/354434182710",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.63
+					},
+					{
+						"itemId": 354318125034,
+						"title": "Yugioh Evil HERO Malicious Edge GLAS-EN003 Unlimited Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/FqsAAOSwHDtjP25F/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Evil-HERO-Malicious-Edge-GLAS-EN003-Unlimited-Super-Rare-/354318125034",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.74
+					},
+					{
+						"itemId": 354434182703,
+						"title": "Yugioh Virtual World Beast - Jiujiu PHRA-EN097 1st Edition Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/Vh0AAOSwLxxjP25D/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Virtual-World-Beast-Jiujiu-PHRA-EN097-1st-Edition-Super-Rare-/354434182703",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.04
+					},
+					{
+						"itemId": 354588496365,
+						"title": "Yugioh Noble Knight Custennin CYHO-EN088 1st Edition Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/RHIAAOSwsWpjP24-/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Noble-Knight-Custennin-CYHO-EN088-1st-Edition-Super-Rare-/354588496365",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.28
+					},
+					{
+						"itemId": 354434182619,
+						"title": "Yugioh Lavalval Ignis BP03-EN120 1st Edition Shatterfoil",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/6~AAAOSwHXFjCTZf/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Lavalval-Ignis-BP03-EN120-1st-Edition-Shatterfoil-/354434182619",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.23
+					},
+					{
+						"itemId": 354588496313,
+						"title": "Yugioh Rivalry Of Warlords KICO-EN058 Rare 1st Edition NM",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/0bEAAOSw4NBjydCc/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Rivalry-Warlords-KICO-EN058-Rare-1st-Edition-NM-/354588496313",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 3.32
+					},
+					{
+						"itemId": 354434182616,
+						"title": "Yugioh Miracle Locus BP03-EN213 1st Edition Shatterfoil",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/TqgAAOSwSxJjCTZe/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Miracle-Locus-BP03-EN213-1st-Edition-Shatterfoil-/354434182616",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.95
+					},
+					{
+						"itemId": 354588496311,
+						"title": "Yugioh Impcantation Penciplume MP19-EN171 Unlimited Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/yOEAAOSwmSJjP25D/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Impcantation-Penciplume-MP19-EN171-Unlimited-Super-Rare-/354588496311",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.56
+					},
+					{
+						"itemId": 354588496324,
+						"title": "Yugioh Virtual World Mai-Hime - Lulu MP21-EN173 1st Edition",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/B8wAAOSwNPRi9DOo/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Virtual-World-Mai-Hime-Lulu-MP21-EN173-1st-Edition-/354588496324",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.62
+					},
+					{
+						"itemId": 354588496326,
+						"title": "Yugioh Hieratic Sun Dragon Overlord of Heliopolis GFTP-EN052 1st Edition",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/r6UAAOSwXARjPOyn/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Hieratic-Sun-Dragon-Overlord-Heliopolis-GFTP-EN052-1st-Edition-/354588496326",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.05
+					},
+					{
+						"itemId": 354434182603,
+						"title": "Yugioh Great Sorcerer of the Nekroz THSF-EN011 1st Edition Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/3SMAAOSwKSVjP25C/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Great-Sorcerer-Nekroz-THSF-EN011-1st-Edition-Super-Rare-/354434182603",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.1
+					},
+					{
+						"itemId": 354588496303,
+						"title": "Yugioh Adamancipator Risen - Raptite SESL-EN008 1st Edition Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/QCAAAOSwyXBjP25F/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Adamancipator-Risen-Raptite-SESL-EN008-1st-Edition-Super-Rare-/354588496303",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.27
+					},
+					{
+						"itemId": 354588496294,
+						"title": "Yugioh Cyber Dragon Drei SDCR-EN002 Unlimited Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/36EAAOSwGJljP25D/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Cyber-Dragon-Drei-SDCR-EN002-Unlimited-Super-Rare-/354588496294",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.4
+					},
+					{
+						"itemId": 354434274674,
+						"title": "Yugioh Dark Paladin LCYW-EN048 1st Edition Secret Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/p7wAAOSwmQRjWfND/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Dark-Paladin-LCYW-EN048-1st-Edition-Secret-Rare-/354434274674",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 99.69
+					},
+					{
+						"itemId": 354434182559,
+						"title": "Yugioh Geartown GFTP-EN108 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/URgAAOSwpOBjP25C/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Geartown-GFTP-EN108-1st-Edition-Ultra-Rare-/354434182559",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.28
+					},
+					{
+						"itemId": 354434182687,
+						"title": "Yugioh Spirit Reaper GLD4-EN011 Limited Gold Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/mXgAAOSwsYli9DOp/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Spirit-Reaper-GLD4-EN011-Limited-Gold-Rare-/354434182687",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 3.63
+					},
+					{
+						"itemId": 354588496306,
+						"title": "Yugioh Vampire Sorcerer DASA-EN049 1st Edition Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/gxkAAOSwo-Ri9DOo/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Vampire-Sorcerer-DASA-EN049-1st-Edition-Super-Rare-/354588496306",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.34
+					},
+					{
+						"itemId": 354434182623,
+						"title": "Yugioh Myutant Synthesis PHRA-EN090 1st Edition Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/Z6QAAOSwC29jP25D/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Myutant-Synthesis-PHRA-EN090-1st-Edition-Super-Rare-/354434182623",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.23
+					},
+					{
+						"itemId": 354434182524,
+						"title": "Yugioh Arsenal Bug BP03-EN004 1st Edition Shatterfoil Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/jcEAAOSwo6FjPOym/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Arsenal-Bug-BP03-EN004-1st-Edition-Shatterfoil-Rare-/354434182524",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.98
+					},
+					{
+						"itemId": 354588496356,
+						"title": "Yugioh Simorgh, Bird of Divinity SD8-EN001 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/zHcAAOSwwo1jP25E/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Simorgh-Bird-Divinity-SD8-EN001-1st-Edition-Ultra-Rare-/354588496356",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.74
+					},
+					{
+						"itemId": 354434182576,
+						"title": "Yugioh Galaxy-Eyes Cipher Blade Dragon GFTP-EN059 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/eEEAAOSwdG1jPOyk/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Galaxy-Eyes-Cipher-Blade-Dragon-GFTP-EN059-1st-Edition-Ultra-Rare-/354434182576",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.73
+					},
+					{
+						"itemId": 354434182693,
+						"title": "Yugioh Spellbook Magician of Prophecy BLLR-EN050 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/gzcAAOSwR1Ji9DOo/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Spellbook-Magician-Prophecy-BLLR-EN050-1st-Edition-Ultra-Rare-/354434182693",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 3.12
+					},
+					{
+						"itemId": 354434182541,
+						"title": "Yugioh Drytron Meteonis Quadrantids GEIM-EN030 1st Edition Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/WtQAAOSwLgdjP249/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Drytron-Meteonis-Quadrantids-GEIM-EN030-1st-Edition-Super-Rare-/354434182541",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.47
+					},
+					{
+						"itemId": 354434182572,
+						"title": "Yugioh  Chaos Ruler, the Chaotic Magical Dragon MP21-EN128 1st Edition",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/WTcAAOSwmx5i9DOn/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Chaos-Ruler-Chaotic-Magical-Dragon-MP21-EN128-1st-Edition-/354434182572",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 3.29
+					},
+					{
+						"itemId": 354588496291,
+						"title": "Yugioh Accel Synchron SDSE-EN042 1st Edition Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/HzcAAOSwEBNi9DOp/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Accel-Synchron-SDSE-EN042-1st-Edition-Super-Rare-/354588496291",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.88
+					},
+					{
+						"itemId": 354588496363,
+						"title": "Yugioh Naturia Pineapple HASE-EN002 Limited Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/e48AAOSwhVpjP25E/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Naturia-Pineapple-HASE-EN002-Limited-Super-Rare-/354588496363",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.94
+					},
+					{
+						"itemId": 354434274682,
+						"title": "Yugioh Speedroid Dominobutterfly DPDG-EN004 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/vj4AAOSwgO5i9DOk/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Speedroid-Dominobutterfly-DPDG-EN004-1st-Edition-Ultra-Rare-/354434274682",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 5.18
+					},
+					{
+						"itemId": 354588496348,
+						"title": "Yugioh Zoodiac Boarbow OP15-EN005 Unlimited Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/1vMAAOSwXxli9DOo/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Zoodiac-Boarbow-OP15-EN005-Unlimited-Super-Rare-/354588496348",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 4.15
+					},
+					{
+						"itemId": 354588496353,
+						"title": "Yugioh LANphorhynchus DUDE-EN021 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/hPcAAOSwXANjPOyj/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-LANphorhynchus-DUDE-EN021-1st-Edition-Ultra-Rare-/354588496353",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.49
+					},
+					{
+						"itemId": 354434182602,
+						"title": "Yugioh Melffy Mommy OP15-EN011 Unlimited Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/0egAAOSwGK1i9DOm/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Melffy-Mommy-OP15-EN011-Unlimited-Super-Rare-/354434182602",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 3.21
+					},
+					{
+						"itemId": 354434182633,
+						"title": "Yugioh Paladin of Dark Dragon (Green) DLCS-EN069 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/xoIAAOSwuipjPOyl/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Paladin-Dark-Dragon-Green-DLCS-EN069-1st-Edition-Ultra-Rare-/354434182633",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.19
+					},
+					{
+						"itemId": 354588496358,
+						"title": "Yugioh D/D/D Gust King Alexander CT13-EN010 Limited Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/4WMAAOSwwe9jP25D/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-D-D-D-Gust-King-Alexander-CT13-EN010-Limited-Super-Rare-/354588496358",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.06
+					},
+					{
+						"itemId": 354588496307,
+						"title": "Yugioh Gem-Knight Zirconia HA07-EN018 1st Edition Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/L7wAAOSwwpFi9DOo/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Gem-Knight-Zirconia-HA07-EN018-1st-Edition-Super-Rare-/354588496307",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.95
+					},
+					{
+						"itemId": 354434274669,
+						"title": "Yugioh Painful Choice MRL-049 1st Edition Super Rare  Magic Ruler",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/8rsAAOSwujRj8XZ8/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Painful-Choice-MRL-049-1st-Edition-Super-Rare-Magic-Ruler-/354434274669",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 16.69
+					},
+					{
+						"itemId": 354588496342,
+						"title": "Yugioh Gem-Merchant HA05-EN006 1st Edition Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/KL4AAOSwZMljP25G/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Gem-Merchant-HA05-EN006-1st-Edition-Super-Rare-/354588496342",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.1
+					},
+					{
+						"itemId": 354588496319,
+						"title": "Yugioh Jain, Lightsworn Paladin BP03-EN042 1st Edition Shatterfoil Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/pGIAAOSw7LljPOym/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Jain-Lightsworn-Paladin-BP03-EN042-1st-Edition-Shatterfoil-Rare-/354588496319",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.11
+					},
+					{
+						"itemId": 354588496323,
+						"title": "Yugioh Block Dragon SESL-EN038 1st Edition Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/LPEAAOSwmHRjP25E/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Block-Dragon-SESL-EN038-1st-Edition-Super-Rare-/354588496323",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.07
+					},
+					{
+						"itemId": 354434274687,
+						"title": "Yugioh Red Dragon Archfiend CT07-EN025 Limited Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/2GgAAOSwWO5j5phl/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Red-Dragon-Archfiend-CT07-EN025-Limited-Super-Rare-/354434274687",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 6.62
+					},
+					{
+						"itemId": 354434185126,
+						"title": "Yugioh Zaborg the Mega Monarch NECH-EN037 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/a~cAAOSwsMVi9DOn/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Zaborg-Mega-Monarch-NECH-EN037-1st-Edition-Ultra-Rare-/354434185126",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 3.75
+					},
+					{
+						"itemId": 354588496301,
+						"title": "Yugioh Iron Knight BLRR-EN007 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/DrQAAOSwx79jP25E/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Iron-Knight-BLRR-EN007-1st-Edition-Ultra-Rare-/354588496301",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.21
+					},
+					{
+						"itemId": 354434182553,
+						"title": "Yugioh Future Fusion POTD-EN044 Unlimited Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/yHQAAOSwgGRjCTZg/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Future-Fusion-POTD-EN044-Unlimited-Rare-/354434182553",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 3.11
+					},
+					{
+						"itemId": 354434182625,
+						"title": "Yugioh Rope of Life BP02-EN176 Unlimited Mosaic Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/h4IAAOSwDwVjPOyn/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Rope-Life-BP02-EN176-Unlimited-Mosaic-Rare-/354434182625",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.03
+					},
+					{
+						"itemId": 354588496344,
+						"title": "Yugioh Night Dragolich NECH-EN034 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/KvgAAOSwH~NjP25G/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Night-Dragolich-NECH-EN034-1st-Edition-Ultra-Rare-/354588496344",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.41
+					},
+					{
+						"itemId": 354588496280,
+						"title": "Yugioh Underground Arachnid DPC5-EN001 Limited Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/Z8AAAOSw~uxjP25E/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Underground-Arachnid-DPC5-EN001-Limited-Super-Rare-/354588496280",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.89
+					},
+					{
+						"itemId": 354588496314,
+						"title": "Yugioh Miracle Fusion DUPO-EN055 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/lMwAAOSwespi9DOo/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Miracle-Fusion-DUPO-EN055-1st-Edition-Ultra-Rare-/354588496314",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.86
+					},
+					{
+						"itemId": 354588496285,
+						"title": "Yugioh Silent Sea Nettle BROL-EN029 1st Edition Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/~W4AAOSwdPVjP25E/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Silent-Sea-Nettle-BROL-EN029-1st-Edition-Ultra-Rare-/354588496285",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.53
+					},
+					{
+						"itemId": 354434182597,
+						"title": "Yugioh Koa'ki Meiru Ghoulungulate ANPR-EN082 Unlimited Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/XFwAAOSw2JtjP25E/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Koaki-Meiru-Ghoulungulate-ANPR-EN082-Unlimited-Ultra-Rare-/354434182597",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.47
+					},
+					{
+						"itemId": 354588496351,
+						"title": "Yugioh Master Hyperion GLD5-EN027 Limited Gold Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/c2AAAOSwemNjPOyn/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Master-Hyperion-GLD5-EN027-Limited-Gold-Rare-/354588496351",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.34
+					},
+					{
+						"itemId": 354588496297,
+						"title": "Yugioh Sphinx Teleia EP1-EN003 Limited Ultra Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/y9QAAOSwNZxjPOym/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Sphinx-Teleia-EP1-EN003-Limited-Ultra-Rare-/354588496297",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.8
+					},
+					{
+						"itemId": 354434182560,
+						"title": "Yugioh Autorokket Dragon CIBR-EN010 1st Edition Super Rare",
+						"galleryURL": "https://i.ebayimg.com/thumbs/images/g/BJoAAOSw6uZjP25C/s-l1600.webp",
+						"viewItemURL": "https://www.ebay.com/itm/Yugioh-Autorokket-Dragon-CIBR-EN010-1st-Edition-Super-Rare-/354434182560",
+						"sellerUserName": "gottasellemall69",
+						"currentPrice": 2.04
+					}
+				];
 
+				function populateProductCard(productData) {
+					// Select the product card template and clone it
+					const productCardTemplate = document.querySelector("#product-card");
+					const productCard = productCardTemplate.cloneNode(true);
 
+					// Populate the card with product data
+					productCard.querySelector("#viewItemURL").href = productData.viewItemURL;
+					productCard.querySelector("#galleryURL").src = productData.galleryURL;
+					productCard.querySelector("#title").textContent = productData.title;
+					productCard.querySelector("#currentPrice").textContent = productData.currentPrice;
 
-		<script>
-			const productData = [
-				{
-					"itemId": 354434274670,
-					"title": "Dragonite (4) 1st Edition Holo Rare Pokemon Fossil 1999",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/lpkAAOSwOuRj8vqB/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Dragonite-4-1st-Edition-Holo-Rare-Pokemon-Fossil-1999-/354434274670",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 184.69
-				},
-				{
-					"itemId": 354434182543,
-					"title": "Yugioh Chaos Goddess DUOV-EN079 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/DTIAAOSwDH5jPOym/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Chaos-Goddess-DUOV-EN079-1st-Edition-Ultra-Rare-/354434182543",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.72
-				},
-				{
-					"itemId": 354434274684,
-					"title": "Yugioh Tyrant Dragon LOD-034 First Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/B7sAAOSwjn9j6Den/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Tyrant-Dragon-LOD-034-First-Edition-Ultra-Rare-/354434274684",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 13.84
-				},
-				{
-					"itemId": 354434182695,
-					"title": "Yugioh Super Quantal Mech Beast Lusterrex DANE-EN037 1st Edition Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/YdgAAOSwiW9jP25F/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Super-Quantal-Mech-Beast-Lusterrex-DANE-EN037-1st-Edition-Super-Rare-/354434182695",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.81
-				},
-				{
-					"itemId": 354434182701,
-					"title": "Yugioh Kuriboh FL1-EN003 Limited Secret Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/uw4AAOSwaOVj5pmE/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Kuriboh-FL1-EN003-Limited-Secret-Rare-/354434182701",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 12.12
-				},
-				{
-					"itemId": 354434182718,
-					"title": "Yugioh Number 21: Frozen Lady Justice PGL2-EN018 1st Edition Secret Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/G0oAAOSwqLhi9DOn/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Number-21-Frozen-Lady-Justice-PGL2-EN018-1st-Edition-Secret-Rare-/354434182718",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.69
-				},
-				{
-					"itemId": 354434182612,
-					"title": "Yugioh Penumbral Soldier Lady SOD-EN033 Unlimited Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/nXsAAOSwH9ljP25D/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Penumbral-Soldier-Lady-SOD-EN033-Unlimited-Super-Rare-/354434182612",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.3
-				},
-				{
-					"itemId": 354434182577,
-					"title": "Yugioh Cyber Larva LC02-EN007 Limited Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/vtAAAOSw7NpjPOyl/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Cyber-Larva-LC02-EN007-Limited-Ultra-Rare-/354434182577",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.03
-				},
-				{
-					"itemId": 354434182563,
-					"title": "Yugioh GranSolfachord Musecia DAMA-EN048 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/KFEAAOSwC7pjPOym/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-GranSolfachord-Musecia-DAMA-EN048-1st-Edition-Ultra-Rare-/354434182563",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.26
-				},
-				{
-					"itemId": 354588496327,
-					"title": "Yugioh Desert Twister TAEV-EN034 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/QtMAAOSw~qBjPOyk/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Desert-Twister-TAEV-EN034-1st-Edition-Ultra-Rare-/354588496327",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.24
-				},
-				{
-					"itemId": 354434182547,
-					"title": "Yugioh Celtic Guard of Noble Arms MVP1-ENG48 1st Edition Gold Secret Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/7C0AAOSw3ldjPOyl/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Celtic-Guard-Noble-Arms-MVP1-ENG48-1st-Edition-Gold-Secret-Rare-/354434182547",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.28
-				},
-				{
-					"itemId": 354434182527,
-					"title": "Yugioh Armageddon Knight THSF-EN035 Unlimited Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/RjkAAOSw7CZjP25D/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Armageddon-Knight-THSF-EN035-Unlimited-Super-Rare-/354434182527",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.35
-				},
-				{
-					"itemId": 354434274667,
-					"title": "Yugioh Smashing Ground PGL2-EN075 1st Edition Gold Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/2LQAAOSwTChi9DOn/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Smashing-Ground-PGL2-EN075-1st-Edition-Gold-Rare-/354434274667",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 3.46
-				},
-				{
-					"itemId": 354434182671,
-					"title": "Yugioh Soul Pendulum DUPO-EN013 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/XBoAAOSw8wVjP25D/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Soul-Pendulum-DUPO-EN013-1st-Edition-Ultra-Rare-/354434182671",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.22
-				},
-				{
-					"itemId": 354434274671,
-					"title": "Yugioh Winged Kuriboh DR3-EN185 Unlimited Super Rare NM",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/0asAAOSw3iti9DOn/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Winged-Kuriboh-DR3-EN185-Unlimited-Super-Rare-NM-/354434274671",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 18.56
-				},
-				{
-					"itemId": 354434274664,
-					"title": "Yugioh Double Spell MFC-106 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/LrQAAOSwZ0Nj8XgQ/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Double-Spell-MFC-106-1st-Edition-Ultra-Rare-/354434274664",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 17.69
-				},
-				{
-					"itemId": 354434182662,
-					"title": "Yugioh Kuribeh BROL-EN004 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/np0AAOSwQA5jP25D/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Kuribeh-BROL-EN004-1st-Edition-Ultra-Rare-/354434182662",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.18
-				},
-				{
-					"itemId": 354434182595,
-					"title": "Yugioh Galaxy-Eyes Full Armor Photon Dragon MP16-EN044 1st Edition Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/N2EAAOSwRz9jP25B/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Galaxy-Eyes-Full-Armor-Photon-Dragon-MP16-EN044-1st-Edition-Super-Rare-/354434182595",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.91
-				},
-				{
-					"itemId": 354588496336,
-					"title": "Yugioh Performapal King Bear YS16-EN002 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/5HwAAOSwujhjPOym/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Performapal-King-Bear-YS16-EN002-1st-Edition-Ultra-Rare-/354588496336",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.17
-				},
-				{
-					"itemId": 354434182722,
-					"title": "Yugioh Tactical Exchanger DUPO-EN026 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/btgAAOSw4UpjP25C/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Tactical-Exchanger-DUPO-EN026-1st-Edition-Ultra-Rare-/354434182722",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.56
-				},
-				{
-					"itemId": 354434274688,
-					"title": "Yugioh Volcanic Doomfire CT04-EN004 Limited Secret Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/0d0AAOSwm7Bi9DOo/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Volcanic-Doomfire-CT04-EN004-Limited-Secret-Rare-/354434274688",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 6
-				},
-				{
-					"itemId": 354434182542,
-					"title": "Yugioh Dramaturge of Despia GFP2-EN098 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/5c4AAOSw7DBi9DOm/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Dramaturge-Despia-GFP2-EN098-1st-Edition-Ultra-Rare-/354434182542",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.35
-				},
-				{
-					"itemId": 354434182632,
-					"title": "Yugioh Starlight Road PGL2-EN091 1st Edition Gold Secret Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/fvAAAOSwOcRjPOym/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Starlight-Road-PGL2-EN091-1st-Edition-Gold-Secret-Rare-/354434182632",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.54
-				},
-				{
-					"itemId": 354434182646,
-					"title": "Yugioh Thunder Dragonhawk MP19-EN168 1st Edition Prismatic Secret Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/kfkAAOSwWR5i9DOp/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Thunder-Dragonhawk-MP19-EN168-1st-Edition-Prismatic-Secret-Rare-/354434182646",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 4.44
-				},
-				{
-					"itemId": 354434182635,
-					"title": "Yugioh Green Gadget FIGA-EN006 1st Edition Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/~OgAAOSwP3xjP25B/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Green-Gadget-FIGA-EN006-1st-Edition-Super-Rare-/354434182635",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.15
-				},
-				{
-					"itemId": 354434182525,
-					"title": "Yugioh Dark Requiem Xyz Dragon GFTP-EN099 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/ymoAAOSwh-VjPOyn/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Dark-Requiem-Xyz-Dragon-GFTP-EN099-1st-Edition-Ultra-Rare-/354434182525",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.28
-				},
-				{
-					"itemId": 354588496298,
-					"title": "Yugioh Dragonic Tactics LC02-EN012 Limited Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/14MAAOSwZvZjP24-/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Dragonic-Tactics-LC02-EN012-Limited-Ultra-Rare-/354588496298",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 3.83
-				},
-				{
-					"itemId": 354434182679,
-					"title": "Yugioh Vampire Familiar DASA-EN001 Unlimited Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/RF4AAOSwlqhjP25D/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Vampire-Familiar-DASA-EN001-Unlimited-Super-Rare-/354434182679",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.69
-				},
-				{
-					"itemId": 354434182624,
-					"title": "Yugioh Linkslayer YS17-EN004 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/wfMAAOSwxN9i9DOm/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Linkslayer-YS17-EN004-1st-Edition-Ultra-Rare-/354434182624",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.38
-				},
-				{
-					"itemId": 354434182645,
-					"title": "Yugioh Madolche Fresh Sistart GFTP-EN104 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/x1gAAOSwfaZjPOyo/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Madolche-Fresh-Sistart-GFTP-EN104-1st-Edition-Ultra-Rare-/354434182645",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.32
-				},
-				{
-					"itemId": 354434182573,
-					"title": "Yugioh Hieratic Dragon of Tefnuit DUPO-EN080 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/oUwAAOSw-xxjP25F/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Hieratic-Dragon-Tefnuit-DUPO-EN080-1st-Edition-Ultra-Rare-/354434182573",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.51
-				},
-				{
-					"itemId": 354434182622,
-					"title": "Yugioh Evolzar Dolkka KICO-EN043 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/yXAAAOSwbF5i9DOp/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Evolzar-Dolkka-KICO-EN043-1st-Edition-Ultra-Rare-/354434182622",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.82
-				},
-				{
-					"itemId": 354434182678,
-					"title": "Yugioh Vision HERO Witch Raider BLHR-EN060 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/qz0AAOSwx6hjP25E/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Vision-HERO-Witch-Raider-BLHR-EN060-1st-Edition-Ultra-Rare-/354434182678",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.57
-				},
-				{
-					"itemId": 354434182655,
-					"title": "Yugioh Djinn Disserere of Rituals THSF-EN040 1st Edition Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/sfsAAOSwHy9jP25E/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Djinn-Disserere-Rituals-THSF-EN040-1st-Edition-Super-Rare-/354434182655",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.01
-				},
-				{
-					"itemId": 354434182609,
-					"title": "Yugioh F.A. Dawn Dragster MP19-EN061 1st Edition Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/P7QAAOSwxUpi9DOm/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-F-A-Dawn-Dragster-MP19-EN061-1st-Edition-Super-Rare-/354434182609",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 3.49
-				},
-				{
-					"itemId": 354588496338,
-					"title": "Yugioh Theinen the Great Sphinx EP1-EN001 Limited Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/iegAAOSwDX1jPOyl/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Theinen-Great-Sphinx-EP1-EN001-Limited-Ultra-Rare-/354588496338",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.03
-				},
-				{
-					"itemId": 354434182668,
-					"title": "Yugioh Witchcrafter Madame Verre DUOV-EN073 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/3UwAAOSwvBpjP25D/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Witchcrafter-Madame-Verre-DUOV-EN073-1st-Edition-Ultra-Rare-/354434182668",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.72
-				},
-				{
-					"itemId": 354588496369,
-					"title": "Yugioh Inspiration BP03-EN232 1st Edition Mosaic Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/gdwAAOSwvVRjCTZf/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Inspiration-BP03-EN232-1st-Edition-Mosaic-Rare-/354588496369",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.05
-				},
-				{
-					"itemId": 354434182520,
-					"title": "Yugioh Andro Sphinx EP1-EN002 Unlimited Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/tCYAAOSwErdjPOyl/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Andro-Sphinx-EP1-EN002-Unlimited-Ultra-Rare-/354434182520",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.31
-				},
-				{
-					"itemId": 354434182636,
-					"title": "Yugioh Reinforcement of the Army PGLD-EN058 1st Edition Gold Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/1AYAAOSwwcpi9DOp/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Reinforcement-Army-PGLD-EN058-1st-Edition-Gold-Rare-/354434182636",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.66
-				},
-				{
-					"itemId": 354434182682,
-					"title": "Yugioh Super Quantal Mech King Great Magnus DUPO-EN093 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/AN0AAOSwqXdi9DOn/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Super-Quantal-Mech-King-Great-Magnus-DUPO-EN093-1st-Edition-Ultra-Rare-/354434182682",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.65
-				},
-				{
-					"itemId": 354434182663,
-					"title": "Yugioh Mahaama the Fairy Dragon MP21-EN218 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/0FsAAOSwqJZjPOyj/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Mahaama-Fairy-Dragon-MP21-EN218-1st-Edition-Ultra-Rare-/354434182663",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.55
-				},
-				{
-					"itemId": 354434182567,
-					"title": "Yugioh Dark Hunter TDGS-EN033 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/m5cAAOSwPKdjPOyk/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Dark-Hunter-TDGS-EN033-1st-Edition-Ultra-Rare-/354434182567",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.34
-				},
-				{
-					"itemId": 354434274665,
-					"title": "Yugioh Sephylon, the Ultimate Timelord GLD5-EN029 Limited Gold Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/TEsAAOSwCWxjPOyk/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Sephylon-Ultimate-Timelord-GLD5-EN029-Limited-Gold-Rare-/354434274665",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.56
-				},
-				{
-					"itemId": 354588496287,
-					"title": "Yugioh Vampire Domination DASA-EN011 Unlimited Secret Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/t4YAAOSwb3xi9DOn/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Vampire-Domination-DASA-EN011-Unlimited-Secret-Rare-/354588496287",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.6
-				},
-				{
-					"itemId": 354588496360,
-					"title": "Yugioh Krystal Dragon MVP1-ENSV2 Limited Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/XAgAAOSwItljP25C/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Krystal-Dragon-MVP1-ENSV2-Limited-Ultra-Rare-/354588496360",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 3.98
-				},
-				{
-					"itemId": 354434182538,
-					"title": "Yugioh Borrelend Dragon GFP2-EN006 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/5MkAAOSw4F9i9DOn/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Borrelend-Dragon-GFP2-EN006-1st-Edition-Ultra-Rare-/354434182538",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.73
-				},
-				{
-					"itemId": 354434274679,
-					"title": "Yugioh Enishi, Shien's Chancellor GLAS-EN032 Unlimited Ultimate Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/QxIAAOSwdcRj8XXG/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Enishi-Shiens-Chancellor-GLAS-EN032-Unlimited-Ultimate-Rare-/354434274679",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 18.2
-				},
-				{
-					"itemId": 354588496275,
-					"title": "Yugioh Battlewasp - Pin the Bullseye BLHR-EN031 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/0eoAAOSwGK1i9DOn/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Battlewasp-Pin-Bullseye-BLHR-EN031-1st-Edition-Ultra-Rare-/354588496275",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 3.68
-				},
-				{
-					"itemId": 354434182584,
-					"title": "Yugioh Inspector Boarder DUDE-EN031 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/h6kAAOSw3yxjPOyk/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Inspector-Boarder-DUDE-EN031-1st-Edition-Ultra-Rare-/354434182584",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.82
-				},
-				{
-					"itemId": 354434182710,
-					"title": "Yugioh Strike Ninja SHVA-EN021 1st Edition Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/i6EAAOSw3ldjP25E/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Strike-Ninja-SHVA-EN021-1st-Edition-Super-Rare-/354434182710",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.63
-				},
-				{
-					"itemId": 354318125034,
-					"title": "Yugioh Evil HERO Malicious Edge GLAS-EN003 Unlimited Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/FqsAAOSwHDtjP25F/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Evil-HERO-Malicious-Edge-GLAS-EN003-Unlimited-Super-Rare-/354318125034",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.74
-				},
-				{
-					"itemId": 354434182703,
-					"title": "Yugioh Virtual World Beast - Jiujiu PHRA-EN097 1st Edition Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/Vh0AAOSwLxxjP25D/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Virtual-World-Beast-Jiujiu-PHRA-EN097-1st-Edition-Super-Rare-/354434182703",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.04
-				},
-				{
-					"itemId": 354588496365,
-					"title": "Yugioh Noble Knight Custennin CYHO-EN088 1st Edition Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/RHIAAOSwsWpjP24-/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Noble-Knight-Custennin-CYHO-EN088-1st-Edition-Super-Rare-/354588496365",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.28
-				},
-				{
-					"itemId": 354434182619,
-					"title": "Yugioh Lavalval Ignis BP03-EN120 1st Edition Shatterfoil",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/6~AAAOSwHXFjCTZf/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Lavalval-Ignis-BP03-EN120-1st-Edition-Shatterfoil-/354434182619",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.23
-				},
-				{
-					"itemId": 354588496313,
-					"title": "Yugioh Rivalry Of Warlords KICO-EN058 Rare 1st Edition NM",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/0bEAAOSw4NBjydCc/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Rivalry-Warlords-KICO-EN058-Rare-1st-Edition-NM-/354588496313",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 3.32
-				},
-				{
-					"itemId": 354434182616,
-					"title": "Yugioh Miracle Locus BP03-EN213 1st Edition Shatterfoil",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/TqgAAOSwSxJjCTZe/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Miracle-Locus-BP03-EN213-1st-Edition-Shatterfoil-/354434182616",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.95
-				},
-				{
-					"itemId": 354588496311,
-					"title": "Yugioh Impcantation Penciplume MP19-EN171 Unlimited Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/yOEAAOSwmSJjP25D/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Impcantation-Penciplume-MP19-EN171-Unlimited-Super-Rare-/354588496311",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.56
-				},
-				{
-					"itemId": 354588496324,
-					"title": "Yugioh Virtual World Mai-Hime - Lulu MP21-EN173 1st Edition",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/B8wAAOSwNPRi9DOo/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Virtual-World-Mai-Hime-Lulu-MP21-EN173-1st-Edition-/354588496324",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.62
-				},
-				{
-					"itemId": 354588496326,
-					"title": "Yugioh Hieratic Sun Dragon Overlord of Heliopolis GFTP-EN052 1st Edition",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/r6UAAOSwXARjPOyn/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Hieratic-Sun-Dragon-Overlord-Heliopolis-GFTP-EN052-1st-Edition-/354588496326",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.05
-				},
-				{
-					"itemId": 354434182603,
-					"title": "Yugioh Great Sorcerer of the Nekroz THSF-EN011 1st Edition Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/3SMAAOSwKSVjP25C/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Great-Sorcerer-Nekroz-THSF-EN011-1st-Edition-Super-Rare-/354434182603",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.1
-				},
-				{
-					"itemId": 354588496303,
-					"title": "Yugioh Adamancipator Risen - Raptite SESL-EN008 1st Edition Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/QCAAAOSwyXBjP25F/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Adamancipator-Risen-Raptite-SESL-EN008-1st-Edition-Super-Rare-/354588496303",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.27
-				},
-				{
-					"itemId": 354588496294,
-					"title": "Yugioh Cyber Dragon Drei SDCR-EN002 Unlimited Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/36EAAOSwGJljP25D/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Cyber-Dragon-Drei-SDCR-EN002-Unlimited-Super-Rare-/354588496294",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.4
-				},
-				{
-					"itemId": 354434274674,
-					"title": "Yugioh Dark Paladin LCYW-EN048 1st Edition Secret Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/p7wAAOSwmQRjWfND/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Dark-Paladin-LCYW-EN048-1st-Edition-Secret-Rare-/354434274674",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 99.69
-				},
-				{
-					"itemId": 354434182559,
-					"title": "Yugioh Geartown GFTP-EN108 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/URgAAOSwpOBjP25C/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Geartown-GFTP-EN108-1st-Edition-Ultra-Rare-/354434182559",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.28
-				},
-				{
-					"itemId": 354434182687,
-					"title": "Yugioh Spirit Reaper GLD4-EN011 Limited Gold Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/mXgAAOSwsYli9DOp/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Spirit-Reaper-GLD4-EN011-Limited-Gold-Rare-/354434182687",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 3.63
-				},
-				{
-					"itemId": 354588496306,
-					"title": "Yugioh Vampire Sorcerer DASA-EN049 1st Edition Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/gxkAAOSwo-Ri9DOo/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Vampire-Sorcerer-DASA-EN049-1st-Edition-Super-Rare-/354588496306",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.34
-				},
-				{
-					"itemId": 354434182623,
-					"title": "Yugioh Myutant Synthesis PHRA-EN090 1st Edition Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/Z6QAAOSwC29jP25D/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Myutant-Synthesis-PHRA-EN090-1st-Edition-Super-Rare-/354434182623",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.23
-				},
-				{
-					"itemId": 354434182524,
-					"title": "Yugioh Arsenal Bug BP03-EN004 1st Edition Shatterfoil Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/jcEAAOSwo6FjPOym/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Arsenal-Bug-BP03-EN004-1st-Edition-Shatterfoil-Rare-/354434182524",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.98
-				},
-				{
-					"itemId": 354588496356,
-					"title": "Yugioh Simorgh, Bird of Divinity SD8-EN001 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/zHcAAOSwwo1jP25E/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Simorgh-Bird-Divinity-SD8-EN001-1st-Edition-Ultra-Rare-/354588496356",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.74
-				},
-				{
-					"itemId": 354434182576,
-					"title": "Yugioh Galaxy-Eyes Cipher Blade Dragon GFTP-EN059 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/eEEAAOSwdG1jPOyk/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Galaxy-Eyes-Cipher-Blade-Dragon-GFTP-EN059-1st-Edition-Ultra-Rare-/354434182576",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.73
-				},
-				{
-					"itemId": 354434182693,
-					"title": "Yugioh Spellbook Magician of Prophecy BLLR-EN050 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/gzcAAOSwR1Ji9DOo/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Spellbook-Magician-Prophecy-BLLR-EN050-1st-Edition-Ultra-Rare-/354434182693",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 3.12
-				},
-				{
-					"itemId": 354434182541,
-					"title": "Yugioh Drytron Meteonis Quadrantids GEIM-EN030 1st Edition Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/WtQAAOSwLgdjP249/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Drytron-Meteonis-Quadrantids-GEIM-EN030-1st-Edition-Super-Rare-/354434182541",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.47
-				},
-				{
-					"itemId": 354434182572,
-					"title": "Yugioh  Chaos Ruler, the Chaotic Magical Dragon MP21-EN128 1st Edition",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/WTcAAOSwmx5i9DOn/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Chaos-Ruler-Chaotic-Magical-Dragon-MP21-EN128-1st-Edition-/354434182572",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 3.29
-				},
-				{
-					"itemId": 354588496291,
-					"title": "Yugioh Accel Synchron SDSE-EN042 1st Edition Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/HzcAAOSwEBNi9DOp/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Accel-Synchron-SDSE-EN042-1st-Edition-Super-Rare-/354588496291",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.88
-				},
-				{
-					"itemId": 354588496363,
-					"title": "Yugioh Naturia Pineapple HASE-EN002 Limited Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/e48AAOSwhVpjP25E/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Naturia-Pineapple-HASE-EN002-Limited-Super-Rare-/354588496363",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.94
-				},
-				{
-					"itemId": 354434274682,
-					"title": "Yugioh Speedroid Dominobutterfly DPDG-EN004 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/vj4AAOSwgO5i9DOk/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Speedroid-Dominobutterfly-DPDG-EN004-1st-Edition-Ultra-Rare-/354434274682",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 5.18
-				},
-				{
-					"itemId": 354588496348,
-					"title": "Yugioh Zoodiac Boarbow OP15-EN005 Unlimited Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/1vMAAOSwXxli9DOo/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Zoodiac-Boarbow-OP15-EN005-Unlimited-Super-Rare-/354588496348",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 4.15
-				},
-				{
-					"itemId": 354588496353,
-					"title": "Yugioh LANphorhynchus DUDE-EN021 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/hPcAAOSwXANjPOyj/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-LANphorhynchus-DUDE-EN021-1st-Edition-Ultra-Rare-/354588496353",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.49
-				},
-				{
-					"itemId": 354434182602,
-					"title": "Yugioh Melffy Mommy OP15-EN011 Unlimited Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/0egAAOSwGK1i9DOm/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Melffy-Mommy-OP15-EN011-Unlimited-Super-Rare-/354434182602",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 3.21
-				},
-				{
-					"itemId": 354434182633,
-					"title": "Yugioh Paladin of Dark Dragon (Green) DLCS-EN069 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/xoIAAOSwuipjPOyl/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Paladin-Dark-Dragon-Green-DLCS-EN069-1st-Edition-Ultra-Rare-/354434182633",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.19
-				},
-				{
-					"itemId": 354588496358,
-					"title": "Yugioh D/D/D Gust King Alexander CT13-EN010 Limited Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/4WMAAOSwwe9jP25D/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-D-D-D-Gust-King-Alexander-CT13-EN010-Limited-Super-Rare-/354588496358",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.06
-				},
-				{
-					"itemId": 354588496307,
-					"title": "Yugioh Gem-Knight Zirconia HA07-EN018 1st Edition Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/L7wAAOSwwpFi9DOo/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Gem-Knight-Zirconia-HA07-EN018-1st-Edition-Super-Rare-/354588496307",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.95
-				},
-				{
-					"itemId": 354434274669,
-					"title": "Yugioh Painful Choice MRL-049 1st Edition Super Rare  Magic Ruler",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/8rsAAOSwujRj8XZ8/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Painful-Choice-MRL-049-1st-Edition-Super-Rare-Magic-Ruler-/354434274669",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 16.69
-				},
-				{
-					"itemId": 354588496342,
-					"title": "Yugioh Gem-Merchant HA05-EN006 1st Edition Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/KL4AAOSwZMljP25G/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Gem-Merchant-HA05-EN006-1st-Edition-Super-Rare-/354588496342",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.1
-				},
-				{
-					"itemId": 354588496319,
-					"title": "Yugioh Jain, Lightsworn Paladin BP03-EN042 1st Edition Shatterfoil Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/pGIAAOSw7LljPOym/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Jain-Lightsworn-Paladin-BP03-EN042-1st-Edition-Shatterfoil-Rare-/354588496319",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.11
-				},
-				{
-					"itemId": 354588496323,
-					"title": "Yugioh Block Dragon SESL-EN038 1st Edition Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/LPEAAOSwmHRjP25E/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Block-Dragon-SESL-EN038-1st-Edition-Super-Rare-/354588496323",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.07
-				},
-				{
-					"itemId": 354434274687,
-					"title": "Yugioh Red Dragon Archfiend CT07-EN025 Limited Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/2GgAAOSwWO5j5phl/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Red-Dragon-Archfiend-CT07-EN025-Limited-Super-Rare-/354434274687",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 6.62
-				},
-				{
-					"itemId": 354434185126,
-					"title": "Yugioh Zaborg the Mega Monarch NECH-EN037 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/a~cAAOSwsMVi9DOn/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Zaborg-Mega-Monarch-NECH-EN037-1st-Edition-Ultra-Rare-/354434185126",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 3.75
-				},
-				{
-					"itemId": 354588496301,
-					"title": "Yugioh Iron Knight BLRR-EN007 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/DrQAAOSwx79jP25E/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Iron-Knight-BLRR-EN007-1st-Edition-Ultra-Rare-/354588496301",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.21
-				},
-				{
-					"itemId": 354434182553,
-					"title": "Yugioh Future Fusion POTD-EN044 Unlimited Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/yHQAAOSwgGRjCTZg/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Future-Fusion-POTD-EN044-Unlimited-Rare-/354434182553",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 3.11
-				},
-				{
-					"itemId": 354434182625,
-					"title": "Yugioh Rope of Life BP02-EN176 Unlimited Mosaic Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/h4IAAOSwDwVjPOyn/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Rope-Life-BP02-EN176-Unlimited-Mosaic-Rare-/354434182625",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.03
-				},
-				{
-					"itemId": 354588496344,
-					"title": "Yugioh Night Dragolich NECH-EN034 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/KvgAAOSwH~NjP25G/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Night-Dragolich-NECH-EN034-1st-Edition-Ultra-Rare-/354588496344",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.41
-				},
-				{
-					"itemId": 354588496280,
-					"title": "Yugioh Underground Arachnid DPC5-EN001 Limited Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/Z8AAAOSw~uxjP25E/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Underground-Arachnid-DPC5-EN001-Limited-Super-Rare-/354588496280",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.89
-				},
-				{
-					"itemId": 354588496314,
-					"title": "Yugioh Miracle Fusion DUPO-EN055 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/lMwAAOSwespi9DOo/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Miracle-Fusion-DUPO-EN055-1st-Edition-Ultra-Rare-/354588496314",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.86
-				},
-				{
-					"itemId": 354588496285,
-					"title": "Yugioh Silent Sea Nettle BROL-EN029 1st Edition Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/~W4AAOSwdPVjP25E/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Silent-Sea-Nettle-BROL-EN029-1st-Edition-Ultra-Rare-/354588496285",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.53
-				},
-				{
-					"itemId": 354434182597,
-					"title": "Yugioh Koa'ki Meiru Ghoulungulate ANPR-EN082 Unlimited Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/XFwAAOSw2JtjP25E/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Koaki-Meiru-Ghoulungulate-ANPR-EN082-Unlimited-Ultra-Rare-/354434182597",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.47
-				},
-				{
-					"itemId": 354588496351,
-					"title": "Yugioh Master Hyperion GLD5-EN027 Limited Gold Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/c2AAAOSwemNjPOyn/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Master-Hyperion-GLD5-EN027-Limited-Gold-Rare-/354588496351",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.34
-				},
-				{
-					"itemId": 354588496297,
-					"title": "Yugioh Sphinx Teleia EP1-EN003 Limited Ultra Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/y9QAAOSwNZxjPOym/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Sphinx-Teleia-EP1-EN003-Limited-Ultra-Rare-/354588496297",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.8
-				},
-				{
-					"itemId": 354434182560,
-					"title": "Yugioh Autorokket Dragon CIBR-EN010 1st Edition Super Rare",
-					"galleryURL": "https://i.ebayimg.com/thumbs/images/g/BJoAAOSw6uZjP25C/s-l1600.webp",
-					"viewItemURL": "https://www.ebay.com/itm/Yugioh-Autorokket-Dragon-CIBR-EN010-1st-Edition-Super-Rare-/354434182560",
-					"sellerUserName": "gottasellemall69",
-					"currentPrice": 2.04
+					// Append the card to the product container
+					const productContainer = document.querySelector("#product-container");
+					productContainer.appendChild(productCard);
+
+					// Show the product card
+					productCard.style.display = "block";
 				}
-			];
 
-			function populateProductCard(productData) {
-				// Select the product card template and clone it
-				const productCardTemplate = document.querySelector("#product-card");
-				const productCard = productCardTemplate.cloneNode(true);
-
-				// Populate the card with product data
-				productCard.querySelector("#viewItemURL").href = productData.viewItemURL;
-				productCard.querySelector("#galleryURL").src = productData.galleryURL;
-				productCard.querySelector("#title").textContent = productData.title;
-				productCard.querySelector("#sellerUserName").textContent = productData.sellerUserName;
-				productCard.querySelector("#currentPrice").textContent = productData.currentPrice;
-
-				// Append the card to the product container
-				const productContainer = document.querySelector("#product-container");
-				productContainer.appendChild(productCard);
-
-				// Show the product card
-				productCard.style.display = "block";
-			}
-
-			// Loop through the product data array and populate the card with each product's data
-			productData.forEach(productData => {
-				populateProductCard(productData);
-			});
-		</script>
+				// Loop through the product data array and populate the card with each product's data
+				productData.forEach(productData => {
+					populateProductCard(productData);
+				});
+			</script>
 	</main>
 </body>
 
