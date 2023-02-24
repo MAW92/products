@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ['./css/**/*.{html,js}'],
+	content: ['./index.html', './populateProductCard.js'],
 	theme: {
 		extend: {},
 	},
-	plugins: [require('@tailwindcss/typography'), require('@tailwindcss/aspect-ratio')],
+	plugins: [],
 };
