@@ -52,7 +52,7 @@
   </ActiveList>
 </GetMyeBaySellingRequest>`;
 
-  const response = await fetch(url, {
+  const response = fetch(url, {
     method: 'POST',
     headers: {
       'X-EBAY-API-SITEID': '0',
@@ -64,7 +64,7 @@
     body: data,
   });
 
-  const text = await response.text();
+  const text = response.text();
 
   console.log(text);
 
