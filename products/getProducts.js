@@ -69,4 +69,22 @@ async function getProducts() {
   const text = await response.text();
 
   console.log(text);
+
+  const productContainer = document.getElementById("product-container");
+					const productCardTemplate = document.getElementById("product-card");
+
+					// Remove the original card
+					productCardTemplate.remove();
+					// Loop through the products and generate a new card for each one
+					products.forEach(product => {
+						const newCard = productCardTemplate.cloneNode(true);
+						newCard.querySelector("#viewItemURL").href = product.viewItemURL;
+						newCard.querySelector("#galleryURL").src = product.galleryURL;
+						newCard.querySelector("#title").textContent = product.title;
+						newCard.querySelector("#itemId").textContent = product.itemId;
+						newCard.querySelector("#condition").textContent = product.condition;
+						newCard.querySelector("#currentPrice").textContent = "$" + product.currentPrice.toFixed(2);
+						newCard.querySelector("#shipping").textContent = "Free shipping";
+						productContainer.appendChild(newCard);
+					});
 }
