@@ -1,6 +1,5 @@
-getProducts();
 
-function getProducts() {
+
   const products = [
     {
       "itemId": 354434274670,
@@ -803,7 +802,7 @@ function getProducts() {
       "currentPrice": 3.34
     }
   ];
-
+function getProducts() {
   // Retrieve the product container element
   const productContainer = document.getElementById("product-container");
 
