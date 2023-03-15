@@ -913,12 +913,10 @@
 			// Make the API call
 			fetch('https://api.ebay.com/ws/api.dll', {
 				method: 'POST',
-				mode: 'cors',
+				mode: 'no-cors',
 				headers: {
 					'Content-Type': 'text/xml',
 					'Access-Control-Allow-Origin': '*',
-					'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-					'Access-Control-Allow-Headers': 'Content-Type',
 					'X-EBAY-API-SITEID': '0',
 					'X-EBAY-API-COMPATIBILITY-LEVEL': '967',
 					'X-EBAY-API-CALL-NAME': 'GetSellerList',
