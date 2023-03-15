@@ -23,9 +23,56 @@
 		<link href="favicon.ico"
 					rel="Shortcut Icon"
 					type="image/x-icon" />
+		<script>
+			function getData() {
+				fetch("https://api.ebay.com/ws/api.dll", {
+					method: "POST",
+					headers: {
+						'X-EBAY-API-SITEID': '0',
+						'X-EBAY-API-COMPATIBILITY-LEVEL': '967',
+						'X-EBAY-API-CALL-NAME': 'GetSellerList',
+						'X-EBAY-API-IAF-TOKEN': 'v^1.1#i^1#r^0#p^3#I^3#f^0#t^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',
+					},
+					body: '<?xml version="1.0" encoding="utf-8"?>' +
+						'<GetSellerListRequest xmlns="urn:ebay:apis:eBLBaseComponents">' +
+						'<RequesterCredentials>' +
+						'<eBayAuthToken>v^1.1#i^1#r^0#p^3#I^3#f^0#t^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</eBayAuthToken>' +
+						'</RequesterCredentials>' +
+						'<ErrorLanguage>en_US</ErrorLanguage>' +
+						'<WarningLevel>High</WarningLevel>' +
+						'<GranularityLevel>Coarse</GranularityLevel>' +
+						'<StartTimeFrom>2023-02-15T12:00:00.420Z</StartTimeFrom>' +
+						'<StartTimeTo>2023-03-14T12:00:00.420Z</StartTimeTo>' +
+						'<IncludeWatchCount>true</IncludeWatchCount>' +
+						'<Pagination>' +
+						'<EntriesPerPage>200</EntriesPerPage>' +
+						'</Pagination>' +
+						'</GetSellerListRequest>'
+				})
+					.then(response => response.text())
+					.then(data => {
+						parser = new DOMParser();
+						xmlDoc = parser.parseFromString(data, "text/xml");
+						var title = xmlDoc.getElementsByTagName("Title")[0].childNodes[0].nodeValue;
+						var pictureURL = xmlDoc.getElementsByTagName("PictureURL")[0].childNodes[0].nodeValue;
+						var condition = xmlDoc.getElementsByTagName("ConditionDescription")[0].childNodes[0].nodeValue;
+						var quantity = xmlDoc.getElementsByTagName("Quantity")[0].childNodes[0].nodeValue;
+						var currentPrice = xmlDoc.getElementsByTagName("CurrentPrice")[0].childNodes[0].nodeValue;
+						var shipping = xmlDoc.getElementsByTagName("ShippingServiceCost")[0].childNodes[0].nodeValue;
+						document.getElementById("Title").innerHTML = title;
+						document.getElementById("PictureURL").src = pictureURL;
+						document.getElementById("ConditionDescription").innerHTML = condition;
+						document.getElementById("Quantity").innerHTML = quantity;
+						document.getElementById("CurrentPrice").innerHTML = currentPrice;
+						document.getElementById("shipping").innerHTML = shipping;
+						document.getElementById("ViewItemURL").href = xmlDoc.getElementsByTagName("ViewItemURL")[0].childNodes[0].nodeValue;
+					})
+					.catch(error => console.log("Error: ", error));
+			}
+		</script>
 	</head>
 
-	<body>
+	<body onload="getData()">
 		<main class="bg-image min-h-screen bg-cover bg-fixed bg-center">
 			<div id="product-container"
 					 class="mx-auto max-w-7xl w-full flex-wrap grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 py-10 px-5">
@@ -897,7 +944,7 @@
 				// Append the populated product card to the product container element
 				productContainer.appendChild(productCard);
 			});
-		</script>-->
+		</script>
 		<script>
 			// Select the HTML elements
 			const productContainer = document.querySelector('#product-container');
@@ -913,7 +960,6 @@
 			// Make the API call
 			fetch('https://api.ebay.com/ws/api.dll', {
 				method: 'POST',
-				mode: 'no-cors',
 				headers: {
 					'Content-Type': 'text/xml',
 					'Access-Control-Allow-Origin': '*',
@@ -936,8 +982,10 @@
   <Pagination> 
     <EntriesPerPage>200</EntriesPerPage> 
   </Pagination> 
-</GetSellerListRequest>`
-			})
+</GetSellerListRequest>`-->
+
+
+		<!--})
 				.then(response => response.text())
 				.then(data => {
 					// Parse the XML data
@@ -963,9 +1011,9 @@
 						productContainer.appendChild(newProductCard);
 					}
 				})
-				.catch(error => console.error(error));
+				.catch(error => console.error(error));-->
 
-		</script>
+
 	</body>
 
 
