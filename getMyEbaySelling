@@ -1,0 +1,38 @@
+function getMyEbaySelling() {
+  const xhr=new XMLHttpRequest();
+  const url='https://api.ebay.com/ws/api.dll';
+  const requestBody=`<?xml version="1.0" encoding="utf-8"?>
+    <GetMyeBaySellingRequest xmlns="urn:ebay:apis:eBLBaseComponents">
+      <RequesterCredentials>
+      <eBayAuthToken>v^1.1#i^1#p^3#f^0#I^3#r^0#t^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</eBayAuthToken>
+      </RequesterCredentials>
+      <ActiveList>
+        <Sort>TimeLeft</Sort>
+        <Pagination>
+          <EntriesPerPage>100</EntriesPerPage>
+          <PageNumber>2</PageNumber>
+        </Pagination>
+      </ActiveList>
+    </GetMyeBaySellingRequest>`;
+
+  xhr.open('POST',url,true);
+  xhr.setRequestHeader('X-EBAY-API-SITEID','0');
+  xhr.setRequestHeader('X-EBAY-API-COMPATIBILITY-LEVEL','967');
+  xhr.setRequestHeader('X-EBAY-API-CALL-NAME','GetMyeBaySelling');
+  xhr.setRequestHeader('X-EBAY-API-IAF-TOKEN','v^1.1#i^1#p^3#f^0#I^3#r^0#t^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');
+  xhr.setRequestHeader('Content-Type','text/xml');
+
+  xhr.onreadystatechange=function () {
+    if(xhr.readyState===XMLHttpRequest.DONE&&xhr.status===200) {
+      // API call successful, handle response here
+      const response=xhr.responseText;
+      console.log(response);
+    } else if(xhr.readyState===XMLHttpRequest.DONE&&xhr.status!==200) {
+      // API call failed, handle error here
+      const error=xhr.responseText;
+      console.log(error);
+    }
+  };
+
+  xhr.send(requestBody);
+}

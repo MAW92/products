@@ -1,211 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport"
-					content="width=device-width, initial-scale=1.0" />
-		<title>eBay Products</title>
-		<link rel="stylesheet"
-					href="/styles.css" />
-	</head>
+  <head>
+    <link type="stylesheet"
+          href="/styles.css" />
+    <script src="getMyEbaySelling"></script>
+  </head>
 
-	<body>
-		<div id="product-container"
-				 class="mx-auto max-w-7xl w-full flex-wrap grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 py-10 px-5"></div>
-
-		<script>
-			// Define the API endpoint and request headers
-			const endpoint='https://api.ebay.com/ws/api.dll';
-			const headers={
-				'X-EBAY-API-SITEID': '0',
-				'X-EBAY-API-COMPATIBILITY-LEVEL': '967',
-				'X-EBAY-API-CALL-NAME': 'GetMyeBaySelling',
-				'X-EBAY-API-IAF-TOKEN': 'v^1.1#i^1#p^3#I^3#r^0#f^0#t^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',
-				'Content-Type': 'text/xml',
-			};
-
-			// Define the request body for the API call
-			const requestBody=`<?xml version="1.0" encoding="utf-8"?>
-        <GetMyeBaySellingRequest xmlns="urn:ebay:apis:eBLBaseComponents">
-          <RequesterCredentials>
-            <eBayAuthToken>v^1.1#i^1#p^3#I^3#r^0#f^0#t^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</eBayAuthToken>
-          </RequesterCredentials>
-          <ErrorLanguage>en_US</ErrorLanguage>
-          <WarningLevel>High</WarningLevel>
-          <ActiveList>
-            <Sort>TimeLeft</Sort>
-            <Pagination>
-              <EntriesPerPage>200</EntriesPerPage>
-              <PageNumber>1</PageNumber>
-            </Pagination>
-          </ActiveList>
-        </GetMyeBaySellingRequest>`;
-
-			// Define a function to fetch and display the products
-			async function displayProducts() {
-				try {
-					// Make the API call
-					const response=await fetch(endpoint,{
-						method: 'POST',
-						headers,
-						body: requestBody,
-					});
-
-					// Convert the response to JSON
-					const data=await response.json();
-
-					// Get the list of products from the response
-					const products=data.GetMyeBaySellingResponse.ActiveList.Item;
-
-					// Get the product container element
-					const productContainer=document.getElementById('product-container');
-					products.forEach((product) => {
-						// Create the product card element
-						const productCard=document.createElement('div');
-						productCard.id='product-card';
-						productCard.classList.add(
-							'mx-auto',
-							'h-fit',
-							'box-border',
-							'flex-wrap',
-							'rounded-lg',
-							'backdrop',
-							'hover:shadow-zinc-800',
-							'hover:shadow-lg',
-							'hover:-translate-y-1',
-							'transition-transform',
-							'duration-300'
-						);
-
-						// Create the link element for the card
-						const link=document.createElement('a');
-						link.id='ViewItemURL';
-						link.href=product.ViewItemURLForNaturalSearch;
-						link.target='_blank';
-						link.title='View on eBay';
-
-						// Create the box content element for the card
-						const boxContent=document.createElement('div');
-						boxContent.classList.add(
-							'box-content',
-							'h-fit',
-							'card',
-							'border',
-							'border-zinc-100',
-							'transition-transform',
-							'duration-500',
-							'hover:bg-gradient-to-b',
-							'from-transparent',
-							'to-transparent',
-							'via-neutral-300',
-							'flex',
-							'flex-col',
-							'gap-1',
-							'rounded-lg'
-						);
-
-						// Create the image element for the card
-						const img=document.createElement('img');
-						img.id='PictureURL';
-						img.src=product.PictureURL[0];
-						img.alt=product.Title;
-						img.classList.add(
-							'rounded-t-lg',
-							'border-b',
-							'border-b-zinc-100',
-							'max-w-full',
-							'h-72',
-							'bg-fixed',
-							'bg-neutral-400',
-							'bg-center',
-							'bg-cover',
-							'bg-clip-content',
-							'object-top',
-							'object-cover',
-							'overflow-ellipsis'
-						);
-
-						// Create the title element for the card
-						const title=document.createElement('h1');
-						title.id='Title';
-						title.textContent=product.Title;
-						title.classList.add(
-							'text-lg',
-							'text-shadow',
-							'text-white',
-							'p-1',
-							'font-bold'
-						);
-
-						// Create the ItemID element for the card
-						const itemId=document.createElement('p');
-						itemId.id='ItemID';
-						itemId.classList.add('hidden');
-						itemId.textContent=product.ItemID;
-
-						// Create the condition and quantity elements for the card
-						const condition=document.createElement('p');
-						condition.id='ConditionDescription';
-						condition.classList.add(
-							'float-left',
-							'text-shadow',
-							'text-sm',
-							'text-white',
-							'font-semibold',
-							'italic',
-							'p-1',
-							'mb-0.5'
-						);
-						// Handle condition when it is undefined
-						if(!product.ConditionDisplayName) {
-							condition.textContent='Condition: N/A';
-						} else {
-							condition.textContent=`Condition: ${product.ConditionDisplayName}`;
-						}
-						const quantity=document.createElement('p');
-						quantity.id='Quantity';
-						quantity.classList.add(
-							'float-right',
-							'text-shadow',
-							'text-sm',
-							'text-white',
-							'font-semibold',
-							'italic',
-							'p-1',
-							'mb-0.5'
-						);
-						quantity.textContent=`Quantity: ${product.Quantity}`;
-
-						// Create the price element for the card
-						const price=document.createElement('p');
-						price.id='CurrentPrice';
-						price.classList.add(
-							'text-shadow',
-							'text-lg',
-							'text-green-400',
-							'font-bold',
-							'p-1'
-						);
-						price.textContent=`Price: $${product.CurrentPrice.Value}`;
-
-						// Append the image, title, condition, quantity and price elements to the box content
-						boxContent.append(img,title,itemId,condition,quantity,price);
-
-						// Append the link and box content to the product card
-						link.appendChild(boxContent);
-						productCard.appendChild(link);
-
-						// Append the product card to the product container
-						productContainer.append(productCard);
-					});
-				}
-.catch((error) => {
-					console.error('There was a problem with the fetch operation:',error);
-				});
-			};
-		</script>
-
-	</body>
+  <body onload="getMyeBaySelling()">
+    <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+      <div class="md:flex">
+        <div class="md:flex-shrink-0">
+          <img class="h-48 w-full object-cover md:w-48"
+               src="[ViewImageURL]"
+               alt="[Title]">
+        </div>
+        <div class="p-8">
+          <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">[ShippingProfileName]</div>
+          <a href="[ViewItemURL]"
+             class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">[Title]</a>
+          <p class="mt-2 text-gray-500">Price: $[CurrentPrice]</p>
+        </div>
+      </div>
+    </div>
+  </body>
 
 </html>
