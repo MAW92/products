@@ -3,7 +3,7 @@
 
   <head>
     <link rel="stylesheet"
-          href="styles.css" />
+          href="css/styles.css" />
   </head>
 
   <body>
@@ -851,7 +851,6 @@
     items.forEach(item => {
       // Create the product card element
       const productCard=document.createElement('div');
-      productCard.classList.add('container','rounded-lg','my-10','mx-auto','w-full','h-full','backdrop','text-shadow','text-white','border','border-zinc-200','shadow-lg','hover:shadow-neutral-300');
 
       // Create the link element for the item's eBay page
       const link=document.createElement('a');
@@ -865,23 +864,19 @@
       image.id='galleryURL';
       image.src=item.galleryURL;
       image.alt=item.title;
-      image.classList.add('w-full','h-72','object-none','aspect-square','object-center','rounded-t-lg','bg-transparent');
 
       // Create the product details container
       const productDetails=document.createElement('div');
-      productDetails.classList.add('rounded-b-lg','p-2','mx-auto');
 
       // Create the product title element
       const title=document.createElement('h1');
       title.id='title';
       title.textContent=item.title;
-      title.classList.add('text-center','text-xl','font-bold');
 
       // Create the product condition description element
       const conditionDescription=document.createElement('div');
       conditionDescription.id='conditionDescription';
       conditionDescription.textContent=item.conditionDescription;
-      conditionDescription.classList.add('mx-auto','text-sm','mt-2','italic');
 
       // Create the product price and shipping container
       const priceShippingContainer=document.createElement('div');
@@ -891,13 +886,11 @@
       const currentPrice=document.createElement('div');
       currentPrice.id='currentPrice';
       currentPrice.textContent=item.currentPrice;
-      currentPrice.classList.add('float-left','text-base','font-semibold');
 
       // Create the product shipping cost element
       const shippingCost=document.createElement('div');
       shippingCost.id='shippingCost';
       shippingCost.textContent=item.shippingCost;
-      shippingCost.classList.add('float-right','text-base','font-semibold');
 
       // Append the image element to the link element
       link.appendChild(image);
