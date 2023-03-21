@@ -4,884 +4,6 @@
   <head>
     <link rel="stylesheet"
           href="styles.css" />
-
-    <script>
-      const items=[
-        {
-          "itemId": 354653578326,
-          "title": "Yugioh Dark Paladin DMG-001 Limited Edition Lightly Played",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/KE4AAOSwiFdkE56O/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Dark-Paladin-DMG-001-Limited-Edition-Lightly-Played-/354653578326",
-          "currentPrice": 31.17,
-          "conditionDescription": "Lightly Played condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035122,
-          "title": "Yugioh Shooting Star Dragon BROL-EN071 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/kmwAAOSwnp5jPOyl/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Shooting-Star-Dragon-BROL-EN071-1st-Edition-Ultra-Rare-/354655035122",
-          "currentPrice": 2.44,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434274684,
-          "title": "Yugioh Tyrant Dragon LOD-034 First Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/B7sAAOSwjn9j6Den/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Tyrant-Dragon-LOD-034-First-Edition-Ultra-Rare-/354434274684",
-          "currentPrice": 16.09,
-          "conditionDescription": "Moderately Played condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354656522505,
-          "title": "LEGO Mindstorms For Education Set 9794 ROBOLAB Team Challenge Set (USB) 2002",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/rIMAAOSwmCVkFTEl/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/LEGO-Mindstorms-Education-Set-9794-ROBOLAB-Team-Challenge-Set-USB-2002-/354656522505",
-          "currentPrice": 99.69,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035139,
-          "title": "Yugioh Dimension Reflector MVP1-EN021 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/OzQAAOSwcO1jP25E/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Dimension-Reflector-MVP1-EN021-1st-Edition-Ultra-Rare-/354655035139",
-          "currentPrice": 1.91,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035133,
-          "title": "Yugioh Battlewasp - Azusa the Ghost Bow BLHR-EN036 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/LNUAAOSwml5jPOyn/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Battlewasp-Azusa-Ghost-Bow-BLHR-EN036-1st-Edition-Ultra-Rare-/354655035133",
-          "currentPrice": 1.95,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035124,
-          "title": "Yugioh Live Twin Sunny's Snitch DAMA-EN062 1st Edition Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/XCkAAOSw1HBi9DOp/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Live-Twin-Sunnys-Snitch-DAMA-EN062-1st-Edition-Super-Rare-/354655035124",
-          "currentPrice": 4.4,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354588496296,
-          "title": "Yugioh Elementsaber Nalu FLOD-EN021 1st Edition Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/LG0AAOSwuE5jP25E/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Elementsaber-Nalu-FLOD-EN021-1st-Edition-Super-Rare-/354588496296",
-          "currentPrice": 1.89,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182612,
-          "title": "Yugioh Penumbral Soldier Lady SOD-EN033 Unlimited Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/nXsAAOSwH9ljP25D/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Penumbral-Soldier-Lady-SOD-EN033-Unlimited-Super-Rare-/354434182612",
-          "currentPrice": 2.29,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035121,
-          "title": "Yugioh Wind-Up Zenmaines CT09-EN008 Limited Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/zBQAAOSwU8FjP25E/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Wind-Up-Zenmaines-CT09-EN008-Limited-Super-Rare-/354655035121",
-          "currentPrice": 1.83,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035132,
-          "title": "Yugioh Black Sonic DLCS-EN032 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/DTEAAOSwDH5jPOyl/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Black-Sonic-DLCS-EN032-1st-Edition-Ultra-Rare-/354655035132",
-          "currentPrice": 1.97,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354588496360,
-          "title": "Yugioh Krystal Dragon MVP1-ENSV2 Limited Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/XAgAAOSwItljP25C/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Krystal-Dragon-MVP1-ENSV2-Limited-Ultra-Rare-/354588496360",
-          "currentPrice": 3.21,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035123,
-          "title": "Yugioh Altergeist Primebanshee SP18-EN037 1st Edition Starfoil",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/WZcAAOSwLspjCTZe/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Altergeist-Primebanshee-SP18-EN037-1st-Edition-Starfoil-/354655035123",
-          "currentPrice": 3.22,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035138,
-          "title": "Yugioh Steelswarm Sting HA06-EN015 1st Edition Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/ZD8AAOSwJaxjP25D/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Steelswarm-Sting-HA06-EN015-1st-Edition-Super-Rare-/354655035138",
-          "currentPrice": 1.89,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182718,
-          "title": "Yugioh Number 21: Frozen Lady Justice PGL2-EN018 1st Edition Secret Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/G0oAAOSwqLhi9DOn/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Number-21-Frozen-Lady-Justice-PGL2-EN018-1st-Edition-Secret-Rare-/354434182718",
-          "currentPrice": 2.67,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035137,
-          "title": "Yugioh Underground Arachnid DPC5-EN001 Limited Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/Z8AAAOSw~uxjP25E/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Underground-Arachnid-DPC5-EN001-Limited-Super-Rare-/354655035137",
-          "currentPrice": 8.78,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182695,
-          "title": "Yugioh Super Quantal Mech Beast Lusterrex DANE-EN037 1st Edition Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/YdgAAOSwiW9jP25F/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Super-Quantal-Mech-Beast-Lusterrex-DANE-EN037-1st-Edition-Super-Rare-/354434182695",
-          "currentPrice": 3.14,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182663,
-          "title": "Yugioh Mahaama the Fairy Dragon MP21-EN218 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/0FsAAOSwqJZjPOyj/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Mahaama-Fairy-Dragon-MP21-EN218-1st-Edition-Ultra-Rare-/354434182663",
-          "currentPrice": 2.41,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182571,
-          "title": "Yugioh  Bloom Harmonist the Melodious Composer DUOV-EN020 1st Edition",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/avgAAOSw1HtjPOyl/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Bloom-Harmonist-Melodious-Composer-DUOV-EN020-1st-Edition-/354434182571",
-          "currentPrice": 2.54,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182668,
-          "title": "Yugioh Witchcrafter Madame Verre DUOV-EN073 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/3UwAAOSwvBpjP25D/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Witchcrafter-Madame-Verre-DUOV-EN073-1st-Edition-Ultra-Rare-/354434182668",
-          "currentPrice": 2.72,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354588496354,
-          "title": "Yugioh Thron the Disciplined Angel LIOV-EN082 1st Edition Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/Po8AAOSwMwBjP25F/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Thron-Disciplined-Angel-LIOV-EN082-1st-Edition-Super-Rare-/354588496354",
-          "currentPrice": 2.75,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182708,
-          "title": "Yugioh World Chalice Guardragon MP18-EN047 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/GhEAAOSwmy9jPOym/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-World-Chalice-Guardragon-MP18-EN047-1st-Edition-Ultra-Rare-/354434182708",
-          "currentPrice": 2.17,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434274682,
-          "title": "Yugioh Speedroid Dominobutterfly DPDG-EN004 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/vj4AAOSwgO5i9DOk/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Speedroid-Dominobutterfly-DPDG-EN004-1st-Edition-Ultra-Rare-/354434274682",
-          "currentPrice": 4.48,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354588496327,
-          "title": "Yugioh Desert Twister TAEV-EN034 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/QtMAAOSw~qBjPOyk/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Desert-Twister-TAEV-EN034-1st-Edition-Ultra-Rare-/354588496327",
-          "currentPrice": 2.21,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182579,
-          "title": "Yugioh Garden Rose Flora LIOV-EN036 1st Edition Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/LCIAAOSwwrpjP25E/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Garden-Rose-Flora-LIOV-EN036-1st-Edition-Super-Rare-/354434182579",
-          "currentPrice": 2.14,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182542,
-          "title": "Yugioh Dramaturge of Despia GFP2-EN098 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/5c4AAOSw7DBi9DOm/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Dramaturge-Despia-GFP2-EN098-1st-Edition-Ultra-Rare-/354434182542",
-          "currentPrice": 2.24,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182552,
-          "title": "Yugioh Amazoness Sage BP01-EN212 Unlimited Starfoil Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/N2cAAOSwMDpjPOym/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Amazoness-Sage-BP01-EN212-Unlimited-Starfoil-Rare-/354434182552",
-          "currentPrice": 2.32,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182568,
-          "title": "Yugioh Igknight Templar CORE-EN028 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/1qwAAOSwroZjPOym/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Igknight-Templar-CORE-EN028-1st-Edition-Ultra-Rare-/354434182568",
-          "currentPrice": 3,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182645,
-          "title": "Yugioh Madolche Fresh Sistart GFTP-EN104 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/x1gAAOSwfaZjPOyo/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Madolche-Fresh-Sistart-GFTP-EN104-1st-Edition-Ultra-Rare-/354434182645",
-          "currentPrice": 2.64,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182650,
-          "title": "Yugioh Psychic Wave BLAR-EN015 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/-dcAAOSwvo9jP25D/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Psychic-Wave-BLAR-EN015-1st-Edition-Ultra-Rare-/354434182650",
-          "currentPrice": 2.98,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182632,
-          "title": "Yugioh Starlight Road PGL2-EN091 1st Edition Gold Secret Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/fvAAAOSwOcRjPOym/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Starlight-Road-PGL2-EN091-1st-Edition-Gold-Secret-Rare-/354434182632",
-          "currentPrice": 2.46,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035118,
-          "title": "Yugioh Tri-Brigade Kerass PHRA-EN007 1st Edition Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/53AAAOSw6D5jP25B/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Tri-Brigade-Kerass-PHRA-EN007-1st-Edition-Super-Rare-/354655035118",
-          "currentPrice": 2.98,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434274672,
-          "title": "Yugioh Guardian Eatos LC03-EN003 Limited Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/8XQAAOSwxhFjPOyk/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Guardian-Eatos-LC03-EN003-Limited-Ultra-Rare-/354434274672",
-          "currentPrice": 2.83,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182709,
-          "title": "Yugioh Hieratic Seal of Convocation GFTP-EN054 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/emIAAOSwfdZjP25C/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Hieratic-Seal-Convocation-GFTP-EN054-1st-Edition-Ultra-Rare-/354434182709",
-          "currentPrice": 2.24,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035128,
-          "title": "Yugioh Mecha Phantom Beast Turtletracer LTGY-ENSP1 Limited Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/5xgAAOSw8xpjP25A/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Mecha-Phantom-Beast-Turtletracer-LTGY-ENSP1-Limited-Ultra-Rare-/354655035128",
-          "currentPrice": 3.3,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035117,
-          "title": "Yugioh Thermal Genex HA02-EN028 Unlimited Secret Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/VRQAAOSwtqhjPOym/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Thermal-Genex-HA02-EN028-Unlimited-Secret-Rare-/354655035117",
-          "currentPrice": 1.95,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035143,
-          "title": "Yugioh Tatsunoko HISU-EN050 1st Edition Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/wM8AAOSwu-9jP25D/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Tatsunoko-HISU-EN050-1st-Edition-Super-Rare-/354655035143",
-          "currentPrice": 2.13,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434274667,
-          "title": "Yugioh Smashing Ground PGL2-EN075 1st Edition Gold Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/2LQAAOSwTChi9DOn/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Smashing-Ground-PGL2-EN075-1st-Edition-Gold-Rare-/354434274667",
-          "currentPrice": 3.53,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354588496326,
-          "title": "Yugioh Hieratic Sun Dragon Overlord of Heliopolis GFTP-EN052 1st Edition",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/r6UAAOSwXARjPOyn/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Hieratic-Sun-Dragon-Overlord-Heliopolis-GFTP-EN052-1st-Edition-/354588496326",
-          "currentPrice": 2.53,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354588496287,
-          "title": "Yugioh Vampire Domination DASA-EN011 Unlimited Secret Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/t4YAAOSwb3xi9DOn/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Vampire-Domination-DASA-EN011-Unlimited-Secret-Rare-/354588496287",
-          "currentPrice": 2.51,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354588496289,
-          "title": "Yugioh The Phantom Knights of Rusty Bardiche MAGO-EN040 1st Edition",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/QJYAAOSwEMtjPOyl/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Phantom-Knights-Rusty-Bardiche-MAGO-EN040-1st-Edition-/354588496289",
-          "currentPrice": 2.32,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354588496311,
-          "title": "Yugioh Impcantation Penciplume MP19-EN171 Unlimited Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/yOEAAOSwmSJjP25D/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Impcantation-Penciplume-MP19-EN171-Unlimited-Super-Rare-/354588496311",
-          "currentPrice": 2.54,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182563,
-          "title": "Yugioh GranSolfachord Musecia DAMA-EN048 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/KFEAAOSwC7pjPOym/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-GranSolfachord-Musecia-DAMA-EN048-1st-Edition-Ultra-Rare-/354434182563",
-          "currentPrice": 2.23,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354588496371,
-          "title": "Yugioh Prank-Kids Dropsies HISU-EN016 1st Edition Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/~JgAAOSwo6FjP25B/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Prank-Kids-Dropsies-HISU-EN016-1st-Edition-Super-Rare-/354588496371",
-          "currentPrice": 2.41,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434274665,
-          "title": "Yugioh Sephylon, the Ultimate Timelord GLD5-EN029 Limited Gold Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/TEsAAOSwCWxjPOyk/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Sephylon-Ultimate-Timelord-GLD5-EN029-Limited-Gold-Rare-/354434274665",
-          "currentPrice": 4.41,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035136,
-          "title": "Yugioh Blizzard Warrior HA01-EN002 Limited Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/Tr8AAOSwVUdjP25D/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Blizzard-Warrior-HA01-EN002-Limited-Super-Rare-/354655035136",
-          "currentPrice": 1.84,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182662,
-          "title": "Yugioh Kuribeh BROL-EN004 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/np0AAOSwQA5jP25D/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Kuribeh-BROL-EN004-1st-Edition-Ultra-Rare-/354434182662",
-          "currentPrice": 2.03,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354588496348,
-          "title": "Yugioh Zoodiac Boarbow OP15-EN005 Unlimited Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/1vMAAOSwXxli9DOo/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Zoodiac-Boarbow-OP15-EN005-Unlimited-Super-Rare-/354588496348",
-          "currentPrice": 4.55,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182603,
-          "title": "Yugioh Great Sorcerer of the Nekroz THSF-EN011 1st Edition Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/3SMAAOSwKSVjP25C/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Great-Sorcerer-Nekroz-THSF-EN011-1st-Edition-Super-Rare-/354434182603",
-          "currentPrice": 1.9,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354318125034,
-          "title": "Yugioh Evil HERO Malicious Edge GLAS-EN003 Unlimited Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/FqsAAOSwHDtjP25F/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Evil-HERO-Malicious-Edge-GLAS-EN003-Unlimited-Super-Rare-/354318125034",
-          "currentPrice": 4.3,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182523,
-          "title": "Yugioh Darklord Asmodeus LC02-EN004 Limited Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/pW0AAOSwFKVjP25F/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Darklord-Asmodeus-LC02-EN004-Limited-Ultra-Rare-/354434182523",
-          "currentPrice": 3.27,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035116,
-          "title": "Yugioh Zexal Construction LIOV-EN051 1st Edition Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/oyEAAOSw~kpi9DOn/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Zexal-Construction-LIOV-EN051-1st-Edition-Super-Rare-/354655035116",
-          "currentPrice": 2.03,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354588496363,
-          "title": "Yugioh Naturia Pineapple HASE-EN002 Limited Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/e48AAOSwhVpjP25E/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Naturia-Pineapple-HASE-EN002-Limited-Super-Rare-/354588496363",
-          "currentPrice": 3.28,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035129,
-          "title": "Yugioh Dogmatika Theo, the Iron Punch MP21-EN102 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/RzUAAOSwSGFjPOyn/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Dogmatika-Theo-Iron-Punch-MP21-EN102-1st-Edition-Ultra-Rare-/354655035129",
-          "currentPrice": 2.44,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035131,
-          "title": "Yugioh Unacceptable Result BLHR-EN020 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/uV8AAOSwn21jP25D/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Unacceptable-Result-BLHR-EN020-1st-Edition-Ultra-Rare-/354655035131",
-          "currentPrice": 2.44,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035115,
-          "title": "Yugioh The Phantom Knights of Cursed Javelin MACR-EN042 1st Edition",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/6mIAAOSwyXhjP25G/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Phantom-Knights-Cursed-Javelin-MACR-EN042-1st-Edition-/354655035115",
-          "currentPrice": 2.29,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035120,
-          "title": "Yugioh Daigusto Laplampilica DAMA-EN040 1st Edition Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/3mIAAOSwIaNjP25E/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Daigusto-Laplampilica-DAMA-EN040-1st-Edition-Super-Rare-/354655035120",
-          "currentPrice": 2.64,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035114,
-          "title": "Yugioh Morph King Stygi-Gel KICO-EN018 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/mpcAAOSwqqJjPOyl/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Morph-King-Stygi-Gel-KICO-EN018-1st-Edition-Ultra-Rare-/354655035114",
-          "currentPrice": 2.81,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035127,
-          "title": "Yugioh Kagetokage SP13-EN009 Unlimited Starfoil",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/VOUAAOSwTlVjCTZf/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Kagetokage-SP13-EN009-Unlimited-Starfoil-/354655035127",
-          "currentPrice": 2.84,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035146,
-          "title": "Yugioh Stardust Assault Warrior CT15-EN008 Limited Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/fvEAAOSwOcRjPOyn/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Stardust-Assault-Warrior-CT15-EN008-Limited-Ultra-Rare-/354655035146",
-          "currentPrice": 4.88,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354588496320,
-          "title": "Yugioh Crusadia Arboria MP19-EN078 1st Edition Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/B4YAAOSwvu9jodO8/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Crusadia-Arboria-MP19-EN078-1st-Edition-Super-Rare-/354588496320",
-          "currentPrice": 4.22,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182540,
-          "title": "Yugioh Chronomaly City Babylon PGLD-EN008 1st Edition Gold Secret Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/YOQAAOSwFYljPOyo/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Chronomaly-City-Babylon-PGLD-EN008-1st-Edition-Gold-Secret-Rare-/354434182540",
-          "currentPrice": 2.42,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035126,
-          "title": "Yugioh High Ritual Art DAMA-EN065 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/9PEAAOSwrsZjP25B/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-High-Ritual-Art-DAMA-EN065-1st-Edition-Ultra-Rare-/354655035126",
-          "currentPrice": 3.1,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035125,
-          "title": "Yugioh Elementsaber Lapauila FLOD-EN023 1st Edition Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/xgkAAOSwdGZjP249/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Elementsaber-Lapauila-FLOD-EN023-1st-Edition-Super-Rare-/354655035125",
-          "currentPrice": 2.34,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182616,
-          "title": "Yugioh Miracle Locus BP03-EN213 1st Edition Shatterfoil",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/TqgAAOSwSxJjCTZe/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Miracle-Locus-BP03-EN213-1st-Edition-Shatterfoil-/354434182616",
-          "currentPrice": 2.88,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182602,
-          "title": "Yugioh Melffy Mommy OP15-EN011 Unlimited Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/0egAAOSwGK1i9DOm/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Melffy-Mommy-OP15-EN011-Unlimited-Super-Rare-/354434182602",
-          "currentPrice": 3.95,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035110,
-          "title": "Yugioh Virtual World Hime - Nyannyan MP21-EN223 1st Edition",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/7SUAAOSwf6tjPOyo/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Virtual-World-Hime-Nyannyan-MP21-EN223-1st-Edition-/354655035110",
-          "currentPrice": 2.24,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182685,
-          "title": "Yugioh Speedroid Scratch BROL-EN035 1st Edition Secret Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/M~QAAOSwaxtjPOym/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Speedroid-Scratch-BROL-EN035-1st-Edition-Secret-Rare-/354434182685",
-          "currentPrice": 1.97,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354588496334,
-          "title": "Yugioh Prediction Princess Coinorma DRL2-EN030 1st Edition Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/LrAAAOSwFYljP25E/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Prediction-Princess-Coinorma-DRL2-EN030-1st-Edition-Super-Rare-/354588496334",
-          "currentPrice": 4.34,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182665,
-          "title": "Yugioh Laval Volcano Handmaiden GFTP-EN046 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/RHAAAOSwsWpjP248/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Laval-Volcano-Handmaiden-GFTP-EN046-1st-Edition-Ultra-Rare-/354434182665",
-          "currentPrice": 2.57,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354630944662,
-          "title": "Yugioh 335 Holo Cards Super Rare/Ultra Rare/Secret Rare Near Mint",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/r7QAAOSwXMJj58ie/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-335-Holo-Cards-Super-Rare-Ultra-Rare-Secret-Rare-Near-Mint-/354630944662",
-          "currentPrice": 73.17,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035145,
-          "title": "Yugioh Silent Sea Nettle BROL-EN029 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/~W4AAOSwdPVjP25E/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Silent-Sea-Nettle-BROL-EN029-1st-Edition-Ultra-Rare-/354655035145",
-          "currentPrice": 2.53,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182635,
-          "title": "Yugioh Green Gadget FIGA-EN006 1st Edition Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/~OgAAOSwP3xjP25B/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Green-Gadget-FIGA-EN006-1st-Edition-Super-Rare-/354434182635",
-          "currentPrice": 2.47,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035112,
-          "title": "Yugioh Dual Avatar Fists - Yuhi PHRA-EN014 1st Edition Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/lwYAAOSwmoJjP25D/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Dual-Avatar-Fists-Yuhi-PHRA-EN014-1st-Edition-Super-Rare-/354655035112",
-          "currentPrice": 2.49,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035130,
-          "title": "Yugioh ZS - Utopic Sage BROL-EN058 1st Edition Secret Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/0TcAAOSwS2pjPOym/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-ZS-Utopic-Sage-BROL-EN058-1st-Edition-Secret-Rare-/354655035130",
-          "currentPrice": 1.96,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035141,
-          "title": "Yugioh Dual Avatar Feet - Kokoku PHRA-EN015 1st Edition Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/cfgAAOSwFVpjP25F/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Dual-Avatar-Feet-Kokoku-PHRA-EN015-1st-Edition-Super-Rare-/354655035141",
-          "currentPrice": 2.49,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182682,
-          "title": "Yugioh Super Quantal Mech King Great Magnus DUPO-EN093 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/AN0AAOSwqXdi9DOn/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Super-Quantal-Mech-King-Great-Magnus-DUPO-EN093-1st-Edition-Ultra-Rare-/354434182682",
-          "currentPrice": 2.72,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182683,
-          "title": "Yugioh SolSolfachord Gracia ANGU-EN018 1st Edition Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/HIQAAOSwYOJjP25E/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-SolSolfachord-Gracia-ANGU-EN018-1st-Edition-Super-Rare-/354434182683",
-          "currentPrice": 2.89,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354588496307,
-          "title": "Yugioh Gem-Knight Zirconia HA07-EN018 1st Edition Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/L7wAAOSwwpFi9DOo/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Gem-Knight-Zirconia-HA07-EN018-1st-Edition-Super-Rare-/354588496307",
-          "currentPrice": 2.84,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354588496324,
-          "title": "Yugioh Virtual World Mai-Hime - Lulu MP21-EN173 1st Edition",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/B8wAAOSwNPRi9DOo/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Virtual-World-Mai-Hime-Lulu-MP21-EN173-1st-Edition-/354588496324",
-          "currentPrice": 2.51,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182520,
-          "title": "Yugioh Andro Sphinx EP1-EN002 Unlimited Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/tCYAAOSwErdjPOyl/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Andro-Sphinx-EP1-EN002-Unlimited-Ultra-Rare-/354434182520",
-          "currentPrice": 2.21,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354588496302,
-          "title": "Yugioh Myutant Evolution Lab PHRA-EN092 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/YpUAAOSw9cpi9DOm/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Myutant-Evolution-Lab-PHRA-EN092-1st-Edition-Ultra-Rare-/354588496302",
-          "currentPrice": 3.72,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182633,
-          "title": "Yugioh Paladin of Dark Dragon (Green) DLCS-EN069 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/xoIAAOSwuipjPOyl/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Paladin-Dark-Dragon-Green-DLCS-EN069-1st-Edition-Ultra-Rare-/354434182633",
-          "currentPrice": 2.2,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035134,
-          "title": "Yugioh Sphinx Teleia EP1-EN003 Limited Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/y9QAAOSwNZxjPOym/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Sphinx-Teleia-EP1-EN003-Limited-Ultra-Rare-/354655035134",
-          "currentPrice": 8.78,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354655035113,
-          "title": "Yugioh Five Star Twilight BROL-EN006 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/e-UAAOSwvOBjP25F/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Five-Star-Twilight-BROL-EN006-1st-Edition-Ultra-Rare-/354655035113",
-          "currentPrice": 1.91,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182549,
-          "title": "Yugioh Dragunity Corsesca HA04-EN044 Unlimited Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/s7YAAOSwKVVjP25F/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Dragunity-Corsesca-HA04-EN044-Unlimited-Super-Rare-/354434182549",
-          "currentPrice": 2.26,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434274687,
-          "title": "Yugioh Red Dragon Archfiend CT07-EN025 Limited Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/2GgAAOSwWO5j5phl/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Red-Dragon-Archfiend-CT07-EN025-Limited-Super-Rare-/354434274687",
-          "currentPrice": 5,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434274670,
-          "title": "Pokemon TCG Dragonite 1st Edition 4/62 Holo Rare Fossil 1999",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/lpkAAOSwOuRj8vqB/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Pokemon-TCG-Dragonite-1st-Edition-4-62-Holo-Rare-Fossil-1999-/354434274670",
-          "currentPrice": 220.17,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182701,
-          "title": "Yugioh Kuriboh FL1-EN003 Limited Secret Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/uw4AAOSwaOVj5pmE/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Kuriboh-FL1-EN003-Limited-Secret-Rare-/354434182701",
-          "currentPrice": 11.03,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182619,
-          "title": "Yugioh Lavalval Ignis BP03-EN120 1st Edition Shatterfoil",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/6~AAAOSwHXFjCTZf/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Lavalval-Ignis-BP03-EN120-1st-Edition-Shatterfoil-/354434182619",
-          "currentPrice": 3.18,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354588496365,
-          "title": "Yugioh Noble Knight Custennin CYHO-EN088 1st Edition Super Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/RHIAAOSwsWpjP24-/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Noble-Knight-Custennin-CYHO-EN088-1st-Edition-Super-Rare-/354588496365",
-          "currentPrice": 2.25,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354588496364,
-          "title": "Yugioh Martial Metal Marcher CT15-EN009 Limited Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/QqsAAOSw4uFjPOyo/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Martial-Metal-Marcher-CT15-EN009-Limited-Ultra-Rare-/354588496364",
-          "currentPrice": 8.78,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182678,
-          "title": "Yugioh Vision HERO Witch Raider BLHR-EN060 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/qz0AAOSwx6hjP25E/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Vision-HERO-Witch-Raider-BLHR-EN060-1st-Edition-Ultra-Rare-/354434182678",
-          "currentPrice": 2.53,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434274664,
-          "title": "Yugioh Double Spell MFC-106 1st Edition Ultra Rare Magician's Force",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/HSkAAOSwGDBkB~WK/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Double-Spell-MFC-106-1st-Edition-Ultra-Rare-Magicians-Force-/354434274664",
-          "currentPrice": 15.85,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182657,
-          "title": "Yugioh Stealth Kragen Spawn BROL-EN031 1st Edition Secret Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/64QAAOSwseFi9DOn/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Stealth-Kragen-Spawn-BROL-EN031-1st-Edition-Secret-Rare-/354434182657",
-          "currentPrice": 2.8,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182722,
-          "title": "Yugioh Tactical Exchanger DUPO-EN026 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/btgAAOSw4UpjP25C/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Tactical-Exchanger-DUPO-EN026-1st-Edition-Ultra-Rare-/354434182722",
-          "currentPrice": 2.59,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182646,
-          "title": "Yugioh Thunder Dragonhawk MP19-EN168 1st Edition Prismatic Secret Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/kfkAAOSwWR5i9DOp/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Thunder-Dragonhawk-MP19-EN168-1st-Edition-Prismatic-Secret-Rare-/354434182646",
-          "currentPrice": 5.44,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354588496347,
-          "title": "Yugioh Exile of the Wicked LCKC-EN100 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/7HMAAOSwdlNjP25C/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Exile-Wicked-LCKC-EN100-1st-Edition-Ultra-Rare-/354588496347",
-          "currentPrice": 1.94,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182573,
-          "title": "Yugioh Hieratic Dragon of Tefnuit DUPO-EN080 1st Edition Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/oUwAAOSw-xxjP25F/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Hieratic-Dragon-Tefnuit-DUPO-EN080-1st-Edition-Ultra-Rare-/354434182573",
-          "currentPrice": 2.53,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        },
-        {
-          "itemId": 354434182654,
-          "title": "Yugioh Vortex the Whirlwind STOR-ENSP1 Limited Ultra Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/ehUAAOSw1DljPOyk/s-w400.webp",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Vortex-Whirlwind-STOR-ENSP1-Limited-Ultra-Rare-/354434182654",
-          "currentPrice": 8.78,
-          "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-        }
-      ];
-
-      function displayItems(items) {
-        const productGrid=document.getElementById("product-grid");
-
-        if(!Array.isArray(items)) {
-          console.error("Error: items is not an array");
-          return;
-        }
-
-        items.forEach(item => {
-          const productCard=document.createElement("div");
-          productCard.id="product-card";
-          productCard.className="container rounded-lg my-10 mx-auto w-fit h-fit backdrop text-shadow text-white bg-transparent hover:-translate-y-1 hover:will-change-transform hover:ease-out hover:duration-500 hover:bg-gradient-to-b hover:bg-zinc-400 from-transparent to-neutral-300 via-black border border-zinc-200 drop-shadow-sm";
-
-          const productImageContainer=document.createElement("div");
-          productImageContainer.className="border-b border-b-zinc-200 rounded-t-lg mx-auto";
-
-          const productImage=document.createElement("img");
-          productImage.id="galleryURL";
-          productImage.src=item.image;
-          productImage.alt=item.title;
-          productImage.className="w-full object-cover aspect-square object-center bg-transparent";
-
-          productImageContainer.appendChild(productImage);
-          productCard.appendChild(productImageContainer);
-
-          const productDetailsContainer=document.createElement("div");
-          productDetailsContainer.className="rounded-b-lg p-2 mx-auto";
-
-          const productTitle=document.createElement("h1");
-          productTitle.id="title";
-          productTitle.className="text-center text-2xl font-semibold";
-          productTitle.textContent=item.title;
-
-          const productDescription=document.createElement("div");
-          productDescription.id="conditionDescription";
-          productDescription.className="mx-auto text-sm my-2";
-          productDescription.textContent=item.description;
-
-          const productPriceContainer=document.createElement("div");
-          productPriceContainer.className="inline space-x-5";
-
-          const productPrice=document.createElement("div");
-          productPrice.id="currentPrice";
-          productPrice.className="float-left";
-          productPrice.textContent="$"+item.price;
-
-          const productShipping=document.createElement("div");
-          productShipping.id="shippingCost";
-          productShipping.className="float-right";
-          productShipping.textContent="$"+item.shipping;
-
-          productPriceContainer.appendChild(productPrice);
-          productPriceContainer.appendChild(productShipping);
-
-          productDetailsContainer.appendChild(productTitle);
-          productDetailsContainer.appendChild(productDescription);
-          productDetailsContainer.appendChild(productPriceContainer);
-
-          const productLink=document.createElement("a");
-          productLink.id="viewItemURL";
-          productLink.href=item.link;
-          productLink.title="View on eBay";
-          productLink.target="_blank";
-          productLink.appendChild(productCard);
-
-          const productGridColumn=document.createElement("div");
-          productGridColumn.className="col-span-1";
-          productGridColumn.appendChild(productLink);
-
-          productGrid.appendChild(productGridColumn);
-        });
-      }
-    </script>
   </head>
 
   <body onload="displayItems()">
@@ -891,5 +13,882 @@
       </div>
     </main>
   </body>
+  <script>
+    const items=[
+      {
+        "itemId": 354653578326,
+        "title": "Yugioh Dark Paladin DMG-001 Limited Edition Lightly Played",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/KE4AAOSwiFdkE56O/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Dark-Paladin-DMG-001-Limited-Edition-Lightly-Played-/354653578326",
+        "currentPrice": 31.17,
+        "conditionDescription": "Lightly Played condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035122,
+        "title": "Yugioh Shooting Star Dragon BROL-EN071 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/kmwAAOSwnp5jPOyl/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Shooting-Star-Dragon-BROL-EN071-1st-Edition-Ultra-Rare-/354655035122",
+        "currentPrice": 2.44,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434274684,
+        "title": "Yugioh Tyrant Dragon LOD-034 First Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/B7sAAOSwjn9j6Den/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Tyrant-Dragon-LOD-034-First-Edition-Ultra-Rare-/354434274684",
+        "currentPrice": 16.09,
+        "conditionDescription": "Moderately Played condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354656522505,
+        "title": "LEGO Mindstorms For Education Set 9794 ROBOLAB Team Challenge Set (USB) 2002",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/rIMAAOSwmCVkFTEl/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/LEGO-Mindstorms-Education-Set-9794-ROBOLAB-Team-Challenge-Set-USB-2002-/354656522505",
+        "currentPrice": 99.69,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035139,
+        "title": "Yugioh Dimension Reflector MVP1-EN021 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/OzQAAOSwcO1jP25E/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Dimension-Reflector-MVP1-EN021-1st-Edition-Ultra-Rare-/354655035139",
+        "currentPrice": 1.91,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035133,
+        "title": "Yugioh Battlewasp - Azusa the Ghost Bow BLHR-EN036 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/LNUAAOSwml5jPOyn/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Battlewasp-Azusa-Ghost-Bow-BLHR-EN036-1st-Edition-Ultra-Rare-/354655035133",
+        "currentPrice": 1.95,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035124,
+        "title": "Yugioh Live Twin Sunny's Snitch DAMA-EN062 1st Edition Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/XCkAAOSw1HBi9DOp/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Live-Twin-Sunnys-Snitch-DAMA-EN062-1st-Edition-Super-Rare-/354655035124",
+        "currentPrice": 4.4,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354588496296,
+        "title": "Yugioh Elementsaber Nalu FLOD-EN021 1st Edition Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/LG0AAOSwuE5jP25E/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Elementsaber-Nalu-FLOD-EN021-1st-Edition-Super-Rare-/354588496296",
+        "currentPrice": 1.89,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182612,
+        "title": "Yugioh Penumbral Soldier Lady SOD-EN033 Unlimited Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/nXsAAOSwH9ljP25D/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Penumbral-Soldier-Lady-SOD-EN033-Unlimited-Super-Rare-/354434182612",
+        "currentPrice": 2.29,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035121,
+        "title": "Yugioh Wind-Up Zenmaines CT09-EN008 Limited Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/zBQAAOSwU8FjP25E/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Wind-Up-Zenmaines-CT09-EN008-Limited-Super-Rare-/354655035121",
+        "currentPrice": 1.83,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035132,
+        "title": "Yugioh Black Sonic DLCS-EN032 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/DTEAAOSwDH5jPOyl/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Black-Sonic-DLCS-EN032-1st-Edition-Ultra-Rare-/354655035132",
+        "currentPrice": 1.97,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354588496360,
+        "title": "Yugioh Krystal Dragon MVP1-ENSV2 Limited Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/XAgAAOSwItljP25C/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Krystal-Dragon-MVP1-ENSV2-Limited-Ultra-Rare-/354588496360",
+        "currentPrice": 3.21,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035123,
+        "title": "Yugioh Altergeist Primebanshee SP18-EN037 1st Edition Starfoil",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/WZcAAOSwLspjCTZe/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Altergeist-Primebanshee-SP18-EN037-1st-Edition-Starfoil-/354655035123",
+        "currentPrice": 3.22,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035138,
+        "title": "Yugioh Steelswarm Sting HA06-EN015 1st Edition Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/ZD8AAOSwJaxjP25D/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Steelswarm-Sting-HA06-EN015-1st-Edition-Super-Rare-/354655035138",
+        "currentPrice": 1.89,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182718,
+        "title": "Yugioh Number 21: Frozen Lady Justice PGL2-EN018 1st Edition Secret Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/G0oAAOSwqLhi9DOn/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Number-21-Frozen-Lady-Justice-PGL2-EN018-1st-Edition-Secret-Rare-/354434182718",
+        "currentPrice": 2.67,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035137,
+        "title": "Yugioh Underground Arachnid DPC5-EN001 Limited Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/Z8AAAOSw~uxjP25E/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Underground-Arachnid-DPC5-EN001-Limited-Super-Rare-/354655035137",
+        "currentPrice": 8.78,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182695,
+        "title": "Yugioh Super Quantal Mech Beast Lusterrex DANE-EN037 1st Edition Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/YdgAAOSwiW9jP25F/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Super-Quantal-Mech-Beast-Lusterrex-DANE-EN037-1st-Edition-Super-Rare-/354434182695",
+        "currentPrice": 3.14,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182663,
+        "title": "Yugioh Mahaama the Fairy Dragon MP21-EN218 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/0FsAAOSwqJZjPOyj/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Mahaama-Fairy-Dragon-MP21-EN218-1st-Edition-Ultra-Rare-/354434182663",
+        "currentPrice": 2.41,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182571,
+        "title": "Yugioh  Bloom Harmonist the Melodious Composer DUOV-EN020 1st Edition",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/avgAAOSw1HtjPOyl/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Bloom-Harmonist-Melodious-Composer-DUOV-EN020-1st-Edition-/354434182571",
+        "currentPrice": 2.54,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182668,
+        "title": "Yugioh Witchcrafter Madame Verre DUOV-EN073 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/3UwAAOSwvBpjP25D/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Witchcrafter-Madame-Verre-DUOV-EN073-1st-Edition-Ultra-Rare-/354434182668",
+        "currentPrice": 2.72,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354588496354,
+        "title": "Yugioh Thron the Disciplined Angel LIOV-EN082 1st Edition Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/Po8AAOSwMwBjP25F/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Thron-Disciplined-Angel-LIOV-EN082-1st-Edition-Super-Rare-/354588496354",
+        "currentPrice": 2.75,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182708,
+        "title": "Yugioh World Chalice Guardragon MP18-EN047 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/GhEAAOSwmy9jPOym/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-World-Chalice-Guardragon-MP18-EN047-1st-Edition-Ultra-Rare-/354434182708",
+        "currentPrice": 2.17,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434274682,
+        "title": "Yugioh Speedroid Dominobutterfly DPDG-EN004 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/vj4AAOSwgO5i9DOk/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Speedroid-Dominobutterfly-DPDG-EN004-1st-Edition-Ultra-Rare-/354434274682",
+        "currentPrice": 4.48,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354588496327,
+        "title": "Yugioh Desert Twister TAEV-EN034 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/QtMAAOSw~qBjPOyk/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Desert-Twister-TAEV-EN034-1st-Edition-Ultra-Rare-/354588496327",
+        "currentPrice": 2.21,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182579,
+        "title": "Yugioh Garden Rose Flora LIOV-EN036 1st Edition Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/LCIAAOSwwrpjP25E/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Garden-Rose-Flora-LIOV-EN036-1st-Edition-Super-Rare-/354434182579",
+        "currentPrice": 2.14,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182542,
+        "title": "Yugioh Dramaturge of Despia GFP2-EN098 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/5c4AAOSw7DBi9DOm/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Dramaturge-Despia-GFP2-EN098-1st-Edition-Ultra-Rare-/354434182542",
+        "currentPrice": 2.24,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182552,
+        "title": "Yugioh Amazoness Sage BP01-EN212 Unlimited Starfoil Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/N2cAAOSwMDpjPOym/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Amazoness-Sage-BP01-EN212-Unlimited-Starfoil-Rare-/354434182552",
+        "currentPrice": 2.32,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182568,
+        "title": "Yugioh Igknight Templar CORE-EN028 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/1qwAAOSwroZjPOym/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Igknight-Templar-CORE-EN028-1st-Edition-Ultra-Rare-/354434182568",
+        "currentPrice": 3,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182645,
+        "title": "Yugioh Madolche Fresh Sistart GFTP-EN104 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/x1gAAOSwfaZjPOyo/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Madolche-Fresh-Sistart-GFTP-EN104-1st-Edition-Ultra-Rare-/354434182645",
+        "currentPrice": 2.64,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182650,
+        "title": "Yugioh Psychic Wave BLAR-EN015 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/-dcAAOSwvo9jP25D/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Psychic-Wave-BLAR-EN015-1st-Edition-Ultra-Rare-/354434182650",
+        "currentPrice": 2.98,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182632,
+        "title": "Yugioh Starlight Road PGL2-EN091 1st Edition Gold Secret Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/fvAAAOSwOcRjPOym/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Starlight-Road-PGL2-EN091-1st-Edition-Gold-Secret-Rare-/354434182632",
+        "currentPrice": 2.46,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035118,
+        "title": "Yugioh Tri-Brigade Kerass PHRA-EN007 1st Edition Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/53AAAOSw6D5jP25B/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Tri-Brigade-Kerass-PHRA-EN007-1st-Edition-Super-Rare-/354655035118",
+        "currentPrice": 2.98,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434274672,
+        "title": "Yugioh Guardian Eatos LC03-EN003 Limited Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/8XQAAOSwxhFjPOyk/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Guardian-Eatos-LC03-EN003-Limited-Ultra-Rare-/354434274672",
+        "currentPrice": 2.83,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182709,
+        "title": "Yugioh Hieratic Seal of Convocation GFTP-EN054 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/emIAAOSwfdZjP25C/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Hieratic-Seal-Convocation-GFTP-EN054-1st-Edition-Ultra-Rare-/354434182709",
+        "currentPrice": 2.24,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035128,
+        "title": "Yugioh Mecha Phantom Beast Turtletracer LTGY-ENSP1 Limited Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/5xgAAOSw8xpjP25A/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Mecha-Phantom-Beast-Turtletracer-LTGY-ENSP1-Limited-Ultra-Rare-/354655035128",
+        "currentPrice": 3.3,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035117,
+        "title": "Yugioh Thermal Genex HA02-EN028 Unlimited Secret Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/VRQAAOSwtqhjPOym/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Thermal-Genex-HA02-EN028-Unlimited-Secret-Rare-/354655035117",
+        "currentPrice": 1.95,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035143,
+        "title": "Yugioh Tatsunoko HISU-EN050 1st Edition Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/wM8AAOSwu-9jP25D/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Tatsunoko-HISU-EN050-1st-Edition-Super-Rare-/354655035143",
+        "currentPrice": 2.13,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434274667,
+        "title": "Yugioh Smashing Ground PGL2-EN075 1st Edition Gold Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/2LQAAOSwTChi9DOn/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Smashing-Ground-PGL2-EN075-1st-Edition-Gold-Rare-/354434274667",
+        "currentPrice": 3.53,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354588496326,
+        "title": "Yugioh Hieratic Sun Dragon Overlord of Heliopolis GFTP-EN052 1st Edition",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/r6UAAOSwXARjPOyn/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Hieratic-Sun-Dragon-Overlord-Heliopolis-GFTP-EN052-1st-Edition-/354588496326",
+        "currentPrice": 2.53,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354588496287,
+        "title": "Yugioh Vampire Domination DASA-EN011 Unlimited Secret Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/t4YAAOSwb3xi9DOn/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Vampire-Domination-DASA-EN011-Unlimited-Secret-Rare-/354588496287",
+        "currentPrice": 2.51,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354588496289,
+        "title": "Yugioh The Phantom Knights of Rusty Bardiche MAGO-EN040 1st Edition",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/QJYAAOSwEMtjPOyl/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Phantom-Knights-Rusty-Bardiche-MAGO-EN040-1st-Edition-/354588496289",
+        "currentPrice": 2.32,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354588496311,
+        "title": "Yugioh Impcantation Penciplume MP19-EN171 Unlimited Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/yOEAAOSwmSJjP25D/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Impcantation-Penciplume-MP19-EN171-Unlimited-Super-Rare-/354588496311",
+        "currentPrice": 2.54,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182563,
+        "title": "Yugioh GranSolfachord Musecia DAMA-EN048 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/KFEAAOSwC7pjPOym/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-GranSolfachord-Musecia-DAMA-EN048-1st-Edition-Ultra-Rare-/354434182563",
+        "currentPrice": 2.23,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354588496371,
+        "title": "Yugioh Prank-Kids Dropsies HISU-EN016 1st Edition Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/~JgAAOSwo6FjP25B/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Prank-Kids-Dropsies-HISU-EN016-1st-Edition-Super-Rare-/354588496371",
+        "currentPrice": 2.41,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434274665,
+        "title": "Yugioh Sephylon, the Ultimate Timelord GLD5-EN029 Limited Gold Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/TEsAAOSwCWxjPOyk/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Sephylon-Ultimate-Timelord-GLD5-EN029-Limited-Gold-Rare-/354434274665",
+        "currentPrice": 4.41,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035136,
+        "title": "Yugioh Blizzard Warrior HA01-EN002 Limited Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/Tr8AAOSwVUdjP25D/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Blizzard-Warrior-HA01-EN002-Limited-Super-Rare-/354655035136",
+        "currentPrice": 1.84,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182662,
+        "title": "Yugioh Kuribeh BROL-EN004 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/np0AAOSwQA5jP25D/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Kuribeh-BROL-EN004-1st-Edition-Ultra-Rare-/354434182662",
+        "currentPrice": 2.03,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354588496348,
+        "title": "Yugioh Zoodiac Boarbow OP15-EN005 Unlimited Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/1vMAAOSwXxli9DOo/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Zoodiac-Boarbow-OP15-EN005-Unlimited-Super-Rare-/354588496348",
+        "currentPrice": 4.55,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182603,
+        "title": "Yugioh Great Sorcerer of the Nekroz THSF-EN011 1st Edition Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/3SMAAOSwKSVjP25C/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Great-Sorcerer-Nekroz-THSF-EN011-1st-Edition-Super-Rare-/354434182603",
+        "currentPrice": 1.9,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354318125034,
+        "title": "Yugioh Evil HERO Malicious Edge GLAS-EN003 Unlimited Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/FqsAAOSwHDtjP25F/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Evil-HERO-Malicious-Edge-GLAS-EN003-Unlimited-Super-Rare-/354318125034",
+        "currentPrice": 4.3,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182523,
+        "title": "Yugioh Darklord Asmodeus LC02-EN004 Limited Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/pW0AAOSwFKVjP25F/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Darklord-Asmodeus-LC02-EN004-Limited-Ultra-Rare-/354434182523",
+        "currentPrice": 3.27,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035116,
+        "title": "Yugioh Zexal Construction LIOV-EN051 1st Edition Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/oyEAAOSw~kpi9DOn/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Zexal-Construction-LIOV-EN051-1st-Edition-Super-Rare-/354655035116",
+        "currentPrice": 2.03,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354588496363,
+        "title": "Yugioh Naturia Pineapple HASE-EN002 Limited Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/e48AAOSwhVpjP25E/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Naturia-Pineapple-HASE-EN002-Limited-Super-Rare-/354588496363",
+        "currentPrice": 3.28,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035129,
+        "title": "Yugioh Dogmatika Theo, the Iron Punch MP21-EN102 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/RzUAAOSwSGFjPOyn/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Dogmatika-Theo-Iron-Punch-MP21-EN102-1st-Edition-Ultra-Rare-/354655035129",
+        "currentPrice": 2.44,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035131,
+        "title": "Yugioh Unacceptable Result BLHR-EN020 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/uV8AAOSwn21jP25D/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Unacceptable-Result-BLHR-EN020-1st-Edition-Ultra-Rare-/354655035131",
+        "currentPrice": 2.44,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035115,
+        "title": "Yugioh The Phantom Knights of Cursed Javelin MACR-EN042 1st Edition",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/6mIAAOSwyXhjP25G/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Phantom-Knights-Cursed-Javelin-MACR-EN042-1st-Edition-/354655035115",
+        "currentPrice": 2.29,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035120,
+        "title": "Yugioh Daigusto Laplampilica DAMA-EN040 1st Edition Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/3mIAAOSwIaNjP25E/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Daigusto-Laplampilica-DAMA-EN040-1st-Edition-Super-Rare-/354655035120",
+        "currentPrice": 2.64,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035114,
+        "title": "Yugioh Morph King Stygi-Gel KICO-EN018 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/mpcAAOSwqqJjPOyl/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Morph-King-Stygi-Gel-KICO-EN018-1st-Edition-Ultra-Rare-/354655035114",
+        "currentPrice": 2.81,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035127,
+        "title": "Yugioh Kagetokage SP13-EN009 Unlimited Starfoil",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/VOUAAOSwTlVjCTZf/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Kagetokage-SP13-EN009-Unlimited-Starfoil-/354655035127",
+        "currentPrice": 2.84,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035146,
+        "title": "Yugioh Stardust Assault Warrior CT15-EN008 Limited Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/fvEAAOSwOcRjPOyn/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Stardust-Assault-Warrior-CT15-EN008-Limited-Ultra-Rare-/354655035146",
+        "currentPrice": 4.88,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354588496320,
+        "title": "Yugioh Crusadia Arboria MP19-EN078 1st Edition Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/B4YAAOSwvu9jodO8/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Crusadia-Arboria-MP19-EN078-1st-Edition-Super-Rare-/354588496320",
+        "currentPrice": 4.22,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182540,
+        "title": "Yugioh Chronomaly City Babylon PGLD-EN008 1st Edition Gold Secret Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/YOQAAOSwFYljPOyo/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Chronomaly-City-Babylon-PGLD-EN008-1st-Edition-Gold-Secret-Rare-/354434182540",
+        "currentPrice": 2.42,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035126,
+        "title": "Yugioh High Ritual Art DAMA-EN065 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/9PEAAOSwrsZjP25B/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-High-Ritual-Art-DAMA-EN065-1st-Edition-Ultra-Rare-/354655035126",
+        "currentPrice": 3.1,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035125,
+        "title": "Yugioh Elementsaber Lapauila FLOD-EN023 1st Edition Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/xgkAAOSwdGZjP249/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Elementsaber-Lapauila-FLOD-EN023-1st-Edition-Super-Rare-/354655035125",
+        "currentPrice": 2.34,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182616,
+        "title": "Yugioh Miracle Locus BP03-EN213 1st Edition Shatterfoil",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/TqgAAOSwSxJjCTZe/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Miracle-Locus-BP03-EN213-1st-Edition-Shatterfoil-/354434182616",
+        "currentPrice": 2.88,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182602,
+        "title": "Yugioh Melffy Mommy OP15-EN011 Unlimited Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/0egAAOSwGK1i9DOm/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Melffy-Mommy-OP15-EN011-Unlimited-Super-Rare-/354434182602",
+        "currentPrice": 3.95,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035110,
+        "title": "Yugioh Virtual World Hime - Nyannyan MP21-EN223 1st Edition",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/7SUAAOSwf6tjPOyo/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Virtual-World-Hime-Nyannyan-MP21-EN223-1st-Edition-/354655035110",
+        "currentPrice": 2.24,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182685,
+        "title": "Yugioh Speedroid Scratch BROL-EN035 1st Edition Secret Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/M~QAAOSwaxtjPOym/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Speedroid-Scratch-BROL-EN035-1st-Edition-Secret-Rare-/354434182685",
+        "currentPrice": 1.97,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354588496334,
+        "title": "Yugioh Prediction Princess Coinorma DRL2-EN030 1st Edition Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/LrAAAOSwFYljP25E/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Prediction-Princess-Coinorma-DRL2-EN030-1st-Edition-Super-Rare-/354588496334",
+        "currentPrice": 4.34,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182665,
+        "title": "Yugioh Laval Volcano Handmaiden GFTP-EN046 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/RHAAAOSwsWpjP248/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Laval-Volcano-Handmaiden-GFTP-EN046-1st-Edition-Ultra-Rare-/354434182665",
+        "currentPrice": 2.57,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354630944662,
+        "title": "Yugioh 335 Holo Cards Super Rare/Ultra Rare/Secret Rare Near Mint",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/r7QAAOSwXMJj58ie/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-335-Holo-Cards-Super-Rare-Ultra-Rare-Secret-Rare-Near-Mint-/354630944662",
+        "currentPrice": 73.17,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035145,
+        "title": "Yugioh Silent Sea Nettle BROL-EN029 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/~W4AAOSwdPVjP25E/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Silent-Sea-Nettle-BROL-EN029-1st-Edition-Ultra-Rare-/354655035145",
+        "currentPrice": 2.53,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182635,
+        "title": "Yugioh Green Gadget FIGA-EN006 1st Edition Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/~OgAAOSwP3xjP25B/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Green-Gadget-FIGA-EN006-1st-Edition-Super-Rare-/354434182635",
+        "currentPrice": 2.47,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035112,
+        "title": "Yugioh Dual Avatar Fists - Yuhi PHRA-EN014 1st Edition Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/lwYAAOSwmoJjP25D/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Dual-Avatar-Fists-Yuhi-PHRA-EN014-1st-Edition-Super-Rare-/354655035112",
+        "currentPrice": 2.49,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035130,
+        "title": "Yugioh ZS - Utopic Sage BROL-EN058 1st Edition Secret Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/0TcAAOSwS2pjPOym/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-ZS-Utopic-Sage-BROL-EN058-1st-Edition-Secret-Rare-/354655035130",
+        "currentPrice": 1.96,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035141,
+        "title": "Yugioh Dual Avatar Feet - Kokoku PHRA-EN015 1st Edition Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/cfgAAOSwFVpjP25F/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Dual-Avatar-Feet-Kokoku-PHRA-EN015-1st-Edition-Super-Rare-/354655035141",
+        "currentPrice": 2.49,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182682,
+        "title": "Yugioh Super Quantal Mech King Great Magnus DUPO-EN093 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/AN0AAOSwqXdi9DOn/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Super-Quantal-Mech-King-Great-Magnus-DUPO-EN093-1st-Edition-Ultra-Rare-/354434182682",
+        "currentPrice": 2.72,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182683,
+        "title": "Yugioh SolSolfachord Gracia ANGU-EN018 1st Edition Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/HIQAAOSwYOJjP25E/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-SolSolfachord-Gracia-ANGU-EN018-1st-Edition-Super-Rare-/354434182683",
+        "currentPrice": 2.89,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354588496307,
+        "title": "Yugioh Gem-Knight Zirconia HA07-EN018 1st Edition Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/L7wAAOSwwpFi9DOo/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Gem-Knight-Zirconia-HA07-EN018-1st-Edition-Super-Rare-/354588496307",
+        "currentPrice": 2.84,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354588496324,
+        "title": "Yugioh Virtual World Mai-Hime - Lulu MP21-EN173 1st Edition",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/B8wAAOSwNPRi9DOo/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Virtual-World-Mai-Hime-Lulu-MP21-EN173-1st-Edition-/354588496324",
+        "currentPrice": 2.51,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182520,
+        "title": "Yugioh Andro Sphinx EP1-EN002 Unlimited Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/tCYAAOSwErdjPOyl/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Andro-Sphinx-EP1-EN002-Unlimited-Ultra-Rare-/354434182520",
+        "currentPrice": 2.21,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354588496302,
+        "title": "Yugioh Myutant Evolution Lab PHRA-EN092 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/YpUAAOSw9cpi9DOm/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Myutant-Evolution-Lab-PHRA-EN092-1st-Edition-Ultra-Rare-/354588496302",
+        "currentPrice": 3.72,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182633,
+        "title": "Yugioh Paladin of Dark Dragon (Green) DLCS-EN069 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/xoIAAOSwuipjPOyl/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Paladin-Dark-Dragon-Green-DLCS-EN069-1st-Edition-Ultra-Rare-/354434182633",
+        "currentPrice": 2.2,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035134,
+        "title": "Yugioh Sphinx Teleia EP1-EN003 Limited Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/y9QAAOSwNZxjPOym/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Sphinx-Teleia-EP1-EN003-Limited-Ultra-Rare-/354655035134",
+        "currentPrice": 8.78,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354655035113,
+        "title": "Yugioh Five Star Twilight BROL-EN006 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/e-UAAOSwvOBjP25F/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Five-Star-Twilight-BROL-EN006-1st-Edition-Ultra-Rare-/354655035113",
+        "currentPrice": 1.91,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182549,
+        "title": "Yugioh Dragunity Corsesca HA04-EN044 Unlimited Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/s7YAAOSwKVVjP25F/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Dragunity-Corsesca-HA04-EN044-Unlimited-Super-Rare-/354434182549",
+        "currentPrice": 2.26,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434274687,
+        "title": "Yugioh Red Dragon Archfiend CT07-EN025 Limited Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/2GgAAOSwWO5j5phl/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Red-Dragon-Archfiend-CT07-EN025-Limited-Super-Rare-/354434274687",
+        "currentPrice": 5,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434274670,
+        "title": "Pokemon TCG Dragonite 1st Edition 4/62 Holo Rare Fossil 1999",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/lpkAAOSwOuRj8vqB/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Pokemon-TCG-Dragonite-1st-Edition-4-62-Holo-Rare-Fossil-1999-/354434274670",
+        "currentPrice": 220.17,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182701,
+        "title": "Yugioh Kuriboh FL1-EN003 Limited Secret Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/uw4AAOSwaOVj5pmE/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Kuriboh-FL1-EN003-Limited-Secret-Rare-/354434182701",
+        "currentPrice": 11.03,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182619,
+        "title": "Yugioh Lavalval Ignis BP03-EN120 1st Edition Shatterfoil",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/6~AAAOSwHXFjCTZf/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Lavalval-Ignis-BP03-EN120-1st-Edition-Shatterfoil-/354434182619",
+        "currentPrice": 3.18,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354588496365,
+        "title": "Yugioh Noble Knight Custennin CYHO-EN088 1st Edition Super Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/RHIAAOSwsWpjP24-/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Noble-Knight-Custennin-CYHO-EN088-1st-Edition-Super-Rare-/354588496365",
+        "currentPrice": 2.25,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354588496364,
+        "title": "Yugioh Martial Metal Marcher CT15-EN009 Limited Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/QqsAAOSw4uFjPOyo/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Martial-Metal-Marcher-CT15-EN009-Limited-Ultra-Rare-/354588496364",
+        "currentPrice": 8.78,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182678,
+        "title": "Yugioh Vision HERO Witch Raider BLHR-EN060 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/qz0AAOSwx6hjP25E/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Vision-HERO-Witch-Raider-BLHR-EN060-1st-Edition-Ultra-Rare-/354434182678",
+        "currentPrice": 2.53,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434274664,
+        "title": "Yugioh Double Spell MFC-106 1st Edition Ultra Rare Magician's Force",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/HSkAAOSwGDBkB~WK/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Double-Spell-MFC-106-1st-Edition-Ultra-Rare-Magicians-Force-/354434274664",
+        "currentPrice": 15.85,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182657,
+        "title": "Yugioh Stealth Kragen Spawn BROL-EN031 1st Edition Secret Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/64QAAOSwseFi9DOn/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Stealth-Kragen-Spawn-BROL-EN031-1st-Edition-Secret-Rare-/354434182657",
+        "currentPrice": 2.8,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182722,
+        "title": "Yugioh Tactical Exchanger DUPO-EN026 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/btgAAOSw4UpjP25C/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Tactical-Exchanger-DUPO-EN026-1st-Edition-Ultra-Rare-/354434182722",
+        "currentPrice": 2.59,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182646,
+        "title": "Yugioh Thunder Dragonhawk MP19-EN168 1st Edition Prismatic Secret Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/kfkAAOSwWR5i9DOp/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Thunder-Dragonhawk-MP19-EN168-1st-Edition-Prismatic-Secret-Rare-/354434182646",
+        "currentPrice": 5.44,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354588496347,
+        "title": "Yugioh Exile of the Wicked LCKC-EN100 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/7HMAAOSwdlNjP25C/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Exile-Wicked-LCKC-EN100-1st-Edition-Ultra-Rare-/354588496347",
+        "currentPrice": 1.94,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182573,
+        "title": "Yugioh Hieratic Dragon of Tefnuit DUPO-EN080 1st Edition Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/oUwAAOSw-xxjP25F/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Hieratic-Dragon-Tefnuit-DUPO-EN080-1st-Edition-Ultra-Rare-/354434182573",
+        "currentPrice": 2.53,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      },
+      {
+        "itemId": 354434182654,
+        "title": "Yugioh Vortex the Whirlwind STOR-ENSP1 Limited Ultra Rare",
+        "galleryURL": "https://i.ebayimg.com/thumbs/images/g/ehUAAOSw1DljPOyk/s-w400.webp",
+        "viewItemURL": "https://www.ebay.com/itm/Yugioh-Vortex-Whirlwind-STOR-ENSP1-Limited-Ultra-Rare-/354434182654",
+        "currentPrice": 8.78,
+        "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
+      }
+    ];
+
+    function displayItems(items) {
+      const productGrid=document.getElementById("product-grid");
+
+      if(!Array.isArray(items)) {
+        console.error("Error: items is not an array");
+        return;
+      }
+
+      items.forEach(item => {
+        const productCard=document.createElement("div");
+        productCard.id="product-card";
+        productCard.className="container rounded-lg my-10 mx-auto w-fit h-fit backdrop text-shadow text-white bg-transparent hover:-translate-y-1 hover:will-change-transform hover:ease-out hover:duration-500 hover:bg-gradient-to-b hover:bg-zinc-400 from-transparent to-neutral-300 via-black border border-zinc-200 drop-shadow-sm";
+
+        const productImageContainer=document.createElement("div");
+        productImageContainer.className="border-b border-b-zinc-200 rounded-t-lg mx-auto";
+
+        const productImage=document.createElement("img");
+        productImage.id="galleryURL";
+        productImage.src=item.image;
+        productImage.alt=item.title;
+        productImage.className="w-full object-cover aspect-square object-center bg-transparent";
+
+        productImageContainer.appendChild(productImage);
+        productCard.appendChild(productImageContainer);
+
+        const productDetailsContainer=document.createElement("div");
+        productDetailsContainer.className="rounded-b-lg p-2 mx-auto";
+
+        const productTitle=document.createElement("h1");
+        productTitle.id="title";
+        productTitle.className="text-center text-2xl font-semibold";
+        productTitle.textContent=item.title;
+
+        const productDescription=document.createElement("div");
+        productDescription.id="conditionDescription";
+        productDescription.className="mx-auto text-sm my-2";
+        productDescription.textContent=item.description;
+
+        const productPriceContainer=document.createElement("div");
+        productPriceContainer.className="inline space-x-5";
+
+        const productPrice=document.createElement("div");
+        productPrice.id="currentPrice";
+        productPrice.className="float-left";
+        productPrice.textContent="$"+item.price;
+
+        const productShipping=document.createElement("div");
+        productShipping.id="shippingCost";
+        productShipping.className="float-right";
+        productShipping.textContent="$"+item.shipping;
+
+        productPriceContainer.appendChild(productPrice);
+        productPriceContainer.appendChild(productShipping);
+
+        productDetailsContainer.appendChild(productTitle);
+        productDetailsContainer.appendChild(productDescription);
+        productDetailsContainer.appendChild(productPriceContainer);
+
+        const productLink=document.createElement("a");
+        productLink.id="viewItemURL";
+        productLink.href=item.link;
+        productLink.title="View on eBay";
+        productLink.target="_blank";
+        productLink.appendChild(productCard);
+
+        const productGridColumn=document.createElement("div");
+        productGridColumn.className="col-span-1";
+        productGridColumn.appendChild(productLink);
+
+        productGrid.appendChild(productGridColumn);
+      });
+    }
+  </script>
 
 </html>
