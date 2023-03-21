@@ -822,7 +822,8 @@
     items.forEach(item => {
       // Create the product card element
       const productCard=document.createElement('div');
-      productCard.classList.add('container','rounded-lg','my-10','mx-auto','w-full','h-full','backdrop','text-shadow','text-white','border','border-zinc-200','shadow-lg','hover:shadow-neutral-300');
+      productCard.classList.add('container','rounded-lg','my-10','mx-auto','w-fit','h-fit','backdrop','text-shadow','text-white','bg-transparent','hover:-translate-y-1','hover:will-change-transform','hover:ease-out','hover:duration-500','hover:bg-gradient-to-b','hover:bg-zinc-400','from-transparent','to-neutral-300','via-black','border','border-zinc-200','drop-shadow-sm');
+      productCard.id='product-card';
 
       // Create the link element for the item's eBay page
       const link=document.createElement('a');
@@ -861,13 +862,13 @@
       // Create the product price element
       const currentPrice=document.createElement('div');
       currentPrice.id='currentPrice';
-      currentPrice.textContent=item.currentPrice;
+      currentPrice.textContent=`$${item.currentPrice}`;
       currentPrice.classList.add('float-left','text-base','font-semibold');
 
       // Create the product shipping cost element
       const shippingCost=document.createElement('div');
       shippingCost.id='shippingCost';
-      shippingCost.textContent=item.shippingCost;
+      shippingCost.textContent='S&H: $0.60';
       shippingCost.classList.add('float-right','text-base','font-semibold');
 
       // Append the image element to the link element
