@@ -6,7 +6,7 @@
           href="styles.css" />
 
     <script>
-      const item=[
+      const items=[
         {
           "itemId": 354653578326,
           "title": "Yugioh Dark Paladin DMG-001 Limited Edition Lightly Played",
@@ -807,12 +807,17 @@
           "currentPrice": 8.78,
           "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
         }
-      ];
+      ]
 
-      function displayItems(item) {
+      function displayItems(items) {
         const productGrid=document.getElementById("product-grid");
 
-        item.forEach(item => {
+        if(!Array.isArray(items)) {
+          console.error("Error: items is not an array");
+          return;
+        }
+
+        items.forEach(item => {
           const productCard=document.createElement("div");
           productCard.id="product-card";
           productCard.className="container rounded-lg my-10 mx-auto w-fit h-fit backdrop text-shadow text-white bg-transparent hover:-translate-y-1 hover:will-change-transform hover:ease-out hover:duration-500 hover:bg-gradient-to-b hover:bg-zinc-400 from-transparent to-neutral-300 via-black border border-zinc-200 drop-shadow-sm";
