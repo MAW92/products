@@ -9,7 +9,7 @@
   <body>
     <main class="bg-image min-h-screen bg-fixed bg-cover bg-center">
       <div id="product-grid"
-           class="grid grid-cols-1 gap-3 px-3 w-full sm:grid-cols-2 md:grid-cols-3 mx-auto lg:grid-cols-4">
+           class="mx-auto grid grid-cols-1 gap-5 space-x-5 space-y-5 px-3 w-full sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 
       </div>
     </main>
@@ -865,13 +865,13 @@
       const currentPrice=document.createElement('div');
       currentPrice.id='currentPrice';
       currentPrice.textContent=`$${item.currentPrice}`;
-      currentPrice.classList.add('float-left','text-base','font-semibold');
+      currentPrice.classList.add('float-left','text-base','font-semibold','my-2');
 
       // Create the product shipping cost element
       const shippingCost=document.createElement('div');
       shippingCost.id='shippingCost';
       shippingCost.textContent='S&H: $0.60';
-      shippingCost.classList.add('float-right','text-base','font-semibold');
+      shippingCost.classList.add('float-right','text-base','font-semibold','my-2');
 
       // Append the image element to the link element
       link.appendChild(image);
