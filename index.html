@@ -9,7 +9,7 @@
   <body onload="displayItems()">
     <main class="bg-image min-h-screen bg-fixed bg-cover bg-center mx-auto w-full">
       <div id="product-grid"
-           class="grid grid-cols-1 gap-5 mx-5 w-full sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+           class="grid grid-cols-1 gap-x-5 gap-y-5 mx-5 w-full sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       </div>
     </main>
   </body>
@@ -852,7 +852,7 @@
       const condition=document.createElement('div');
       condition.id='conditionDescription';
       condition.textContent=item.conditionDescription;
-      condition.classList.add('mx-auto','text-sm','my-2');
+      condition.classList.add('mx-auto','text-sm','my-2','italic');
 
       // Create the price and shipping cost elements
       const priceContainer=document.createElement('div');
@@ -863,7 +863,7 @@
       price.classList.add('float-left');
       const shipping=document.createElement('div');
       shipping.id='shippingCost';
-      shipping.textContent='$0.60'; // default value, can be updated later
+      shipping.textContent='Shipping: $0.60'; // default value, can be updated later
       shipping.classList.add('float-right');
 
       // Add the price and shipping cost elements to the price container
