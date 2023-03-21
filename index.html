@@ -10,32 +10,7 @@
     <main class="bg-image min-h-screen bg-fixed bg-cover bg-center">
       <div id="product-grid"
            class="grid grid-cols-1 px-3 w-full sm:grid-cols-2 md:grid-cols-3 mx-auto lg:grid-cols-4">
-        <a id="viewItemURL"
-           href=""
-           title="View on eBay"
-           target="_blank">
-          <div id="product-card"
-               class="container rounded-lg my-10 mx-auto w-full h-full backdrop text-shadow text-white hover:-translate-y-1 hover:will-change-transform hover:ease-out hover:duration-500 hover:bg-gradient-to-bl hover:to-transparent hover:from-white hover:via-transparent border border-zinc-200 shadow-lg hover:shadow-neutral-300">
-            <div class="border-b border-b-zinc-200 rounded-t-lg mx-auto">
-              <img id="galleryURL"
-                   src=""
-                   alt=""
-                   class="w-full h-72 object-none aspect-square object-center rounded-t-lg bg-transparent" />
-            </div>
-            <div class="rounded-b-lg p-2 mx-auto">
-              <h1 id="title"
-                  class="text-center text-xl font-bold"></h1>
-              <div id="conditionDescription"
-                   class="mx-auto text-sm mt-2 italic"></div>
-              <div class="inline space-x-5">
-                <div id="currentPrice"
-                     class="float-left text-base font-semibold"></div>
-                <div id="shippingCost"
-                     class="float-right text-base font-semibold"></div>
-              </div>
-            </div>
-          </div>
-        </a>
+
       </div>
     </main>
   </body>
@@ -849,7 +824,7 @@
     items.forEach(item => {
       // Create the product card element
       const productCard=document.createElement('div');
-      productCard.classList.add('container','rounded-lg','my-10','mx-auto','backdrop','text-shadow','text-white','bg-transparent','hover:-translate-y-1','hover:will-change-transform','hover:ease-out','hover:duration-500','hover:bg-gradient-to-b','hover:bg-zinc-400','from-transparent','to-neutral-300','via-black','border','border-zinc-200','drop-shadow-sm');
+      productCard.classList.add('container','rounded-lg','my-10','mx-auto','w-full','h-full','backdrop','text-shadow','text-white','hover:-translate-y-1','hover:will-change-transform','hover:ease-out','hover:duration-500','hover:bg-gradient-to-bl','hover:to-transparent','hover:from-white','hover:via-transparent','border','border-zinc-200','shadow-lg','hover:shadow-neutral-300');
       productCard.id='product-card';
 
       // Create the link element for the item's eBay page
