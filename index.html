@@ -816,79 +816,71 @@
         "conditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
       }
     ];
+    // Get the product grid element
+    const productGrid=document.getElementById('product-grid');
 
-    function displayItems(items) {
-      const productGrid=document.getElementById("product-grid");
+    // Loop through the items and create a product card for each item
+    items.forEach(item => {
+      // Create the product card element
+      const productCard=document.createElement('div');
+      productCard.classList.add('container','rounded-lg','my-10','mx-auto','w-fit','h-fit','backdrop','text-shadow','text-white','bg-transparent','hover:-translate-y-1','hover:will-change-transform','hover:ease-out','hover:duration-500','hover:bg-gradient-to-b','hover:bg-zinc-400','from-transparent','to-neutral-300','via-black','border','border-zinc-200','drop-shadow-sm');
+      productCard.id='product-card';
 
-      if(!Array.isArray(items)) {
-        console.error("Error: items is not an array");
-        return;
-      }
+      // Create the link element for the item's eBay page
+      const link=document.createElement('a');
+      link.id='viewItemURL';
+      link.href=item.viewItemURL;
+      link.title='View on eBay';
+      link.target='_blank';
 
-      items.forEach(item => {
-        const productCard=document.createElement("div");
-        productCard.id="product-card";
-        productCard.className="container rounded-lg my-10 mx-auto w-fit h-fit backdrop text-shadow text-white bg-transparent hover:-translate-y-1 hover:will-change-transform hover:ease-out hover:duration-500 hover:bg-gradient-to-b hover:bg-zinc-400 from-transparent to-neutral-300 via-black border border-zinc-200 drop-shadow-sm";
+      // Create the image element
+      const image=document.createElement('img');
+      image.id='galleryURL';
+      image.src=item.galleryURL;
+      image.alt=item.title;
+      image.classList.add('w-full','object-cover','aspect-square','object-center','bg-transparent');
 
-        const productImageContainer=document.createElement("div");
-        productImageContainer.className="border-b border-b-zinc-200 rounded-t-lg mx-auto";
+      // Add the image to the link
+      link.appendChild(image);
+      // Create the title element
+      const title=document.createElement('h1');
+      title.id='title';
+      title.textContent=item.title;
+      title.classList.add('text-center','text-2xl','font-semibold');
 
-        const productImage=document.createElement("img");
-        productImage.id="galleryURL";
-        productImage.src=item.image;
-        productImage.alt=item.title;
-        productImage.className="w-full object-cover aspect-square object-center bg-transparent";
+      // Create the condition description element
+      const condition=document.createElement('div');
+      condition.id='conditionDescription';
+      condition.textContent=item.conditionDescription;
+      condition.classList.add('mx-auto','text-sm','my-2');
 
-        productImageContainer.appendChild(productImage);
-        productCard.appendChild(productImageContainer);
+      // Create the price and shipping cost elements
+      const priceContainer=document.createElement('div');
+      priceContainer.classList.add('inline','space-x-5');
+      const price=document.createElement('div');
+      price.id='currentPrice';
+      price.textContent=`$${item.currentPrice}`;
+      price.classList.add('float-left');
+      const shipping=document.createElement('div');
+      shipping.id='shippingCost';
+      shipping.textContent='$0.60'; // default value, can be updated later
+      shipping.classList.add('float-right');
 
-        const productDetailsContainer=document.createElement("div");
-        productDetailsContainer.className="rounded-b-lg p-2 mx-auto";
+      // Add the price and shipping cost elements to the price container
+      priceContainer.appendChild(price);
+      priceContainer.appendChild(shipping);
 
-        const productTitle=document.createElement("h1");
-        productTitle.id="title";
-        productTitle.className="text-center text-2xl font-semibold";
-        productTitle.textContent=item.title;
+      // Add the title, condition, and price container elements to the product card
+      productCard.appendChild(title);
+      productCard.appendChild(condition);
+      productCard.appendChild(priceContainer);
 
-        const productDescription=document.createElement("div");
-        productDescription.id="conditionDescription";
-        productDescription.className="mx-auto text-sm my-2";
-        productDescription.textContent=item.description;
+      // Add the link to the product card
+      productCard.appendChild(link);
 
-        const productPriceContainer=document.createElement("div");
-        productPriceContainer.className="inline space-x-5";
-
-        const productPrice=document.createElement("div");
-        productPrice.id="currentPrice";
-        productPrice.className="float-left";
-        productPrice.textContent="$"+item.price;
-
-        const productShipping=document.createElement("div");
-        productShipping.id="shippingCost";
-        productShipping.className="float-right";
-        productShipping.textContent="$"+item.shipping;
-
-        productPriceContainer.appendChild(productPrice);
-        productPriceContainer.appendChild(productShipping);
-
-        productDetailsContainer.appendChild(productTitle);
-        productDetailsContainer.appendChild(productDescription);
-        productDetailsContainer.appendChild(productPriceContainer);
-
-        const productLink=document.createElement("a");
-        productLink.id="viewItemURL";
-        productLink.href=item.link;
-        productLink.title="View on eBay";
-        productLink.target="_blank";
-        productLink.appendChild(productCard);
-
-        const productGridColumn=document.createElement("div");
-        productGridColumn.className="col-span-1";
-        productGridColumn.appendChild(productLink);
-
-        productGrid.appendChild(productGridColumn);
-      });
-    }
+      // Add the product card to the product grid
+      productGrid.appendChild(productCard);
+    });
   </script>
 
 </html>
