@@ -20,126 +20,48 @@
     <link rel="stylesheet"
           href="./assets/styles.css" />
     <script>
-      const Products=[
-        {
-          "title": "Yugioh Dark Paladin DMG-001 Limited Edition Lightly Played",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/260AAOSwfOBkGpHh/s-l140.jpg",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Dark-Paladin-DMG-001-Limited-Edition-Lightly-Played-/354653578326",
-          "currentPrice": 29.69
-        },
-        {
-          "title": "Yugioh Tyrant Dragon LOD-034 1st Edition Ultra Rare MP",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/XOIAAOSwezZkGpEX/s-l140.jpg",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Tyrant-Dragon-LOD-034-1st-Edition-Ultra-Rare-MP-/354434274684",
-          "currentPrice": 12.09
-        },
-        {
-          "title": "Misty's Tentacruel Pokemon No.73 Gym Heroes Japanese Holo Swirl + Missing Rarity",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/EvMAAOSwv1ZkAvT-/s-l140.jpg",
-          "viewItemURL": "https://www.ebay.com/itm/Mistys-Tentacruel-Pokemon-No-73-Gym-Heroes-Japanese-Holo-Swirl-Missing-Rarity-/354620966520",
-          "currentPrice": 15.43
-        },
-        {
-          "title": "Yugioh 30 Card Lot ~ Only Holos ~ Near Mint Condition",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/h2cAAOSw6E9kG5YO/s-l140.jpg",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-30-Card-Lot-Only-Holos-Near-Mint-Condition-/354667536665",
-          "currentPrice": 14.69
-        },
-        {
-          "title": "Yugioh Double Spell MFC-106 1st Edition Ultra Rare Magician's Force",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/HSkAAOSwGDBkB~WK/s-l140.jpg",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Double-Spell-MFC-106-1st-Edition-Ultra-Rare-Magicians-Force-/354434274664",
-          "currentPrice": 15.85
-        },
-        {
-          "title": "Yugioh Craneo Convocado (Summoned Skull) BIY-S004 1st Edition Common Spanish",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/O~QAAOSwQ8JkAHWf/s-l140.jpg",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Craneo-Convocado-Summoned-Skull-BIY-S004-1st-Edition-Common-Spanish-/354620966508",
-          "currentPrice": 15.69
-        },
-        {
-          "title": "Yugioh Kuriboh FL1-EN003 Limited Secret Rare",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/uw4AAOSwaOVj5pmE/s-l140.jpg",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Kuriboh-FL1-EN003-Limited-Secret-Rare-/354434182701",
-          "currentPrice": 9.03
-        },
-        {
-          "title": "Yugioh Painful Choice MRL-049 1st Edition Super Rare  Magic Ruler",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/YWcAAOSwxtpkB~Tg/s-l140.jpg",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Painful-Choice-MRL-049-1st-Edition-Super-Rare-Magic-Ruler-/354434274669",
-          "currentPrice": 19.52
-        },
-        {
-          "title": "2021 Pokemon 25th Anniversary McDonald’s Booster Pack McDonalds New Sealed",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/-20AAOSwp5xj8g9~/s-l140.jpg",
-          "viewItemURL": "https://www.ebay.com/itm/2021-Pokemon-25th-Anniversary-McDonald-s-Booster-Pack-McDonalds-New-Sealed-/354618440477",
-          "currentPrice": 10.01
-        },
-        {
-          "title": "Yugioh Winged Kuriboh DR3-EN185 Unlimited Super Rare NM",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/0asAAOSw3iti9DOn/s-l140.jpg",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Winged-Kuriboh-DR3-EN185-Unlimited-Super-Rare-NM-/354434274671",
-          "currentPrice": 18.63
-        },
-        {
-          "title": "Yugioh Rivalry Of Warlords KICO-EN058 Rare 1st Edition NM",
-          "galleryURL": "https://i.ebayimg.com/thumbs/images/g/0bEAAOSw4NBjydCc/s-l140.jpg",
-          "viewItemURL": "https://www.ebay.com/itm/Yugioh-Rivalry-Warlords-KICO-EN058-Rare-1st-Edition-NM-/354588496313",
-          "currentPrice": 2.94
-        }
-      ];
-
-      // Retrieve the product container element
-      const productContainer=document.getElementById("product-container");
-
-      // Loop through the product data and create a product card for each one
-      Products.forEach(product => {
-        // Clone the product card template
-        const productCard=document.getElementById("product-card").cloneNode(true);
-
-        // Retrieve the HTML elements within the product card
-        const viewItemURL=productCard.querySelector("#viewItemURL");
-        const galleryURL=productCard.querySelector("#galleryURL");
-        const title=productCard.querySelector("#title");
-        const currentPrice=productCard.querySelector("#currentPrice");
-
-        // Set the values of the elements using the product data
-        viewItemURL.href=product.viewItemURL;
-        galleryURL.src=product.galleryURL;
-        title.innerText=product.title;
-        currentPrice.innerText=product.currentPrice;
-
-        // Append the populated product card to the product container element
-        productContainer.appendChild(productCard);
+      document.addEventListener("DOMContentLoaded",function () {
+        fetch("/assets/products.json")
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            var items=data.items;
+            var productGrid=document.getElementById("productGrid");
+            items.forEach(function (item) {
+              var productCard=document.createElement("div");
+              productCard.className="bg-white shadow-md rounded-md overflow-hidden";
+              var productImage=document.createElement("img");
+              productImage.className="w-full h-48 object-cover";
+              productImage.src=item.galleryURL;
+              productCard.appendChild(productImage);
+              var productInfo=document.createElement("div");
+              productInfo.className="p-4";
+              var productTitle=document.createElement("h2");
+              productTitle.className="font-bold text-lg";
+              productTitle.innerText=item.title;
+              productInfo.appendChild(productTitle);
+              var productPrice=document.createElement("p");
+              productPrice.className="text-gray-700";
+              productPrice.innerText=item.currentPrice;
+              productInfo.appendChild(productPrice);
+              var productLink=document.createElement("a");
+              productLink.className="text-blue-500 hover:text-blue-700";
+              productLink.href=item.viewItemURL;
+              productLink.innerText="View item";
+              productInfo.appendChild(productLink);
+              productCard.appendChild(productInfo);
+              productGrid.appendChild(productCard);
+            });
+          });
       });
     </script>
   </head>
 
   <body>
     <main class="bg-image min-h-screen w-full bg-fixed bg-cover bg-center">
-      <div id="product-grid"
-           class="mx-auto grid grid-cols-1 gap-5 space-x-5 space-y-5 max-w-7xl px-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        <div id="product-card"
-             class="w-fit max-w-80 rounded-xl transition-transform duration-500 hover:bg-gradient-to-b from-transparent to-transparent via-neutral-300 mx-auto">
-          <a id="viewItemURL"
-             href=""
-             title="View on eBay">
-            <div class="card border border-zinc-100 backdrop hover:shadow-zinc-800 hover:shadow-xl hover:-translate-y-1 transition-transform duration-300 flex flex-col gap-1 rounded-lg">
-              <img id="galleryURL"
-                   src=""
-                   alt=""
-                   class="rounded-t-lg border-b border-b-zinc-100 max-h-72 w-full max-w-80 object-top object-cover overflow-hidden mx-auto" />
-              <h1 id="title"
-                  class="text-lg text-shadow text-white p-1 font-bold"></h1>
-              <div class="inline flex-wrap">
-                <p id="currentPrice"
-                   class="float-left text-shadow text-sm text-white font-semibold italic p-1 -mt-2">
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
+      <div class="grid grid-cols-3 gap-4"
+           id="productGrid"></div>
     </main>
   </body>
 
