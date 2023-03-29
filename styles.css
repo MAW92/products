@@ -692,9 +692,9 @@ video {
   --tw-gradient-to-position:  ;
 }
 
-.hover\:text-white:hover {
+.text-white {
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: #fff;
 }
 
 .hover\:duration-300:hover {
