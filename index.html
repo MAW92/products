@@ -31,7 +31,7 @@
 
     <script>
       // Fetch the products data from the local file
-      fetch('products.json')
+      fetch('./src/products.json')
         .then(response => response.json())
         .then(products => {
           // Loop through the products and create a card for each one
