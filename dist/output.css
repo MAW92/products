@@ -419,6 +419,15 @@ video {
   display: none;
 }
 
+.bg-image {
+  background-image: url('https://iili.io/H3ItNYx.webp');
+}
+
+.backdrop {
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -654,16 +663,7 @@ video {
   will-change: transform;
 }
 
-.bg-image {
-  background-image: url('https://iili.io/H3ItNYx.webp');
-}
-
-.backdrop {
-  -webkit-backdrop-filter: blur(12px);
-          backdrop-filter: blur(12px);
-}
-
-.text-shadow {
+.hover\:text-shadow:hover {
   text-shadow: 3px 1px 7px rgba(0, 0, 0, 1.2);
 }
 
