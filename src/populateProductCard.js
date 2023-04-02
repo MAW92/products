@@ -18,7 +18,7 @@ function populateProductCard() {
                   <p class="text-sm italic mb-2">${product.conditionDescription}</p>
                   <div class="flex items-center justify-between pt-5">
                     <p class="font-bold">$${product.currentPrice}</p>
-                    <p class="font-bold">$${product.shippingCost}</p>
+                    <p class="font-bold">S&H: $${product.shippingCost}</p>
                   </div>
                 </div>
               </a>
