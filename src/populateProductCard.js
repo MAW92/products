@@ -15,10 +15,10 @@ function populateProductCard() {
                 <img src="${product.galleryURL}" alt="${product.title}" class="w-full h-56 object-cover object-top border-b border-b-zinc-50 rounded-t-lg">
                 <div class="p-4">
                   <h3 class="text-xl font-black mb-2">${product.title}</h3>
-                  <p class="text-sm italic mb-2">Near Mint condition; kept sleeved and stored in a safe environment.</p>
-                  <div class="flex items-center justify-between">
-                    <p class="font-bold">${product.currentPrice}</p>
-                    <p class="font-bold">S&H: $0.60</p>
+                  <p class="text-sm italic mb-2">${product.productDescription}</p>
+                  <div class="flex items-center justify-between pt-5">
+                    <p class="font-bold">$${product.currentPrice}</p>
+                    <p class="font-bold">$${product.shippingCost}</p>
                   </div>
                 </div>
               </a>

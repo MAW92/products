@@ -602,6 +602,18 @@ video {
   border-bottom-color: rgb(250 250 250 / var(--tw-border-opacity));
 }
 
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-fixed {
+  background-attachment: fixed;
+}
+
+.bg-center {
+  background-position: center;
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -624,6 +636,10 @@ video {
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
+}
+
+.pt-5 {
+  padding-top: 1.25rem;
 }
 
 .text-sm {
