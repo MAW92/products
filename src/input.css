@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+  .bg-image {
+    background-image: url('https://iili.io/H3ItNYx.webp');
+  }
+
+  .backdrop {
+    backdrop-filter: blur(12px);
+  }
+
+  .text-shadow {
+    text-shadow: 3px 1px 7px rgba(0, 0, 0, 1.2);
+  }

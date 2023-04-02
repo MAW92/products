@@ -654,6 +654,19 @@ video {
   will-change: transform;
 }
 
+.bg-image {
+  background-image: url('https://iili.io/H3ItNYx.webp');
+}
+
+.backdrop {
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+}
+
+.text-shadow {
+  text-shadow: 3px 1px 7px rgba(0, 0, 0, 1.2);
+}
+
 .hover\:-translate-y-1:hover {
   --tw-translate-y: -0.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
