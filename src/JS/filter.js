@@ -7,75 +7,74 @@ const raritySelect=document.getElementById('rarity-select');
 const printingSelect=document.getElementById('printing-select');
 const setSelect=document.getElementById('set-select');
 const conditionSelect=document.getElementById('condition-select');
-const toggleButton=document.getElementById("toggleButton");
-const productCardGrid=document.getElementById("productCardGrid");
-const productCardList=document.getElementById("productCardList");
-const cards=document.querySelectorAll(".product-card");
+const toggleButton=document.getElementById('toggleButton');
+const productCardGrid=document.getElementById('productCardGrid');
+const productCardList=document.getElementById('productCardList');
+const cards=document.querySelectorAll('.product-card');
 
 function toggleView() {
-  toggleButton.addEventListener("click",() => {
-    if(productCardGrid.classList.contains("hidden")) {
+  toggleButton.addEventListener('click',() => {
+    if(productCardGrid.classList.contains('hidden')) {
       // Switch to grid view
-      productCardGrid.classList.remove("hidden");
-      productCardList.classList.add("hidden");
-      toggleButton.textContent="Switch to List View";
+      productCardGrid.classList.remove('hidden');
+      productCardList.classList.add('hidden');
+      toggleButton.textContent='Switch to List View';
       // Ensure cards in the grid view are visible
       for(let i=0;i<cards.length;i++) {
-        cards[i
-        ].classList.remove("hidden");
+        cards[i].classList.remove('hidden');
       }
     } else {
       // Switch to list view
-      productCardGrid.classList.add("hidden");
-      productCardList.classList.remove("hidden");
-      toggleButton.textContent="Switch to Grid View";
+      productCardGrid.classList.add('hidden');
+      productCardList.classList.remove('hidden');
+      toggleButton.textContent='Switch to Grid View';
       // Ensure cards in the grid view are hidden
-      const cards=document.querySelectorAll(".product-card");
       for(let i=0;i<cards.length;i++) {
-        cards[i
-        ].classList.add("hidden");
+        cards[i].classList.add('hidden');
       }
     }
   });
 }
 toggleView();
 
-function updateBtn() {
+function updateFilters() {
   updateBtn.addEventListener('click',() => {
-
+    const tcg=tcgSelect.value;
+    const rarity=raritySelect.value;
+    const printing=printingSelect.value;
+    const set=setSelect.value;
+    const condition=conditionSelect.value;
     console.log('Filters:',{ tcg,rarity,printing,set,condition });
     filterMenu.classList.add('-translate-x-full');
   });
 }
-updateBtn();
+updateFilters();
 
-
-function filterBtn() {
+function openFilterMenu() {
   filterBtn.addEventListener('click',() => {
     filterMenu.classList.remove('-translate-x-full');
   });
 }
-filterBtn();
+openFilterMenu();
 
-
-function cancelButton() {
+function cancelFilter() {
   cancelButton.addEventListener('click',() => {
     filterMenu.classList.add('-translate-x-full');
   });
 }
-cancelButton();
-
+cancelFilter();
 
 function applyFilters() {
-  const tcg=tcgSelect.checked;
+  const tcg=tcgSelect.value;
   const rarity=raritySelect.value;
   const printing=printingSelect.value;
   const set=setSelect.value;
   const condition=conditionSelect.value;
-  tcgSelect.addEventListener('change',applyFilters);
-  raritySelect.addEventListener('change',applyFilters);
-  printingSelect.addEventListener('change',applyFilters);
-  setSelect.addEventListener('change',applyFilters);
-  conditionSelect.addEventListener('change',applyFilters);
   console.log('Filters:',{ tcg,rarity,printing,set,condition });
 }
+
+tcgSelect.addEventListener('change',applyFilters);
+raritySelect.addEventListener('change',applyFilters);
+printingSelect.addEventListener('change',applyFilters);
+setSelect.addEventListener('change',applyFilters);
+conditionSelect.addEventListener('change',applyFilters);
