@@ -10,12 +10,7 @@ function toggleMenu() {
     document.getElementById("close-icon").style.display="none";
   }
 }
-var x=document.getElementById("mobile-menu");
-if(x.style.display==="block") {
-  x.style.display="none";
-} else {
-  x.style.display="block";
-}
+
 function hideMenuOnResize() {
   var x=document.getElementById("mobile-menu");
   var y=window.innerWidth;
