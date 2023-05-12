@@ -1,3 +1,5 @@
+updateBtn();
+
 function updateBtn() {
   updateBtn.addEventListener('click',() => {
     const tcg=tcgSelect.checked;
