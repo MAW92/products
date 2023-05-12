@@ -109,12 +109,14 @@
                               <form>
                                     <!-- Filter form elements -->
                                     <div class="mt-4 inline-flex">
-                                          <button" id="update-button"
-                                                   type="button"
-                                                   class="focus:shadow-outline-blue mr-2 rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 focus:outline-none">Update Filter</button>
-                                                <button" id="cancel-button"
-                                                         type="button"
-                                                         class="focus:shadow-outline-gray rounded bg-gray-200 px-4 py-2 text-gray-700 hover:bg-gray-300 focus:outline-none">Cancel</button>
+                                          <button onclick="updateBtn()"
+                                                  id="update-button"
+                                                  type="button"
+                                                  class="focus:shadow-outline-blue mr-2 rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 focus:outline-none">Update Filter</button>
+                                          <button onclick="cancelButton()"
+                                                  id="cancel-button"
+                                                  type="button"
+                                                  class="focus:shadow-outline-gray rounded bg-gray-200 px-4 py-2 text-gray-700 hover:bg-gray-300 focus:outline-none">Cancel</button>
                                     </div>
                               </form>
                         </div>
@@ -188,9 +190,11 @@
 
                   <div class="flex justify-center gap-5">
 
-                        <button id="toggleButton"
+                        <button onclick="toggleView()"
+                                id="toggleButton"
                                 class="mb-8 mt-4 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">Switch Layout</button>
-                        <button id="filter-button"
+                        <button onclick="filterBtn()"
+                                id="filter-button"
                                 class="inline mb-8 mt-4 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">Filters</button>
                   </div>
                   <div id="product-grid">
