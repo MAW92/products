@@ -1,13 +1,3 @@
-filterMenu();
-filterBtn();
-cancelButton();
-updateBtn();
-tcgSelect();
-raritySelect();
-printingSelect();
-setSelect();
-conditionSelect();
-
 const filterMenu=document.getElementById('filter-menu');
 const filterBtn=document.getElementById('filter-button');
 const cancelButton=document.getElementById('cancel-button');
@@ -20,11 +10,9 @@ const conditionSelect=document.getElementById('condition-select');
 const toggleButton=document.getElementById("toggleButton");
 const productCardGrid=document.getElementById("productCardGrid");
 const productCardList=document.getElementById("productCardList");
-
 const cards=document.querySelectorAll(".product-card");
 
 function toggleView() {
-
   toggleButton.addEventListener("click",() => {
     if(productCardGrid.classList.contains("hidden")) {
       // Switch to grid view
@@ -50,6 +38,8 @@ function toggleView() {
     }
   });
 }
+toggleView();
+
 function updateBtn() {
   updateBtn.addEventListener('click',() => {
 
@@ -57,18 +47,24 @@ function updateBtn() {
     filterMenu.classList.add('-translate-x-full');
   });
 }
+updateBtn();
+
 
 function filterBtn() {
   filterBtn.addEventListener('click',() => {
     filterMenu.classList.remove('-translate-x-full');
   });
 }
+filterBtn();
+
 
 function cancelButton() {
   cancelButton.addEventListener('click',() => {
     filterMenu.classList.add('-translate-x-full');
   });
 }
+cancelButton();
+
 
 function applyFilters() {
   const tcg=tcgSelect.checked;
