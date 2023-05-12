@@ -27,7 +27,7 @@
                     src="./src/JS/filter.js"></script>
       </head>
 
-      <body onload="filter()">
+      <body>
             <header class="w-full p-2 mx-auto bg-gradient-to-br from-indigo to-indigo via-red border-b-2 border-zinc-400 shadow-lg">
                   <div class="h-auto items-center pt-2 pb-4 text-center font-medium text-white sm:mb-0">
                         <div id="slogo"
@@ -109,14 +109,12 @@
                               <form>
                                     <!-- Filter form elements -->
                                     <div class="mt-4 inline-flex">
-                                          <button onclick="updateBtn()"
-                                                  id="update-button"
-                                                  type="button"
-                                                  class="focus:shadow-outline-blue mr-2 rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 focus:outline-none">Update Filter</button>
-                                          <button onclick="cancelButton()"
-                                                  id="cancel-button"
-                                                  type="button"
-                                                  class="focus:shadow-outline-gray rounded bg-gray-200 px-4 py-2 text-gray-700 hover:bg-gray-300 focus:outline-none">Cancel</button>
+                                          <button" id="update-button"
+                                                   type="button"
+                                                   class="focus:shadow-outline-blue mr-2 rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 focus:outline-none">Update Filter</button>
+                                                <button" id="cancel-button"
+                                                         type="button"
+                                                         class="focus:shadow-outline-gray rounded bg-gray-200 px-4 py-2 text-gray-700 hover:bg-gray-300 focus:outline-none">Cancel</button>
                                     </div>
                               </form>
                         </div>
@@ -190,11 +188,9 @@
 
                   <div class="flex justify-center gap-5">
 
-                        <button onclick="toggleView()"
-                                id="toggleButton"
+                        <button id="toggleButton"
                                 class="mb-8 mt-4 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">Switch Layout</button>
-                        <button onclick="filterBtn()"
-                                id="filter-button"
+                        <button id="filter-button"
                                 class="inline mb-8 mt-4 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">Filters</button>
                   </div>
                   <div id="product-grid">
