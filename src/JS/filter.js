@@ -17,11 +17,14 @@ const raritySelect=document.getElementById('rarity-select');
 const printingSelect=document.getElementById('printing-select');
 const setSelect=document.getElementById('set-select');
 const conditionSelect=document.getElementById('condition-select');
+const toggleButton=document.getElementById("toggleButton");
+const productCardGrid=document.getElementById("productCardGrid");
+const productCardList=document.getElementById("productCardList");
+
+const cards=document.querySelectorAll(".product-card");
 
 function toggleView() {
-  const toggleButton=document.getElementById("toggleButton");
-  const productCardGrid=document.getElementById("productCardGrid");
-  const productCardList=document.getElementById("productCardList");
+
   toggleButton.addEventListener("click",() => {
     if(productCardGrid.classList.contains("hidden")) {
       // Switch to grid view
@@ -29,7 +32,6 @@ function toggleView() {
       productCardList.classList.add("hidden");
       toggleButton.textContent="Switch to List View";
       // Ensure cards in the grid view are visible
-      const cards=document.querySelectorAll(".product-card");
       for(let i=0;i<cards.length;i++) {
         cards[i
         ].classList.remove("hidden");
@@ -50,11 +52,7 @@ function toggleView() {
 }
 function updateBtn() {
   updateBtn.addEventListener('click',() => {
-    const tcg=tcgSelect.checked;
-    const rarity=raritySelect.value;
-    const printing=printingSelect.value;
-    const set=setSelect.value;
-    const condition=conditionSelect.value;
+
     console.log('Filters:',{ tcg,rarity,printing,set,condition });
     filterMenu.classList.add('-translate-x-full');
   });
@@ -73,6 +71,11 @@ function cancelButton() {
 }
 
 function applyFilters() {
+  const tcg=tcgSelect.checked;
+  const rarity=raritySelect.value;
+  const printing=printingSelect.value;
+  const set=setSelect.value;
+  const condition=conditionSelect.value;
   tcgSelect.addEventListener('change',applyFilters);
   raritySelect.addEventListener('change',applyFilters);
   printingSelect.addEventListener('change',applyFilters);
