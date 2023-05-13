@@ -70,7 +70,27 @@ function applyFilters() {
   const printing=printingSelect.value;
   const set=setSelect.value;
   const condition=conditionSelect.value;
-  console.log('Filters:',{ tcg,rarity,printing,set,condition });
+
+  for(let i=0;i<cards.length;i++) {
+    const card=cards[i];
+    const cardTCG=card.dataset.tcg;
+    const cardRarity=card.dataset.rarity;
+    const cardPrinting=card.dataset.printing;
+    const cardSet=card.dataset.set;
+    const cardCondition=card.dataset.condition;
+
+    const tcgMatch=tcg===''||cardTCG===tcg;
+    const rarityMatch=rarity===''||cardRarity===rarity;
+    const printingMatch=printing===''||cardPrinting===printing;
+    const setMatch=set===''||cardSet===set;
+    const conditionMatch=condition===''||cardCondition===condition;
+
+    if(tcgMatch&&rarityMatch&&printingMatch&&setMatch&&conditionMatch) {
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  }
 }
 
 tcgSelect.addEventListener('change',applyFilters);
