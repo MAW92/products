@@ -55,7 +55,7 @@ function filterCardsByRarity() {
       filteredCards.forEach(card => {
         const cardElement=document.createElement('div');
         cardElement.textContent=card.title;
-        cardList.appendChild(productCardGrid);
+        cardList.appendChild(productCard);
       });
     })
     .catch(error => {
