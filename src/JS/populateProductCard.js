@@ -27,3 +27,4 @@ function populateProductCard() {
       });
     });
 }
+export { productCard };
