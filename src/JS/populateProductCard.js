@@ -1,3 +1,4 @@
+
 // Fetch the products data from the local file
 populateProductCard();
 
