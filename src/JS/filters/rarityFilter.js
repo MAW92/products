@@ -18,6 +18,11 @@ async function fetchCardAttributes() {
 async function populateFilterMenu() {
   const attributes=await fetchCardAttributes();
 
+  if(!Array.isArray(attributes)) {
+    console.log('Invalid data format: attributes is not an array');
+    return;
+  }
+
   // Get the unique rarities from the data
   const rarities=[...new Set(attributes.map(card => card.rarity))];
 
@@ -40,15 +45,21 @@ function filterCardsByRarity() {
   // Clear the previous card list
   cardList.innerHTML='';
 
-  // Filter the cards based on the selected rarity
-  const filteredCards=selectedRarity==='all'? cards:cards.filter(card => card.rarity===selectedRarity);
+  fetchCardAttributes()
+    .then(attributes => {
+      // Filter the cards based on the selected rarity
+      const filteredCards=selectedRarity==='all'? attributes:attributes.filter(card => card.rarity===selectedRarity);
 
-  // Display the filtered cards
-  filteredCards.forEach(card => {
-    const cardElement=document.createElement('div');
-    cardElement.textContent=card.title;
-    cardList.appendChild(cardElement);
-  });
+      // Display the filtered cards
+      filteredCards.forEach(card => {
+        const cardElement=document.createElement('div');
+        cardElement.textContent=card.title;
+        cardList.appendChild(cardElement);
+      });
+    })
+    .catch(error => {
+      console.log('Error filtering cards by rarity:',error);
+    });
 }
 
 const filterBtn=document.getElementById('filterBtn');
@@ -61,3 +72,4 @@ filterBtn.addEventListener('click',() => {
 
 // Call the function to populate the filter menu with data
 populateFilterMenu();
+
