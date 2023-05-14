@@ -19,6 +19,10 @@
                   href="https://www.ebay.com/usr/gottasellemall69" />
             <link rel="stylesheet"
                   href="./dist/output.css" />
+            <script type="text/javascript"
+                    src="./src/JS/populateProductCard.js"></script>
+            <script type="text/javascript"
+                    src="./src/JS/menu.js"></script>
 
       </head>
 
@@ -119,24 +123,24 @@
                   </div>
 
                   <div id="productCardGrid"
-                       class="block gap-4 py-10 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:mx-8">
+                       class="block hidden gap-4 py-10 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:mx-8">
                         <!-- Product cards will be dynamically populated here -->
+                        <productCard></productCard>
                   </div>
                   <div id="productCardList"
-                       class="border-b w-fit border-zinc-200 rounded-lg backdrop text-shadow text-white p-2 hidden">
+                       class="border-b w-fit border-zinc-200 rounded-lg backdrop text-shadow text-white p-2 block hidden">
                         <!-- Product list will be dynamically populated here -->
+                        <productCard></productCard>
                   </div>
 
                   <div id="cardList"
-                       class="p-2 mx-5 lg:mx-auto grid grid-flow-row grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 border border-zinc-300 max-w-5xl text-center leading-5 rounded-lg gap-x-5 gap-y-10 mt-4">
+                       class="block hidden p-2 mx-5 lg:mx-auto grid grid-flow-row grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 border border-zinc-300 max-w-5xl text-center leading-5 rounded-lg gap-x-5 gap-y-10 mt-4">
                         <!-- Filtered cards will be displayed here -->
                   </div>
             </main>
       </body>
-      <script type="text/javascript"
-              src="./src/JS/populateProductCard.js"></script>
-      <script type="text/javascript"
-              src="./src/JS/menu.js"></script>
+
+
       <script type="text/javascript"
               src="./src/JS/toggleView.js"></script>
       <script type="text/javascript"
