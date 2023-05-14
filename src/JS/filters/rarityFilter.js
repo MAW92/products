@@ -1,3 +1,5 @@
+import { productCard } from "./src/populateProductCard.js";
+
 // Fetch the filter menu element
 const rarityFilter=document.getElementById('rarityFilter');
 const cardList=document.getElementById('cardList');
@@ -53,7 +55,7 @@ function filterCardsByRarity() {
       // Display the filtered cards
       filteredCards.forEach(card => {
         const cardElement=document.createElement('div');
-        cardElement.textContent=card.title;
+        cardElement.textContent=productCard;
         cardList.appendChild(cardElement);
       });
     })
