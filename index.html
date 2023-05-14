@@ -116,93 +116,47 @@
                               </form>
                         </div>
 
-                        <h2 class="mb-4 text-lg font-semibold">Filters</h2>
-                        <div class="mb-4">
-                              <label class="block font-medium text-gray-700">TCG</label>
-                              <select id="tcg-select"
-                                      class="form-select w-full rounded-lg border-gray-300 px-4 py-2">
-                                    <option value="">All TCGs</option>
-                                    <option value="Yu-Gi-Oh!">Yu-Gi-Oh!</option>
-                                    <option value="Pokemon">Pokemon</option>
-                                    <option value="Magic: The Gathering">Magic: The Gathering</option>
-                              </select>
-                        </div>
-                        <div class="mb-4">
-                              <label class="block font-medium text-gray-700">Rarity</label>
-                              <select id="rarity-select"
-                                      class="form-select w-full rounded-lg border-gray-300 px-4 py-2">
-                                    <option value="">All Rarities</option>
-                                    <option value="common">Common</option>
-                                    <option value="rare">Rare</option>
-                                    <option value="super-rare">Super Rare</option>
-                              </select>
-                        </div>
-                        <div class="mb-4">
-                              <label class="block font-medium text-gray-700">Printing</label>
-                              <select id="printing-select"
-                                      class="form-select w-full rounded-lg border-gray-300 px-4 py-2">
-                                    <option value="">All Printings</option>
-                                    <option value="1st-edition">1st Edition</option>
-                                    <option value="unlimited">Unlimited</option>
-                                    <option value="limited">Limited</option>
-                              </select>
-                        </div>
-                        <div class="mb-4">
-                              <label class="block font-medium text-gray-700">Set</label>
-                              <select id="set-select"
-                                      class="form-select w-full rounded-lg border-gray-300 px-4 py-2">
-                                    <option value="">All Sets</option>
-                                    <option value="base-set">Base Set</option>
-                                    <option value="jungle">Jungle</option>
-                                    <option value="fossil">Fossil</option>
-                              </select>
-                        </div>
-                        <div class="mb-4">
-                              <label class="block font-medium text-gray-700">Condition</label>
-                              <select id="condition-select"
-                                      class="form-select w-full rounded-lg border-gray-300 px-4 py-2">
-                                    <option value="">All Conditions</option>
-                                    <option value="mint">Mint</option>
-                                    <option value="near-mint">Near Mint</option>
-                                    <option value="lightly-played">Lightly Played</option>
-                                    <option value="moderately-played">Moderately Played</option>
-                                    <option value="heavily-played">Heavily Played</option>
-                              </select>
-                        </div>
-                        <div class="mb-4">
-                              <label class="block font-medium text-gray-700">Price Range</label>
-                              <div class="flex items-center">
-                                    <span class="mr-2 text-gray-700">$0</span>
-                                    <input type="range"
-                                           class="w-full"
-                                           min="0"
-                                           max="100"
-                                           step="1" />
-                                    <span class="ml-2 text-gray-700">$100+</span>
+                        <div class="relative">
+                              <button id="filterBtn"
+                                      class="bg-blue-500 text-white px-4 py-2 rounded">Filter</button>
+
+                              <div id="filterMenu"
+                                   class="relative right-0 mt-2 w-48 bg-white border border-gray-300 rounded shadow-lg hidden">
+                                    <label for="rarityFilter"
+                                           class="block px-4 py-2 font-medium">Filter by Rarity:</label>
+                                    <select id="rarityFilter"
+                                            class="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                                          <option value="all">All Rarities</option>
+                                    </select>
                               </div>
                         </div>
-                  </div>
+                        <div class="flex justify-center gap-5">
 
-                  <div class="flex justify-center gap-5">
+                              <button onclick="toggleView()"
+                                      id="toggleButton"
+                                      class="mb-8 mt-4 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">Switch Layout</button>
+                              <button onclick="openFilterMenu()"
+                                      id="filter-button"
+                                      class="inline mb-8 mt-4 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">Filters</button>
+                        </div>
+                        <div id="cardList"
+                             class=" leading-5 mx-auto">
+                              <!-- Filtered cards will be displayed here -->
+                              <div id="productCardGrid"
+                                   class="product-card block">
+                                    <div id="product-grid"
+                                         class="gap-4 py-10 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:mx-8"></div>
+                              </div>
+                              <div id="productCardList"
+                                   class="product-card hidden">
+                                    <div id="product-grid"
+                                         class="border-b w-fit border-zinc-200 rounded-lg backdrop text-shadow text-white flex-wrap p-2"></div>
+                              </div>
+                        </div>
 
-                        <button onclick="toggleView()"
-                                id="toggleButton"
-                                class="mb-8 mt-4 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">Switch Layout</button>
-                        <button onclick="openFilterMenu()"
-                                id="filter-button"
-                                class="inline mb-8 mt-4 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">Filters</button>
-                  </div>
 
-                  <div id="productCardGrid"
-                       class="product-card block hidden">
-                        <div id="product-grid"
-                             class="gap-4 py-10 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:mx-8"></div>
-                  </div>
-                  <div id="productCardList"
-                       class="product-card border-b w-fit border-zinc-200 rounded-lg backdrop text-shadow text-white block flex-wrap hidden p-2">
-                        <!-- Mobile list view -->
-                        <!-- Product cards will be dynamically populated here -->
-                  </div>
+
+
             </main>
       </body>
       <script type="text/javascript"
@@ -210,6 +164,8 @@
       <script type="text/javascript"
               src="./src/JS/menu.js"></script>
       <script type="text/javascript"
-              src="./src/JS/filter.js"></script>
+              src="./src/JS/filters/filter.js"></script>
+      <script type="text/javascript"
+              src="./src/JS/filters/rarityFilter.js"></script>
 
 </html>
