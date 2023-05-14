@@ -22,7 +22,7 @@ function populateProductCard() {
                 </div>
               </a>
             `;
-        document.getElementById('product-grid').appendChild(this.productCard);
+        document.getElementById('product-grid').appendChild(productCard);
       });
     });
 }
