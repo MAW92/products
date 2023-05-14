@@ -98,23 +98,9 @@
                   </button>
             </header>
             <main class="px-5 min-h-screen bg-image bg-fixed bg-cover bg-center">
-                  <div id="filter-menu"
-                       class="fixed inset-y-0 left-0 z-30 w-64 -translate-x-full bg-white p-3 shadow-lg transition-transform duration-300">
-                        <div class="p-6">
-                              <form>
-                                    <!-- Filter form elements -->
-                                    <div class="mt-4 inline-flex">
-                                          <button onclick="updateFilters()"
-                                                  id="update-button"
-                                                  type="button"
-                                                  class="focus:shadow-outline-blue mr-2 rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 focus:outline-none">Update Filter</button>
-                                          <button onclick="cancelFilter()"
-                                                  id="cancel-button"
-                                                  type="button"
-                                                  class="focus:shadow-outline-gray rounded bg-gray-200 px-4 py-2 text-gray-700 hover:bg-gray-300 focus:outline-none">Cancel</button>
-                                    </div>
-                              </form>
-                        </div>
+                  <div class="flex justify-center">
+                        <button id="toggleButton"
+                                class="mb-8 mt-4 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">Switch Layout</button>
                   </div>
 
                   <div class="relative">
@@ -135,13 +121,12 @@
                        class="leading-5 mx-auto">
                         <!-- Filtered cards will be displayed here -->
                         <div id="productCardGrid"
-                             class="product-card block">
-                              <div id="product-grid"
-                                   class="gap-4 py-10 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:mx-8">
-                              </div>
-                              <div id="productCardList"
-                                   class="hidden border-b w-fit border-zinc-200 rounded-lg backdrop text-shadow text-white flex-wrap p-2">
-                              </div>
+                             class="block gap-4 py-10 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:mx-8">
+                              <!-- Product cards will be dynamically populated here -->
+                        </div>
+                        <div id="productCardList"
+                             class="border-b w-fit border-zinc-200 rounded-lg backdrop text-shadow text-white hidden p-2">
+                              <!-- Product list will be dynamically populated here -->
                         </div>
                   </div>
 
@@ -153,6 +138,9 @@
       <script type="text/javascript"
               src="./src/JS/menu.js"></script>
       <script type="text/javascript"
+              src="./src/JS/toggleView.js"></script>
+      <script type="text/javascript"
               src="./src/JS/filters/rarityFilter.js"></script>
+
 
 </html>
