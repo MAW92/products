@@ -1,5 +1,6 @@
 // Fetch the filter menu element
 const rarityFilter=document.getElementById('rarityFilter');
+const cardList=document.getElementById('cardList');
 
 // Function to fetch the data from "cardAttributes.json"
 async function fetchCardAttributes() {
@@ -35,7 +36,6 @@ rarityFilter.addEventListener('change',filterCardsByRarity);
 // Function to filter and display the cards based on rarity
 function filterCardsByRarity() {
   const selectedRarity=rarityFilter.value;
-  const cardList=document.getElementById('cardList');
 
   // Clear the previous card list
   cardList.innerHTML='';
