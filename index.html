@@ -98,38 +98,96 @@
                   </button>
             </header>
             <main class="px-5 min-h-screen bg-image bg-fixed bg-cover bg-center">
-                  <div class="relative">
-                        <button id="filterBtn"
-                                class="bg-blue-500 text-white px-4 py-2 rounded">Filter</button>
+                  <div class="container mx-auto px-4 py-8">
+                        <div class="flex justify-between mb-4">
+                              <h1 class="text-3xl font-bold">Product Cards</h1>
+                              <button id="filterButton"
+                                      class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-md">Filter</button>
+                        </div>
 
                         <div id="filterMenu"
-                             class="relative right-0 mt-2 w-48 bg-white border border-gray-300 rounded shadow-lg hidden">
-                              <label for="rarityFilter"
-                                     class="block px-4 py-2 font-medium">Filter by Rarity:</label>
-                              <select id="rarityFilter"
-                                      class="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
-                                    <option value="all">All Rarities</option>
-                              </select>
+                             class="fixed inset-y-0 left-0 z-50 bg-white shadow-lg p-4 w-1/4 transform -translate-x-full transition-transform duration-300 ease-in-out">
+                              <h2 class="text-xl font-semibold mb-2">Filter Options</h2>
+                              <div>
+                                    <h3 class="text-lg font-semibold mb-1">Game</h3>
+                                    <label><input type="checkbox"
+                                                 name="gameFilter"
+                                                 value="Yu-Gi-Oh! TCG">Yu-Gi-Oh! TCG</label><br>
+                                    <label><input type="checkbox"
+                                                 name="gameFilter"
+                                                 value="Pokemon TCG">Pokemon TCG</label><br>
+                                    <label><input type="checkbox"
+                                                 name="gameFilter"
+                                                 value="Magic: The Gathering">Magic: The Gathering</label><br>
+                              </div>
+                              <div>
+                                    <h3 class="text-lg font-semibold mb-1">Attribute</h3>
+                                    <label><input type="checkbox"
+                                                 name="attributeFilter"
+                                                 value="Dark">Dark</label><br>
+                                    <label><input type="checkbox"
+                                                 name="attributeFilter"
+                                                 value="Light">Light</label><br>
+                                    <label><input type="checkbox"
+                                                 name="attributeFilter"
+                                                 value="Earth">Earth</label><br>
+                                    <label><input type="checkbox"
+                                                 name="attributeFilter"
+                                                 value="Water">Water</label><br>
+                                    <label><input type="checkbox"
+                                                 name="attributeFilter"
+                                                 value="Wind">Wind</label><br>
+                                    <label><input type="checkbox"
+                                                 name="attributeFilter"
+                                                 value="Fire">Fire</label><br>
+                                    <label><input type="checkbox"
+                                                 name="attributeFilter"
+                                                 value="Divine">Divine</label><br>
+                              </div>
+                              <div>
+                                    <h3 class="text-lg font-semibold mb-1">Condition</h3>
+                                    <label><input type="checkbox"
+                                                 name="conditionFilter"
+                                                 value="Near Mint"> Near Mint</label><br>
+                                    <label><input type="checkbox"
+                                                 name="conditionFilter"
+                                                 value="Lightly Played (Excellent)">Lightly Played (Excellent)</label><br>
+                                    <label><input type="checkbox"
+                                                 name="conditionFilter"
+                                                 value="Moderately Played"> Moderately Played</label><br>
+                                    <label><input type="checkbox"
+                                                 name="conditionFilter"
+                                                 value="Heavily Played"> Heavily Played</label><br>
+                              </div>
+                              <div>
+                                    <h3 class="text-lg font-semibold mb-1">Rarity</h3>
+                                    <label><input type="checkbox"
+                                                 name="rarityFilter"
+                                                 value="Secret Rare">Secret Rare</label><br>
+                                    <label><input type="checkbox"
+                                                 name="rarityFilter"
+                                                 value="Ultra Rare">Ultra Rare</label><br>
+                                    <label><input type="checkbox"
+                                                 name="rarityFilter"
+                                                 value="Super Rare">Super Rare</label><br>
+                                    <label><input type="checkbox"
+                                                 name="rarityFilter"
+                                                 value="Rare">Rare</label><br>
+                                    <label><input type="checkbox"
+                                                 name="rarityFilter"
+                                                 value="Common/Short Print">Common/Short Print</label><br>
+                                    <label><input type="checkbox"
+                                                 name="rarityFilter"
+                                                 value="Starfoil Rare">Starfoil Rare</label><br>
+                                    <label><input type="checkbox"
+                                                 name="rarityFilter"
+                                                 value="Mosaic Rare">Mosaic Rare</label><br>
+                              </div>
+                              <!-- Repeat the same structure for other filters -->
                         </div>
-                  </div>
-                  <div class="flex justify-center">
-                        <button id="toggleButton"
-                                class="mb-8 mt-4 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">Switch Layout</button>
-                  </div>
 
-
-
-                  <div id="cardList"
-                       class="gap-4 py-10 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:mx-8">
-
-                        <div id="productCardGrid"
-                             class="block">
-                              <!-- Product cards will be dynamically populated here -->
-                        </div>
-                        <div id="productCardList">
-                              <!-- Mobile list view -->
-                              <!-- Product cards will be dynamically populated here -->
-                        </div>
+                        <div id="cardList"
+                             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
                   </div>
             </main>
             <!--<script type="text/javascript"
