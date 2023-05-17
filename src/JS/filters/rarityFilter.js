@@ -1,6 +1,6 @@
 let cards=[];
 
-const filterButton=document.getElementById("filterButton");
+const filterButton=document.getElementById("filterBtn");
 const filterMenu=document.getElementById("filterMenu");
 
 filterButton.addEventListener("click",() => {
@@ -11,6 +11,8 @@ const handleFilterChange=() => {
   displayFilteredCards(filterCardsByFilters(
     Array.from(document.querySelectorAll('input[name="attributeFilter"]:checked')).map(e => e.value),
     Array.from(document.querySelectorAll('input[name="conditionFilter"]:checked')).map(e => e.value),
+    Array.from(document.querySelectorAll('input[name="gameFilter"]:checked')).map(e => e.value),
+    Array.from(document.querySelectorAll('input[name="rarityFilter"]:checked')).map(e => e.value),
     // Repeat the same pattern for other filters
   ));
 };
@@ -19,7 +21,10 @@ function filterCardsByFilters(attributeFilters,conditionFilters) {
   return cards.filter(card => {
     return (
       (attributeFilters.length===0||attributeFilters.includes(card.attribute))&&
-      (conditionFilters.length===0||conditionFilters.includes(card.cardCondition))
+      (conditionFilters.length===0||conditionFilters.includes(card.cardCondition))&&
+      (rarityFilters.length===0||rarityFilters.includes(card.rarity))&&
+      (gameFilters.length===0||gameFilters.includes(card.game))
+
       // Repeat the same pattern for other filters
     );
   });
@@ -72,7 +77,7 @@ function displayFilteredCards(filteredCards) {
 
 async function fetchCardData() {
   try {
-    const response=await fetch("./src/cardAttributes.json");
+    const response=await fetch("./src/cardAttributes.json","./src/products.json");
     return await response.json();
   } catch(error) {
     console.log("Error fetching card data:",error);
