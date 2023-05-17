@@ -1,5 +1,5 @@
 // Fetch the products data from the local file
-populateProductCard();
+
 
 function populateProductCard() {
   fetch('./src/products.json')
@@ -25,3 +25,4 @@ function populateProductCard() {
       });
     });
 }
+populateProductCard();
