@@ -19,11 +19,9 @@
                   href="https://www.ebay.com/usr/gottasellemall69" />
             <link rel="stylesheet"
                   href="./dist/output.css" />
-            <script type="text/javascript"
-                    src="./src/JS/populateProductCard.js"></script>
       </head>
 
-      <body onload="populateProductCard()">
+      <body>
             <header class="w-full p-2 mx-auto bg-gradient-to-br from-indigo to-indigo via-red border-b-2 border-zinc-400 shadow-lg">
                   <div class="h-auto items-center pt-2 pb-4 text-center font-medium text-white sm:mb-0">
                         <div id="slogo"
@@ -125,30 +123,22 @@
 
 
                   <div id="productCardGrid"
-                       class="hidden gap-4 py-10 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:mx-8">
+                       class="hidden block gap-4 py-10 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:mx-8">
                         <!-- Product cards will be dynamically populated here -->
-
+                        <div id="productCard"></div>
                   </div>
 
                   <div id="productCardList"
-                       class="border-b w-fit border-zinc-200 rounded-lg backdrop text-shadow text-white block p-2">
+                       class="hidden block border-b w-fit border-zinc-200 rounded-lg backdrop text-shadow text-white p-2">
                         <!-- Mobile list view -->
                         <!-- Product cards will be dynamically populated here -->
+                        <div id="productCard"></div>
 
                   </div>
-
-
-
-
-
-
-
-
-
-
             </main>
       </body>
-
+      <script type="text/javascript"
+              src="./src/JS/populateProductCard.js"></script>
       <script type="text/javascript"
               src="./src/JS/toggleView.js"></script>
       <script type="text/javascript"
