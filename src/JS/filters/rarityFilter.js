@@ -1,94 +1,31 @@
-let cards=[];
-
-const filterButton=document.getElementById("filterBtn");
-const filterMenu=document.getElementById("filterMenu");
-
-filterButton.addEventListener("click",() => {
-  filterMenu.classList.toggle("-translate-x-full");
-});
-
-const handleFilterChange=() => {
-  displayFilteredCards(filterCardsByFilters(
-    Array.from(document.querySelectorAll('input[name="attributeFilter"]:checked')).map(e => e.value),
-    Array.from(document.querySelectorAll('input[name="conditionFilter"]:checked')).map(e => e.value),
-    Array.from(document.querySelectorAll('input[name="gameFilter"]:checked')).map(e => e.value),
-    Array.from(document.querySelectorAll('input[name="rarityFilter"]:checked')).map(e => e.value),
-    // Repeat the same pattern for other filters
-  ));
-};
-
-function filterCardsByFilters(attributeFilters,conditionFilters) {
-  return cards.filter(card => {
-    return (
-      (attributeFilters.length===0||attributeFilters.includes(card.attribute))&&
-      (conditionFilters.length===0||conditionFilters.includes(card.cardCondition))&&
-      (rarityFilters.length===0||rarityFilters.includes(card.rarity))&&
-      (gameFilters.length===0||gameFilters.includes(card.game))
-
-      // Repeat the same pattern for other filters
-    );
-  });
-}
-
-function displayFilteredCards(filteredCards) {
+// Function to filter product cards by rarity
+function filterByRarity(rarity) {
   const cardList=document.getElementById("cardList");
+
+  // Clear previous card list
   cardList.innerHTML="";
 
-  filteredCards.forEach(card => {
-    const productCard=document.createElement("div");
-    productCard.classList.add(
-      "border",
-      "border-zinc-50",
-      "backdrop",
-      "rounded-lg",
-      "shadow-lg",
-      "overflow-hidden",
-      "will-change-transform",
-      "hover:transform-gpu",
-      "hover:duration-300",
-      "hover:ease-linear",
-      "hover:-translate-y-1.5",
-      "hover:bg-gradient-to-tr",
-      "hover:bg-transparent",
-      "hover:from-stone-400",
-      "hover:to-neutral-100",
-      "hover:via-neutral-950",
-      "hover:text-shadow",
-      "text-white"
-    );
+  // Filter the product cards by rarity
+  const filteredCards=productCards.filter((card) => card.rarity===rarity);
 
-    productCard.innerHTML=`
-          <a href="${card.viewItemURL}" title="View on eBay" class="w-full h-full">
-            <img src="${card.galleryURL}" alt="${card.title}" class="w-full h-56 object-cover object-top border-b border-b-zinc-50 rounded-t-lg">
-            <div class="p-4">
-              <h3 class="text-xl font-black mb-2">${card.title}</h3>
-              <p class="text-sm italic mb-2">${card.conditionDescription}</p>
-              <div class="flex items-center justify-between pt-5">
-                <p class="font-bold">$${card.currentPrice}</p>
-                <p class="font-bold">S&H: $${card.shippingCost}</p>
-              </div>
-            </div>
-          </a>
-        `;
-
-    cardList.appendChild(productCard);
+  // Populate the filtered cards
+  filteredCards.forEach((card) => {
+    // Create HTML elements for each filtered card (similar to the populateProductCards function)
+    // Append the elements to the card list
   });
 }
 
-async function fetchCardData() {
-  try {
-    const response=await fetch("./src/cardAttributes.json","./src/products.json");
-    return await response.json();
-  } catch(error) {
-    console.log("Error fetching card data:",error);
-    return [];
-  }
-}
+// Event listener for rarity filter checkboxes
+const rarityCheckboxes=document.querySelectorAll('input[name="rarityFilter"]');
+rarityCheckboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change",() => {
+    const selectedRarity=checkbox.value;
 
-async function initialize() {
-  const cardData=await fetchCardData();
-  cards=cardData.cards;
-  displayFilteredCards(cards);
-}
-
-initialize();
+    if(checkbox.checked) {
+      filterByRarity(selectedRarity);
+    } else {
+      // If the checkbox is unchecked, restore the original card list
+      populateProductCards();
+    }
+  });
+});

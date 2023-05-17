@@ -1,62 +1,57 @@
-// Function to fetch and populate the product cards
-function populateProductCard() {
-  return fetch('./src/products.json')
-    .then(response => response.json())
-    .then(products => {
-      const cardList=document.getElementById('cardList');
-
-      // Clear the previous product cards
-      cardList.innerHTML='';
-
-      // Loop through the products and create a card for each one
-      products.forEach(product => {
-        const productCard=document.createElement('div');
-        productCard.classList.add(
-          'border',
-          'border-zinc-50',
-          'backdrop',
-          'rounded-lg',
-          'shadow-lg',
-          'overflow-hidden',
-          'will-change-transform',
-          'hover:transform-gpu',
-          'hover:duration-300',
-          'hover:ease-linear',
-          'hover:-translate-y-1.5',
-          'hover:bg-gradient-to-tr',
-          'hover:bg-transparent',
-          'hover:from-stone-400',
-          'hover:to-neutral-100',
-          'hover:via-neutral-950',
-          'hover:text-shadow',
-          'text-white'
-        );
-        productCard.innerHTML=`
-          <a href="${product.viewItemURL}" title="View on eBay" class="w-full h-full">
-            <img src="${product.galleryURL}" alt="${product.title}" class="w-full h-56 object-cover object-top border-b border-b-zinc-50 rounded-t-lg">
-            <div class="p-4">
-              <h3 class="text-xl font-black mb-2">${product.title}</h3>
-              <p class="text-sm italic mb-2">${product.conditionDescription}</p>
-                  <div class="flex items-center justify-between pt-5">
-            <p class="font-bold">$${product.currentPrice}</p>
-            <p class="font-bold">S&H: $${product.shippingCost}</p>
-          </div>
-        </div>
-      </a>
-    `;
-
-        cardList.appendChild(productCard);
+// Fetch the products and card attributes data
+fetch('products.json')
+  .then(response => response.json())
+  .then(products => {
+    fetch('cardAttributes.json')
+      .then(response => response.json())
+      .then(cardAttributes => {
+        populateProductCards(products,cardAttributes);
       });
-    });
+  })
+  .catch(error => console.log(error));
+
+// Function to populate the product cards
+function populateProductCards() {
+  const cardList=document.getElementById("cardList");
+
+  // Clear previous card list
+  cardList.innerHTML="";
+
+  // Loop through the product cards and create HTML elements
+  productCards.forEach((card) => {
+    const cardItem=document.createElement("div");
+    cardItem.classList.add("bg-white","border","rounded","p-4");
+
+    const cardImage=document.createElement("img");
+    cardImage.setAttribute("src",card.imageUrl);
+    cardImage.setAttribute("alt",card.name);
+    cardImage.classList.add("mx-auto","h-40","w-40","object-cover");
+
+    const cardName=document.createElement("h2");
+    cardName.classList.add("text-xl","font-bold","mt-2");
+    cardName.textContent=card.name;
+
+    const cardDetails=document.createElement("div");
+    cardDetails.classList.add("mt-2");
+
+    const game=document.createElement("p");
+    game.textContent=`Game: ${card.game}`;
+
+    const attribute=document.createElement("p");
+    attribute.textContent=`Attribute: ${card.attribute}`;
+
+    const condition=document.createElement("p");
+    condition.textContent=`Condition: ${card.condition}`;
+
+    const rarity=document.createElement("p");
+    rarity.textContent=`Rarity: ${card.rarity}`;
+
+    // Append elements to the card item
+    cardDetails.append(game,attribute,condition,rarity);
+    cardItem.append(cardImage,cardName,cardDetails);
+    cardList.appendChild(cardItem);
+  });
 }
 
-// Call the function to populate the product cards
-populateProductCard();
-
-const filterBtn=document.getElementById('filterBtn');
-const filterMenu=document.getElementById('filterMenu');
-
-// Toggle the visibility of the filter menu when the filter button is clicked
-filterBtn.addEventListener('click',() => {
-  filterMenu.classList.toggle('hidden');
-});
+// Call the function to populate the initial card list
+populateProductCards();
