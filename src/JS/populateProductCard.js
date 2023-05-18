@@ -15,7 +15,7 @@ function createProductGrid() {
           <div id="productCard">
             <a href="${product.viewItemURL}" target="_blank" title="View on eBay">
               <div class="py-2">
-                <div class="flex items-center">
+                <div class="flex flex-wrap items-center">
                   <img src="${product.galleryURL}" alt="${product.title}" class="w-24 object-scale-down rounded-lg">
                   <div class="ml-4">
                     <h3 class="text-lg font-semibold">${product.title}</h3>
