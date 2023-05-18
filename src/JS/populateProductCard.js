@@ -11,9 +11,8 @@ function createProductGrid() {
         // Create the product card element
         const productCard=document.createElement("div");
         productCard.classList.add("w-full","md:w-1/2","lg:w-1/4","p-4");
-        productCard.innerHTML=`
-          <div id="productCard">
-            <a href="${product.viewItemURL}" target="_blank" title="View on eBay">
+        productCard.innerHTML=
+          `<a id="productCard" href="${product.viewItemURL}" target="_blank" title="View on eBay">
               <div class="py-2">
                 <div class="flex flex-wrap items-center">
                   <img src="${product.galleryURL}" alt="${product.title}" class="w-24 object-scale-down rounded-lg">
@@ -25,9 +24,7 @@ function createProductGrid() {
                   </div>
                 </div>
               </div>
-            </a>
-          </div>
-        `;
+            </a>`;
 
         // Append the product card to the grid container
         gridContainer.appendChild(productCard);
