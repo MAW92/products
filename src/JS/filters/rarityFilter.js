@@ -1,76 +1,57 @@
-function fetchFilterOptions() {
-  return fetch('./src/cardAttributes.json')
-    .then(response => response.json())
-    .then(data => {
-      const filterOptions={
-        games: [],
-        rarities: [],
-        features: [],
-        conditions: [],
-        attributes: []
-      };
+const fetchFilterOptions=async () => {
+  try {
+    const response=await fetch('./src/cardAttributes.json');
+    const data=await response.json();
 
-      // Extract unique filter options from the JSON data
-      data.forEach(card => {
-        if(!filterOptions.games.includes(card.Game)) {
-          filterOptions.games.push(card.Game);
-        }
-        if(!filterOptions.rarities.includes(card.Rarity)) {
-          filterOptions.rarities.push(card.Rarity);
-        }
-        if(!filterOptions.features.includes(card.Features)) {
-          filterOptions.features.push(card.Features);
-        }
-        if(!filterOptions.conditions.includes(card.cardCondition)) {
-          filterOptions.conditions.push(card.cardCondition);
-        }
-        if(card.Attribute&&!filterOptions.attributes.includes(card.Attribute)) {
-          filterOptions.attributes.push(card.Attribute);
-        }
-      });
+    const gameFilterSelect=document.getElementById('gameFilter');
+    const rarityFilterSelect=document.getElementById('rarityFilter');
+    const featuresFilterSelect=document.getElementById('featuresFilter');
+    const conditionFilterSelect=document.getElementById('conditionFilter');
+    const attributeFilterSelect=document.getElementById('attributeFilter');
 
-      // Populate the filter options in the HTML select elements
-      const gameFilterSelect=document.getElementById('gameFilter');
-      filterOptions.games.forEach(game => {
-        const option=document.createElement('option');
-        option.value=game;
-        option.textContent=game;
-        gameFilterSelect.appendChild(option);
-      });
+    // Clear existing options
+    gameFilterSelect.innerHTML='';
+    rarityFilterSelect.innerHTML='';
+    featuresFilterSelect.innerHTML='';
+    conditionFilterSelect.innerHTML='';
+    attributeFilterSelect.innerHTML='';
 
-      const rarityFilterSelect=document.getElementById('rarityFilter');
-      filterOptions.rarities.forEach(rarity => {
-        const option=document.createElement('option');
-        option.value=rarity;
-        option.textContent=rarity;
-        rarityFilterSelect.appendChild(option);
-      });
+    // Populate options
+    data.forEach((card) => {
+      // Populate game filter options
+      const gameOption=document.createElement('option');
+      gameOption.value=card.Game.toLowerCase().replace(/\s/g,'');
+      gameOption.textContent=card.Game;
+      gameFilterSelect.appendChild(gameOption);
 
-      const featuresFilterSelect=document.getElementById('featuresFilter');
-      filterOptions.features.forEach(feature => {
-        const option=document.createElement('option');
-        option.value=feature;
-        option.textContent=feature;
-        featuresFilterSelect.appendChild(option);
-      });
+      // Populate rarity filter options
+      const rarityOption=document.createElement('option');
+      rarityOption.value=card.Rarity.toLowerCase().replace(/\s/g,'');
+      rarityOption.textContent=card.Rarity;
+      rarityFilterSelect.appendChild(rarityOption);
 
-      const conditionFilterSelect=document.getElementById('conditionFilter');
-      filterOptions.conditions.forEach(condition => {
-        const option=document.createElement('option');
-        option.value=condition;
-        option.textContent=condition;
-        conditionFilterSelect.appendChild(option);
-      });
+      // Populate features filter options
+      const featuresOption=document.createElement('option');
+      featuresOption.value=card.Features.toLowerCase().replace(/\s/g,'');
+      featuresOption.textContent=card.Features;
+      featuresFilterSelect.appendChild(featuresOption);
 
-      const attributeFilterSelect=document.getElementById('attributeFilter');
-      filterOptions.attributes.forEach(attribute => {
-        const option=document.createElement('option');
-        option.value=attribute;
-        option.textContent=attribute;
-        attributeFilterSelect.appendChild(option);
-      });
-    })
-    .catch(error => {
-      console.error('Error fetching filter options:',error);
+      // Populate condition filter options
+      const conditionOption=document.createElement('option');
+      conditionOption.value=card.cardCondition.toLowerCase().replace(/\s/g,'');
+      conditionOption.textContent=card.cardCondition;
+      conditionFilterSelect.appendChild(conditionOption);
+
+      // Populate attribute filter options
+      const attributeOption=document.createElement('option');
+      attributeOption.value=card.Attribute? card.Attribute.toLowerCase().replace(/\s/g,''):'all';
+      attributeOption.textContent=card.Attribute||'All Attributes';
+      attributeFilterSelect.appendChild(attributeOption);
     });
-}
+  } catch(error) {
+    console.error('Error fetching filter options:',error);
+  }
+};
+
+// Call the fetchFilterOptions function to fetch and populate the filter options
+fetchFilterOptions();
