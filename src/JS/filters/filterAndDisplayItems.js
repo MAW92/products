@@ -1,7 +1,7 @@
 // Function to fetch card data from cardAttributes.json
 async function fetchCardData() {
   try {
-    const response=await fetch('cardAttributes.json');
+    const response=await fetch('./src/cardAttributes.json');
     const data=await response.json();
     return data;
   } catch(error) {
