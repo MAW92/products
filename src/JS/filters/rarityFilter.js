@@ -8,11 +8,7 @@ async function fetchCardAttributes() {
     console.error('Error fetching card attributes:',error);
     return [];
   }
-}
-const rarityFilter=document.getElementById('rarityFilter');
-
-// Get the unique rarities from the data
-const rarities=[...new Set(cards.map(card => card.rarity))];
+} const rarityFilter=document.getElementById('rarityFilter');
 
 // Populate the filter menu
 rarities.forEach(rarity => {
