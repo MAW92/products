@@ -1,69 +1,59 @@
-// Function to populate the rarity filters
-function populateRarityFilters(cardAttributes) {
-  const rarityFilters=document.getElementById('rarityFilters');
-
-  // Clear previous filters
-  rarityFilters.innerHTML='';
-
-  // Get unique rarities from card attributes
-  const rarities=[...new Set(cardAttributes.map((card) => card.rarity))];
-
-  // Create checkboxes for each rarity
-  rarities.forEach((rarity) => {
-    const label=document.createElement('label');
-    label.classList.add('block','my-1');
-
-    const checkbox=document.createElement('input');
-    checkbox.setAttribute('type','checkbox');
-    checkbox.classList.add('mr-2');
-    checkbox.addEventListener('change',() => {
-      filterByRarity(rarity,checkbox.checked);
-    });
-
-    const labelText=document.createTextNode(rarity);
-    label.append(checkbox,labelText);
-    rarityFilters.appendChild(label);
-  });
+// Fetch the card attributes from 'cardAttributes.json'
+async function fetchCardAttributes() {
+  try {
+    const response=await fetch('./src/cardAttributes.json');
+    const data=await response.json();
+    return data;
+  } catch(error) {
+    console.error('Error fetching card attributes:',error);
+    return [];
+  }
 }
+const rarityFilter=document.getElementById('rarityFilter');
 
-// Function to filter the product cards by rarity
-function filterByRarity(rarity,checked) {
-  const cardList=document.getElementById('cardList');
-  const cards=cardList.querySelectorAll('.bg-white');
+// Get the unique rarities from the data
+const rarities=[...new Set(cards.map(card => card.rarity))];
 
-  cards.forEach((card) => {
-    const cardRarity=card.querySelector('p:nth-child(4)').textContent.split(': ')[1];
-    if(cardRarity===rarity&&checked) {
-      card.style.display='block';
-    } else if(cardRarity===rarity&&!checked) {
-      card.style.display='none';
-    }
-  });
-}
-
-// Entry point
-document.addEventListener('DOMContentLoaded',async () => {
-  // Fetch the product cards and card attributes
-  const productCards=await fetchProductCards();
-  const cardAttributes=await fetchCardAttributes();
-
-  // Populate the product cards and rarity filters
-  populateProductCards(productCards);
-  populateRarityFilters(cardAttributes);
-
-  // Add event listener to the filter button
-  const filterBtn=document.getElementById('filterBtn');
-  filterBtn.addEventListener('click',toggleMenu);
+// Populate the filter menu
+rarities.forEach(rarity => {
+  const option=document.createElement('option');
+  option.value=rarity;
+  option.textContent=rarity;
+  rarityFilter.appendChild(option);
 });
 
-// Function to toggle the filter menu
-function toggleMenu() {
-  const filterMenu=document.getElementById('filterMenu');
-  const menuIcon=document.getElementById('menu-icon');
-  const closeIcon=document.getElementById('close-icon');
+// Event listener for the filter menu
+rarityFilter.addEventListener('change',filterCardsByRarity);
 
-  filterMenu.classList.toggle('translate-x-0');
-  filterMenu.classList.toggle('-translate-x-full');
-  menuIcon.classList.toggle('hidden');
-  closeIcon.classList.toggle('hidden');
+// Function to filter and display the cards based on rarity
+function filterCardsByRarity() {
+  const selectedRarity=rarityFilter.value;
+  const cardList=document.getElementById('cardList');
+
+  // Clear the previous card list
+  cardList.innerHTML='';
+
+  // Filter the cards based on the selected rarity
+  const filteredCards=selectedRarity==='all'? cards:cards.filter(card => card.rarity===selectedRarity);
+
+  // Display the filtered cards
+  filteredCards.forEach(card => {
+    const cardElement=document.createElement('div');
+    cardElement.textContent=card.cardName;
+    cardList.appendChild(cardElement);
+
+  });
 }
+const filterBtn=document.getElementById('filterBtn');
+const filterMenu=document.getElementById('filterMenu');
+
+// Toggle the visibility of the filter menu when the filter button is clicked
+filterBtn.addEventListener('click',() => {
+  filterMenu.classList.toggle('hidden');
+});
+function openFilterMenu() {
+  filterBtn.addEventListener('click',() => {
+    filterMenu.classList.remove('-translate-x-full');
+  });
+}
+openFilterMenu();
