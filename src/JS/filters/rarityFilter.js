@@ -15,7 +15,7 @@ const rarityFilter=document.getElementById('rarityFilter');
 
 // Populate the filter menu
 fetchCardAttributes()
-  .then(data => {
+  .then((data) => {
     const rarities=data.rarities;
 
     rarities.forEach(rarity => {
@@ -25,9 +25,6 @@ fetchCardAttributes()
       rarityFilter.appendChild(option);
     });
   })
-  .catch(error => {
-    console.error('Error fetching card attributes:',error);
-  });
 
 // Event listener for the filter menu
 rarityFilter.addEventListener('change',filterCardsByRarity);
