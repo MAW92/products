@@ -8,15 +8,26 @@ async function fetchCardAttributes() {
     console.error('Error fetching card attributes:',error);
     return [];
   }
-} const rarityFilter=document.getElementById('rarityFilter');
+}
+
+// Get the rarity filter element
+const rarityFilter=document.getElementById('rarityFilter');
 
 // Populate the filter menu
-rarities.forEach(rarity => {
-  const option=document.createElement('option');
-  option.value=rarity;
-  option.textContent=rarity;
-  rarityFilter.appendChild(option);
-});
+fetchCardAttributes()
+  .then(data => {
+    const rarities=data.rarities;
+
+    rarities.forEach(rarity => {
+      const option=document.createElement('option');
+      option.value=rarity;
+      option.textContent=rarity;
+      rarityFilter.appendChild(option);
+    });
+  })
+  .catch(error => {
+    console.error('Error fetching card attributes:',error);
+  });
 
 // Event listener for the filter menu
 rarityFilter.addEventListener('change',filterCardsByRarity);
@@ -37,9 +48,10 @@ function filterCardsByRarity() {
     const cardElement=document.createElement('div');
     cardElement.textContent=card.cardName;
     cardList.appendChild(cardElement);
-
   });
 }
+
+// Get the filter button and filter menu elements
 const filterBtn=document.getElementById('filterBtn');
 const filterMenu=document.getElementById('filterMenu');
 
@@ -47,9 +59,13 @@ const filterMenu=document.getElementById('filterMenu');
 filterBtn.addEventListener('click',() => {
   filterMenu.classList.toggle('hidden');
 });
+
+// Function to open the filter menu
 function openFilterMenu() {
   filterBtn.addEventListener('click',() => {
     filterMenu.classList.remove('-translate-x-full');
   });
 }
+
+// Call the openFilterMenu function
 openFilterMenu();
