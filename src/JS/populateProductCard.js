@@ -1,18 +1,27 @@
 function createProductGrid() {
   const gridContainer=document.getElementById("gridContainer");
 
-  fetch("./src/products.json")
+  // Fetch the first JSON file
+  fetch("./src/CardData/cardData.json")
     .then(response => response.json())
-    .then(products => {
-      // Loop through the products array
-      for(let i=0;i<products.length;i++) {
-        const product=products[i];
+    .then(cardData => {
+      // Fetch the second JSON file
+      fetch("./src/CardData/listingData.json")
+        .then(response => response.json())
+        .then(listingData => {
+          // Combine or handle the data from both files as needed
 
-        // Create the product card element
-        const productCard=document.createElement("div");
-        productCard.classList.add("w-full","md:w-1/2","lg:w-1/4","p-4");
-        productCard.innerHTML=
-          `<a id="productCard" href="${product.viewItemURL}" target="_blank" title="View on eBay">
+          const products=[...cardData,...listingData]; // Combine the products from both files
+
+          // Loop through the combined products array
+          for(let i=0;i<products.length;i++) {
+            const product=products[i];
+
+            // Create the product card element
+            const productCard=document.createElement("div");
+            productCard.classList.add("w-full","md:w-1/2","lg:w-1/4","p-4");
+            productCard.innerHTML=
+              `<a id="productCard" href="${product.viewItemURL}" target="_blank" title="View on eBay">
               <div class="py-2">
                 <div class="flex flex-wrap items-center">
                   <img src="${product.galleryURL}" alt="${product.title}" class="w-24 object-scale-down rounded-lg">
@@ -26,13 +35,19 @@ function createProductGrid() {
               </div>
             </a>`;
 
-        // Append the product card to the grid container
-        gridContainer.appendChild(productCard);
-      }
+            // Append the product card to the grid container
+            gridContainer.appendChild(productCard);
+          }
+
+        })
+        .catch(error => {
+          console.error("Error fetching second JSON file:",error);
+        });
     })
     .catch(error => {
-      console.error("Error fetching product data:",error);
+      console.error("Error fetching first JSON file:",error);
     });
+
 }
 
 // Call the function to create the product grid

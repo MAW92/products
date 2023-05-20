@@ -1,6 +1,6 @@
 const fetchFilterOptions=async () => {
   try {
-    const response=await fetch('./src/cardAttributes.json');
+    const response=await fetch('./src/CardData/cardData.json');
     const data=await response.json();
 
     const gameFilterSelect=document.getElementById('gameFilter');
@@ -19,42 +19,42 @@ const fetchFilterOptions=async () => {
     // Populate options
     data.forEach((card) => {
       // Populate game filter options
-      if(card.game) {
+      if(card.Game) {
         const gameOption=document.createElement('option');
-        gameOption.value=card.game.toLowerCase().replace(/\s/g,'');
-        gameOption.textContent=card.game;
+        gameOption.value=card.Game.toLowerCase().replace(/\s/g,'');
+        gameOption.textContent=card.Game;
         gameFilterSelect.appendChild(gameOption);
       }
 
       // Populate rarity filter options
-      if(card.rarity) {
+      if(card.Rarity) {
         const rarityOption=document.createElement('option');
-        rarityOption.value=card.rarity.toLowerCase().replace(/\s/g,'');
-        rarityOption.textContent=card.rarity;
+        rarityOption.value=card.Rarity.toLowerCase().replace(/\s/g,'');
+        rarityOption.textContent=card.Rarity;
         rarityFilterSelect.appendChild(rarityOption);
       }
 
       // Populate features filter options
-      if(card.features) {
+      if(card.Features) {
         const featuresOption=document.createElement('option');
-        featuresOption.value=card.features.toLowerCase().replace(/\s/g,'');
-        featuresOption.textContent=card.features;
+        featuresOption.value=card.Features.toLowerCase().replace(/\s/g,'');
+        featuresOption.textContent=card.Features;
         featuresFilterSelect.appendChild(featuresOption);
       }
 
       // Populate condition filter options
-      if(card.cardCondition) {
+      if(card.CardCondition) {
         const conditionOption=document.createElement('option');
-        conditionOption.value=card.cardCondition.toLowerCase().replace(/\s/g,'');
-        conditionOption.textContent=card.cardCondition;
+        conditionOption.value=card.CardCondition.toLowerCase().replace(/\s/g,'');
+        conditionOption.textContent=card.CardCondition;
         conditionFilterSelect.appendChild(conditionOption);
       }
 
       // Populate attribute filter options
-      if(card.attribute) {
+      if(card.Attribute) {
         const attributeOption=document.createElement('option');
-        attributeOption.value=card.attribute.toLowerCase().replace(/\s/g,'');
-        attributeOption.textContent=card.attribute;
+        attributeOption.value=card.Attribute.toLowerCase().replace(/\s/g,'');
+        attributeOption.textContent=card.Attribute;
         attributeFilterSelect.appendChild(attributeOption);
       }
     });
@@ -62,8 +62,3 @@ const fetchFilterOptions=async () => {
     console.error('Error fetching filter options:',error);
   }
 };
-
-// Call the fetchFilterOptions function to fetch and populate the filter options
-fetchFilterOptions();
-
-
