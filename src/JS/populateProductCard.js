@@ -19,7 +19,7 @@ function createProductGrid() {
 
             // Create the product card element
             const productCard=document.createElement("div");
-            productCard.classList.add("w-full","md:w-1/2","lg:w-1/4","p-4");
+            productCard.classList.add("w-fit","mx-auto");
             productCard.innerHTML=
               `<a id="productCard" href="${product.viewItemURL}" target="_blank" title="View on eBay">
               <div class="py-2">
@@ -29,7 +29,6 @@ function createProductGrid() {
                     <h3 class="text-lg font-semibold">${product.title}</h3>
                     <p class="mt-2">$${product.currentPrice}</p>
                     <p class="mb-5">Shipping: $${product.shippingCost}</p>
-                    <p class="max-w-prose text-sm text-shadow italic">${product.conditionDescription}</p>
                   </div>
                 </div>
               </div>
