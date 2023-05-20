@@ -1,7 +1,7 @@
 // Function to fetch card data from cardAttributes.json
 async function fetchCardData() {
   try {
-    const response=await fetch('./src/cardAttributes.json');
+    const response=await fetch('./src/CardData/cardData.json');
     const data=await response.json();
     return data;
   } catch(error) {
@@ -21,11 +21,11 @@ function filterAndDisplayItems() {
   // Filter the card items based on the selected filters
   const filteredItems=cardItems.filter(item => {
     return (
-      (gameFilter==='all'||item.game===gameFilter)&&
-      (rarityFilter==='all'||item.rarity.toLowerCase()===rarityFilter.toLowerCase())&&
-      (featuresFilter==='all'||item.features.toLowerCase()===featuresFilter.toLowerCase())&&
-      (conditionFilter==='all'||item.cardCondition.toLowerCase()===conditionFilter.toLowerCase())&&
-      (attributeFilter==='all'||item.attribute.toLowerCase()===attributeFilter.toLowerCase())
+      (gameFilter==='all'||item.Game.toLowerCase().replace(/\s/g,'')===gameFilter.toLowerCase().replace(/\s/g,''))&&
+      (rarityFilter==='all'||item.Rarity.toLowerCase().replace(/\s/g,'')===rarityFilter.toLowerCase().replace(/\s/g,''))&&
+      (featuresFilter==='all'||item.Features.toLowerCase().replace(/\s/g,'')===featuresFilter.toLowerCase().replace(/\s/g,''))&&
+      (conditionFilter==='all'||item.CardCondition.toLowerCase().replace(/\s/g,'')===conditionFilter.toLowerCase().replace(/\s/g,''))&&
+      (attributeFilter==='all'||item.Attribute.toLowerCase().replace(/\s/g,'')===attributeFilter.toLowerCase().replace(/\s/g,''))
     );
   });
 
@@ -36,7 +36,7 @@ function filterAndDisplayItems() {
   if(filteredItems.length>0) {
     filteredItems.forEach(item => {
       const cardElement=document.createElement('div');
-      cardElement.textContent=item.title;
+      cardElement.textContent=item.Title;
       resultContainer.appendChild(cardElement);
     });
   } else {
