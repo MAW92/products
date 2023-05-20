@@ -52,9 +52,8 @@ saveButton.addEventListener('click',filterAndDisplayItems);
 
 // Fetch the card data and then initialize the filtering
 fetchCardData()
-  .then(data => {
+  .then(_data => {
     // Replace the cardItems array with the fetched data
-    const cardItems=data;
 
     // Initialize the filtering on page load
     filterAndDisplayItems();
