@@ -1,31 +1,36 @@
-function updateCardData() {
-  var cardGame=cardData.Game;
-  var cardSet=cardData.Set;
-  var cardRarity=cardData.Rarity;
-  var cardTitle=cardData.Title;
-  var cardPrice=cardData.Price;
-  var cardAttribute=cardData.Attribute;
-  var cardNumber=cardData.Number;
-  var monsterType=cardData.monsterType;
-  var cardType=cardData.cardType;
-  var cardPrinting=cardData.Printing;
-  var cardLanguage=cardData.Language;
+function filterAndDisplayItems() {
+  const gameFilter=document.getElementById("game").value.toLowerCase().replace(/\s/g,'');
+  const rarityFilter=document.getElementById("rarity").value.toLowerCase().replace(/\s/g,'');
+  const printingFilter=document.getElementById("printing").value.toLowerCase().replace(/\s/g,'');
+  const conditionFilter=document.getElementById("condition").value.toLowerCase().replace(/\s/g,'');
+  const attributeFilter=document.getElementById("attribute").value.toLowerCase().replace(/\s/g,'');
 
-  document.getElementById('game').innerText=cardGame;
-  document.getElementById('set').innerText=cardSet;
-  document.getElementById('rarity').innerText=cardRarity;
-  document.getElementById('title').innerText=cardTitle;
-  document.getElementById('price').innerText=cardPrice;
-  document.getElementById('attribute').innerText=cardAttribute;
-  document.getElementById('number').innerText=cardNumber;
-  document.getElementById('mtype').innerText=monsterType;
-  document.getElementById('ctype').innerText=cardType;
-  document.getElementById('printing').innerText=cardPrinting;
-  document.getElementById('language').innerText=cardLanguage;
+  const products=document.querySelectorAll("#gridContainer .product-card");
+
+  products.forEach((product) => {
+    const game=product.dataset.game.toLowerCase().replace(/\s/g,'');
+    const rarity=product.dataset.rarity.toLowerCase().replace(/\s/g,'');
+    const printing=product.dataset.printing.toLowerCase().replace(/\s/g,'');
+    const condition=product.dataset.condition.toLowerCase().replace(/\s/g,'');
+    const attribute=product.dataset.attribute.toLowerCase().replace(/\s/g,'');
+
+    const gameMatch=gameFilter===""||game===gameFilter;
+    const rarityMatch=rarityFilter===""||rarity===rarityFilter;
+    const printingMatch=printingFilter===""||printing===printingFilter;
+    const conditionMatch=conditionFilter===""||condition===conditionFilter;
+    const attributeMatch=attributeFilter===""||attribute===attributeFilter;
+
+    if(gameMatch&&rarityMatch&&printingMatch&&conditionMatch&&attributeMatch) {
+      product.style.display="block";
+    } else {
+      product.style.display="none";
+    }
+  });
 }
 
-// Toggle menu visibility when "Filters" button is pressed
-document.getElementById('filtersButton').addEventListener('click',function () {
-  var menu=document.getElementById('menu');
-  menu.classList.toggle('menu-visible');
-});
+// Trigger the filterAndDisplayItems function when filter options change
+document.getElementById("game").addEventListener("change",filterAndDisplayItems);
+document.getElementById("rarity").addEventListener("change",filterAndDisplayItems);
+document.getElementById("printing").addEventListener("change",filterAndDisplayItems);
+document.getElementById("condition").addEventListener("change",filterAndDisplayItems);
+document.getElementById("attribute").addEventListener("change",filterAndDisplayItems);

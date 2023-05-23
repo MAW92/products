@@ -1,51 +1,34 @@
-function createProductGrid() {
+function populateProductCard(data) {
   const gridContainer=document.getElementById("gridContainer");
 
-  // Fetch the first JSON file
-  fetch("./src/CardData/cardData.json")
-    .then(response => response.json())
-    .then(cardData => {
-      // Fetch the second JSON file
-      fetch("./src/CardData/listingData.json")
-        .then(response => response.json())
-        .then(listingData => {
-          // Combine or handle the data from both files as needed
-          const products=[...cardData,...listingData]; // Combine the products from both files
+  // Clear existing product cards
+  gridContainer.innerHTML="";
 
-          // Loop through the combined products array
-          for(let i=0;i<products.length;i++) {
-            const product=products[i];
+  // Populate product cards
+  data.forEach((product) => {
+    const card=document.createElement("div");
+    card.classList.add("product-card");
+    card.setAttribute("data-game",product.game);
+    card.setAttribute("data-rarity",product.rarity);
+    card.setAttribute("data-printing",product.printing);
+    card.setAttribute("data-condition",product.condition);
+    card.setAttribute("data-attribute",product.attribute);
 
-            // Create the product card element
-            const productCard=document.createElement("div");
-            productCard.classList.add("w-fit","mx-auto");
-            productCard.innerHTML=`
-          <a href="${product.viewItemURL}" target="_blank" title="View on eBay">
-            <div class="py-2">
-              <div class="flex flex-wrap items-center">
-                <img src="${product.galleryURL}" alt="${product.Title}" class="w-24 object-scale-down rounded-lg">
-                <div class="ml-4">
-                  <h3 class="text-lg font-semibold">${product.Title}</h3>
-                  <p class="mt-2">$${product.Price}</p>
-                  <p class="mb-5">Shipping: $${product.Shipping}</p>
-                </div>
-              </div>
-            </div>
-          </a>`;
+    const image=document.createElement("img");
+    image.classList.add("product-image");
+    image.src=product.image;
+    card.appendChild(image);
 
-            // Append the product card to the grid container
-            gridContainer.appendChild(productCard);
-          }
+    const title=document.createElement("div");
+    title.classList.add("product-title");
+    title.textContent=product.title;
+    card.appendChild(title);
 
-        })
-        .catch(error => {
-          console.error("Error fetching second JSON file:",error);
-        });
-    })
-    .catch(error => {
-      console.error("Error fetching first JSON file:",error);
-    });
+    const price=document.createElement("div");
+    price.classList.add("product-price");
+    price.textContent=product.price;
+    card.appendChild(price);
+
+    gridContainer.appendChild(card);
+  });
 }
-
-// Call the function to create the product grid
-createProductGrid();
