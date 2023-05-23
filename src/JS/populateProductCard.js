@@ -10,7 +10,6 @@ function createProductGrid() {
         .then(response => response.json())
         .then(listingData => {
           // Combine or handle the data from both files as needed
-
           const products=[...cardData,...listingData]; // Combine the products from both files
 
           // Loop through the combined products array
@@ -20,19 +19,19 @@ function createProductGrid() {
             // Create the product card element
             const productCard=document.createElement("div");
             productCard.classList.add("w-fit","mx-auto");
-            productCard.innerHTML=
-              `<a id="productCard" href="${products.viewItemURL}" target="_blank" title="View on eBay">
-              <div class="py-2">
-                <div class="flex flex-wrap items-center">
-                  <img src="${products.galleryURL}" alt="${products.title}" class="w-24 object-scale-down rounded-lg">
-                  <div class="ml-4">
-                    <h3 class="text-lg font-semibold">${products.title}</h3>
-                    <p class="mt-2">$${products.currentPrice}</p>
-                    <p class="mb-5">Shipping: $${products.shippingCost}</p>
-                  </div>
+            productCard.innerHTML=`
+          <a href="${product.viewItemURL}" target="_blank" title="View on eBay">
+            <div class="py-2">
+              <div class="flex flex-wrap items-center">
+                <img src="${product.galleryURL}" alt="${product.title}" class="w-24 object-scale-down rounded-lg">
+                <div class="ml-4">
+                  <h3 class="text-lg font-semibold">${product.title}</h3>
+                  <p class="mt-2">$${product.currentPrice}</p>
+                  <p class="mb-5">Shipping: $${product.shippingCost}</p>
                 </div>
               </div>
-            </a>`;
+            </div>
+          </a>`;
 
             // Append the product card to the grid container
             gridContainer.appendChild(productCard);
@@ -46,7 +45,6 @@ function createProductGrid() {
     .catch(error => {
       console.error("Error fetching first JSON file:",error);
     });
-
 }
 
 // Call the function to create the product grid

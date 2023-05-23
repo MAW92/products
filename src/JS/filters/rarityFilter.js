@@ -2,7 +2,6 @@ const fetchFilterOptions=async () => {
   try {
     const response=await fetch('./src/CardData/cardData.json');
     const data=await response.json();
-
     const gameFilterSelect=document.getElementById('game');
     const rarityFilterSelect=document.getElementById('rarity');
     const printingFilterSelect=document.getElementById('printing');
@@ -19,42 +18,42 @@ const fetchFilterOptions=async () => {
     // Populate options
     data.forEach((card) => {
       // Populate game filter options
-      if(cardData.Game) {
+      if(card.Game) {
         const gameOption=document.createElement('option');
-        gameOption.value=cardData.Game.toLowerCase().replace(/\s/g,'');
-        gameOption.textContent=cardData.Game;
+        gameOption.value=card.Game.toLowerCase().replace(/\s/g,'');
+        gameOption.textContent=card.Game;
         gameFilterSelect.appendChild(gameOption);
       }
 
       // Populate rarity filter options
-      if(cardData.Rarity) {
+      if(card.Rarity) {
         const rarityOption=document.createElement('option');
-        rarityOption.value=cardData.Rarity.toLowerCase().replace(/\s/g,'');
-        rarityOption.textContent=cardData.Rarity;
+        rarityOption.value=card.Rarity.toLowerCase().replace(/\s/g,'');
+        rarityOption.textContent=card.Rarity;
         rarityFilterSelect.appendChild(rarityOption);
       }
 
       // Populate features filter options
-      if(cardData.Printing) {
+      if(card.Printing) {
         const printingOption=document.createElement('option');
         printingOption.value=card.Printing.toLowerCase().replace(/\s/g,'');
-        printingOption.textContent=cardData.Printing;
+        printingOption.textContent=card.Printing;
         printingFilterSelect.appendChild(printingOption);
       }
 
       // Populate condition filter options
-      if(cardData.Condition) {
+      if(card.Condition) {
         const conditionOption=document.createElement('option');
-        conditionOption.value=cardData.CardCondition.toLowerCase().replace(/\s/g,'');
-        conditionOption.textContent=cardData.Condition;
+        conditionOption.value=card.Condition.toLowerCase().replace(/\s/g,'');
+        conditionOption.textContent=card.Condition;
         conditionFilterSelect.appendChild(conditionOption);
       }
 
       // Populate attribute filter options
-      if(cardData.Attribute) {
+      if(card.Attribute) {
         const attributeOption=document.createElement('option');
-        attributeOption.value=cardData.Attribute.toLowerCase().replace(/\s/g,'');
-        attributeOption.textContent=cardData.Attribute;
+        attributeOption.value=card.Attribute.toLowerCase().replace(/\s/g,'');
+        attributeOption.textContent=card.Attribute;
         attributeFilterSelect.appendChild(attributeOption);
       }
     });
