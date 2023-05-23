@@ -1,29 +1,15 @@
-var cardData={};
-
-function fetchCardData() {
-  fetch('./src/CardData/cardData.json')
-    .then(response => response.json())
-    .then(data => {
-      cardData=data;
-      updateCardData();
-    })
-    .catch(error => {
-      console.log('Error fetching card data:',error);
-    });
-}
-
 function updateCardData() {
-  var cardGame=data.Game;
-  var cardSet=data.Set;
-  var cardRarity=data.Rarity;
-  var cardTitle=data.Title;
-  var cardPrice=data.Price;
-  var cardAttribute=data.Attribute;
-  var cardNumber=data.Number;
-  var monsterType=data.monsterType;
-  var cardType=data.cardType;
-  var cardPrinting=data.Printing;
-  var cardLanguage=data.Language;
+  var cardGame=cardData.Game;
+  var cardSet=cardData.Set;
+  var cardRarity=cardData.Rarity;
+  var cardTitle=cardData.Title;
+  var cardPrice=cardData.Price;
+  var cardAttribute=cardData.Attribute;
+  var cardNumber=cardData.Number;
+  var monsterType=cardData.monsterType;
+  var cardType=cardData.cardType;
+  var cardPrinting=cardData.Printing;
+  var cardLanguage=cardData.Language;
 
   document.getElementById('game').innerText=cardGame;
   document.getElementById('set').innerText=cardSet;
