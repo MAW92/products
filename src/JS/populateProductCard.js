@@ -20,7 +20,7 @@ function createProductGrid() {
             const productCard=document.createElement("div");
             productCard.classList.add("w-fit","mx-auto");
             productCard.innerHTML=`
-          <a href="${product.viewItemURL}" target="_blank" title="View on eBay">
+          <a href="${viewItemURL}" target="_blank" title="View on eBay">
             <div class="py-2">
               <div class="flex flex-wrap items-center">
                 <img src="${product.galleryURL}" alt="${product.Title}" class="w-24 object-scale-down rounded-lg">

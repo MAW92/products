@@ -29,5 +29,3 @@ document.getElementById('filtersButton').addEventListener('click',function () {
   var menu=document.getElementById('menu');
   menu.classList.toggle('menu-visible');
 });
-
-fetchCardData();
