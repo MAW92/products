@@ -26,8 +26,8 @@ function createProductGrid() {
                 <img src="${product.galleryURL}" alt="${product.title}" class="w-24 object-scale-down rounded-lg">
                 <div class="ml-4">
                   <h3 class="text-lg font-semibold">${product.title}</h3>
-                  <p class="mt-2">$${product.currentPrice}</p>
-                  <p class="mb-5">Shipping: $${product.shippingCost}</p>
+                  <p class="mt-2">$${product.Price}</p>
+                  <p class="mb-5">Shipping: $${product.Shipping}</p>
                 </div>
               </div>
             </div>
