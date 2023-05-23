@@ -1,63 +1,47 @@
-// Function to fetch card data from cardAttributes.json
-async function fetchCardData() {
-  try {
-    const response=await fetch('./src/CardData/cardData.json');
-    const data=await response.json();
-    return data;
-  } catch(error) {
-    console.log('Error fetching card data:',error);
-    return [];
-  }
-}
+var cardData={};
 
-// Function to filter and display card items
-function filterAndDisplayItems() {
-  const gameFilter=document.getElementById('gameFilter').value;
-  const rarityFilter=document.getElementById('rarityFilter').value;
-  const featuresFilter=document.getElementById('featuresFilter').value;
-  const conditionFilter=document.getElementById('conditionFilter').value;
-  const attributeFilter=document.getElementById('attributeFilter').value;
-
-  // Filter the card items based on the selected filters
-  const filteredItems=cardItems.filter(item => {
-    return (
-      (gameFilter==='all'||item.Game.toLowerCase().replace(/\s/g,'')===gameFilter.toLowerCase().replace(/\s/g,''))&&
-      (rarityFilter==='all'||item.Rarity.toLowerCase().replace(/\s/g,'')===rarityFilter.toLowerCase().replace(/\s/g,''))&&
-      (featuresFilter==='all'||item.Features.toLowerCase().replace(/\s/g,'')===featuresFilter.toLowerCase().replace(/\s/g,''))&&
-      (conditionFilter==='all'||item.CardCondition.toLowerCase().replace(/\s/g,'')===conditionFilter.toLowerCase().replace(/\s/g,''))&&
-      (attributeFilter==='all'||item.Attribute.toLowerCase().replace(/\s/g,'')===attributeFilter.toLowerCase().replace(/\s/g,''))
-    );
-  });
-
-  // Display the filtered items on the screen (replace with your own code)
-  const resultContainer=document.getElementById('resultContainer');
-  resultContainer.innerHTML=''; // Clear previous results
-
-  if(filteredItems.length>0) {
-    filteredItems.forEach(item => {
-      const cardElement=document.createElement('div');
-      cardElement.textContent=item.Title;
-      resultContainer.appendChild(cardElement);
+function fetchCardData() {
+  fetch('./src/CardData/cardData.json')
+    .then(response => response.json())
+    .then(data => {
+      cardData=data;
+      updateProfileUI();
+    })
+    .catch(error => {
+      console.log('Error fetching card data:',error);
     });
-  } else {
-    const noResultsElement=document.createElement('div');
-    noResultsElement.textContent='No results found.';
-    resultContainer.appendChild(noResultsElement);
-  }
 }
 
-// Event listener for the "Save" button
-const saveButton=document.getElementById('saveButton');
-saveButton.addEventListener('click',filterAndDisplayItems);
+function updateProfileUI() {
+  var cardGame=cardData.Game;
+  var cardSet=cardData.Set;
+  var cardRarity=cardData.Rarity;
+  var cardTitle=cardData.Title;
+  var cardPrice=cardData.Price;
+  var cardAttribute=cardData.Attribute;
+  var cardNumber=cardData.Number;
+  var monsterType=cardData.monsterType;
+  var cardType=cardData.cardType;
+  var cardPrinting=cardData.Printing;
+  var cardLanguage=cardData.Language;
 
-// Fetch the card data and then initialize the filtering
-fetchCardData()
-  .then(_data => {
-    // Replace the cardItems array with the fetched data
+  document.getElementById('game').innerText=cardGame;
+  document.getElementById('set').innerText=cardSet;
+  document.getElementById('rarity').innerText=cardRarity;
+  document.getElementById('title').innerText=cardTitle;
+  document.getElementById('price').innerText=cardPrice;
+  document.getElementById('attribute').innerText=cardAttribute;
+  document.getElementById('number').innerText=cardNumber;
+  document.getElementById('mtype').innerText=monsterType;
+  document.getElementById('ctype').innerText=cardType;
+  document.getElementById('printing').innerText=cardPrinting;
+  document.getElementById('language').innerText=cardLanguage;
+}
 
-    // Initialize the filtering on page load
-    filterAndDisplayItems();
-  })
-  .catch(error => {
-    console.log('Error fetching card data:',error);
-  });
+// Toggle menu visibility when "Filters" button is pressed
+document.getElementById('filtersButton').addEventListener('click',function () {
+  var menu=document.getElementById('menu');
+  menu.classList.toggle('menu-visible');
+});
+
+fetchCardData();
