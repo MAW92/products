@@ -5,14 +5,14 @@ function fetchCardData() {
     .then(response => response.json())
     .then(data => {
       cardData=data;
-      updateProfileUI();
+      updateCardData();
     })
     .catch(error => {
       console.log('Error fetching card data:',error);
     });
 }
 
-function updateProfileUI() {
+function updateCardData() {
   var cardGame=cardData.Game;
   var cardSet=cardData.Set;
   var cardRarity=cardData.Rarity;
