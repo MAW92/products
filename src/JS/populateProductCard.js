@@ -14,7 +14,6 @@ function createProductGrid() {
 
           // Loop through the combined products array
           for(let i=0;i<products.length;i++) {
-            const product=products[i];
 
             // Create the product card element
             const productCard=document.createElement("div");
