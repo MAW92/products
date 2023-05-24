@@ -1,34 +1,56 @@
-function populateProductCard(data) {
+function createProductGrid() {
   const gridContainer=document.getElementById("gridContainer");
 
-  // Clear existing product cards
-  gridContainer.innerHTML="";
+  // Fetch the first JSON file
+  fetch("./src/CardData/cardData.json")
+    .then(response => response.json())
+    .then(cardData => {
+      // Fetch the second JSON file
+      fetch("./src/CardData/listingData.json")
+        .then(response => response.json())
+        .then(listingData => {
+          // Combine or handle the data from both files as needed
+          const products=[...cardData,...listingData]; // Combine the products from both files
 
-  // Populate product cards
-  data.forEach((product) => {
-    const card=document.createElement("div");
-    card.classList.add("product-card");
-    card.setAttribute("data-game",product.game);
-    card.setAttribute("data-rarity",product.rarity);
-    card.setAttribute("data-printing",product.printing);
-    card.setAttribute("data-condition",product.condition);
-    card.setAttribute("data-attribute",product.attribute);
+          // Loop through the combined products array
+          for(let i=0;i<products.length;i++) {
+            const product=products[i];
 
-    const image=document.createElement("img");
-    image.classList.add("product-image");
-    image.src=product.image;
-    card.appendChild(image);
+            // Create the product card element
+            const productCard=document.createElement("div");
+            productCard.classList.add("w-fit","mx-auto");
+            productCard.innerHTML=`
+            <a href="${product.viewItemURL}"
+         target="_blank"
+         title="View on eBay"
+         class="mt-2 hover:text-shadow text-white">
+        <div class="w-fit border border-zinc-50 backdrop rounded-lg shadow-lg overflow-ellipsis will-change-transform hover:transform-gpu hover:duration-500 hover:ease-in-out hover:scale-105 hover:bg-gradient-to-b hover:from-transparent hover:to-transparent hover:via-black hover:text-shadow text-white">
+          <img src="${product.galleryURL}"
+               alt="${product.Title}"
+               class="w-full h-72 object-cover object-top rounded-t-lg">
+          <div class="p-2 flex-wrap">
+            <h3 class="text-lg font-black text-shadow text-white">${product.Title}</h3>
+            <p class="mt-2 text-shadow font-bold text-white">${product.Price}</p>
+            <p class="text-shadow text-sm font-bold text-white">Shipping: $${product.Shipping}</p>
+            <p class="mt-5 text-sm italic font-semibold text-shadow text-white">${product.Condition} condition, kept sleeved and
+              stored in a safe environment.</p>
+          </div>
+        </div>
+      </a>`;
 
-    const title=document.createElement("div");
-    title.classList.add("product-title");
-    title.textContent=product.title;
-    card.appendChild(title);
+            // Append the product card to the grid container
+            gridContainer.appendChild(productCard);
+          }
 
-    const price=document.createElement("div");
-    price.classList.add("product-price");
-    price.textContent=product.price;
-    card.appendChild(price);
-
-    gridContainer.appendChild(card);
-  });
+        })
+        .catch(error => {
+          console.error("Error fetching second JSON file:",error);
+        });
+    })
+    .catch(error => {
+      console.error("Error fetching first JSON file:",error);
+    });
 }
+
+// Call the function to create the product grid
+createProductGrid();
