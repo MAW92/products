@@ -85,113 +85,6 @@
                         // Call the function to create the product grid
                         createProductGrid();
             </script>-->
-      </head>
-
-
-      <body>
-            <header class="w-full p-2 mx-auto bg-gradient-to-br from-indigo to-indigo via-red border-b-2 border-zinc-400 shadow-lg">
-                  <div class="h-auto items-center pt-2 pb-4 text-center font-medium text-white sm:mb-0">
-                        <div id="slogo"
-                             class="mx-auto h-16 w-16 overflow-hidden rounded-full border border-zinc-50 text-center align-middle sm:inline-block"></div>
-                        <blockquote class="brandname inline flex-wrap align-middle text-3xl font-extrabold -tracking-wider antialiased"></blockquote>
-                  </div>
-                  <!--Mobile-->
-                  <nav class="text-center font-semibold hidden sm:hidden"
-                       id="mobile-menu"
-                       style="display: none;">
-                        <div class="grid grid-cols-1 flex-wrap w-full gap-y-3 py-3">
-                              <a href="https://www.ebay.com/cnt/IntermediatedFAQ?error_msg=false&seller_name=gottasellemall69&item_id="
-                                 title="Click to ask the seller a question"
-                                 rel="noopener"
-                                 class="mx-auto border w-44 rounded-md py-1 px-4 text-xl text-white hover:transition duration-500 hover:bg-white hover:text-black lg:px-6">Message</a>
-                              <a href="https://www.ebay.com/fdbk/feedback_profile/gottasellemall69?filter=feedback_page:All"
-                                 title="Click to view seller feedback"
-                                 rel="noopener"
-                                 class="mx-auto border w-44 rounded-md py-1 px-4 text-xl text-white hover:transition duration-500 hover:bg-white hover:text-black lg:px-6">Feedback</a>
-                              <a href="https://www.ebay.com/usr/gottasellemall69"
-                                 title="Click to save this seller to Favorites"
-                                 rel="noopener"
-                                 class="mx-auto border w-44 rounded-md py-1 px-4 text-xl text-white hover:transition duration-500 hover:bg-white hover:text-black lg:px-6">Follow</a>
-                              <a href="https://www.ebay.com/sch/gottasellemall69/m.html?_nkw=&amp;_armrs=1&amp;_ipg=&amp;_from="
-                                 title="Click to view other items"
-                                 rel="noopener"
-                                 class="mx-auto border w-44 rounded-md py-1 px-4 text-xl text-white hover:transition duration-500 hover:bg-white hover:text-black lg:px-6">More Items</a>
-                        </div>
-                  </nav>
-                  <!--Non-Mobile-->
-                  <nav class="place-content-evenly gap-x-5 gap-y-3 py-3 text-justify font-semibold hidden sm:flex sm:flex-wrap">
-                        <a href="#"
-                           title="Click to ask the seller a question"
-                           rel="noopener"
-                           class="link link-underline link-underline-black rounded-md py-1 px-4 text-xl text-white lg:px-6">Message</a>
-                        <a href="#"
-                           title="Click to view seller feedback"
-                           rel="noopener"
-                           class="link link-underline link-underline-black rounded-md py-1 px-4 text-xl text-white lg:px-6">Feedback</a>
-                        <a href="#"
-                           title="Click to save this seller to Favorites"
-                           rel="noopener"
-                           class="link link-underline link-underline-black rounded-md py-1 px-4 text-xl text-white lg:px-6">Follow</a>
-                        <a href="#"
-                           title="Click to view other items"
-                           rel="noopener"
-                           class="link link-underline link-underline-black rounded-md py-1 px-4 text-xl text-white lg:px-6">More Items</a>
-                  </nav>
-                  <!--Mobile Menu Icon-->
-                  <button class="sm:hidden block absolute top-2 right-2 p-2 rounded-full bg-white text-indigo-600 z-50"
-                          onclick="toggleMenu()">
-                        <svg class="h-6 w-6 fill-current"
-                             viewBox="0 0 24 24"
-                             id="menu-icon">
-                              <path d="M3 12h18M3 6h18M3 18h18"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"></path>
-                        </svg>
-                        <svg class="hidden active:visible h-6 w-6 fill-current"
-                             viewBox="0 0 24 24"
-                             id="close-icon">
-                              <path d="M6 18L18 6M6 6l12 12"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"></path>
-                        </svg>
-                  </button>
-            </header>
-            <main class="px-5 min-h-screen bg-image bg-fixed bg-cover bg-center">
-                  <div class="container mx-auto px-4 py-8">
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                                id="filtersButton">Filters</button>
-
-                        <div id="menu"
-                             class="max-w-sm rounded overflow-hidden shadow-lg bg-white menu-hidden">
-                              <div class="px-6 py-4">
-                                    <div class="font-bold text-xl mb-2"
-                                         id="title"></div>
-                                    <p class="text-gray-700 text-base mb-2">Game: <span id="game"></span></p>
-                                    <p class="text-gray-700 text-base mb-2">Set: <span id="set"></span></p>
-                                    <p class="text-gray-700 text-base mb-2">Rarity: <span id="rarity"></span></p>
-                                    <p class="text-gray-700 text-base mb-2">Price: <span id="price"></span></p>
-                                    <p class="text-gray-700 text-base mb-2">Attribute: <span id="attribute"></span></p>
-                                    <p class="text-gray-700 text-base mb-2">Number: <span id="number"></span></p>
-                                    <p class="text-gray-700 text-base mb-2">Monster Type: <span id="mtype"></span></p>
-                                    <p class="text-gray-700 text-base mb-2">Card Type: <span id="ctype"></span></p>
-                                    <p class="text-gray-700 text-base mb-2">Printing: <span id="printing"></span></p>
-                                    <p class="text-gray-700 text-base mb-2">Language: <span id="language"></span></p>
-                              </div>
-                        </div>
-                  </div>
-
-                  <div id="gridContainer"
-                       class="mx-auto grid grid-cols-1 gap-4 py-10 sm:grid-cols-2 md:grid-cols-3 lg:mx-8 lg:grid-cols-4">
-                        <!-- Product cards will be dynamically populated here -->
-                  </div>
-            </main>
-            <script src="./src/JS/menu.js"></script>
-            <script src="./src/JS/populateProductCard.js"></script>
-            <script src="./src/JS/filterAndDisplayItems.js"></script>
             <script>
                   // Example data for product cards
                   const listingData=[
@@ -1354,6 +1247,114 @@
                   populateProductCard(productsData);
                   populateProductCard(listingData);
             </script>
+      </head>
+
+
+      <body>
+            <header class="w-full p-2 mx-auto bg-gradient-to-br from-indigo to-indigo via-red border-b-2 border-zinc-400 shadow-lg">
+                  <div class="h-auto items-center pt-2 pb-4 text-center font-medium text-white sm:mb-0">
+                        <div id="slogo"
+                             class="mx-auto h-16 w-16 overflow-hidden rounded-full border border-zinc-50 text-center align-middle sm:inline-block"></div>
+                        <blockquote class="brandname inline flex-wrap align-middle text-3xl font-extrabold -tracking-wider antialiased"></blockquote>
+                  </div>
+                  <!--Mobile-->
+                  <nav class="text-center font-semibold hidden sm:hidden"
+                       id="mobile-menu"
+                       style="display: none;">
+                        <div class="grid grid-cols-1 flex-wrap w-full gap-y-3 py-3">
+                              <a href="https://www.ebay.com/cnt/IntermediatedFAQ?error_msg=false&seller_name=gottasellemall69&item_id="
+                                 title="Click to ask the seller a question"
+                                 rel="noopener"
+                                 class="mx-auto border w-44 rounded-md py-1 px-4 text-xl text-white hover:transition duration-500 hover:bg-white hover:text-black lg:px-6">Message</a>
+                              <a href="https://www.ebay.com/fdbk/feedback_profile/gottasellemall69?filter=feedback_page:All"
+                                 title="Click to view seller feedback"
+                                 rel="noopener"
+                                 class="mx-auto border w-44 rounded-md py-1 px-4 text-xl text-white hover:transition duration-500 hover:bg-white hover:text-black lg:px-6">Feedback</a>
+                              <a href="https://www.ebay.com/usr/gottasellemall69"
+                                 title="Click to save this seller to Favorites"
+                                 rel="noopener"
+                                 class="mx-auto border w-44 rounded-md py-1 px-4 text-xl text-white hover:transition duration-500 hover:bg-white hover:text-black lg:px-6">Follow</a>
+                              <a href="https://www.ebay.com/sch/gottasellemall69/m.html?_nkw=&amp;_armrs=1&amp;_ipg=&amp;_from="
+                                 title="Click to view other items"
+                                 rel="noopener"
+                                 class="mx-auto border w-44 rounded-md py-1 px-4 text-xl text-white hover:transition duration-500 hover:bg-white hover:text-black lg:px-6">More Items</a>
+                        </div>
+                  </nav>
+                  <!--Non-Mobile-->
+                  <nav class="place-content-evenly gap-x-5 gap-y-3 py-3 text-justify font-semibold hidden sm:flex sm:flex-wrap">
+                        <a href="#"
+                           title="Click to ask the seller a question"
+                           rel="noopener"
+                           class="link link-underline link-underline-black rounded-md py-1 px-4 text-xl text-white lg:px-6">Message</a>
+                        <a href="#"
+                           title="Click to view seller feedback"
+                           rel="noopener"
+                           class="link link-underline link-underline-black rounded-md py-1 px-4 text-xl text-white lg:px-6">Feedback</a>
+                        <a href="#"
+                           title="Click to save this seller to Favorites"
+                           rel="noopener"
+                           class="link link-underline link-underline-black rounded-md py-1 px-4 text-xl text-white lg:px-6">Follow</a>
+                        <a href="#"
+                           title="Click to view other items"
+                           rel="noopener"
+                           class="link link-underline link-underline-black rounded-md py-1 px-4 text-xl text-white lg:px-6">More Items</a>
+                  </nav>
+                  <!--Mobile Menu Icon-->
+                  <button class="sm:hidden block absolute top-2 right-2 p-2 rounded-full bg-white text-indigo-600 z-50"
+                          onclick="toggleMenu()">
+                        <svg class="h-6 w-6 fill-current"
+                             viewBox="0 0 24 24"
+                             id="menu-icon">
+                              <path d="M3 12h18M3 6h18M3 18h18"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                        </svg>
+                        <svg class="hidden active:visible h-6 w-6 fill-current"
+                             viewBox="0 0 24 24"
+                             id="close-icon">
+                              <path d="M6 18L18 6M6 6l12 12"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                        </svg>
+                  </button>
+            </header>
+            <main class="px-5 min-h-screen bg-image bg-fixed bg-cover bg-center">
+                  <div class="container mx-auto px-4 py-8">
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                                id="filtersButton">Filters</button>
+
+                        <div id="menu"
+                             class="max-w-sm rounded overflow-hidden shadow-lg bg-white menu-hidden">
+                              <div class="px-6 py-4">
+                                    <div class="font-bold text-xl mb-2"
+                                         id="title"></div>
+                                    <p class="text-gray-700 text-base mb-2">Game: <span id="game"></span></p>
+                                    <p class="text-gray-700 text-base mb-2">Set: <span id="set"></span></p>
+                                    <p class="text-gray-700 text-base mb-2">Rarity: <span id="rarity"></span></p>
+                                    <p class="text-gray-700 text-base mb-2">Price: <span id="price"></span></p>
+                                    <p class="text-gray-700 text-base mb-2">Attribute: <span id="attribute"></span></p>
+                                    <p class="text-gray-700 text-base mb-2">Number: <span id="number"></span></p>
+                                    <p class="text-gray-700 text-base mb-2">Monster Type: <span id="mtype"></span></p>
+                                    <p class="text-gray-700 text-base mb-2">Card Type: <span id="ctype"></span></p>
+                                    <p class="text-gray-700 text-base mb-2">Printing: <span id="printing"></span></p>
+                                    <p class="text-gray-700 text-base mb-2">Language: <span id="language"></span></p>
+                              </div>
+                        </div>
+                  </div>
+
+                  <div id="gridContainer"
+                       class="mx-auto grid grid-cols-1 gap-4 py-10 sm:grid-cols-2 md:grid-cols-3 lg:mx-8 lg:grid-cols-4">
+                        <!-- Product cards will be dynamically populated here -->
+                  </div>
+            </main>
+            <script src="./src/JS/menu.js"></script>
+            <script src="./src/JS/populateProductCard.js"></script>
+            <script src="./src/JS/filterAndDisplayItems.js"></script>
+
       </body>
 
 </html>
