@@ -5,21 +5,17 @@ function createProductGrid() {
   fetch("./src/CardData/cardData.json")
     .then(response => response.json())
     .then(cardData => {
-      // Fetch the second JSON file
-      fetch("./src/CardData/listingData.json")
-        .then(response => response.json())
-        .then(listingData => {
-          // Combine or handle the data from both files as needed
-          const products=[...cardData,...listingData]; // Combine the products from both files
+      // Combine or handle the data from both files as needed
+      const products=[...cardData,...listingData]; // Combine the products from both files
 
-          // Loop through the combined products array
-          for(let i=0;i<products.length;i++) {
-            const product=products[i];
+      // Loop through the combined products array
+      for(let i=0;i<products.length;i++) {
+        const product=products[i];
 
-            // Create the product card element
-            const productCard=document.createElement("div");
-            productCard.classList.add("w-fit","mx-auto");
-            productCard.innerHTML=`
+        // Create the product card element
+        const productCard=document.createElement("div");
+        productCard.classList.add("w-fit","mx-auto");
+        productCard.innerHTML=`
             <a href="${product.viewItemURL}"
          target="_blank"
          title="View on eBay"
@@ -38,14 +34,10 @@ function createProductGrid() {
         </div>
       </a>`;
 
-            // Append the product card to the grid container
-            gridContainer.appendChild(productCard);
-          }
+        // Append the product card to the grid container
+        gridContainer.appendChild(productCard);
+      }
 
-        })
-        .catch(error => {
-          console.error("Error fetching second JSON file:",error);
-        });
     })
     .catch(error => {
       console.error("Error fetching first JSON file:",error);
