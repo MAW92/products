@@ -1,36 +1,176 @@
-function filterAndDisplayItems() {
-  const gameFilter=document.getElementById("game").value.toLowerCase().replace(/\s/g,'');
-  const rarityFilter=document.getElementById("rarity").value.toLowerCase().replace(/\s/g,'');
-  const printingFilter=document.getElementById("printing").value.toLowerCase().replace(/\s/g,'');
-  const conditionFilter=document.getElementById("condition").value.toLowerCase().replace(/\s/g,'');
-  const attributeFilter=document.getElementById("attribute").value.toLowerCase().replace(/\s/g,'');
+function openFiltersModal() {
+  const modal=document.getElementById("filtersModal");
+  modal.style.display="block";
+  modal.classList.add("slide-in");
+}
 
-  const products=document.querySelectorAll("#gridContainer .product-card");
+function closeFiltersModal() {
+  const modal=document.getElementById("filtersModal");
+  modal.classList.add("slide-out");
 
-  products.forEach((product) => {
-    const game=product.dataset.game.toLowerCase().replace(/\s/g,'');
-    const rarity=product.dataset.rarity.toLowerCase().replace(/\s/g,'');
-    const printing=product.dataset.printing.toLowerCase().replace(/\s/g,'');
-    const condition=product.dataset.condition.toLowerCase().replace(/\s/g,'');
-    const attribute=product.dataset.attribute.toLowerCase().replace(/\s/g,'');
+  setTimeout(() => {
+    modal.style.display="none";
+    modal.classList.remove("slide-out");
+  },500);
+}
 
-    const gameMatch=gameFilter===""||game===gameFilter;
-    const rarityMatch=rarityFilter===""||rarity===rarityFilter;
-    const printingMatch=printingFilter===""||printing===printingFilter;
-    const conditionMatch=conditionFilter===""||condition===conditionFilter;
-    const attributeMatch=attributeFilter===""||attribute===attributeFilter;
+function applyFilters() {
+  const attribute=document.getElementById("attributeFilter").value;
+  const condition=document.getElementById("conditionFilter").value;
+  const cardType=document.getElementById("cardTypeFilter").value;
+  const monsterType=document.getElementById("monsterTypeFilter").value;
+  const printing=document.getElementById("printingFilter").value;
+  const game=document.getElementById("gameFilter").value;
+  const language=document.getElementById("languageFilter").value;
+  const rarity=document.getElementById("rarityFilter").value;
+  const set=document.getElementById("setFilter").value;
 
-    if(gameMatch&&rarityMatch&&printingMatch&&conditionMatch&&attributeMatch) {
-      product.style.display="block";
-    } else {
-      product.style.display="none";
+
+  // Fetch the filter values from the JSON file
+  function fetchFilterValues() {
+    fetch("./src/cardData.json")
+      .then((response) => response.json())
+      .then((data) => populateFilterOptions(data[0].cardData))
+      .catch((error) => console.error("Error fetching filter values:",error));
+  }
+
+  // Populate the filter options with the fetched values
+  function populateFilterOptions(filterData) {
+    const filterOptions=Object.keys(filterData[0]);
+
+    filterOptions.forEach((option) => {
+      const selectElement=document.getElementById(`${option}Filter`);
+      const filterValues=Array.from(new Set(filterData.map((item) => item[option])));
+
+      filterValues.forEach((value) => {
+        const optionElement=document.createElement("option");
+        optionElement.value=value;
+        optionElement.textContent=value;
+        selectElement.appendChild(optionElement);
+      });
+    });
+  }
+
+  // Call the function to fetch and populate the filter options
+  fetchFilterValues();
+
+
+
+
+  console.log("Attribute:",attribute);
+  console.log("Condition:",condition);
+  console.log("Card Type:",cardType);
+  console.log("Monster Type:",monsterType);
+  console.log("Printing:",printing);
+  console.log("Game:",game);
+  console.log("Language:",language);
+  console.log("Rarity:",rarity);
+  console.log("Set:",set);
+}
+
+function populateFilterOptions(data) {
+  const attributeFilter=document.getElementById("attributeFilter");
+  const conditionFilter=document.getElementById("conditionFilter");
+  const cardTypeFilter=document.getElementById("cardTypeFilter");
+  const monsterTypeFilter=document.getElementById("monsterTypeFilter");
+  const printingFilter=document.getElementById("printingFilter");
+  const gameFilter=document.getElementById("gameFilter");
+  const languageFilter=document.getElementById("languageFilter");
+  const rarityFilter=document.getElementById("rarityFilter");
+  const setFilter=document.getElementById("setFilter");
+
+  // Add options to the filter dropdowns based on the data
+  // Replace this with your own code to populate the filter options
+
+  data.forEach((item) => {
+    // Add unique attributes to the attribute filter
+    if(!attributeFilter.querySelector(`option[value="${item.attribute}"]`)) {
+      attributeFilter.innerHTML+=`<option value="${item.attribute}">${item.attribute}</option>`;
+    }
+
+    // Add unique conditions to the condition filter
+    if(!conditionFilter.querySelector(`option[value="${item.condition}"]`)) {
+      conditionFilter.innerHTML+=`<option value="${item.condition}">${item.condition}</option>`;
+    }
+
+    // Add unique card types to the card type filter
+    if(!cardTypeFilter.querySelector(`option[value="${item.cardType}"]`)) {
+      cardTypeFilter.innerHTML+=`<option value="${item.cardType}">${item.cardType}</option>`;
+    }
+
+    // Add unique monster types to the monster type filter
+    if(!monsterTypeFilter.querySelector(`option[value="${item.monsterType}"]`)) {
+      monsterTypeFilter.innerHTML+=`<option value="${item.monsterType}">${item.monsterType}</option>`;
+    }
+
+    // Add unique printings to the printing filter
+    if(!printingFilter.querySelector(`option[value="${item.printing}"]`)) {
+      printingFilter.innerHTML+=`<option value="${item.printing}">${item.printing}</option>`;
+    }
+
+    // Add unique games to the game filter
+    if(!gameFilter.querySelector(`option[value="${item.game}"]`)) {
+      gameFilter.innerHTML+=`<option value="${item.game}">${item.game}</option>`;
+    }
+
+    // Add unique languages to the language filter
+    if(!languageFilter.querySelector(`option[value="${item.language}"]`)) {
+      languageFilter.innerHTML+=`<option value="${item.language}">${item.language}</option>`;
+    }
+
+    // Add unique rarities to the rarity filter
+    if(!rarityFilter.querySelector(`option[value="${item.rarity}"]`)) {
+      rarityFilter.innerHTML+=`<option value="${item.rarity}">${item.rarity}</option>`;
+    }
+
+    // Add unique sets to the set filter
+    if(!setFilter.querySelector(`option[value="${item.set}"]`)) {
+      setFilter.innerHTML+=`<option value="${item.set}">${item.set}</option>`;
     }
   });
 }
 
-// Trigger the filterAndDisplayItems function when filter options change
-document.getElementById("game").addEventListener("change",filterAndDisplayItems);
-document.getElementById("rarity").addEventListener("change",filterAndDisplayItems);
-document.getElementById("printing").addEventListener("change",filterAndDisplayItems);
-document.getElementById("condition").addEventListener("change",filterAndDisplayItems);
-document.getElementById("attribute").addEventListener("change",filterAndDisplayItems);
+// Sample data for testing
+const sampleData=[
+  {
+    attribute: "Earth",
+    condition: "Near Mint",
+    cardType: "Spell",
+    monsterType: "Dragon",
+    printing: "1st Edition",
+    game: "Yu-Gi-Oh!",
+    language: "English",
+    rarity: "Rare",
+    set: "Dark Magician",
+  },
+  {
+    attribute: "Dark",
+    condition: "Lightly Played",
+    cardType: "Trap",
+    monsterType: "Warrior",
+    printing: "Unlimited Edition",
+    game: "Pokemon",
+    language: "French",
+    rarity: "Common",
+    set: "Charizard",
+  },
+  {
+    attribute: "Fire",
+    condition: "Mint",
+    cardType: "Monster",
+    monsterType: "Spellcaster",
+    printing: "Limited Edition",
+    game: "Magic: The Gathering",
+    language: "German",
+    rarity: "Mythic",
+    set: "Black Lotus",
+  },
+];
+
+// Populate the filter options on page load
+populateFilterOptions(sampleData);
+
+// Event listeners
+document.getElementById("openButton").addEventListener("click",openFiltersModal);
+document.getElementById("cancelButton").addEventListener("click",closeFiltersModal);
+document.getElementById("applyButton").addEventListener("click",applyFilters);
