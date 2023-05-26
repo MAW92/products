@@ -130,45 +130,8 @@ function populateFilterOptions(data) {
   });
 }
 
-// Sample data for testing
-const sampleData=[
-  {
-    attribute: "Earth",
-    condition: "Near Mint",
-    cardType: "Spell",
-    monsterType: "Dragon",
-    printing: "1st Edition",
-    game: "Yu-Gi-Oh!",
-    language: "English",
-    rarity: "Rare",
-    set: "Dark Magician",
-  },
-  {
-    attribute: "Dark",
-    condition: "Lightly Played",
-    cardType: "Trap",
-    monsterType: "Warrior",
-    printing: "Unlimited Edition",
-    game: "Pokemon",
-    language: "French",
-    rarity: "Common",
-    set: "Charizard",
-  },
-  {
-    attribute: "Fire",
-    condition: "Mint",
-    cardType: "Monster",
-    monsterType: "Spellcaster",
-    printing: "Limited Edition",
-    game: "Magic: The Gathering",
-    language: "German",
-    rarity: "Mythic",
-    set: "Black Lotus",
-  },
-];
-
 // Populate the filter options on page load
-populateFilterOptions(sampleData);
+populateFilterOptions();
 
 // Event listeners
 document.getElementById("openButton").addEventListener("click",openFiltersModal);
