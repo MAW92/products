@@ -1,3 +1,5 @@
+const { data }=require("autoprefixer");
+
 function openFiltersModal() {
   const modal=document.getElementById("filtersModal");
   modal.style.display="block";
@@ -115,7 +117,7 @@ function populateFilterOptions(data) {
 }
 
 // Call the function to fetch and populate the filter options
-fetchFilterValues();
+fetchFilterValues(data);
 
 // Event listeners
 document.getElementById("openButton").addEventListener("click",openFiltersModal);
