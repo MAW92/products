@@ -95,94 +95,92 @@
                         </svg>
                   </button>
             </header>
-            <main class="px-5 min-h-screen bg-image bg-fixed bg-cover bg-center">
-                  <div id="gridContainer"
-                       class="mx-auto grid grid-cols-1 gap-4 py-10 sm:grid-cols-2 md:grid-cols-3 lg:mx-8 lg:grid-cols-4">
-                        <!-- Product cards will be dynamically populated here -->
-                        <div id="filtersModal"
-                             class="fixed inset-0 overflow-hidden bg-zinc-500 bg-opacity-75 transition-opacity">
-                              <div class="fixed inset-0 flex justify-center items-center">
-                                    <div class="bg-white shadow-xl rounded-lg w-full sm:w-1/5">
-                                          <div class="px-6 py-4">
-                                                <h2 class="text-lg font-semibold mb-4">Filters</h2>
-                                                <div class="mb-4">
-                                                      <label class="block text-sm font-medium text-gray-700 mb-2">Attribute</label>
-                                                      <select id="attributeFilter"
-                                                              class="w-full border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 rounded-md">
-                                                            <option value="">All</option>
-                                                      </select>
-                                                </div>
-                                                <div class="mb-4">
-                                                      <label class="block text-sm font-medium text-gray-700 mb-2">Condition</label>
-                                                      <select id="conditionFilter"
-                                                              class="w-full border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 rounded-md">
-                                                            <option value="">All</option>
-                                                      </select>
-                                                </div>
-                                                <div class="mb-4">
-                                                      <label class="block text-sm font-medium text-gray-700 mb-2">Card Type</label>
-                                                      <select id="cardTypeFilter"
-                                                              class="w-full border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 rounded-md">
-                                                            <option value="">All</option>
-                                                      </select>
-                                                </div>
-                                                <div class="mb-4">
-                                                      <label class="block text-sm font-medium text-gray-700 mb-2">Monster Type</label>
-                                                      <select id="monsterTypeFilter"
-                                                              class="w-full border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 rounded-md">
-                                                            <option value="">All</option>
-                                                      </select>
-                                                </div>
-                                                <div class="mb-4">
-                                                      <label class="block text-sm font-medium text-gray-700 mb-2">Printing</label>
-                                                      <select id="printingFilter"
-                                                              class="w-full border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 rounded-md">
-                                                            <option value="">All</option>
-                                                      </select>
-                                                </div>
-                                                <div class="mb-4">
-                                                      <label class="block text-sm font-medium text-gray-700 mb-2">Game</label>
-                                                      <select id="gameFilter"
-                                                              class="w-full border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 rounded-md">
-                                                            <option value="">All</option>
-                                                      </select>
-                                                </div>
-                                                <div class="mb-4">
-                                                      <label class="block text-sm font-medium text-gray-700 mb-2">Language</label>
-                                                      <select id="languageFilter"
-                                                              class="w-full border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 rounded-md">
-                                                            <option value="">All</option>
-                                                      </select>
-                                                </div>
-                                                <div class="mb-4">
-                                                      <label class="block text-sm font-medium text-gray-700 mb-2">Rarity</label>
-                                                      <select id="rarityFilter"
-                                                              class="w-full border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 rounded-md">
-                                                            <option value="">All</option>
-                                                      </select>
-                                                </div>
-                                                <div class="mb-4">
-                                                      <label class="block text-sm font-medium text-gray-700 mb-2">Set</label>
-                                                      <select id="setFilter"
-                                                              class="w-full border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 rounded-md">
-                                                            <option value="">All</option>
-                                                      </select>
-                                                </div>
-                                                <div class="flex justify-end">
-                                                      <button id="applyButton"
-                                                              class="px-4 py-2 bg-indigo-500 text-white rounded-md">Apply Filters</button>
-                                                      <button id="cancelButton"
-                                                              class="px-4 py-2 bg-gray-300 text-gray-700 rounded-md ml-2">Cancel</button>
-                                                </div>
-                                          </div>
+
+            <div id="filtersModal"
+                 class="fixed inset-0 overflow-hidden bg-zinc-500 bg-opacity-75 transition-opacity">
+                  <div class="fixed inset-0 flex justify-center items-center">
+                        <div class="bg-white shadow-xl rounded-lg w-full sm:w-1/5">
+                              <div class="px-6 py-4">
+                                    <h2 class="text-lg font-semibold mb-4">Filters</h2>
+                                    <div class="mb-4">
+                                          <label class="block text-sm font-medium text-gray-700 mb-2">Attribute</label>
+                                          <select id="attributeFilter"
+                                                  class="w-full border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 rounded-md">
+                                                <option value="">All</option>
+                                          </select>
+                                    </div>
+                                    <div class="mb-4">
+                                          <label class="block text-sm font-medium text-gray-700 mb-2">Condition</label>
+                                          <select id="conditionFilter"
+                                                  class="w-full border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 rounded-md">
+                                                <option value="">All</option>
+                                          </select>
+                                    </div>
+                                    <div class="mb-4">
+                                          <label class="block text-sm font-medium text-gray-700 mb-2">Card Type</label>
+                                          <select id="cardTypeFilter"
+                                                  class="w-full border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 rounded-md">
+                                                <option value="">All</option>
+                                          </select>
+                                    </div>
+                                    <div class="mb-4">
+                                          <label class="block text-sm font-medium text-gray-700 mb-2">Monster Type</label>
+                                          <select id="monsterTypeFilter"
+                                                  class="w-full border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 rounded-md">
+                                                <option value="">All</option>
+                                          </select>
+                                    </div>
+                                    <div class="mb-4">
+                                          <label class="block text-sm font-medium text-gray-700 mb-2">Printing</label>
+                                          <select id="printingFilter"
+                                                  class="w-full border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 rounded-md">
+                                                <option value="">All</option>
+                                          </select>
+                                    </div>
+                                    <div class="mb-4">
+                                          <label class="block text-sm font-medium text-gray-700 mb-2">Game</label>
+                                          <select id="gameFilter"
+                                                  class="w-full border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 rounded-md">
+                                                <option value="">All</option>
+                                          </select>
+                                    </div>
+                                    <div class="mb-4">
+                                          <label class="block text-sm font-medium text-gray-700 mb-2">Language</label>
+                                          <select id="languageFilter"
+                                                  class="w-full border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 rounded-md">
+                                                <option value="">All</option>
+                                          </select>
+                                    </div>
+                                    <div class="mb-4">
+                                          <label class="block text-sm font-medium text-gray-700 mb-2">Rarity</label>
+                                          <select id="rarityFilter"
+                                                  class="w-full border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 rounded-md">
+                                                <option value="">All</option>
+                                          </select>
+                                    </div>
+                                    <div class="mb-4">
+                                          <label class="block text-sm font-medium text-gray-700 mb-2">Set</label>
+                                          <select id="setFilter"
+                                                  class="w-full border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 rounded-md">
+                                                <option value="">All</option>
+                                          </select>
+                                    </div>
+                                    <div class="flex justify-end">
+                                          <button id="applyButton"
+                                                  class="px-4 py-2 bg-indigo-500 text-white rounded-md">Apply Filters</button>
+                                          <button id="cancelButton"
+                                                  class="px-4 py-2 bg-gray-300 text-gray-700 rounded-md ml-2">Cancel</button>
                                     </div>
                               </div>
                         </div>
-
-                        <button id="openButton"
-                                class="px-4 py-2 bg-indigo-500 text-white rounded-md">Filters</button>
-
                   </div>
+            </div>
+            <main class="px-5 min-h-screen bg-image bg-fixed bg-cover bg-center">
+                  <button id="openButton"
+                          class="px-4 py-2 bg-indigo-500 text-white rounded-md">Filters</button>
+                  <div id="gridContainer"
+                       class="mx-auto grid grid-cols-1 gap-4 py-10 sm:grid-cols-2 md:grid-cols-3 lg:mx-8 lg:grid-cols-4"></div>
+                  <!-- Product cards will be dynamically populated here -->
             </main>
             <script src="./src/JS/menu.js"></script>
             <script src="./src/JS/populateProductCard.js"></script>
