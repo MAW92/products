@@ -25,38 +25,6 @@ function applyFilters() {
   const rarity=document.getElementById("rarityFilter").value;
   const set=document.getElementById("setFilter").value;
 
-
-  // Fetch the filter values from the JSON file
-  function fetchFilterValues() {
-    fetch("./src/cardData.json")
-      .then((response) => response.json())
-      .then((data) => populateFilterOptions(data[0].cardData))
-      .catch((error) => console.error("Error fetching filter values:",error));
-  }
-
-  // Populate the filter options with the fetched values
-  function populateFilterOptions(filterData) {
-    const filterOptions=Object.keys(filterData[0]);
-
-    filterOptions.forEach((option) => {
-      const selectElement=document.getElementById(`${option}Filter`);
-      const filterValues=Array.from(new Set(filterData.map((item) => item[option])));
-
-      filterValues.forEach((value) => {
-        const optionElement=document.createElement("option");
-        optionElement.value=value;
-        optionElement.textContent=value;
-        selectElement.appendChild(optionElement);
-      });
-    });
-  }
-
-  // Call the function to fetch and populate the filter options
-  fetchFilterValues();
-
-
-
-
   console.log("Attribute:",attribute);
   console.log("Condition:",condition);
   console.log("Card Type:",cardType);
@@ -66,6 +34,13 @@ function applyFilters() {
   console.log("Language:",language);
   console.log("Rarity:",rarity);
   console.log("Set:",set);
+}
+
+function fetchFilterValues() {
+  fetch("./src/cardData.json")
+    .then((response) => response.json())
+    .then((data) => populateFilterOptions(data[0].cardData))
+    .catch((error) => console.error("Error fetching filter values:",error));
 }
 
 function populateFilterOptions(data) {
@@ -79,9 +54,18 @@ function populateFilterOptions(data) {
   const rarityFilter=document.getElementById("rarityFilter");
   const setFilter=document.getElementById("setFilter");
 
-  // Add options to the filter dropdowns based on the data
-  // Replace this with your own code to populate the filter options
+  // Clear existing options
+  attributeFilter.innerHTML="";
+  conditionFilter.innerHTML="";
+  cardTypeFilter.innerHTML="";
+  monsterTypeFilter.innerHTML="";
+  printingFilter.innerHTML="";
+  gameFilter.innerHTML="";
+  languageFilter.innerHTML="";
+  rarityFilter.innerHTML="";
+  setFilter.innerHTML="";
 
+  // Add options to the filter dropdowns based on the data
   data.forEach((item) => {
     // Add unique attributes to the attribute filter
     if(!attributeFilter.querySelector(`option[value="${item.attribute}"]`)) {
@@ -130,8 +114,8 @@ function populateFilterOptions(data) {
   });
 }
 
-// Populate the filter options on page load
-populateFilterOptions();
+// Call the function to fetch and populate the filter options
+fetchFilterValues();
 
 // Event listeners
 document.getElementById("openButton").addEventListener("click",openFiltersModal);
