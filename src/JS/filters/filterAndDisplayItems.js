@@ -115,7 +115,7 @@ function populateFilterOptions(data) {
 }
 
 // Call the function to fetch and populate the filter options
-fetchFilterValues(item);
+fetchFilterValues();
 
 // Event listeners
 document.getElementById("openButton").addEventListener("click",openFiltersModal);
