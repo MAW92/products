@@ -1,21 +1,32 @@
 function createProductGrid() {
   const gridContainer=document.getElementById("gridContainer");
 
-  // Fetch the first JSON file
+  // Fetch the cardData.json file
   fetch("./src/CardData/cardData.json")
     .then(response => response.json())
-    .then(cardData => {
-      // Combine or handle the data from both files as needed
-      const products=[...cardData,...listingData]; // Combine the products from both files
+    .then(data => {
+      // Extract the cardData and listingData arrays
+      const cardData=data[0].cardData;
+      const listingData=data[1].listingData;
 
-      // Loop through the combined products array
-      for(let i=0;i<products.length;i++) {
-        const product=products[i];
+      // Combine the products from both arrays
+      const products=[...cardData,...listingData];
 
-        // Create the product card element
-        const productCard=document.createElement("div");
-        productCard.classList.add("w-fit","mx-auto");
-        productCard.innerHTML=`
+      // Process the combined data or perform any other operations
+      console.log(products);
+    })
+    .catch(error => {
+      console.log("Error fetching cardData:",error);
+    });
+
+  // Loop through the combined products array
+  for(let i=0;i<products.length;i++) {
+    const product=products[i];
+
+    // Create the product card element
+    const productCard=document.createElement("div");
+    productCard.classList.add("w-fit","mx-auto");
+    productCard.innerHTML=`
             <a href="${product.viewItemURL}"
          target="_blank"
          title="View on eBay"
@@ -34,14 +45,10 @@ function createProductGrid() {
         </div>
       </a>`;
 
-        // Append the product card to the grid container
-        gridContainer.appendChild(productCard);
-      }
+    // Append the product card to the grid container
+    gridContainer.appendChild(productCard);
+  }
 
-    })
-    .catch(error => {
-      console.error("Error fetching first JSON file:",error);
-    });
 }
 
 // Call the function to create the product grid
