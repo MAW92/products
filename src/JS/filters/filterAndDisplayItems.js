@@ -37,7 +37,7 @@ function applyFilters() {
 }
 
 function fetchFilterValues() {
-  fetch("./src/cardData.json")
+  fetch("./src/CardData/cardData.json")
     .then((response) => response.json())
     .then((data) => populateFilterOptions(data[0].cardData))
     .catch((error) => console.error("Error fetching filter values:",error));
