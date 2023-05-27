@@ -11,10 +11,6 @@ function createProductGrid() {
 
       // Combine the products from both arrays
       const products=[...cardData,...listingData];
-
-      // Process the combined data or perform any other operations
-      console.log(products);
-
       // Loop through the combined products array
       for(let i=0;i<products.length;i++) {
         const product=products[i];
