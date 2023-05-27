@@ -12,11 +12,6 @@ function applyFilters() {
   console.log("Game:",game);
   console.log("Language:",language);
   console.log("Rarity:",rarity);
-
-  // Call the function to update the grid with filtered cards
-  filterProductGrid(attribute,condition,printing,game,language,rarity);
-
-
 }
 applyFilters();
 // Event listener for the "Apply" button

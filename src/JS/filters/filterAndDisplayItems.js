@@ -1,4 +1,4 @@
-function filterProductGrid() {
+function filterProductGrid(attribute,condition,printing,game,language,rarity) {
   const gridContainer=document.getElementById("gridContainer");
 
   // Clear the existing grid
@@ -54,3 +54,8 @@ function filterProductGrid() {
       console.log("Error fetching cardData:",error);
     });
 }
+
+// Call the function to update the grid with filtered cards
+filterProductGrid(attribute,condition,printing,game,language,rarity);
+
+
