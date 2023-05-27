@@ -68,13 +68,13 @@ function populateFilterOptions(data) {
   // Add options to the filter dropdowns based on the data
   data.forEach((item) => {
     // Add unique attributes to the attribute filter
-    if(!attributeFilter.querySelector(`option[value="${item.attribute}"]`)) {
-      attributeFilter.innerHTML+=`<option value="${item.attribute}">${item.attribute}</option>`;
+    if(!attributeFilter.querySelector(`option[value="${item.Attribute}"]`)) {
+      attributeFilter.innerHTML+=`<option value="${item.Attribute}">${item.Attribute}</option>`;
     }
 
     // Add unique conditions to the condition filter
-    if(!conditionFilter.querySelector(`option[value="${item.condition}"]`)) {
-      conditionFilter.innerHTML+=`<option value="${item.condition}">${item.condition}</option>`;
+    if(!conditionFilter.querySelector(`option[value="${item.Condition}"]`)) {
+      conditionFilter.innerHTML+=`<option value="${item.Condition}">${item.Condition}</option>`;
     }
 
     // Add unique card types to the card type filter
@@ -88,28 +88,28 @@ function populateFilterOptions(data) {
     }
 
     // Add unique printings to the printing filter
-    if(!printingFilter.querySelector(`option[value="${item.printing}"]`)) {
-      printingFilter.innerHTML+=`<option value="${item.printing}">${item.printing}</option>`;
+    if(!printingFilter.querySelector(`option[value="${item.Printing}"]`)) {
+      printingFilter.innerHTML+=`<option value="${item.Printing}">${item.Printing}</option>`;
     }
 
     // Add unique games to the game filter
-    if(!gameFilter.querySelector(`option[value="${item.game}"]`)) {
-      gameFilter.innerHTML+=`<option value="${item.game}">${item.game}</option>`;
+    if(!gameFilter.querySelector(`option[value="${item.Game}"]`)) {
+      gameFilter.innerHTML+=`<option value="${item.Game}">${item.Game}</option>`;
     }
 
     // Add unique languages to the language filter
-    if(!languageFilter.querySelector(`option[value="${item.language}"]`)) {
-      languageFilter.innerHTML+=`<option value="${item.language}">${item.language}</option>`;
+    if(!languageFilter.querySelector(`option[value="${item.Language}"]`)) {
+      languageFilter.innerHTML+=`<option value="${item.Language}">${item.Language}</option>`;
     }
 
     // Add unique rarities to the rarity filter
-    if(!rarityFilter.querySelector(`option[value="${item.rarity}"]`)) {
-      rarityFilter.innerHTML+=`<option value="${item.rarity}">${item.rarity}</option>`;
+    if(!rarityFilter.querySelector(`option[value="${item.Rarity}"]`)) {
+      rarityFilter.innerHTML+=`<option value="${item.Rarity}">${item.Rarity}</option>`;
     }
 
     // Add unique sets to the set filter
-    if(!setFilter.querySelector(`option[value="${item.set}"]`)) {
-      setFilter.innerHTML+=`<option value="${item.set}">${item.set}</option>`;
+    if(!setFilter.querySelector(`option[value="${item.Set}"]`)) {
+      setFilter.innerHTML+=`<option value="${item.Set}">${item.Set}</option>`;
     }
   });
 }
