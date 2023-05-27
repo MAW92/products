@@ -3,8 +3,8 @@ module.exports={
 	content:
 		[
 			"./index.html",
-			"./src/menu.js",
-			"./src/populateProductCard.js",
+			"./src/JS/menu.js",
+			"./src/JS/populateProductCard.js",
 			"./src/JS/Filters/*.{html,js}",
 			"./src/JS/Buttons/*.{html,js}"
 		],
