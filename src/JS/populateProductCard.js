@@ -4,13 +4,13 @@ async function fetchProducts() {
     const response=await fetch("./cardData.json");
     const data=await response.json();
     // Convert the fetched data into a list of products
-    const products=data.map(item => ({
-      viewItemURL: item.viewItemURL,
-      galleryURL: item.galleryURL,
-      title: item.title,
-      Price: item.Price,
-      Shipping: item.Shipping,
-      Condition: item.Condition
+    const products=data.map(({
+      viewItemURL: listingData.viewItemURL,
+      galleryURL: listingData.galleryURL,
+      title: listingData.title,
+      Price: cardData.Price,
+      Shipping: cardData.Shipping,
+      Condition: cardData.Condition
     }));
 
     // Display the product cards
