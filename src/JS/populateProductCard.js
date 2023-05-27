@@ -1,15 +1,3 @@
-function fetchFilterValues() {
-  fetch("./src/CardData/cardData.json")
-    .then((response) => response.json())
-    .then((data) => {
-      const cardData=data[0].cardData;
-      const listingData=data[1].listingData;
-      populateProductCard(cardData,listingData);
-    })
-    .catch((error) => {
-      console.error("Error fetching cardData:",error);
-    });
-}
 function populateProductCard(cardData,listingData) {
   for(let i=0;i<cardData.length;i++) {
     const card=cardData[i];
@@ -40,3 +28,5 @@ function populateProductCard(cardData,listingData) {
     gridContainer.appendChild(productCard);
   }
 }
+
+populateProductCard();
