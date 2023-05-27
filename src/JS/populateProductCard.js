@@ -4,7 +4,7 @@ function createProductGrid() {
   // Fetch the cardData.json file
   fetch("./src/CardData/cardData.json")
     .then(response => response.json())
-    .then(_data => {
+    .then(products => {
       // Extract the cardData and listingData arrays
       // Process the combined data or perform any other operations
       console.log(products);
