@@ -18,22 +18,18 @@ function applyFilters() {
   const attribute=document.getElementById("attributeFilter").value;
   const condition=document.getElementById("conditionFilter").value;
   const cardType=document.getElementById("cardTypeFilter").value;
-  const monsterType=document.getElementById("monsterTypeFilter").value;
   const printing=document.getElementById("printingFilter").value;
   const game=document.getElementById("gameFilter").value;
   const language=document.getElementById("languageFilter").value;
   const rarity=document.getElementById("rarityFilter").value;
-  const set=document.getElementById("setFilter").value;
 
   console.log("Attribute:",attribute);
   console.log("Condition:",condition);
   console.log("Card Type:",cardType);
-  console.log("Monster Type:",monsterType);
   console.log("Printing:",printing);
   console.log("Game:",game);
   console.log("Language:",language);
   console.log("Rarity:",rarity);
-  console.log("Set:",set);
 }
 
 function fetchFilterValues() {
@@ -47,23 +43,19 @@ function populateFilterOptions(data) {
   const attributeFilter=document.getElementById("attributeFilter");
   const conditionFilter=document.getElementById("conditionFilter");
   const cardTypeFilter=document.getElementById("cardTypeFilter");
-  const monsterTypeFilter=document.getElementById("monsterTypeFilter");
   const printingFilter=document.getElementById("printingFilter");
   const gameFilter=document.getElementById("gameFilter");
   const languageFilter=document.getElementById("languageFilter");
   const rarityFilter=document.getElementById("rarityFilter");
-  const setFilter=document.getElementById("setFilter");
 
   // Clear existing options
   attributeFilter.innerHTML="";
   conditionFilter.innerHTML="";
   cardTypeFilter.innerHTML="";
-  monsterTypeFilter.innerHTML="";
   printingFilter.innerHTML="";
   gameFilter.innerHTML="";
   languageFilter.innerHTML="";
   rarityFilter.innerHTML="";
-  setFilter.innerHTML="";
 
   // Add options to the filter dropdowns based on the data
   data.forEach((item) => {
@@ -82,10 +74,6 @@ function populateFilterOptions(data) {
       cardTypeFilter.innerHTML+=`<option value="${item.cardType}">${item.cardType}</option>`;
     }
 
-    // Add unique monster types to the monster type filter
-    if(!monsterTypeFilter.querySelector(`option[value="${item.monsterType}"]`)) {
-      monsterTypeFilter.innerHTML+=`<option value="${item.monsterType}">${item.monsterType}</option>`;
-    }
 
     // Add unique printings to the printing filter
     if(!printingFilter.querySelector(`option[value="${item.Printing}"]`)) {
@@ -107,10 +95,6 @@ function populateFilterOptions(data) {
       rarityFilter.innerHTML+=`<option value="${item.Rarity}">${item.Rarity}</option>`;
     }
 
-    // Add unique sets to the set filter
-    if(!setFilter.querySelector(`option[value="${item.Set}"]`)) {
-      setFilter.innerHTML+=`<option value="${item.Set}">${item.Set}</option>`;
-    }
   });
 }
 
