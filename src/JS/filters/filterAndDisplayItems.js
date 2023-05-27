@@ -5,7 +5,7 @@ function filterProductGrid(attribute,condition,printing,game,language,rarity) {
   gridContainer.innerHTML="";
 
   // Fetch the cardData.json file
-  fetch("./src/cardData.json")
+  fetch("./cardData.json")
     .then((response) => response.json())
     .then((data) => {
       // Extract the cardData array
