@@ -69,11 +69,6 @@ function populateFilterOptions(data) {
       conditionFilter.innerHTML+=`<option value="${item.condition}">${item.condition}</option>`;
     }
 
-    // Add unique monster types to the monster type filter
-    if(!monsterTypeFilter.querySelector(`option[value="${item.monsterType}"]`)) {
-      monsterTypeFilter.innerHTML+=`<option value="${item.monsterType}">${item.monsterType}</option>`;
-    }
-
     // Add unique printings to the printing filter
     if(!printingFilter.querySelector(`option[value="${item.printing}"]`)) {
       printingFilter.innerHTML+=`<option value="${item.printing}">${item.printing}</option>`;
