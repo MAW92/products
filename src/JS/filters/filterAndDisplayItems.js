@@ -1,4 +1,4 @@
-function filterProductGrid(attribute,condition,printing,game,language,rarity) {
+function filterProductGrid() {
   const gridContainer=document.getElementById("gridContainer");
 
   // Clear the existing grid
