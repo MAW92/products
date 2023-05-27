@@ -16,9 +16,8 @@ function applyFilters() {
   // Call the function to update the grid with filtered cards
   filterProductGrid(attribute,condition,printing,game,language,rarity);
 
-  // Close the filters modal
-  closeFiltersModal();
-}
 
+}
+applyFilters();
 // Event listener for the "Apply" button
 document.getElementById("applyButton").addEventListener("click",applyFilters);

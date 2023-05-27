@@ -6,8 +6,8 @@ function createProductGrid() {
     .then(response => response.json())
     .then(data => {
       // Extract the cardData and listingData arrays
-      const cardData=data[0].cardData;
-      const listingData=data[1].listingData;
+      const cardData=data.cardData;
+      const listingData=data.listingData;
 
       // Combine the products from both arrays
       const products=[...cardData,...listingData];
@@ -17,7 +17,7 @@ function createProductGrid() {
 
       // Loop through the combined products array
       for(let i=0;i<products.length;i++) {
-        const product=products[i];
+        const product=products;
 
         // Create the product card element
         const productCard=document.createElement("div");

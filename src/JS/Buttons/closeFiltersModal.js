@@ -7,5 +7,6 @@ function closeFiltersModal() {
     modal.classList.remove("slide-out");
   },500);
 }
+// Close the filters modal
 closeFiltersModal();
 document.getElementById("cancelButton").addEventListener("click",closeFiltersModal);
