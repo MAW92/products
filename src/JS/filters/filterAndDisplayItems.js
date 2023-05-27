@@ -17,7 +17,6 @@ function closeFiltersModal() {
 function applyFilters() {
   const attribute=document.getElementById("attributeFilter").value;
   const condition=document.getElementById("conditionFilter").value;
-  const cardType=document.getElementById("cardTypeFilter").value;
   const printing=document.getElementById("printingFilter").value;
   const game=document.getElementById("gameFilter").value;
   const language=document.getElementById("languageFilter").value;
@@ -25,7 +24,6 @@ function applyFilters() {
 
   console.log("Attribute:",attribute);
   console.log("Condition:",condition);
-  console.log("Card Type:",cardType);
   console.log("Printing:",printing);
   console.log("Game:",game);
   console.log("Language:",language);
@@ -42,7 +40,6 @@ function fetchFilterValues() {
 function populateFilterOptions(data) {
   const attributeFilter=document.getElementById("attributeFilter");
   const conditionFilter=document.getElementById("conditionFilter");
-  const cardTypeFilter=document.getElementById("cardTypeFilter");
   const printingFilter=document.getElementById("printingFilter");
   const gameFilter=document.getElementById("gameFilter");
   const languageFilter=document.getElementById("languageFilter");
@@ -51,7 +48,6 @@ function populateFilterOptions(data) {
   // Clear existing options
   attributeFilter.innerHTML="";
   conditionFilter.innerHTML="";
-  cardTypeFilter.innerHTML="";
   printingFilter.innerHTML="";
   gameFilter.innerHTML="";
   languageFilter.innerHTML="";
