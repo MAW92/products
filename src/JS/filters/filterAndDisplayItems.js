@@ -9,7 +9,7 @@ function filterProductGrid(attribute,condition,printing,game,language,rarity) {
     .then((response) => response.json())
     .then((data) => {
       // Extract the cardData array
-      const cardData=data[0].cardData;
+      const cardData=data.cardData;
 
       // Filter the cardData array based on the selected options
       const filteredCards=cardData.filter((card) => {
