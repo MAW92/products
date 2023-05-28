@@ -11,9 +11,9 @@ fetch('cardData.json')
     const printingFilter=document.getElementById('printingFilter');
 
     // Get the unique values from the data
-    const rarities=[...new Set(cards.map(card => card.rarity))];
-    const conditions=[...new Set(cards.map(card => card.cardCondition))];
-    const printings=[...new Set(cards.map(card => card.printing))];
+    const rarities=[...new Set(cards.map(card => card.Rarity))];
+    const conditions=[...new Set(cards.map(card => card.Condition))];
+    const printings=[...new Set(cards.map(card => card.Printing))];
 
     // Populate the filter menu
     rarities.forEach(rarity => {
@@ -51,7 +51,7 @@ fetch('cardData.json')
       cardList.innerHTML='';
 
       // Filter the cards based on the selected rarity
-      const filteredCards=selectedRarity==='all'? cards:cards.filter(card => card.rarity===selectedRarity);
+      const filteredCards=selectedRarity==='all'? cards:cards.filter(card => card.Rarity===selectedRarity);
 
       // Display the filtered cards
       filteredCards.forEach(card => {
@@ -70,7 +70,7 @@ fetch('cardData.json')
       cardList.innerHTML='';
 
       // Filter the cards based on the selected condition
-      const filteredCards=selectedCondition==='all'? cards:cards.filter(card => card.cardCondition===selectedCondition);
+      const filteredCards=selectedCondition==='all'? cards:cards.filter(card => card.Condition===selectedCondition);
 
       // Display the filtered cards
       filteredCards.forEach(card => {
@@ -89,7 +89,7 @@ fetch('cardData.json')
       cardList.innerHTML='';
 
       // Filter the cards based on the selected printing
-      const filteredCards=selectedPrinting==='all'? cards:cards.filter(card => card.printing===selectedPrinting);
+      const filteredCards=selectedPrinting==='all'? cards:cards.filter(card => card.Printing===selectedPrinting);
 
       // Display the filtered cards
       filteredCards.forEach(card => {
