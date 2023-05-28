@@ -1,24 +1,19 @@
 // Function to fetch JSON data from an external file
 async function fetchProducts() {
-  try {
-    const response=await fetch("./cardData.json");
-    const data=await response.json();
-    // Convert the fetched data into a list of products
-    const products=data.map((listingData) => ({
-      viewItemURL: listingData.viewItemURL,
-      galleryURL: listingData.galleryURL,
-      title: listingData.title,
-      Price: listingData.Price,
-      Shipping: listingData.Shipping,
-      Condition: listingData.Condition
-    }));
 
-    // Display the product cards
-    displayProductCards(products);
-  } catch(error) {
-    console.log("Error fetching products:",error);
-  }
+  const response=await fetch("./cardData.json");
+  // Convert the fetched data into a list of products
+  const products=data.map((listingData) => ({
+    viewItemURL: listingData.viewItemURL,
+    galleryURL: listingData.galleryURL,
+    title: listingData.title,
+    Price: listingData.Price,
+    Shipping: listingData.Shipping,
+    Condition: listingData.Condition
+  }));
 }
+// Display the product cards
+displayProductCards(products);
 
 // Function to create product cards
 function createProductCard(product) {
