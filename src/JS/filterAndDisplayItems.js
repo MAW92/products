@@ -1,9 +1,6 @@
 function filterProductGrid() {
   const gridContainer=document.getElementById("gridContainer");
 
-  // Clear the existing grid
-  gridContainer.innerHTML="";
-
   // Fetch the cardData.json file
   fetch("./cardData.json")
     .then((data) => {
