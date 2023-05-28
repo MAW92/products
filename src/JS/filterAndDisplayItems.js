@@ -1,55 +1,120 @@
-function filterProductGrid() {
-  const gridContainer=document.getElementById("gridContainer");
+// Fetch the card data from cardData.json
+fetch('cardData.json')
+  .then(response => response.json())
+  .then(data => {
+    // Store the card data in a variable
+    const cards=data[0].listingData;
 
-  // Fetch the cardData.json file
-  fetch("./cardData.json")
-    .then((data) => {
-      // Extract the listingData array
-      const listingData=data[0].listingData;
+    // Fetch the filter menu element
+    const rarityFilter=document.getElementById('rarityFilter');
+    const conditionFilter=document.getElementById('conditionFilter');
+    const printingFilter=document.getElementById('printingFilter');
 
-      // Filter the listingData array based on the selected options
-      const filteredCards=listingData.filter((card) => {
-        return (
-          card.Attribute===attribute&&
-          card.Condition===condition&&
-          card.Printing===printing&&
-          card.Game===game&&
-          card.Language===language&&
-          card.Rarity===rarity
-        );
-      });
+    // Get the unique values from the data
+    const rarities=[...new Set(cards.map(card => card.rarity))];
+    const conditions=[...new Set(cards.map(card => card.cardCondition))];
+    const printings=[...new Set(cards.map(card => card.printing))];
 
-      // Loop through the filtered cards array
-      filteredCards.forEach((card) => {
-        // Create the product card element
-        const productCard=document.createElement("div");
-        productCard.classList.add("w-fit","mx-auto");
-        productCard.innerHTML=`
-          <a href="${card.viewItemURL}"
-            target="_blank"
-            title="View on eBay"
-            class="mt-2 hover:text-shadow text-white">
-            <div class="w-fit border border-zinc-50 backdrop rounded-lg shadow-lg overflow-ellipsis will-change-transform hover:transform-gpu hover:duration-500 hover:ease-in-out hover:scale-105 hover:bg-gradient-to-b hover:from-transparent hover:to-transparent hover:via-black hover:text-shadow text-white">
-              <img src="${card.galleryURL}"
-                alt="${card.Title}"
-                class="w-full h-72 object-cover object-top rounded-t-lg">
-              <div class="p-2 flex-wrap">
-                <h3 class="text-lg font-black text-shadow text-white">${card.Title}</h3>
-                <p class="mt-2 text-shadow font-bold text-white">${card.Price}</p>
-                <p class="text-shadow text-sm font-bold text-white">Shipping: $${card.Shipping}</p>
-                <p class="mt-5 text-sm italic font-semibold text-shadow text-white">${card.Condition} condition, kept sleeved and stored in a safe environment.</p>
-              </div>
-            </div>
-          </a>`;
-
-        // Append the product card to the grid container
-        gridContainer.appendChild(productCard);
-      });
-    })
-    .catch((error) => {
-      console.log("Error fetching cardData:",error);
+    // Populate the filter menu
+    rarities.forEach(rarity => {
+      const option=document.createElement('option');
+      option.value=rarity;
+      option.textContent=rarity;
+      rarityFilter.appendChild(option);
     });
-}
 
-// Call the function to update the grid with filtered cards
-filterProductGrid();
+    conditions.forEach(cardCondition => {
+      const option=document.createElement('option');
+      option.value=cardCondition;
+      option.textContent=cardCondition;
+      conditionFilter.appendChild(option);
+    });
+
+    printings.forEach(printing => {
+      const option=document.createElement('option');
+      option.value=printing;
+      option.textContent=printing;
+      printingFilter.appendChild(option);
+    });
+
+    // Event listeners for the filter menu
+    rarityFilter.addEventListener('change',filterCardsByRarity);
+    conditionFilter.addEventListener('change',filterCardsByCondition);
+    printingFilter.addEventListener('change',filterCardsByPrinting);
+
+    // Function to filter and display the cards based on rarity
+    function filterCardsByRarity() {
+      const selectedRarity=rarityFilter.value;
+      const cardList=document.getElementById('cardList');
+
+      // Clear the previous card list
+      cardList.innerHTML='';
+
+      // Filter the cards based on the selected rarity
+      const filteredCards=selectedRarity==='all'? cards:cards.filter(card => card.rarity===selectedRarity);
+
+      // Display the filtered cards
+      filteredCards.forEach(card => {
+        const cardElement=document.createElement('div');
+        cardElement.textContent=card.cardName;
+        cardList.appendChild(cardElement);
+      });
+    }
+
+    // Function to filter and display the cards based on condition
+    function filterCardsByCondition() {
+      const selectedCondition=conditionFilter.value;
+      const cardList=document.getElementById('cardList');
+
+      // Clear the previous card list
+      cardList.innerHTML='';
+
+      // Filter the cards based on the selected condition
+      const filteredCards=selectedCondition==='all'? cards:cards.filter(card => card.cardCondition===selectedCondition);
+
+      // Display the filtered cards
+      filteredCards.forEach(card => {
+        const cardElement=document.createElement('div');
+        cardElement.textContent=card.cardName;
+        cardList.appendChild(cardElement);
+      });
+    }
+
+    // Function to filter and display the cards based on printing
+    function filterCardsByPrinting() {
+      const selectedPrinting=printingFilter.value;
+      const cardList=document.getElementById('cardList');
+
+      // Clear the previous card list
+      cardList.innerHTML='';
+
+      // Filter the cards based on the selected printing
+      const filteredCards=selectedPrinting==='all'? cards:cards.filter(card => card.printing===selectedPrinting);
+
+      // Display the filtered cards
+      filteredCards.forEach(card => {
+        const cardElement=document.createElement('div');
+        cardElement.textContent=card.cardName;
+        cardList.appendChild(cardElement);
+      });
+    }
+
+    const filterBtn=document.getElementById('filterBtn');
+    const filterMenu=document.getElementById('filterMenu');
+
+    // Toggle the visibility of the filter menu when the filter button is clicked
+    filterBtn.addEventListener('click',() => {
+      filterMenu.classList.toggle('hidden');
+    });
+
+    function openFilterMenu() {
+      filterBtn.addEventListener('click',() => {
+        filterMenu.classList.remove('-translate-x-full');
+      });
+    }
+
+    openFilterMenu();
+  })
+  .catch(error => {
+    console.error('Error fetching card data:',error);
+  });
