@@ -6,12 +6,6 @@ function filterProductGrid(attribute,condition,printing,game,language,rarity) {
 
   // Fetch the cardData.json file
   fetch("./cardData.json")
-    .then((response) => {
-      if(!response.ok) {
-        throw new Error("Error fetching cardData: "+response.status);
-      }
-      return response.json();
-    })
     .then((data) => {
       // Extract the listingData array
       const listingData=data[0].listingData;
