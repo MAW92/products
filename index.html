@@ -96,34 +96,59 @@
                   </button>
             </header>
 
-            <div id="filterMenu"
-                 class="relative right-0 mt-2 w-fit bg-white border border-gray-300 rounded shadow-lg">
-                  <label for="rarityFilter"
-                         class="block px-4 py-2 font-medium">Filter by Rarity:</label>
-                  <select id="rarityFilter"
-                          class="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
-                        <option>All</option>
-                  </select>
-                  <label for="conditionFilter"
-                         class="block px-4 py-2 font-medium">Filter by Condition:</label>
-                  <select id="conditionFilter"
-                          class="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
-                        <option>All</option>
-                  </select>
-                  <label for="printingFilter"
-                         class="block px-4 py-2 font-medium">Filter by Printing:</label>
-                  <select id="printingFilter"
-                          class="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
-                        <option>All</option>
-                  </select>
-            </div>
 
+            <aside class="container mx-auto py-8">
+                  <h1 class="text-2xl font-bold mb-4">Card Filter</h1>
+
+                  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                        <div class="p-4 bg-white rounded shadow">
+                              <h2 class="text-lg font-bold mb-2">Filter By Rarity</h2>
+                              <select id="rarityFilter"
+                                      class="w-full p-2 border rounded">
+                                    <option value="">All</option>
+                                    <option value="Common">Common</option>
+                                    <option value="Rare">Rare</option>
+                                    <option value="Super Rare">Super Rare</option>
+                                    <option value="Ultra Rare">Ultra Rare</option>
+                                    <option value="Secret Rare">Secret Rare</option>
+                              </select>
+                        </div>
+
+                        <div class="p-4 bg-white rounded shadow">
+                              <h2 class="text-lg font-bold mb-2">Filter By Condition</h2>
+                              <select id="conditionFilter"
+                                      class="w-full p-2 border rounded">
+                                    <option value="">All</option>
+                                    <option value="Near Mint">Near Mint</option>
+                                    <option value="Lightly Played">Lightly Played</option>
+                                    <option value="Moderately Played">Moderately Played</option>
+                                    <option value="Heavily Played">Heavily Played</option>
+                              </select>
+                        </div>
+
+                        <div class="p-4 bg-white rounded shadow">
+                              <h2 class="text-lg font-bold mb-2">Filter By Printing</h2>
+                              <select id="printingFilter"
+                                      class="w-full p-2 border rounded">
+                                    <option value="">All</option>
+                                    <option value="1st Edition">1st Edition</option>
+                                    <option value="Limited Edition">Limited Edition</option>
+                                    <option value="Unlimited Edition">Unlimited Edition</option>
+                              </select>
+                        </div>
+                  </div>
+            </aside>
             <main class="px-5 min-h-screen bg-image bg-fixed bg-cover bg-center">
+
                   <button id="filterBtn"
                           class="px-4 py-2 bg-indigo-500 text-white rounded-md">Filters</button>
                   <div id="cardList"></div>
                   <div id="productGrid"
-                       class="grid grid-cols-1 mx-auto gap-4 py-10 sm:grid-cols-2 md:grid-cols-3 lg:mx-8 lg:grid-cols-4"></div>
+                       class="grid grid-cols-1 mx-auto gap-4 py-10 sm:grid-cols-2 md:grid-cols-3 lg:mx-8 lg:grid-cols-4">
+                        <div id="cardContainer"
+                             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8"></div>
+                  </div>
+                  </div>
                   <!-- Product cards will be dynamically populated here -->
 
             </main>
