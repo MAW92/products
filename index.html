@@ -99,38 +99,82 @@
 
 
             <main class="px-5 min-h-screen bg-image bg-fixed bg-cover bg-center">
-                  <div id="filterMenu"
-                       class="relative right-0 mt-2 w-fit bg-white border border-gray-300 rounded shadow-lg">
-                        <label for="rarityFilter"
-                               class="block px-4 py-2 font-medium">Filter by Rarity:</label>
-                        <select id="rarityFilter"
-                                class="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
-                              <option>All</option>
-                        </select>
-                        <label for="conditionFilter"
-                               class="block px-4 py-2 font-medium">Filter by Condition:</label>
-                        <select id="conditionFilter"
-                                class="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
-                              <option>All</option>
-                        </select>
-                        <label for="printingFilter"
-                               class="block px-4 py-2 font-medium">Filter by Printing:</label>
-                        <select id="printingFilter"
-                                class="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
-                              <option>All</option>
-                        </select>
-                  </div>
-                  <button id="filterBtn"
-                          class="px-4 py-2 bg-indigo-500 text-white rounded-md">Filters</button>
-                  <div id="cardList"></div>
-                  <div id="productGrid"
-                       class="grid grid-cols-1 mx-auto gap-4 py-10 sm:grid-cols-2 md:grid-cols-3 lg:mx-8 lg:grid-cols-4"></div>
-                  <!-- Product cards will be dynamically populated here -->
+                  <div class="flex flex-col h-screen">
+                        <!-- Product Grid -->
+                        <div id="productGrid"
+                             class="grid grid-cols-1 mx-auto gap-4 py-10 sm:grid-cols-2 md:grid-cols-3 lg:mx-8 lg:grid-cols-4"></div>
 
+                        <!-- Filter Button -->
+                        <button id="filterBtn"
+                                class="fixed bottom-4 right-4 bg-blue-500 text-white py-2 px-4 rounded-lg shadow-md">
+                              Filters
+                        </button>
+
+                        <!-- Filters Slide-over Menu -->
+                        <div id="filterMenu"
+                             class="fixed right-0 top-0 h-screen w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out">
+                              <div class="flex justify-between items-center px-4 py-3 bg-blue-500 text-white">
+                                    <h2 class="text-lg font-bold">Filters</h2>
+                                    <button id="closeFilterBtn"
+                                            class="text-white hover:text-gray-200 focus:outline-none">
+                                          <svg class="h-6 w-6"
+                                               fill="none"
+                                               viewBox="0 0 24 24"
+                                               stroke="currentColor">
+                                                <path stroke-linecap="round"
+                                                      stroke-linejoin="round"
+                                                      stroke-width="2"
+                                                      d="M6 18L18 6M6 6l12 12"></path>
+                                          </svg>
+                                    </button>
+                              </div>
+                              <div class="px-4 py-6">
+                                    <label for="conditionFilter"
+                                           class="block font-medium">Condition</label>
+                                    <select id="conditionFilter"
+                                            class="w-full border-gray-300 rounded-md mt-1 focus:ring-blue-500 focus:border-blue-500">
+                                          <option value="all">All</option>
+                                          <option value="Excellent">Excellent</option>
+                                          <option value="Near Mint">Near Mint</option>
+                                          <option value="Lightly Played">Lightly Played</option>
+                                          <option value="Moderately Played">Moderately Played</option>
+                                          <option value="Heavily Played">Heavily Played</option>
+
+                                    </select>
+
+                                    <label for="rarityFilter"
+                                           class="block font-medium mt-4">Rarity</label>
+                                    <select id="rarityFilter"
+                                            class="w-full border-gray-300 rounded-md mt-1 focus:ring-blue-500 focus:border-blue-500">
+                                          <option value="all">All</option>
+                                          <option value="Common">Common</option>
+                                          <option value="Rare">Rare</option>
+                                          <option value="Super Rare">Super Rare</option>
+                                          <option value="Ultra Rare">Ultra Rare</option>
+                                          <option value="Secret Rare">Secret Rare</option>
+                                    </select>
+
+                                    <label for="printingFilter"
+                                           class="block font-medium mt-4">Printing</label>
+                                    <select id="printingFilter"
+                                            class="w-full border-gray-300 rounded-md mt-1 focus:ring-blue-500 focus:border-blue-500">
+                                          <option value="all">All</option>
+                                          <option value="First Edition">First Edition</option>
+                                          <option value="Unlimited Edition">Unlimited Edition</option>
+                                          <option value="Limited Edition">Limited Edition</option>
+                                    </select>
+
+                                    <div class="flex justify-end mt-6">
+                                          <button id="applyFilterBtn"
+                                                  class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">Apply</button>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
             </main>
             <script src="src/JS/filterAndDisplayItems.js"></script>
             <script src="src/JS/menu.js"></script>
-            <script src="src/JS/populateProductCard.js"></script>
+            <!--<script src="src/JS/populateProductCard.js"></script>-->
       </body>
 
 </html>
