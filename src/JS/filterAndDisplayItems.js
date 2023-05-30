@@ -33,7 +33,7 @@ function createProductCard(product) {
         <img src="${product.galleryURL}" alt="${product.title}" class="w-full h-72 object-cover object-top rounded-t-lg">
         <div class="p-2 flex-wrap">
           <h3 class="text-lg font-black text-shadow text-white">${product.title}</h3>
-          <p class="mt-2 text-shadow font-bold text-white">${product.Price}</p>
+          <p class="mt-2 text-shadow font-bold text-white">$${product.Price}</p>
           <p class="text-shadow text-sm font-bold text-white">Shipping: $${product.Shipping}</p>
           <p class="mt-5 text-sm italic font-semibold text-shadow text-white">${product.Condition} condition, kept sleeved and stored in a safe environment.</p>
         </div>
