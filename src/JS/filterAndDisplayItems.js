@@ -1,5 +1,5 @@
 // Fetch the card data from cardData.json
-fetch('cardData.json')
+fetch('./cardData.json')
   .then(response => response.json())
   .then(data => {
     // Store the card data in a variable
@@ -11,29 +11,29 @@ fetch('cardData.json')
     const printingFilter=document.getElementById('printingFilter');
 
     // Get the unique values from the data
-    const rarities=[...new Set(cards.map(card => card.Rarity))];
-    const conditions=[...new Set(cards.map(card => card.Condition))];
-    const printings=[...new Set(cards.map(card => card.Printing))];
+    const rarities=[...new Set(cards.map(cards => cards.Rarity))];
+    const conditions=[...new Set(cards.map(cards => cards.Condition))];
+    const printings=[...new Set(cards.map(cards => cards.Printing))];
 
     // Populate the filter menu
-    rarities.forEach(rarity => {
+    rarities.forEach(cards => {
       const option=document.createElement('option');
-      option.value=rarity;
-      option.textContent=rarity;
+      option.value=cards.Rarity;
+      option.textContent=cards.Rarity;
       rarityFilter.appendChild(option);
     });
 
-    conditions.forEach(cardCondition => {
+    conditions.forEach(cards => {
       const option=document.createElement('option');
-      option.value=cardCondition;
-      option.textContent=cardCondition;
+      option.value=cards.Condition;
+      option.textContent=cards.Condition;
       conditionFilter.appendChild(option);
     });
 
-    printings.forEach(printing => {
+    printings.forEach(cards => {
       const option=document.createElement('option');
-      option.value=printing;
-      option.textContent=printing;
+      option.value=cards.Printing;
+      option.textContent=cards.Printing;
       printingFilter.appendChild(option);
     });
 
