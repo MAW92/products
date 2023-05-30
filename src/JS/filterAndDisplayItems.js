@@ -1,120 +1,78 @@
-// Fetch the card data from cardData.json
-fetch('./cardData.json')
-  .then(response => response.json())
-  .then(data => {
-    // Store the card data in a variable
-    const cards=data[0].listingData;
+function filterAndDisplayCards() {
+  // Fetch the card data from cardData.json
+  fetch('cardData.json')
+    .then(response => response.json())
+    .then(data => {
+      // Store the card data in a variable
+      const cards=data.listingData;
 
-    // Fetch the filter menu element
-    const rarityFilter=document.getElementById('rarityFilter');
-    const conditionFilter=document.getElementById('conditionFilter');
-    const printingFilter=document.getElementById('printingFilter');
+      // Get the filter menu elements
+      const rarityFilter=document.getElementById('rarityFilter');
+      const conditionFilter=document.getElementById('conditionFilter');
+      const printingFilter=document.getElementById('printingFilter');
 
-    // Get the unique values from the data
-    const rarities=[...new Set(cards.map(cards => cards.Rarity))];
-    const conditions=[...new Set(cards.map(cards => cards.Condition))];
-    const printings=[...new Set(cards.map(cards => cards.Printing))];
-
-    // Populate the filter menu
-    rarities.forEach(cards => {
-      const option=document.createElement('option');
-      option.value=cards.Rarity;
-      option.textContent=cards.Rarity;
-      rarityFilter.appendChild(option);
-    });
-
-    conditions.forEach(cards => {
-      const option=document.createElement('option');
-      option.value=cards.Condition;
-      option.textContent=cards.Condition;
-      conditionFilter.appendChild(option);
-    });
-
-    printings.forEach(cards => {
-      const option=document.createElement('option');
-      option.value=cards.Printing;
-      option.textContent=cards.Printing;
-      printingFilter.appendChild(option);
-    });
-
-    // Event listeners for the filter menu
-    rarityFilter.addEventListener('change',filterCardsByRarity);
-    conditionFilter.addEventListener('change',filterCardsByCondition);
-    printingFilter.addEventListener('change',filterCardsByPrinting);
-
-    // Function to filter and display the cards based on rarity
-    function filterCardsByRarity() {
+      // Get the selected filter values
       const selectedRarity=rarityFilter.value;
-      const cardList=document.getElementById('cardList');
-
-      // Clear the previous card list
-      cardList.innerHTML='';
-
-      // Filter the cards based on the selected rarity
-      const filteredCards=selectedRarity==='all'? cards:cards.filter(card => card.Rarity===selectedRarity);
-
-      // Display the filtered cards
-      filteredCards.forEach(card => {
-        const cardElement=document.createElement('div');
-        cardElement.textContent=card.cardName;
-        cardList.appendChild(cardElement);
-      });
-    }
-
-    // Function to filter and display the cards based on condition
-    function filterCardsByCondition() {
       const selectedCondition=conditionFilter.value;
-      const cardList=document.getElementById('cardList');
-
-      // Clear the previous card list
-      cardList.innerHTML='';
-
-      // Filter the cards based on the selected condition
-      const filteredCards=selectedCondition==='all'? cards:cards.filter(card => card.Condition===selectedCondition);
-
-      // Display the filtered cards
-      filteredCards.forEach(card => {
-        const cardElement=document.createElement('div');
-        cardElement.textContent=card.cardName;
-        cardList.appendChild(cardElement);
-      });
-    }
-
-    // Function to filter and display the cards based on printing
-    function filterCardsByPrinting() {
       const selectedPrinting=printingFilter.value;
-      const cardList=document.getElementById('cardList');
 
-      // Clear the previous card list
-      cardList.innerHTML='';
+      // Filter the cards based on the selected criteria
+      const filteredCards=cards.filter(card => {
+        // Filter by Condition
+        if(selectedCondition!=='all'&&card.Condition!==selectedCondition) {
+          return false;
+        }
 
-      // Filter the cards based on the selected printing
-      const filteredCards=selectedPrinting==='all'? cards:cards.filter(card => card.Printing===selectedPrinting);
+        // Filter by Rarity
+        if(selectedRarity!=='all'&&card.Rarity!==selectedRarity) {
+          return false;
+        }
+
+        // Filter by Printing
+        if(selectedPrinting!=='all'&&card.Printing!==selectedPrinting) {
+          return false;
+        }
+
+        return true;
+      });
 
       // Display the filtered cards
+      const cardList=document.getElementById('cardList');
+      cardList.innerHTML=''; // Clear previous results
+
       filteredCards.forEach(card => {
+        // Create a card element to display the details
         const cardElement=document.createElement('div');
-        cardElement.textContent=card.cardName;
+        cardElement.classList.add('card');
+
+        // Set the content of the card element
+        cardElement.innerHTML=`
+          <img src="${card.galleryURL}" alt="Card Image">
+          <h3>${card.Title}</h3>
+          <p>Condition: ${card.Condition}</p>
+          <p>Rarity: ${card.Rarity}</p>
+          <p>Printing: ${card.Printing}</p>
+          <p>Price: $${card.Price}</p>
+          <a href="${card.viewItemURL}" target="_blank">View Item</a>
+        `;
+
+        // Append the card element to the card list
         cardList.appendChild(cardElement);
       });
-    }
-
-    const filterBtn=document.getElementById('filterBtn');
-    const filterMenu=document.getElementById('filterMenu');
-
-    // Toggle the visibility of the filter menu when the filter button is clicked
-    filterBtn.addEventListener('click',() => {
-      filterMenu.classList.toggle('hidden');
+    })
+    .catch(error => {
+      console.error('Error fetching card data:',error);
     });
+}
 
-    function openFilterMenu() {
-      filterBtn.addEventListener('click',() => {
-        filterMenu.classList.remove('-translate-x-full');
-      });
-    }
+// Call the function to filter and display the cards
+filterAndDisplayCards();
 
-    openFilterMenu();
-  })
-  .catch(error => {
-    console.error('Error fetching card data:',error);
-  });
+// Add event listeners for filter menu changes
+const rarityFilter=document.getElementById('rarityFilter');
+const conditionFilter=document.getElementById('conditionFilter');
+const printingFilter=document.getElementById('printingFilter');
+
+rarityFilter.addEventListener('change',filterAndDisplayCards);
+conditionFilter.addEventListener('change',filterAndDisplayCards);
+printingFilter.addEventListener('change',filterAndDisplayCards);
