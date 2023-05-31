@@ -2,7 +2,6 @@
 const filterBtn=document.getElementById('filterBtn');
 const filterMenu=document.getElementById('filterMenu');
 const closeFilterBtn=document.getElementById('closeFilterBtn');
-const applyFilterBtn=document.getElementById('applyFilterBtn');
 
 // Function to open the filter menu
 function openFilterMenu() {
@@ -19,6 +18,3 @@ filterBtn.addEventListener('click',openFilterMenu);
 
 // Event listener for closing the filter menu when the close button is clicked
 closeFilterBtn.addEventListener('click',closeFilterMenu);
-
-// Event listener for closing the filter menu when the apply button is clicked
-applyFilterBtn.addEventListener('click',closeFilterMenu);
