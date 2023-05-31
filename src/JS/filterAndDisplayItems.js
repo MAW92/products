@@ -29,5 +29,6 @@ function filterAndDisplayItems() {
   });
 }
 
+filterAndDisplayItems();
 // Call the filter and display function when the filter button is clicked
 document.getElementById("applyFilterBtn").addEventListener("click",filterAndDisplayItems);

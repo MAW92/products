@@ -97,7 +97,15 @@
             </header>
             <main class="px-5 min-h-screen bg-image bg-fixed bg-cover bg-center">
 
+                  <!-- Product Grid -->
+                  <div id="productGrid"
+                       class="grid grid-cols-1 mx-auto gap-4 py-10 sm:grid-cols-2 md:grid-cols-3 lg:mx-8 lg:grid-cols-4"></div>
 
+                  <!-- Filter Button -->
+                  <button id="filterBtn"
+                          class="fixed bottom-4 right-4 bg-blue-500 text-white py-2 px-4 rounded-lg shadow-md">
+                        Filters
+                  </button>
                   <!-- Filters Slide-over Menu -->
                   <div id="filterMenu"
                        class="fixed inset-y-0 right-0 z-50 w-72 px-4 py-6 bg-white shadow-lg will-change-transform transform translate-x-full transition-transform duration-300 ease-in-out">
@@ -146,15 +154,7 @@
                                       class="bg-blue-500 hover:bg-blue-600 text-white text-shadow px-4 py-2 rounded-md">Apply</button>
                         </div>
                   </div>
-                  <!-- Product Grid -->
-                  <div id="productGrid"
-                       class="grid grid-cols-1 mx-auto gap-4 py-10 sm:grid-cols-2 md:grid-cols-3 lg:mx-8 lg:grid-cols-4"></div>
 
-                  <!-- Filter Button -->
-                  <button id="filterBtn"
-                          class="fixed bottom-4 right-4 bg-blue-500 text-white py-2 px-4 rounded-lg shadow-md">
-                        Filters
-                  </button>
             </main>
             <script src="src/JS/filterAndDisplayItems.js"></script>
             <script src="src/JS/Buttons/filtersButton.js"></script>

@@ -1,20 +1,20 @@
-// Function to fetch JSON data from an external file
+// Function to fetch data from the provided URL and parse it
 function fetchProducts() {
   try {
-    fetch("./cardData.json")
+    fetch("https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsAdvanced&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=MW-test-PRD-5b44d5824-5238f1d1&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&itemFilter(0).name=Seller&itemFilter(0).value=gottasellemall69&searchResult.item.GalleryInfoContainer&searchResult.item.shippinginfo.shippingServiceCost&searchResult.item.shippinginfo.shippingType&aspectHistogramContainer.aspect.valueName=Rare&paginationInput.entriesPerPage=100")
       .then(response => response.json())
       .then(data => {
-        // Extract the listingData array from the JSON
-        const listingData=data[0].listingData;
+        // Extract the item data array from the response
+        const items=data.findItemsAdvancedResponse[0].searchResult[0].item;
 
         // Convert the fetched data into a list of products
-        const products=listingData.map(productData => ({
-          viewItemURL: productData.viewItemURL,
-          galleryURL: productData.galleryURL,
-          title: productData.Title,
-          Price: productData.Price,
-          Shipping: productData.Shipping,
-          Condition: productData.Condition
+        const products=items.map(item => ({
+          viewItemURL: item.viewItemURL[0],
+          galleryURL: item.galleryURL[0],
+          title: item.title[0],
+          Price: item.sellingStatus[0].currentPrice[0].__value__,
+          Shipping: item.shippingInfo[0].shippingServiceCost[0].__value__||"0.00",
+          Condition: item.condition[0].conditionDisplayName[0]
         }));
 
         // Display the product cards
@@ -27,6 +27,7 @@ function fetchProducts() {
     console.log("Error fetching products:",error);
   }
 }
+
 
 // Function to create product cards
 function createProductCard(product) {
@@ -64,3 +65,5 @@ function displayProductCards(products) {
 
 // Call the fetch function initially
 fetchProducts();
+createProductCard();
+displayProductCards(products);
