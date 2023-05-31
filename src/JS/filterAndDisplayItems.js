@@ -1,5 +1,5 @@
 // Function to fetch JSON data from an external file
-async function fetchProducts() {
+function fetchProducts() {
   try {
     const response=fetch("./cardData.json");
     const data=response.json();
