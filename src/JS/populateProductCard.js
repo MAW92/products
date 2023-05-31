@@ -5,7 +5,7 @@ function fetchProducts() {
       .then(response => response.json())
       .then(data => {
         // Extract the listingData array from the JSON
-        const listingData=data[0].listingData;
+        const listingData=data.listingData;
 
         // Convert the fetched data into a list of products
         const products=listingData.map(productData => ({
