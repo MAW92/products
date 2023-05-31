@@ -1,11 +1,11 @@
 // Function to fetch JSON data from an external file
 async function fetchProducts() {
   try {
-    const response=await fetch("./cardData.json");
-    const data=await response.json();
+    const response=fetch("./cardData.json");
+    const data=response.json();
 
     // Extract the listingData array from the JSON
-    const listingData=data[0]?.listingData||[];
+    const listingData=data[0].listingData;
 
     // Convert the fetched data into a list of products
     const products=listingData.map((productData) => ({
