@@ -1,8 +1,8 @@
 // Function to fetch JSON data from an external file
-async function fetchProducts() {
+function fetchProducts() {
   try {
-    const response=await fetch("./cardData.json");
-    const data=await response.json();
+    const response=fetch("./cardData.json");
+    const data=response.json();
 
     // Extract the listingData array from the JSON
     const listingData=data[0].listingData;
@@ -23,7 +23,6 @@ async function fetchProducts() {
     console.log("Error fetching products:",error);
   }
 }
-
 // Function to create product cards
 function createProductCard(product) {
   const card=document.createElement("div");
@@ -33,7 +32,7 @@ function createProductCard(product) {
         <img src="${product.galleryURL}" alt="${product.title}" class="w-full h-72 object-cover object-top rounded-t-lg">
         <div class="p-2 flex-wrap">
           <h3 class="text-lg font-black text-shadow text-white">${product.title}</h3>
-          <p class="mt-2 text-shadow font-bold text-white">${product.Price}</p>
+          <p class="mt-2 text-shadow font-bold text-white">$${product.Price}</p>
           <p class="text-shadow text-sm font-bold text-white">Shipping: $${product.Shipping}</p>
           <p class="mt-5 text-sm italic font-semibold text-shadow text-white">${product.Condition} condition, kept sleeved and stored in a safe environment.</p>
         </div>
@@ -48,12 +47,12 @@ function displayProductCards(products) {
   // Get the product grid element
   const productGrid=document.getElementById("productGrid");
 
+  // Clear previous results
+  productGrid.innerHTML="";
+
   // Generate product cards and append to the grid
   products.forEach((product) => {
     const card=createProductCard(product);
     productGrid.appendChild(card);
   });
 }
-
-// Fetch the products and display the cards
-fetchProducts();
