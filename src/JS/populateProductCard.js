@@ -1,28 +1,33 @@
 // Function to fetch JSON data from an external file
 function fetchProducts() {
   try {
-    const response=fetch("./cardData.json");
-    const data=response.json();
+    fetch("./cardData.json")
+      .then(response => response.json())
+      .then(data => {
+        // Extract the listingData array from the JSON
+        const listingData=data[0].listingData;
 
-    // Extract the listingData array from the JSON
-    const listingData=data[0].listingData;
+        // Convert the fetched data into a list of products
+        const products=listingData.map(productData => ({
+          viewItemURL: productData.viewItemURL,
+          galleryURL: productData.galleryURL,
+          title: productData.Title,
+          Price: productData.Price,
+          Shipping: productData.Shipping,
+          Condition: productData.Condition
+        }));
 
-    // Convert the fetched data into a list of products
-    const products=listingData.map((productData) => ({
-      viewItemURL: productData.viewItemURL,
-      galleryURL: productData.galleryURL,
-      title: productData.Title,
-      Price: productData.Price,
-      Shipping: productData.Shipping,
-      Condition: productData.Condition
-    }));
-
-    // Display the product cards
-    displayProductCards(products);
+        // Display the product cards
+        displayProductCards(products);
+      })
+      .catch(error => {
+        console.log("Error fetching products:",error);
+      });
   } catch(error) {
     console.log("Error fetching products:",error);
   }
 }
+
 // Function to create product cards
 function createProductCard(product) {
   const card=document.createElement("div");
@@ -51,8 +56,11 @@ function displayProductCards(products) {
   productGrid.innerHTML="";
 
   // Generate product cards and append to the grid
-  products.forEach((product) => {
+  products.forEach(product => {
     const card=createProductCard(product);
     productGrid.appendChild(card);
   });
 }
+
+// Call the fetch function initially
+fetchProducts();
