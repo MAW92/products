@@ -95,9 +95,6 @@
                         </svg>
                   </button>
             </header>
-
-
-
             <main class="px-5 min-h-screen bg-image bg-fixed bg-cover bg-center">
                   <!-- Product Grid -->
                   <div id="productGrid"
@@ -111,8 +108,8 @@
 
                   <!-- Filters Slide-over Menu -->
                   <div id="filterMenu"
-                       class="fixed right-0 top-0 h-screen w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out">
-                        <div class="flex justify-between items-center px-4 py-3 bg-blue-500 text-white">
+                       class="fixed inset-y-0 right-0 z-50 w-72 px-4 py-6 bg-white shadow-lg will-change-transform transform translate-x-full transition-transform duration-300 ease-in-out">
+                        <div class="flex justify-between items-center px-4 py-3 bg-blue-500 text-shadow text-white">
                               <h2 class="text-lg font-bold">Filters</h2>
                               <button id="closeFilterBtn"
                                       class="text-white hover:text-gray-200 focus:outline-none">
@@ -127,46 +124,33 @@
                                     </svg>
                               </button>
                         </div>
-                        <div class="px-4 py-6">
-                              <label for="conditionFilter"
-                                     class="block font-medium">Condition</label>
-                              <select id="conditionFilter"
-                                      class="w-full border-gray-300 rounded-md mt-1 focus:ring-blue-500 focus:border-blue-500">
-                                    <option value="all">All</option>
-                                    <option value="Excellent">Excellent</option>
-                                    <option value="Near Mint">Near Mint</option>
-                                    <option value="Lightly Played">Lightly Played</option>
-                                    <option value="Moderately Played">Moderately Played</option>
-                                    <option value="Heavily Played">Heavily Played</option>
-
-                              </select>
-
+                        <div class="mb-4">
                               <label for="rarityFilter"
-                                     class="block font-medium mt-4">Rarity</label>
+                                     class="block font-medium">Rarity:</label>
                               <select id="rarityFilter"
-                                      class="w-full border-gray-300 rounded-md mt-1 focus:ring-blue-500 focus:border-blue-500">
+                                      class="form-select w-full">
                                     <option value="all">All</option>
-                                    <option value="Common">Common</option>
-                                    <option value="Rare">Rare</option>
-                                    <option value="Super Rare">Super Rare</option>
-                                    <option value="Ultra Rare">Ultra Rare</option>
-                                    <option value="Secret Rare">Secret Rare</option>
                               </select>
-
+                        </div>
+                        <div class="mb-4">
+                              <label for="conditionFilter"
+                                     class="block font-medium">Condition:</label>
+                              <select id="conditionFilter"
+                                      class="form-select w-full">
+                                    <option value="all">All</option>
+                              </select>
+                        </div>
+                        <div class="mb-4">
                               <label for="printingFilter"
-                                     class="block font-medium mt-4">Printing</label>
+                                     class="block font-medium">Printing:</label>
                               <select id="printingFilter"
-                                      class="w-full border-gray-300 rounded-md mt-1 focus:ring-blue-500 focus:border-blue-500">
+                                      class="form-select w-full">
                                     <option value="all">All</option>
-                                    <option value="First Edition">First Edition</option>
-                                    <option value="Unlimited Edition">Unlimited Edition</option>
-                                    <option value="Limited Edition">Limited Edition</option>
                               </select>
-
-                              <div class="flex justify-end mt-6">
-                                    <button id="applyFilterBtn"
-                                            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">Apply</button>
-                              </div>
+                        </div>
+                        <div class="flex justify-end mt-6">
+                              <button id="applyFilterBtn"
+                                      class="bg-blue-500 hover:bg-blue-600 text-white text-shadow px-4 py-2 rounded-md">Apply</button>
                         </div>
                   </div>
             </main>
