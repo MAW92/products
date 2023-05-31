@@ -5,7 +5,7 @@ async function fetchProducts() {
     const data=await response.json();
 
     // Extract the listingData array from the JSON
-    const listingData=data[0].listingData;
+    const listingData=data[0]?.listingData||[];
 
     // Convert the fetched data into a list of products
     const products=listingData.map((productData) => ({
@@ -14,20 +14,18 @@ async function fetchProducts() {
       title: productData.Title,
       Price: productData.Price,
       Shipping: productData.Shipping,
-      Condition: productData.Condition,
-      Rarity: productData.Rarity,
-      Printing: productData.Printing
+      Condition: productData.Condition
     }));
 
     // Display the product cards
     displayProductCards(products);
-
-    // Populate the filter menu
-    populateFilterMenu();
   } catch(error) {
     console.log("Error fetching products:",error);
   }
 }
+// Populate the filter menu
+populateFilterMenu();
+
 
 // Function to create product cards
 function createProductCard(product) {
