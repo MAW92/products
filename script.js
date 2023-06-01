@@ -9,7 +9,7 @@ async function populateFilterOptions(category) {
     // Fetch data from cardData.json
     const response=await fetch('./cardData.json');
     const jsonData=await response.json();
-    const data=jsonData[0].listingData;
+    const data=jsonData.listingData;
 
     // Get unique values for the selected category
     const options=[...new Set(data.map((card) => card[category]))];
@@ -56,7 +56,7 @@ form.addEventListener('submit',async (e) => {
     // Fetch data from cardData.json
     const response=await fetch('cardData.json');
     const jsonData=await response.json();
-    const data=jsonData[0].listingData;
+    const data=jsonData.listingData;
 
     // Get selected filters
     const selectedFilters={};
