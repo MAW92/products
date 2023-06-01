@@ -830,16 +830,16 @@ html {
   bottom: 1rem;
 }
 
+.left-4 {
+  left: 1rem;
+}
+
 .right-0 {
   right: 0px;
 }
 
 .right-2 {
   right: 0.5rem;
-}
-
-.right-4 {
-  right: 1rem;
 }
 
 .top-2 {
