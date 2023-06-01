@@ -226,52 +226,52 @@
                               </div>
                         </div>
                   </div>
-                  <div class="hidden lg:block">
-                        <aside class="bg-white">
-                              <div class="px-4 py-6 sm:px-6">
-                                    <h2 class="text-lg font-medium text-gray-900">Filters</h2>
-                              </div>
-                              <form class="border-t border-gray-200 px-4 py-6 sm:p-0">
-                                    <div class="sm:hidden">
-                                          <label for="tabs"
-                                                 class="sr-only">Select a tab</label>
-                                          <select id="tabs"
-                                                  name="tabs"
-                                                  class="block w-full focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
-                                                <option>Rarity</option>
-                                                <option>Type</option>
-                                                <option>Color</option>
-                                          </select>
+
+                  <div id="filterMenu"
+                       class="fixed inset-y-0 right-0 z-50 w-72 px-4 py-6 bg-white shadow-lg will-change-transform transform translate-x-full transition-transform duration-300 ease-in-out">
+                        <div class="hidden lg:block">
+                              <aside class="bg-white">
+                                    <div class="px-4 py-6 sm:px-6">
+                                          <h2 class="text-lg font-medium text-gray-900">Filters</h2>
                                     </div>
-                                    <div class="hidden sm:block">
-                                          <nav class="flex space-x-4">
-                                                <button type="button"
-                                                        class="text-sm font-medium text-gray-600 hover:text-gray-900">Rarity</button>
-                                                <button type="button"
-                                                        class="text-sm font-medium text-gray-600 hover:text-gray-900">Type</button>
-                                                <button type="button"
-                                                        class="text-sm font-medium text-gray-600 hover:text-gray-900">Color</button>
-                                          </nav>
-                                    </div>
-                                    <div class="mt-4">
-                                          <div class="border-t border-gray-200 pt-4">
-                                                <div class="space-y-6"
-                                                     id="filter-options">
-                                                      <!-- Populated dynamically with JavaScript -->
+                                    <form class="border-t border-gray-200 px-4 py-6 sm:p-0">
+                                          <div class="sm:hidden">
+                                                <label for="tabs"
+                                                       class="sr-only">Select a tab</label>
+                                                <select id="tabs"
+                                                        name="tabs"
+                                                        class="block w-full focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
+                                                      <option>Rarity</option>
+                                                      <option>Type</option>
+                                                      <option>Color</option>
+                                                </select>
+                                          </div>
+                                          <div class="hidden sm:block">
+                                                <nav class="flex space-x-4">
+                                                      <button type="button"
+                                                              class="text-sm font-medium text-gray-600 hover:text-gray-900">Rarity</button>
+                                                      <button type="button"
+                                                              class="text-sm font-medium text-gray-600 hover:text-gray-900">Type</button>
+                                                      <button type="button"
+                                                              class="text-sm font-medium text-gray-600 hover:text-gray-900">Color</button>
+                                                </nav>
+                                          </div>
+                                          <div class="mt-4">
+                                                <div class="border-t border-gray-200 pt-4">
+                                                      <div class="space-y-6"
+                                                           id="filter-options">
+                                                            <!-- Populated dynamically with JavaScript -->
+                                                      </div>
                                                 </div>
                                           </div>
-                                    </div>
-                                    <div class="px-4 py-4 bg-gray-100 text-right sm:px-6">
-                                          <button type="submit"
-                                                  class="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">Apply Filters</button>
-                                    </div>
-                              </form>
-                        </aside>
-                  </div>
-                  </div>
-                  <!--<div id="filterMenu"
-                       class="fixed inset-y-0 right-0 z-50 w-72 px-4 py-6 bg-white shadow-lg will-change-transform transform translate-x-full transition-transform duration-300 ease-in-out">
-                        <div class="flex justify-between items-center px-4 py-3 bg-blue-500 text-shadow text-white">
+                                          <div class="px-4 py-4 bg-gray-100 text-right sm:px-6">
+                                                <button type="submit"
+                                                        class="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">Apply Filters</button>
+                                          </div>
+                                    </form>
+                              </aside>
+                        </div>
+                        <!--<div class="flex justify-between items-center px-4 py-3 bg-blue-500 text-shadow text-white">
                               <h2 class="text-lg font-bold">Filters</h2>
                               <button id="closeFilterBtn"
                                       class="text-white hover:text-gray-200 focus:outline-none">
@@ -312,12 +312,12 @@
                                       class="form-select w-full">
                                     <option>All</option>
                               </select>
-                        </div>
+                        </div>-->
                         <div class="flex justify-end mt-6">
                               <button id="applyFilterBtn"
                                       class="bg-blue-500 hover:bg-blue-600 text-white text-shadow px-4 py-2 rounded-md">Apply</button>
                         </div>
-                  </div>-->
+                  </div>
 
             </main>
             <script src="./script.js"></script>
