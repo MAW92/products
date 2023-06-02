@@ -19,8 +19,55 @@
                   href="https://www.ebay.com/usr/gottasellemall69" />
             <link rel="stylesheet"
                   href="./dist/output.css" />
-            <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <style>
+                  * {
+                        box-sizing: border-box;
+                  }
+
+                  body {
+                        font-family: sans-serif;
+                  }
+
+                  .item {
+                        width: 100px;
+                        height: 100px;
+                        float: left;
+
+                        margin: 5px;
+                        padding: 5px;
+                  }
+
+                  .item p {
+                        margin: 0;
+                  }
+
+                  .red {
+                        background: #F33;
+                  }
+
+                  .blue {
+                        background: #88F;
+                  }
+
+                  .green {
+                        background: #3A3;
+                  }
+
+                  .orange {
+                        background: orange;
+                  }
+
+                  select,
+                  label,
+                  input {
+                        font-size: 20px;
+                  }
+
+                  label {
+                        margin-right: 10px;
+                  }
+            </style>
+
       </head>
 
 
@@ -103,9 +150,6 @@
                        class="grid grid-cols-1 mx-auto gap-4 py-10 sm:grid-cols-2 md:grid-cols-3 lg:mx-8 lg:grid-cols-4">
 
                   </div>
-                  <div id="container">
-                        <!-- items added with JS -->
-                  </div>
                   <!-- Filter Button -->
                   <button id="filterBtn"
                           class="fixed bottom-4 left-4 bg-blue-500 text-white py-2 px-4 rounded-lg shadow-md">
@@ -157,6 +201,7 @@
                                     </p>
                                     <p id="output">--</p>
                               </div>
+
                               <!--<div class="mb-4">
                                     <label for="rarityFilter"
                                            class="block font-medium">Rarity:</label>
@@ -191,6 +236,9 @@
                               </div>
                         </div>
                   </aside>
+                  <div id="container">
+                        <!-- items added with JS -->
+                  </div>
             </main>
             <script>
                   // Fetch data from cardData.json
@@ -249,6 +297,8 @@
                   }
 
             </script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
             <script src="src/JS/populateProductCard.js"></script>
             <script src="src/JS/filterAndDisplayItems.js"></script>
             <script src="src/JS/Buttons/filtersButton.js"></script>
