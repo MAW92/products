@@ -106,131 +106,26 @@
                           class="fixed bottom-4 left-4 bg-blue-500 text-white py-2 px-4 rounded-lg shadow-md">
                         Filters
                   </button>
-                  <!-- Filters Slide-over Menu -->
-                  <div class="relative z-40 lg:hidden"
-                       role="dialog"
-                       aria-modal="true">
-                        <div class="fixed inset-0 bg-black bg-opacity-25"></div>
-                        <div class="fixed inset-0 z-40 flex">
-                              <div class="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white py-4 pb-6 shadow-xl">
-                                    <div class="flex items-center justify-between px-4">
-                                          <h2 class="text-lg font-medium text-gray-900">Filters</h2>
-                                          <button type="button"
-                                                  class="-mr-2 flex h-10 w-10 items-center justify-center p-2 text-gray-400 hover:text-gray-500">
-                                                <span class="sr-only">Close menu</span>
-                                                <svg class="h-6 w-6"
-                                                     fill="none"
-                                                     viewBox="0 0 24 24"
-                                                     stroke-width="1.5"
-                                                     stroke="currentColor"
-                                                     aria-hidden="true">
-                                                      <path stroke-linecap="round"
-                                                            stroke-linejoin="round"
-                                                            d="M6 18L18 6M6 6l12 12" />
-                                                </svg>
-                                          </button>
-                                    </div>
-                                    <form class="mt-4">
-                                          <div class="border-t border-gray-200 pb-4 pt-4">
-                                                <fieldset>
-                                                      <legend class="w-full px-2">
-                                                            <button type="button"
-                                                                    class="flex w-full items-center justify-between p-2 text-gray-400 hover:text-gray-500"
-                                                                    aria-controls="filter-section-0"
-                                                                    aria-expanded="false">
-                                                                  <span class="text-sm font-medium text-gray-900">Rarity</span>
-                                                                  <span class="ml-6 flex h-7 items-center">
-                                                                        <svg class="rotate-0 h-5 w-5 transform"
-                                                                             viewBox="0 0 20 20"
-                                                                             fill="currentColor"
-                                                                             aria-hidden="true">
-                                                                              <path fill-rule="evenodd"
-                                                                                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                                                                                    clip-rule="evenodd" />
-                                                                        </svg>
-                                                                  </span>
-                                                            </button>
-                                                      </legend>
-                                                      <div class="px-4 pb-2 pt-4"
-                                                           id="filter-section-0">
-                                                            <div class="space-y-6"
-                                                                 id="rarityFilterOptions">
-                                                                  <!-- Populated dynamically with JavaScript -->
-                                                            </div>
-                                                      </div>
-                                                </fieldset>
-                                          </div>
-                                          <div class="border-t border-gray-200 pb-4 pt-4">
-                                                <fieldset>
-                                                      <legend class="w-full px-2">
-                                                            <button type="button"
-                                                                    class="flex w-full items-center justify-between p-2 text-gray-400 hover:text-gray-500"
-                                                                    aria-controls="filter-section-1"
-                                                                    aria-expanded="false">
-                                                                  <span class="text-sm font-medium text-gray-900">Type</span>
-                                                                  <span class="ml-6 flex h-7 items-center">
-                                                                        <svg class="rotate-0 h-5 w-5 transform"
-                                                                             viewBox="0 0 20 20"
-                                                                             fill="currentColor"
-                                                                             aria-hidden="true">
-                                                                              <path fill-rule="evenodd"
-                                                                                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                                                                                    clip-rule="evenodd" />
-                                                                        </svg>
-                                                                  </span>
-                                                            </button>
-                                                      </legend>
-                                                      <div class="px-4 pb-2 pt-4"
-                                                           id="filter-section-1">
-                                                            <div class="space-y-6"
-                                                                 id="typeFilterOptions">
-                                                                  <!-- Populated dynamically with JavaScript -->
-                                                            </div>
-                                                      </div>
-                                                </fieldset>
-                                          </div>
-                                          <div class="border-t border-gray-200 pb-4 pt-4">
-                                                <fieldset>
-                                                      <legend class="w-full px-2">
-                                                            <button type="button"
-                                                                    class="flex w-full items-center justify-between p-2 text-gray-400 hover:text-gray-500"
-                                                                    aria-controls="filter-section-2"
-                                                                    aria-expanded="false">
-                                                                  <span class="text-sm font-medium text-gray-900">Color</span>
-                                                                  <span class="ml-6 flex h-7 items-center">
-                                                                        <svg class="rotate-0 h-5 w-5 transform"
-                                                                             viewBox="0 0 20 20"
-                                                                             fill="currentColor"
-                                                                             aria-hidden="true">
-                                                                              <path fill-rule="evenodd"
-                                                                                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                                                                                    clip-rule="evenodd" />
-                                                                        </svg>
-                                                                  </span>
-                                                            </button>
-                                                      </legend>
-                                                      <div class="px-4 pb-2 pt-4"
-                                                           id="filter-section-2">
-                                                            <div class="space-y-6"
-                                                                 id="colorFilterOptions">
-                                                                  <!-- Populated dynamically with JavaScript -->
-                                                            </div>
-                                                      </div>
-                                                </fieldset>
-                                          </div>
-                                          <div class="px-4 pt-4 pb-6">
-                                                <button type="submit"
-                                                        class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">Apply Filters</button>
-                                          </div>
-                                    </form>
-                              </div>
-                        </div>
-                  </div>
+
 
                   <div id="filterMenu"
                        class="fixed inset-y-0 right-0 z-50 w-72 px-4 py-6 bg-white shadow-lg will-change-transform transform translate-x-full transition-transform duration-300 ease-in-out">
+                        <aside>
+                              <h2>Condition Filter</h2>
+                              <select id="conditionFilter">
+                                    <option value="">All</option>
+                              </select>
 
-                        <div class="flex justify-between items-center px-4 py-3 bg-blue-500 text-shadow text-white">
+                              <h2>Rarity Filter</h2>
+                              <select id="rarityFilter">
+                                    <option value="">All</option>
+                              </select>
+
+                              <h2>Printing Filter</h2>
+                              <select id="printingFilter">
+                                    <option value="">All</option>
+                              </select>
+                              <!--<div class="flex justify-between items-center px-4 py-3 bg-blue-500 text-shadow text-white">
                               <h2 class="text-lg font-bold">Filters</h2>
                               <button id="closeFilterBtn"
                                       class="text-white hover:text-gray-200 focus:outline-none">
@@ -275,11 +170,192 @@
                         <div class="flex justify-end mt-6">
                               <button id="applyFilterBtn"
                                       class="bg-blue-500 hover:bg-blue-600 text-white text-shadow px-4 py-2 rounded-md">Apply</button>
-                        </div>
+                        </div>-->
                   </div>
-
+                  </aside>
             </main>
+            <script>
+                  async function fetchCardData() {
+                        try {
+                              const response=await fetch('cardData.json');
+                              const jsonData=await response.json();
 
+                              // Extract "Condition", "Rarity", and "Printing" values
+                              const listingData=jsonData.map(item => ({
+                                    Condition: item.Condition,
+                                    Rarity: item.Rarity,
+                                    Printing: item.Printing
+                              }));
+
+                              // Call the function to display the data or perform any other operations
+                              displayFilterOptions(listingData);
+                        } catch(error) {
+                              console.error('Error fetching card data:',error);
+                        }
+                  }
+                  // Get references to the filter elements
+                  const conditionFilter=document.getElementById('conditionFilter');
+                  const filteredDataContainer=document.getElementById('filteredData');
+
+                  // Add event listener to the condition filter
+                  conditionFilter.addEventListener('change',filterByCondition);
+
+                  // Filter logic for the condition
+                  function filterByCondition() {
+                        // Get selected condition values
+                        const selectedConditions=Array.from(conditionFilter.querySelectorAll('input[type="checkbox"]:checked')).map(input => input.value);
+
+                        // Filter the data based on selected conditions
+                        const filteredData=listingData.filter(item => selectedConditions.includes(item.Condition));
+
+                        // Display the filtered data dynamically
+                        displayFilteredData(filteredData);
+                  }
+
+                  // Display the filtered data on the page
+                  function displayFilteredData(data) {
+                        // Clear the previous data
+                        filteredDataContainer.innerHTML='';
+
+                        // Create elements to display the filtered data
+                        const ul=document.createElement('ul');
+                        data.forEach(item => {
+                              const li=document.createElement('li');
+                              li.textContent=item.Title;
+                              ul.appendChild(li);
+                        });
+
+                        // Append the filtered data to the container
+                        filteredDataContainer.appendChild(ul);
+                  }
+                  // Get references to the filter elements
+                  const rarityFilter=document.getElementById('rarityFilter');
+
+
+                  // Add event listener to the rarity filter
+                  rarityFilter.addEventListener('change',filterByRarity);
+
+                  // Filter logic for the rarity
+                  function filterByRarity() {
+                        // Get selected rarity values
+                        const selectedRarities=Array.from(rarityFilter.querySelectorAll('input[type="checkbox"]:checked')).map(input => input.value);
+
+                        // Filter the data based on selected rarities
+                        const filteredData=listingData.filter(item => selectedRarities.includes(item.Rarity));
+
+                        // Display the filtered data dynamically
+                        displayFilteredData(filteredData);
+                  }
+
+                  // Display the filtered data on the page
+                  function displayFilteredData(data) {
+                        // Clear the previous data
+                        filteredDataContainer.innerHTML='';
+
+                        // Create elements to display the filtered data
+                        const ul=document.createElement('ul');
+                        data.forEach(item => {
+                              const li=document.createElement('li');
+                              li.textContent=item.Title;
+                              ul.appendChild(li);
+                        });
+
+                        // Append the filtered data to the container
+                        filteredDataContainer.appendChild(ul);
+                  }
+                  // Get references to the filter elements
+                  const printingFilter=document.getElementById('printingFilter');
+
+
+                  // Add event listener to the printing filter
+                  printingFilter.addEventListener('change',filterByPrinting);
+
+                  // Filter logic for the printing
+                  function filterByPrinting() {
+                        // Get selected printing values
+                        const selectedPrintings=Array.from(printingFilter.querySelectorAll('input[type="checkbox"]:checked')).map(input => input.value);
+
+                        // Filter the data based on selected printings
+                        const filteredData=listingData.filter(item => selectedPrintings.includes(item.Printing));
+
+                        // Display the filtered data dynamically
+                        displayFilteredData(filteredData);
+                  }
+
+                  // Display the filtered data on the page
+                  function displayFilteredData(data) {
+                        // Clear the previous data
+                        filteredDataContainer.innerHTML='';
+
+                        // Create elements to display the filtered data
+                        const ul=document.createElement('ul');
+                        data.forEach(item => {
+                              const li=document.createElement('li');
+                              li.textContent=item.Title;
+                              ul.appendChild(li);
+                        });
+
+                        // Append the filtered data to the container
+                        filteredDataContainer.appendChild(ul);
+                  }
+                  function displayFilterOptions(listingData) {
+                        const conditionFilter=document.getElementById('conditionFilter');
+                        const rarityFilter=document.getElementById('rarityFilter');
+                        const printingFilter=document.getElementById('printingFilter');
+
+                        // Get unique values for each filter option
+                        const uniqueConditions=[...new Set(listingData.map(item => item.Condition))];
+                        const uniqueRarities=[...new Set(listingData.map(item => item.Rarity))];
+                        const uniquePrintings=[...new Set(listingData.map(item => item.Printing))];
+
+                        // Populate condition filter options
+                        uniqueConditions.forEach(condition => {
+                              const option=document.createElement('option');
+                              option.value=condition;
+                              option.textContent=condition;
+                              conditionFilter.appendChild(option);
+                        });
+
+                        // Populate rarity filter options
+                        uniqueRarities.forEach(rarity => {
+                              const option=document.createElement('option');
+                              option.value=rarity;
+                              option.textContent=rarity;
+                              rarityFilter.appendChild(option);
+                        });
+
+                        // Populate printing filter options
+                        uniquePrintings.forEach(printing => {
+                              const option=document.createElement('option');
+                              option.value=printing;
+                              option.textContent=printing;
+                              printingFilter.appendChild(option);
+                        });
+                  }
+
+                  // Fetch card data and display filter options
+                  async function fetchCardData() {
+                        try {
+                              const response=await fetch('cardData.json');
+                              const jsonData=await response.json();
+
+                              // Extract "Condition", "Rarity", and "Printing" values
+                              const listingData=jsonData.map(item => ({
+                                    Condition: item.Condition,
+                                    Rarity: item.Rarity,
+                                    Printing: item.Printing
+                              }));
+
+                              // Call the function to display the filter options
+                              displayFilterOptions(listingData);
+                        } catch(error) {
+                              console.error('Error fetching card data:',error);
+                        }
+                  }
+
+                  // Call the fetchCardData function to initiate the process
+                  fetchCardData();
+            </script>
             <script src="src/JS/populateProductCard.js"></script>
             <script src="src/JS/filterAndDisplayItems.js"></script>
             <script src="src/JS/Buttons/filtersButton.js"></script>
