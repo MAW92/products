@@ -177,7 +177,7 @@
             <script>
                   async function fetchCardData() {
                         try {
-                              const response=await fetch('cardData.json');
+                              const response=await fetch('./cardData.json');
                               const jsonData=await response.json();
 
                               // Extract "Condition", "Rarity", and "Printing" values
