@@ -332,29 +332,6 @@
                               printingFilter.appendChild(option);
                         });
                   }
-
-                  // Fetch card data and display filter options
-                  async function fetchCardData() {
-                        try {
-                              const response=await fetch('cardData.json');
-                              const jsonData=await response.json();
-
-                              // Extract "Condition", "Rarity", and "Printing" values
-                              const listingData=jsonData.map(item => ({
-                                    Condition: item.Condition,
-                                    Rarity: item.Rarity,
-                                    Printing: item.Printing
-                              }));
-
-                              // Call the function to display the filter options
-                              displayFilterOptions(listingData);
-                        } catch(error) {
-                              console.error('Error fetching card data:',error);
-                        }
-                  }
-
-                  // Call the fetchCardData function to initiate the process
-                  fetchCardData();
             </script>
             <script src="src/JS/populateProductCard.js"></script>
             <script src="src/JS/filterAndDisplayItems.js"></script>
