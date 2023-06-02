@@ -107,232 +107,60 @@
                         Filters
                   </button>
 
+                  <aside>
+                        <div id="filterMenu"
+                             class="fixed inset-y-0 right-0 z-50 w-72 px-4 py-6 bg-white shadow-lg will-change-transform transform translate-x-full transition-transform duration-300 ease-in-out">
 
-                  <div id="filterMenu"
-                       class="fixed inset-y-0 right-0 z-50 w-72 px-4 py-6 bg-white shadow-lg will-change-transform transform translate-x-full transition-transform duration-300 ease-in-out">
-                        <aside>
-                              <h2>Condition Filter</h2>
-                              <select id="conditionFilter">
-                                    <option value="">All</option>
-                              </select>
 
-                              <h2>Rarity Filter</h2>
-                              <select id="rarityFilter">
-                                    <option value="">All</option>
-                              </select>
-
-                              <h2>Printing Filter</h2>
-                              <select id="printingFilter">
-                                    <option value="">All</option>
-                              </select>
-                              <!--<div class="flex justify-between items-center px-4 py-3 bg-blue-500 text-shadow text-white">
-                              <h2 class="text-lg font-bold">Filters</h2>
-                              <button id="closeFilterBtn"
-                                      class="text-white hover:text-gray-200 focus:outline-none">
-                                    <svg class="h-6 w-6"
-                                         fill="none"
-                                         viewBox="0 0 24 24"
-                                         stroke="currentColor">
-                                          <path stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="2"
-                                                d="M6 18L18 6M6 6l12 12"></path>
-                                    </svg>
-                              </button>
+                              <div class="flex justify-between items-center px-4 py-3 bg-blue-500 text-shadow text-white">
+                                    <h2 class="text-lg font-bold">Filters</h2>
+                                    <button id="closeFilterBtn"
+                                            class="text-white hover:text-gray-200 focus:outline-none">
+                                          <svg class="h-6 w-6"
+                                               fill="none"
+                                               viewBox="0 0 24 24"
+                                               stroke="currentColor">
+                                                <path stroke-linecap="round"
+                                                      stroke-linejoin="round"
+                                                      stroke-width="2"
+                                                      d="M6 18L18 6M6 6l12 12"></path>
+                                          </svg>
+                                    </button>
+                              </div>
+                              <div class="mb-4">
+                                    <label for="rarityFilter"
+                                           class="block font-medium">Rarity:</label>
+                                    <select id="rarityFilter"
+                                            data-rarity="Rarity"
+                                            class="form-select w-full">
+                                          <option>All</option>
+                                    </select>
+                              </div>
+                              <div class="mb-4">
+                                    <label for="conditionFilter"
+                                           class="block font-medium">Condition:</label>
+                                    <select id="conditionFilter"
+                                            data-condition="Condition"
+                                            class="form-select w-full">
+                                          <option>All</option>
+                                    </select>
+                              </div>
+                              <div class="mb-4">
+                                    <label for="printingFilter"
+                                           class="block font-medium">Printing:</label>
+                                    <select id="printingFilter"
+                                            data-printing="Printing"
+                                            class="form-select w-full">
+                                          <option>All</option>
+                                    </select>
+                              </div>
+                              <div class="flex justify-end mt-6">
+                                    <button id="applyFilterBtn"
+                                            class="bg-blue-500 hover:bg-blue-600 text-white text-shadow px-4 py-2 rounded-md">Apply</button>
+                              </div>
                         </div>
-                        <div class="mb-4">
-                              <label for="rarityFilter"
-                                     class="block font-medium">Rarity:</label>
-                              <select id="rarityFilter"
-                                      data-rarity="Rarity"
-                                      class="form-select w-full">
-                                    <option>All</option>
-                              </select>
-                        </div>
-                        <div class="mb-4">
-                              <label for="conditionFilter"
-                                     class="block font-medium">Condition:</label>
-                              <select id="conditionFilter"
-                                      data-condition="Condition"
-                                      class="form-select w-full">
-                                    <option>All</option>
-                              </select>
-                        </div>
-                        <div class="mb-4">
-                              <label for="printingFilter"
-                                     class="block font-medium">Printing:</label>
-                              <select id="printingFilter"
-                                      data-printing="Printing"
-                                      class="form-select w-full">
-                                    <option>All</option>
-                              </select>
-                        </div>
-                        <div class="flex justify-end mt-6">
-                              <button id="applyFilterBtn"
-                                      class="bg-blue-500 hover:bg-blue-600 text-white text-shadow px-4 py-2 rounded-md">Apply</button>
-                        </div>-->
-                  </div>
                   </aside>
             </main>
-            <script>
-                  async function fetchCardData() {
-                        try {
-                              const response=await fetch('./cardData.json');
-                              const jsonData=await response.json();
-
-                              // Extract "Condition", "Rarity", and "Printing" values
-                              const listingData=jsonData.map(item => ({
-                                    Condition: item.Condition,
-                                    Rarity: item.Rarity,
-                                    Printing: item.Printing
-                              }));
-
-                              // Call the function to display the data or perform any other operations
-                              displayFilterOptions(listingData);
-                        } catch(error) {
-                              console.error('Error fetching card data:',error);
-                        }
-                  }
-                  // Get references to the filter elements
-                  const conditionFilter=document.getElementById('conditionFilter');
-                  const filteredDataContainer=document.getElementById('filteredData');
-
-                  // Add event listener to the condition filter
-                  conditionFilter.addEventListener('change',filterByCondition);
-
-                  // Filter logic for the condition
-                  function filterByCondition() {
-                        // Get selected condition values
-                        const selectedConditions=Array.from(conditionFilter.querySelectorAll('input[type="checkbox"]:checked')).map(input => input.value);
-
-                        // Filter the data based on selected conditions
-                        const filteredData=listingData.filter(item => selectedConditions.includes(item.Condition));
-
-                        // Display the filtered data dynamically
-                        displayFilteredData(filteredData);
-                  }
-
-                  // Display the filtered data on the page
-                  function displayFilteredData(data) {
-                        // Clear the previous data
-                        filteredDataContainer.innerHTML='';
-
-                        // Create elements to display the filtered data
-                        const ul=document.createElement('ul');
-                        data.forEach(item => {
-                              const li=document.createElement('li');
-                              li.textContent=item.Title;
-                              ul.appendChild(li);
-                        });
-
-                        // Append the filtered data to the container
-                        filteredDataContainer.appendChild(ul);
-                  }
-                  // Get references to the filter elements
-                  const rarityFilter=document.getElementById('rarityFilter');
-
-
-                  // Add event listener to the rarity filter
-                  rarityFilter.addEventListener('change',filterByRarity);
-
-                  // Filter logic for the rarity
-                  function filterByRarity() {
-                        // Get selected rarity values
-                        const selectedRarities=Array.from(rarityFilter.querySelectorAll('input[type="checkbox"]:checked')).map(input => input.value);
-
-                        // Filter the data based on selected rarities
-                        const filteredData=listingData.filter(item => selectedRarities.includes(item.Rarity));
-
-                        // Display the filtered data dynamically
-                        displayFilteredData(filteredData);
-                  }
-
-                  // Display the filtered data on the page
-                  function displayFilteredData(data) {
-                        // Clear the previous data
-                        filteredDataContainer.innerHTML='';
-
-                        // Create elements to display the filtered data
-                        const ul=document.createElement('ul');
-                        data.forEach(item => {
-                              const li=document.createElement('li');
-                              li.textContent=item.Title;
-                              ul.appendChild(li);
-                        });
-
-                        // Append the filtered data to the container
-                        filteredDataContainer.appendChild(ul);
-                  }
-                  // Get references to the filter elements
-                  const printingFilter=document.getElementById('printingFilter');
-
-
-                  // Add event listener to the printing filter
-                  printingFilter.addEventListener('change',filterByPrinting);
-
-                  // Filter logic for the printing
-                  function filterByPrinting() {
-                        // Get selected printing values
-                        const selectedPrintings=Array.from(printingFilter.querySelectorAll('input[type="checkbox"]:checked')).map(input => input.value);
-
-                        // Filter the data based on selected printings
-                        const filteredData=listingData.filter(item => selectedPrintings.includes(item.Printing));
-
-                        // Display the filtered data dynamically
-                        displayFilteredData(filteredData);
-                  }
-
-                  // Display the filtered data on the page
-                  function displayFilteredData(data) {
-                        // Clear the previous data
-                        filteredDataContainer.innerHTML='';
-
-                        // Create elements to display the filtered data
-                        const ul=document.createElement('ul');
-                        data.forEach(item => {
-                              const li=document.createElement('li');
-                              li.textContent=item.Title;
-                              ul.appendChild(li);
-                        });
-
-                        // Append the filtered data to the container
-                        filteredDataContainer.appendChild(ul);
-                  }
-                  function displayFilterOptions(listingData) {
-                        const conditionFilter=document.getElementById('conditionFilter');
-                        const rarityFilter=document.getElementById('rarityFilter');
-                        const printingFilter=document.getElementById('printingFilter');
-
-                        // Get unique values for each filter option
-                        const uniqueConditions=[...new Set(listingData.map(item => item.Condition))];
-                        const uniqueRarities=[...new Set(listingData.map(item => item.Rarity))];
-                        const uniquePrintings=[...new Set(listingData.map(item => item.Printing))];
-
-                        // Populate condition filter options
-                        uniqueConditions.forEach(condition => {
-                              const option=document.createElement('option');
-                              option.value=condition;
-                              option.textContent=condition;
-                              conditionFilter.appendChild(option);
-                        });
-
-                        // Populate rarity filter options
-                        uniqueRarities.forEach(rarity => {
-                              const option=document.createElement('option');
-                              option.value=rarity;
-                              option.textContent=rarity;
-                              rarityFilter.appendChild(option);
-                        });
-
-                        // Populate printing filter options
-                        uniquePrintings.forEach(printing => {
-                              const option=document.createElement('option');
-                              option.value=printing;
-                              option.textContent=printing;
-                              printingFilter.appendChild(option);
-                        });
-                  }
-            </script>
             <script src="src/JS/populateProductCard.js"></script>
             <script src="src/JS/filterAndDisplayItems.js"></script>
             <script src="src/JS/Buttons/filtersButton.js"></script>
