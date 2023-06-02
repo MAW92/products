@@ -20,6 +20,7 @@
             <link rel="stylesheet"
                   href="./dist/output.css" />
             <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       </head>
 
 
@@ -192,9 +193,8 @@
                   </aside>
             </main>
             <script>
-
                   // Fetch data from cardData.json
-                  fetch('cardData.json')
+                  fetch('./cardData.json')
                         .then((response) => response.json())
                         .then((jsonData) => {
                               const cardData=jsonData[0].listingData;
@@ -247,7 +247,6 @@
 
                         $items.appendTo($('#container'));
                   }
-
 
             </script>
             <script src="src/JS/populateProductCard.js"></script>
