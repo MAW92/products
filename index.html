@@ -194,10 +194,10 @@
             <script>
 
                   // Fetch data from cardData.json
-                  fetch('./cardData.json')
+                  fetch('cardData.json')
                         .then((response) => response.json())
                         .then((jsonData) => {
-                              const cardData=listingData;
+                              const cardData=jsonData[0].listingData;
                               createItems(cardData);
                         })
                         .catch((error) => console.error('Error fetching card data:',error));
@@ -231,10 +231,9 @@
                   });
 
                   function createItems(cardData) {
-                        var $items;
+                        var $items=$();
                         // Loop over cardData
-                        for(var i=0;i<cardData.length;i++) {
-                              var item=cardData[i];
+                        cardData.forEach(function (item) {
                               var condition=item.Condition.replace(' ','');
                               var printing=item.Printing.replace(' ','');
                               var rarity=item.Rarity.replace(' ','');
@@ -243,11 +242,12 @@
                               });
                               $item.append('<p>'+item.Name+'</p><p>$'+item.Price+'</p>');
                               // Add to items
-                              $items=$items? $items.add($item):$item;
-                        }
+                              $items=$items.add($item);
+                        });
 
                         $items.appendTo($('#container'));
                   }
+
 
             </script>
             <script src="src/JS/populateProductCard.js"></script>
