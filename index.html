@@ -19,57 +19,7 @@
                   href="https://www.ebay.com/usr/gottasellemall69" />
             <link rel="stylesheet"
                   href="./dist/output.css" />
-            <style>
-                  * {
-                        box-sizing: border-box;
-                  }
-
-                  body {
-                        font-family: sans-serif;
-                  }
-
-                  .item {
-                        width: 100px;
-                        height: 100px;
-                        float: left;
-
-                        margin: 5px;
-                        padding: 5px;
-                  }
-
-                  .item p {
-                        margin: 0;
-                  }
-
-                  .red {
-                        background: #F33;
-                  }
-
-                  .blue {
-                        background: #88F;
-                  }
-
-                  .green {
-                        background: #3A3;
-                  }
-
-                  .orange {
-                        background: orange;
-                  }
-
-                  select,
-                  label,
-                  input {
-                        font-size: 20px;
-                  }
-
-                  label {
-                        margin-right: 10px;
-                  }
-            </style>
-
       </head>
-
 
       <body>
             <header class="w-full p-2 mx-auto bg-gradient-to-br from-indigo to-indigo via-red border-b-2 border-zinc-400 shadow-lg">
@@ -176,33 +126,7 @@
                                           </svg>
                                     </button>
                               </div>
-                              <div id="form-ui">
-                                    <p>
-                                          <label><input type="checkbox"
-                                                       value=".Condition-LightlyPlayed" /> Lightly Played</label>
-                                          <label><input type="checkbox"
-                                                       value=".Condition-NearMint" /> Near Mint</label>
-                                          <label><input type="checkbox"
-                                                       value=".Condition-Mint" /> Mint</label>
-                                    </p>
-                                    <p>
-                                          <label><input type="checkbox"
-                                                       value=".Printing-1stEdition" /> 1st Edition</label>
-                                          <label><input type="checkbox"
-                                                       value=".Printing-LimitedEdition" /> Limited Edition</label>
-                                    </p>
-                                    <p>
-                                          <label><input type="checkbox"
-                                                       value=".Rarity-SecretRare" /> Secret Rare</label>
-                                          <label><input type="checkbox"
-                                                       value=".Rarity-UltraRare" /> Ultra Rare</label>
-                                          <label><input type="checkbox"
-                                                       value=".Rarity-SuperRare" /> Super Rare</label>
-                                    </p>
-                                    <p id="output">--</p>
-                              </div>
-
-                              <!--<div class="mb-4">
+                              <div class="mb-4">
                                     <label for="rarityFilter"
                                            class="block font-medium">Rarity:</label>
                                     <select id="rarityFilter"
@@ -228,7 +152,7 @@
                                             class="form-select w-full">
                                           <option>All</option>
                                     </select>
-                              </div>-->
+                              </div>
                               <div class="flex justify-end mt-6">
                                     <button onclick="createItems()"
                                             id="applyFilterBtn"
@@ -236,68 +160,9 @@
                               </div>
                         </div>
                   </aside>
-                  <div id="container">
-                        <!-- items added with JS -->
-                  </div>
+
             </main>
-            <script>
-                  // Fetch data from cardData.json
-                  fetch('./cardData.json')
-                        .then((response) => response.json())
-                        .then((jsonData) => {
-                              createItems(cardData);
-                        })
-                        .catch((error) => console.error('Error fetching card data:',error));
 
-                  // Initialize Isotope
-                  var $container=('#container').isotope({
-                        itemSelector: '.item'
-                  });
-
-                  var $output=('#output');
-
-                  // Filter with checkboxes
-                  var $checkboxes=('#form-ui input');
-
-                  $checkboxes.change(function () {
-                        // Map input values to an array
-                        var inclusives=[];
-                        // Inclusive filters from checkboxes
-                        $checkboxes.each(function (i,elem) {
-                              // If checkbox, use value if checked
-                              if(elem.checked) {
-                                    inclusives.push(elem.value);
-                              }
-                        });
-
-                        // Combine inclusive filters
-                        var filterValue=inclusives.length? inclusives.join(', '):'*';
-
-                        $output.text(filterValue);
-                        $container.isotope({ filter: filterValue });
-                  });
-
-                  function createItems(cardData) {
-                        var $items=[];
-                        // Loop over cardData
-                        cardData.forEach(function (item) {
-                              var condition=item.Condition.replace(' ','');
-                              var printing=item.Printing.replace(' ','');
-                              var rarity=item.Rarity.replace(' ','');
-                              var $item=('<div />',{
-                                    'class': 'item '+'Condition-'+condition+' '+'Printing-'+printing+' '+'Rarity-'+rarity
-                              });
-                              $item.append('<p>'+item.Name+'</p><p>$'+item.Price+'</p>');
-                              // Add to items
-                              $items=$items.add($item);
-                        });
-
-                        $items.appendTo('#container');
-                  }
-
-            </script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
             <script src="src/JS/populateProductCard.js"></script>
             <script src="src/JS/filterAndDisplayItems.js"></script>
             <script src="src/JS/Buttons/filtersButton.js"></script>
