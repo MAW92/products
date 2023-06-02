@@ -251,14 +251,14 @@
                         .catch((error) => console.error('Error fetching card data:',error));
 
                   // Initialize Isotope
-                  var $container=$('#container').isotope({
+                  var $container=('#container').isotope({
                         itemSelector: '.item'
                   });
 
-                  var $output=$('#output');
+                  var $output=('#output');
 
                   // Filter with checkboxes
-                  var $checkboxes=$('#form-ui input');
+                  var $checkboxes=('#form-ui input');
 
                   $checkboxes.change(function () {
                         // Map input values to an array
@@ -279,13 +279,13 @@
                   });
 
                   function createItems(cardData) {
-                        var $items=$();
+                        var $items=[];
                         // Loop over cardData
                         cardData.forEach(function (item) {
                               var condition=item.Condition.replace(' ','');
                               var printing=item.Printing.replace(' ','');
                               var rarity=item.Rarity.replace(' ','');
-                              var $item=$('<div />',{
+                              var $item=('<div />',{
                                     'class': 'item '+'Condition-'+condition+' '+'Printing-'+printing+' '+'Rarity-'+rarity
                               });
                               $item.append('<p>'+item.Name+'</p><p>$'+item.Price+'</p>');
@@ -293,7 +293,7 @@
                               $items=$items.add($item);
                         });
 
-                        $items.appendTo($('#container'));
+                        $items.appendTo('#container');
                   }
 
             </script>
