@@ -245,7 +245,6 @@
                   fetch('./cardData.json')
                         .then((response) => response.json())
                         .then((jsonData) => {
-                              const cardData=listingData;
                               createItems(cardData);
                         })
                         .catch((error) => console.error('Error fetching card data:',error));
