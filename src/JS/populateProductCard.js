@@ -32,7 +32,7 @@ function fetchProducts() {
 function createProductCard(product) {
   const card=document.createElement("div");
   card.innerHTML=`
-    <a href="${product.viewItemURL}" target="_blank" title="View on eBay" class="card mt-2 hover:text-shadow text-white">
+    <a href="${product.viewItemURL}" target="_blank" title="View on eBay" class="mt-2 hover:text-shadow text-white">
       <div class="w-fit border border-zinc-50 backdrop rounded-lg shadow-lg overflow-ellipsis will-change-transform hover:transform-gpu hover:duration-500 hover:ease-in-out hover:scale-105 hover:bg-gradient-to-b hover:from-transparent hover:to-transparent hover:via-black hover:text-shadow text-white">
         <img src="${product.galleryURL}" alt="${product.title}" class="w-full h-72 object-cover object-top rounded-t-lg">
         <div class="p-2 flex-wrap">
@@ -51,29 +51,18 @@ function createProductCard(product) {
 function displayProductCards(products) {
   // Get the product grid element
   const productGrid=document.getElementById("productGrid");
-
+  const productCardList=document.getElementById("productCardList");
   // Clear previous results
   productGrid.innerHTML="";
-
-  // Generate product cards and append to the grid
-  products.forEach(product => {
-    const card=createProductCard(product);
-    productGrid.appendChild(card);
-  });
-}
-// Function to display product cards
-function displayProductCards(products) {
-  // Get the product grid element
-  const productCardList=document.getElementById("productCardList");
-
-  // Clear previous results
   productCardList.innerHTML="";
 
   // Generate product cards and append to the grid
   products.forEach(product => {
     const card=createProductCard(product);
+    productGrid.appendChild(card);
     productCardList.appendChild(card);
   });
 }
+
 // Call the fetch function initially
 fetchProducts();
