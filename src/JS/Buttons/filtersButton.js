@@ -1,6 +1,5 @@
 // Get the filter button and filter menu elements
 const filterBtn=document.getElementById('filterBtn');
-const closeFilterBtn=document.getElementById('closeFilterBtn');
 
 // Function to open the filter menu
 function openFilterMenu() {
