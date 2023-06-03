@@ -16,9 +16,9 @@ function filterAndDisplayItems() {
     var printing=card.getAttribute("printingFilter");
 
     // Check if the card matches the selected filters
-    var isRarityMatch=rarityFilter==="All"||rarity===rarityFilter;
-    var isConditionMatch=conditionFilter==="All"||condition===conditionFilter;
-    var isPrintingMatch=printingFilter==="All"||printing===printingFilter;
+    var isRarityMatch=rarityFilter===rarityFilter.value||rarity===rarityFilter;
+    var isConditionMatch=conditionFilter===conditionFilter.value||condition===conditionFilter;
+    var isPrintingMatch=printingFilter===printingFilter.value||printing===printingFilter;
 
     // Show/hide the card based on the filter matching
     if(isRarityMatch&&isConditionMatch&&isPrintingMatch) {
