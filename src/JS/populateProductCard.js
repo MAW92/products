@@ -61,6 +61,19 @@ function displayProductCards(products) {
     productGrid.appendChild(card);
   });
 }
+// Function to display product cards
+function displayProductCards(products) {
+  // Get the product grid element
+  const productCardList=document.getElementById("productCardList");
 
+  // Clear previous results
+  productCardList.innerHTML="";
+
+  // Generate product cards and append to the grid
+  products.forEach(product => {
+    const card=createProductCard(product);
+    productCardList.appendChild(card);
+  });
+}
 // Call the fetch function initially
 fetchProducts();
