@@ -8,7 +8,7 @@ toggleButton.addEventListener("click",() => {
     productCardList.classList.add("hidden");
     toggleButton.textContent="Switch to List View";
     // Ensure cards in the grid view are visible
-    const cards=document.querySelectorAll(".product-card");
+    const cards=document.querySelectorAll(".card");
     for(let i=0;i<cards.length;i++) {
       cards[i
       ].classList.remove("hidden");
@@ -19,7 +19,7 @@ toggleButton.addEventListener("click",() => {
     productCardList.classList.remove("hidden");
     toggleButton.textContent="Switch to Grid View";
     // Ensure cards in the grid view are hidden
-    const cards=document.querySelectorAll(".product-card");
+    const cards=document.querySelectorAll(".card");
     for(let i=0;i<cards.length;i++) {
       cards[i
       ].classList.add("hidden");
