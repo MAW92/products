@@ -1,6 +1,7 @@
-
 // Get the filter button and filter menu elements
 const filterBtn=document.getElementById('filterBtn');
+const filterMenu=document.getElementById('filterMenu');
+const closeFilterBtn=document.getElementById('closeFilterBtn');
 
 // Function to open the filter menu
 function openFilterMenu() {
@@ -16,4 +17,4 @@ function closeFilterMenu() {
 filterBtn.addEventListener('click',openFilterMenu);
 
 // Event listener for closing the filter menu when the close button is clicked
-closeFilterMenu.addEventListener('click',closeFilterMenu);
+closeFilterBtn.addEventListener('click',closeFilterMenu);
