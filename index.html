@@ -94,11 +94,23 @@
                   </button>
             </header>
             <main class="px-5 min-h-screen bg-image bg-fixed bg-cover bg-center">
+                  </div>
+                  <div class="flex justify-center gap-5">
 
+                        <button id="toggleButton"
+                                type="button"
+                                class="mb-8 mt-4 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">Switch Layout</button>
+                        <button id="filterBtn"
+                                type="button"
+                                class="inline mb-8 mt-4 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">Filters</button>
+                  </div>
                   <!-- Product Grid -->
                   <div id="productGrid"
                        class="grid grid-cols-1 mx-auto gap-4 py-10 sm:grid-cols-2 md:grid-cols-3 lg:mx-8 lg:grid-cols-4">
 
+                  </div>
+                  <div id="productCardList"
+                       class="border-b w-fit border-zinc-200 rounded-lg backdrop text-shadow text-white block p-2">
                   </div>
                   <!-- Filter Button -->
                   <button id="filterBtn"
@@ -128,29 +140,41 @@
                               </div>
                               <div class="mb-4">
                                     <label for="rarityFilter"
-                                           class="block font-medium">Rarity:</label>
+                                           class="block font-medium text-gray-700">Rarity</label>
                                     <select id="rarityFilter"
-                                            data-rarity="Rarity"
-                                            class="form-select w-full">
-                                          <option>All</option>
-                                    </select>
-                              </div>
-                              <div class="mb-4">
-                                    <label for="conditionFilter"
-                                           class="block font-medium">Condition:</label>
-                                    <select id="conditionFilter"
-                                            data-condition="Condition"
-                                            class="form-select w-full">
-                                          <option>All</option>
+                                            class="form-select w-full rounded-lg border-gray-300 px-4 py-2">
+                                          <option value="">All Rarities</option>
+                                          <option value="">Common</option>
+                                          <option value="">Rare</option>
+                                          <option value="">Super Rare</option>
+                                          <option value="">Ultra Rare</option>
+                                          <option value="">Secret Rare</option>
+                                          <option value="">Starfoil Rare</option>
+                                          <option value="">Mosaic Rare</option>
                                     </select>
                               </div>
                               <div class="mb-4">
                                     <label for="printingFilter"
-                                           class="block font-medium">Printing:</label>
+                                           class="block font-medium text-gray-700">Printing</label>
                                     <select id="printingFilter"
-                                            data-printing="Printing"
-                                            class="form-select w-full">
-                                          <option>All</option>
+                                            class="form-select w-full rounded-lg border-gray-300 px-4 py-2">
+                                          <option value="">All Printings</option>
+                                          <option value="">1st Edition</option>
+                                          <option value="">Unlimited</option>
+                                          <option value="">Limited</option>
+                                    </select>
+                              </div>
+                              <div class="mb-4">
+                                    <label for="conditionFilter"
+                                           class="block font-medium text-gray-700">Condition</label>
+                                    <select id="conditionFilter"
+                                            class="form-select w-full rounded-lg border-gray-300 px-4 py-2">
+                                          <option value="">All Conditions</option>
+                                          <option value="">Mint</option>
+                                          <option value="">Near Mint</option>
+                                          <option value="">Lightly Played</option>
+                                          <option value="">Moderately Played</option>
+                                          <option value="">Heavily Played</option>
                                     </select>
                               </div>
                               <div class="flex justify-end mt-6">

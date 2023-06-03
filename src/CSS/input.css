@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
+@layer components{
   .bg-image {
     background-image: url('https://iili.io/HOAPiua.webp');
   }
@@ -76,7 +76,7 @@
         text-shadow: 3px 1px 7px rgba(0, 0, 0, 1.2);
       }
 }
-@layer components {
+@layer utilities {
       /* Mobile menu animation */
       #mobile-menu {
         animation-name: slide-down;
@@ -113,33 +113,4 @@
         height: 0%;
         background-color: rgba(0, 0, 0, 0.3);
       }
-      * { box-sizing: border-box; }
-
-body { font-family: sans-serif; }
-
-.item {
-  width: 100px;
-  height: 100px;
-  float: left;
-  margin: 5px;
-  padding: 5px;
-}
-
-.item p {
-  margin: 0;
-}
-
-.Condition-LightlyPlayed { background: #F33; }
-.Condition-NearMint { background: #88F; }
-.Condition-Mint { background: #3A3; }
-.Printing-1stEdition { background: #FFD700; }
-.Printing-LimitedEdition { background: #8B4513; }
-.Rarity-SecretRare { background: #800080; }
-.Rarity-UltraRare { background: #FF1493; }
-.Rarity-SuperRare { background: #008000; }
-
-select, label, input { font-size: 20px; }
-
-label { margin-right: 10px; }
-
 }
