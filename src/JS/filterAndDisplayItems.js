@@ -28,37 +28,7 @@ function filterAndDisplayItems() {
     }
   });
 }
-document.getElementById("applyFilterBtn").addEventListener("click",filterAndDisplayItems);
 filterAndDisplayItems();
 // Call the filter and display function when the filter button is clicked
+document.getElementById("applyFilterBtn").addEventListener("click",filterAndDisplayItems);
 
-const filterMenu=document.getElementById('filterMenu');
-const applyFilterBtn=document.getElementById('applyFilterBtn');
-const closeFilterBtn=document.getElementById('closeFilterBtn');
-const updateBtn=document.getElementById('updateBtn');
-const rarityFilter=document.getElementById('rarityFilter');
-const printingFilter=document.getElementById('printingFilter');
-const conditionFilter=document.getElementById('conditionFilter');
-filterBtn.addEventListener('click',() => {
-  filterMenu.classList.remove('-translate-x-full');
-});
-closeFilterBtn.addEventListener('click',() => {
-  filterMenu.classList.add('-translate-x-full');
-});
-updateBtn.addEventListener('click',() => {
-  const rarity=rarityFilter.value;
-  const printing=printingFilter.value;
-  const condition=conditionFilter.value;
-  console.log('Filters:',{ rarity,printing,condition });
-  filterMenu.classList.add('-translate-x-full');
-});
-rarityFilter.addEventListener('change',applyFilters);
-printingFilter.addEventListener('change',applyFilters);
-conditionFilter.addEventListener('change',applyFilters);
-function applyFilters() {
-  const rarity=rarityFilter.value;
-  const printing=printingFilter.value;
-  const condition=conditionFilter.value;
-
-  console.log('Filters:',{ rarity,printing,condition });
-}
