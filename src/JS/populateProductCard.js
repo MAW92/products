@@ -68,5 +68,3 @@ function displayProductCards(products) {
 
 // Call the fetch function initially
 fetchProducts();
-createProductCard();
-displayProductCards(product);
