@@ -8,14 +8,14 @@ function fetchProducts() {
         const listingData=listingData[0];
 
         // Convert the fetched data into a list of products
-        const products=listingData.map((product) => {
+        const products=listingData.map(() => {
           return ({
-            viewItemURL: product.viewItemURL,
-            galleryURL: product.galleryURL,
-            title: product.Title,
-            Price: product.Price,
-            Shipping: product.Shipping,
-            Condition: product.Condition
+            viewItemURL: products.viewItemURL,
+            galleryURL: products.galleryURL,
+            title: products.Title,
+            Price: products.Price,
+            Shipping: products.Shipping,
+            Condition: products.Condition
           });
         });
 
@@ -66,4 +66,4 @@ function displayProductCards(products) {
 }
 
 // Call the fetch function initially
-fetchProducts();
+fetchProducts(products);
