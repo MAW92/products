@@ -20,7 +20,6 @@ function fetchProducts() {
         });
 
         // Display the product cards
-        displayProductCards(products);
       })
       .catch(error => {
         console.log("Error fetching products:",error);
