@@ -3,23 +3,24 @@ function fetchProducts() {
   try {
     fetch("cardData.json")
       .then(response => response.json())
-      .then(() => {
+      .then(data => {
         // Extract the listingData array from the JSON
-        const listingData=listingData[0];
+        const listingData=data.listingData;
 
         // Convert the fetched data into a list of products
-        const products=listingData.map(() => {
-          return ({
-            viewItemURL: products.viewItemURL,
-            galleryURL: products.galleryURL,
-            title: products.Title,
-            Price: products.Price,
-            Shipping: products.Shipping,
-            Condition: products.Condition
-          });
+        const products=listingData.map(product => {
+          return {
+            viewItemURL: product.viewItemURL,
+            galleryURL: product.galleryURL,
+            title: product.Title,
+            Price: product.Price,
+            Shipping: product.Shipping,
+            Condition: product.Condition
+          };
         });
 
         // Display the product cards
+        displayProductCards(products);
       })
       .catch(error => {
         console.log("Error fetching products:",error);
@@ -60,10 +61,10 @@ function displayProductCards(products) {
   // Generate product cards and append to the grid
   products.forEach(product => {
     const card=createProductCard(product);
-    productGrid.appendChild(card);
-    productCardList.appendChild(card);
+    productGrid.appendChild(card.cloneNode(true));
+    productCardList.appendChild(card.cloneNode(true));
   });
 }
 
 // Call the fetch function initially
-fetchProducts(products);
+fetchProducts();
