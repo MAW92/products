@@ -5,17 +5,19 @@ function fetchProducts() {
       .then(response => response.json())
       .then(data => {
         // Extract the listingData array from the JSON
-        const listingData=data.listingData;
+        const listingData=data[0].listingData;
 
         // Convert the fetched data into a list of products
-        const products=listingData.map(productData => ({
-          viewItemURL: productData.viewItemURL,
-          galleryURL: productData.galleryURL,
-          title: productData.Title,
-          Price: productData.Price,
-          Shipping: productData.Shipping,
-          Condition: productData.Condition
-        }));
+        const products=listingData.map(() => {
+          return ({
+            viewItemURL: listingData.viewItemURL,
+            galleryURL: listingData.galleryURL,
+            title: listingData.Title,
+            Price: listingData.Price,
+            Shipping: listingData.Shipping,
+            Condition: listingData.Condition
+          });
+        });
 
         // Display the product cards
         displayProductCards(products);
@@ -66,3 +68,5 @@ function displayProductCards(products) {
 
 // Call the fetch function initially
 fetchProducts();
+createProductCard();
+displayProductCards(productCardList);
