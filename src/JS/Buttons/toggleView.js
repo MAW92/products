@@ -17,7 +17,7 @@ toggleButton.addEventListener("click",() => {
   } else {
     // Switch to list view
     productGrid.classList.add("hidden");
-    productCardList.classList.remove("hidden");
+    productCardList.classList.add("hidden");
     toggleButton.textContent="Switch to Grid View";
 
     // Ensure cards in the grid view are hidden
