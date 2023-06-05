@@ -3,9 +3,9 @@ function fetchProducts() {
   try {
     fetch("./cardData.json")
       .then(response => response.json())
-      .then(data => {
+      .then(() => {
         // Extract the listingData array from the JSON
-        const listingData=data[0].listingData;
+        const listingData=listingData[0];
 
         // Convert the fetched data into a list of products
         const products=listingData.map((product) => {
