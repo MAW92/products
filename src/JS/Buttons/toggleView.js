@@ -10,10 +10,10 @@ toggleButton.addEventListener("click",() => {
     toggleButton.textContent="Switch to List View";
 
     // Ensure cards in the grid view are visible
-    const cards=document.querySelectorAll(".card");
-    for(let i=0;i<cards.length;i++) {
-      cards[i].classList.remove("hidden");
-    }
+    const gridCards=document.querySelectorAll("#productGrid .card");
+    gridCards.forEach(card => {
+      card.classList.remove("hidden");
+    });
   } else {
     // Switch to list view
     productGrid.classList.add("hidden");
@@ -21,9 +21,9 @@ toggleButton.addEventListener("click",() => {
     toggleButton.textContent="Switch to Grid View";
 
     // Ensure cards in the grid view are hidden
-    const cards=document.querySelectorAll(".card");
-    for(let i=0;i<cards.length;i++) {
-      cards[i].classList.add("hidden");
-    }
+    const gridCards=document.querySelectorAll("#productGrid .card");
+    gridCards.forEach(card => {
+      card.classList.add("hidden");
+    });
   }
 });
