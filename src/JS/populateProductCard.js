@@ -62,7 +62,7 @@ function displayProductCards(products) {
   products.forEach(product => {
     const card=createProductCard(product);
     productGrid.appendChild(card.cloneNode(true));
-    productCardList.createElement(card.cloneNode(true));
+    productCardList.appendChild(card.cloneNode(true));
   });
 }
 
