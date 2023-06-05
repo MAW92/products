@@ -60,9 +60,11 @@ function displayProductCards(products) {
 
   // Generate product cards and append to the grid
   products.forEach(product => {
-    const card=createProductCard(product);
-    productGrid.appendChild(card.cloneNode(true));
-    productCardList.appendChild(card.cloneNode(true));
+    const gridCard=createProductCard(product);
+    const listCard=createProductCard(product);
+
+    productGrid.appendChild(gridCard);
+    productCardList.appendChild(listCard);
   });
 }
 
