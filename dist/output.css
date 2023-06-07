@@ -865,6 +865,10 @@ html {
   display: flex;
 }
 
+.inline-flex {
+  display: inline-flex;
+}
+
 .grid {
   display: grid;
 }
@@ -933,10 +937,6 @@ html {
 
 .resize {
   resize: both;
-}
-
-.grid-flow-col-dense {
-  grid-auto-flow: column dense;
 }
 
 .grid-cols-1 {
