@@ -7,6 +7,8 @@ function applyFilters() {
   console.log("Printing:",printing);
   console.log("Rarity:",rarity);
 }
+
 applyFilters();
+
 // Event listener for the "Apply" button
 document.getElementById("applyButton").addEventListener("click",applyFilters);

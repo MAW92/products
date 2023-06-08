@@ -11,14 +11,17 @@ function filterAndDisplayItems() {
   // Loop through each product card
   productCards.forEach(function (card) {
     // Get the data attributes of the card
-    var rarity=card.getAttribute("rarityFilter");
-    var condition=card.getAttribute("conditionFilter");
-    var printing=card.getAttribute("printingFilter");
+    var rarity=card.getAttribute("rarity");
+    var condition=card.getAttribute("condition");
+    var printing=card.getAttribute("printing");
 
     // Check if the card matches the selected filters
-    var isRarityMatch=rarityFilter===rarityFilter.value||rarity===rarityFilter;
-    var isConditionMatch=conditionFilter===conditionFilter.value||condition===conditionFilter;
-    var isPrintingMatch=printingFilter===printingFilter.value||printing===printingFilter;
+    var isRarityMatch=
+      rarityFilter===""||rarityFilter===rarity;
+    var isConditionMatch=
+      conditionFilter===""||conditionFilter===condition;
+    var isPrintingMatch=
+      printingFilter===""||printingFilter===printing;
 
     // Show/hide the card based on the filter matching
     if(isRarityMatch&&isConditionMatch&&isPrintingMatch) {
@@ -30,7 +33,9 @@ function filterAndDisplayItems() {
 }
 
 // Call the filter and display function when the filter button is clicked
-document.getElementById("applyButton").addEventListener("click",filterAndDisplayItems);
+document
+  .getElementById("applyButton")
+  .addEventListener("click",filterAndDisplayItems);
 
 // Function to display product cards
 function displayProductCards(products) {
@@ -43,7 +48,7 @@ function displayProductCards(products) {
   productCardList.innerHTML="";
 
   // Generate product cards and append to the grid
-  products.forEach(product => {
+  products.forEach((product) => {
     const card=createProductCard(product);
     productGrid.appendChild(card);
     productCardList.appendChild(card.cloneNode(true));

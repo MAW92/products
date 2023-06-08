@@ -11,7 +11,7 @@ toggleButton.addEventListener("click",() => {
 
     // Ensure cards in the grid view are visible
     const gridCards=document.querySelectorAll("#productGrid .card");
-    gridCards.forEach(card => {
+    gridCards.forEach((card) => {
       card.classList.remove("hidden");
     });
   } else {
@@ -22,7 +22,7 @@ toggleButton.addEventListener("click",() => {
 
     // Ensure cards in the grid view are hidden
     const gridCards=document.querySelectorAll("#productGrid .card");
-    gridCards.forEach(card => {
+    gridCards.forEach((card) => {
       card.classList.add("hidden");
     });
   }

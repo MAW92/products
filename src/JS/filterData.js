@@ -3867,8 +3867,8 @@ function filterByCardCondition(cardCondition) {
   });
 }
 
-// Example usage
-filterByFeatures([features]);
-filterByRarity([rarity]);
-filterByCardCondition([cardCondition]);
+filterByFeatures(features);
+filterByRarity(rarity);
+filterByCardCondition(cardCondition);
+
 
