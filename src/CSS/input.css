@@ -75,8 +75,7 @@
       .text-shadow {
         text-shadow: 3px 1px 7px rgba(0, 0, 0, 1.2);
       }
-}
-@layer utilities {
+      
       /* Mobile menu animation */
       #mobile-menu {
         animation-name: slide-down;

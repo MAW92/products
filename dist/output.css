@@ -820,6 +820,33 @@ html {
   text-shadow: 3px 1px 7px rgba(0, 0, 0, 1.2);
 }
 
+/* Mobile menu animation */
+
+#mobile-menu {
+  animation-name: slide-down;
+  animation-duration: 0.29s;
+  animation-timing-function: ease-linear;
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-30%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.mobile-menu.hidden {
+  transform: translateY(-70%);
+  transition: transform 0.28s ease-linear;
+}
+
+/* Fading background when mobile menu is open */
+
 .visible {
   visibility: visible;
 }
@@ -1255,14 +1282,6 @@ html {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .transition-transform {
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1285,35 +1304,15 @@ html {
   will-change: transform;
 }
 
-/* Mobile menu animation */
-
-#mobile-menu {
-  animation-name: slide-down;
-  animation-duration: 0.29s;
-  animation-timing-function: ease-linear;
-}
-
-@keyframes slide-down {
-  0% {
-    transform: translateY(-30%);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateX(0%);
-    opacity: 1;
-  }
-}
-
-.mobile-menu.hidden {
-  transform: translateY(-70%);
-  transition: transform 0.28s ease-linear;
-}
-
-/* Fading background when mobile menu is open */
-
 .hover\:text-shadow:hover {
   text-shadow: 3px 1px 7px rgba(0, 0, 0, 1.2);
+}
+
+@media (min-width: 640px) {
+  .sm\:hidden.mobile-menu {
+    transform: translateY(-70%);
+    transition: transform 0.28s ease-linear;
+  }
 }
 
 .hover\:scale-105:hover {
@@ -1423,11 +1422,6 @@ html {
 
   .sm\:flex-wrap {
     flex-wrap: wrap;
-  }
-
-  .sm\:hidden.mobile-menu {
-    transform: translateY(-70%);
-    transition: transform 0.28s ease-linear;
   }
 }
 
