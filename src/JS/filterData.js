@@ -5,7 +5,7 @@ function parseJSON(jsonData) {
   const rarity=[];
   const cardCondition=[];
 
-  parsedData.ItemSpecifics.NameValueList.forEach((item) => {
+  parsedData[0].ItemSpecifics.NameValueList.forEach((item) => {
     if(item.Name==="Features") {
       features.push(item.Value);
     } else if(item.Name==="Rarity") {
