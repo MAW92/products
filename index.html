@@ -19,6 +19,19 @@
                   href="https://www.ebay.com/usr/gottasellemall69">
             <link rel="stylesheet"
                   href="./dist/output.css">
+            <style>
+                  .grid {
+                        display: grid;
+                        grid-template-columns: repeat(4, 1fr);
+                        grid-gap: 20px;
+                  }
+
+                  .grid-item {
+                        width: 100%;
+                        height: 200px;
+                        background-color: #ccc;
+                  }
+            </style>
             <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
       </head>
 
@@ -133,7 +146,7 @@
                                     </svg>
                               </button>
                         </div>
-                        <div class="mb-4">
+                        <!--<div class="mb-4">
                               <label for="rarityFilter"
                                      class="block font-medium text-gray-700">Rarity</label>
                               <select id="rarityFilter"
@@ -171,7 +184,32 @@
                                     <option value="Moderately Played">Moderately Played</option>
                                     <option value="Heavily Played">Heavily Played</option>
                               </select>
+                        </div>-->
+
+
+                        <div id="filter-container">
+                              <h2>Filters:</h2>
+                              <div>
+                                    <label for="features">Features:</label>
+                                    <select id="features">
+                                          <option value="">All</option>
+                                    </select>
+                              </div>
+                              <div>
+                                    <label for="rarity">Rarity:</label>
+                                    <select id="rarity">
+                                          <option value="">All</option>
+                                    </select>
+                              </div>
+                              <div>
+                                    <label for="card-condition">Card Condition:</label>
+                                    <select id="card-condition">
+                                          <option value="">All</option>
+                                    </select>
+                              </div>
                         </div>
+
+
                         <div class="flex justify-end mt-6">
                               <button type="button"
                                       id="applyButton"
@@ -181,7 +219,7 @@
             </aside>
 
 
-            <script>
+            <!--<script>
                   // Wait for the DOM to load
                   document.addEventListener('DOMContentLoaded',() => {
                         // Initialize Isotope
@@ -205,7 +243,99 @@
                         });
                   });
 
+            </script>-->
+
+
+            <script>
+                  // Initialize Isotope
+                  const grid=document.querySelector('.grid');
+                  const iso=new Isotope(grid,{
+                        itemSelector: '.grid-item',
+                        layoutMode: 'fitRows'
+                  });
+
+                  // Get unique values for each filter
+                  const features=getUniqueValues('features');
+                  const rarity=getUniqueValues('rarity');
+                  const cardCondition=getUniqueValues('card-condition');
+
+                  // Add options to filter elements
+                  populateFilterOptions(features,'features');
+                  populateFilterOptions(rarity,'rarity');
+                  populateFilterOptions(cardCondition,'card-condition');
+
+                  // Add event listeners to the filter elements
+                  const featuresSelect=document.querySelector('#features');
+                  featuresSelect.addEventListener('change',handleFeaturesFilter);
+
+                  const raritySelect=document.querySelector('#rarity');
+                  raritySelect.addEventListener('change',handleRarityFilter);
+
+                  const cardConditionSelect=document.querySelector('#card-condition');
+                  cardConditionSelect.addEventListener('change',handleCardConditionFilter);
+
+                  // Event handlers for filter elements
+                  function handleFeaturesFilter() {
+                        const selectedFeature=featuresSelect.value;
+                        iso.arrange({ filter: getFilterString(selectedFeature,'features') });
+                  }
+
+                  function handleRarityFilter() {
+                        const selectedRarity=raritySelect.value;
+                        iso.arrange({ filter: getFilterString(selectedRarity,'rarity') });
+                  }
+
+                  function handleCardConditionFilter() {
+                        const selectedCardCondition=cardConditionSelect.value;
+                        iso.arrange({ filter: getFilterString(selectedCardCondition,'card-condition') });
+                  }
+
+                  // Get unique values for a specific filter
+                  function getUniqueValues(filter) {
+                        const values=[];
+                        data.forEach(item => {
+                              if(!values.includes(item[filter])) {
+                                    values.push(item[filter]);
+                              }
+                        });
+                        return values;
+                  }
+
+                  // Add options to a filter element
+                  function populateFilterOptions(values,filter) {
+                        const select=document.querySelector(`#${filter}`);
+                        values.forEach(value => {
+                              const option=document.createElement('option');
+                              option.value=value;
+                              option.textContent=value;
+                              select.appendChild(option);
+                        });
+                  }
+
+                  // Get filter string for Isotope
+                  function getFilterString(value,filter) {
+                        return value? `.${filter}-${value}`:'*';
+                  }
+
+                  // Generate grid items dynamically
+                  function generateGridItems() {
+                        const fragment=document.createDocumentFragment();
+                        data.forEach(item => {
+                              const gridItem=document.createElement('div');
+                              gridItem.classList.add('grid-item');
+                              gridItem.classList.add(`features-${item.features}`);
+                              gridItem.classList.add(`rarity-${item.rarity}`);
+                              gridItem.classList.add(`card-condition-${item['card-condition']}`);
+                              fragment.appendChild(gridItem);
+                        });
+                        grid.appendChild(fragment);
+                  }
+
+                  // Generate initial grid items
+                  generateGridItems();
             </script>
+
+
             <script src="src/JS/populateProductCard.js"></script>
             <script src="src/JS/filterData.js"></script>
             <script src="src/JS/filterAndDisplayItems.js"></script>
