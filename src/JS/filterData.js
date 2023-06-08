@@ -5,7 +5,7 @@ function parseJSON(jsonData) {
   const rarity=[];
   const cardCondition=[];
 
-  parsedData.ItemSpecifics.NameValueList.forEach(item => {
+  parsedData[0].ItemSpecifics.NameValueList.forEach((item) => {
     if(item.Name==="Features") {
       features.push(item.Value);
     } else if(item.Name==="Rarity") {
@@ -18,12 +18,13 @@ function parseJSON(jsonData) {
   return {
     features,
     rarity,
-    cardCondition
+    cardCondition,
   };
 }
+
 // Example usage
-const jsonData=`{
-  "jsonData": [{
+const jsonData=`[
+  {
     "ItemID": 354434182701,
     "EndTime": "2023-07-06T22:17:02.000Z",
     "ViewItemURLForNaturalSearch": "https://www.ebay.com/itm/Yugioh-Kuriboh-FL1-EN003-Limited-Secret-Rare-/354434182701",
@@ -3816,7 +3817,7 @@ const jsonData=`{
       "ConditionID": 1000,
       "ConditionDisplayName": "New/Factory Sealed"
     }
-    ]}`;
+    ]`;
 
 const { features,rarity,cardCondition
 }=parseJSON(jsonData);
