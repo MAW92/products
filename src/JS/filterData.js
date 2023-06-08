@@ -3865,7 +3865,7 @@ function filterByCardCondition(cardCondition) {
 }
 
 // Example usage
-filterByFeatures(['1st Edition']);
-filterByRarity(['Super Rare']);
-filterByCardCondition(['Near Mint or Better']);
+filterByFeatures([features]);
+filterByRarity([rarity]);
+filterByCardCondition([cardCondition]);
 
