@@ -5,14 +5,16 @@ function parseJSON(jsonData) {
   const rarity=[];
   const cardCondition=[];
 
-  parsedData[0].ItemSpecifics.NameValueList.forEach((item) => {
-    if(item.Name==="Features") {
-      features.push(item.Value);
-    } else if(item.Name==="Rarity") {
-      rarity.push(item.Value);
-    } else if(item.Name==="Card Condition") {
-      cardCondition.push(item.Value);
-    }
+  parsedData.forEach((item) => {
+    item.ItemSpecifics.NameValueList.forEach((subItem) => {
+      if(subItem.Name==="Features") {
+        features.push(subItem.Value);
+      } else if(subItem.Name==="Rarity") {
+        rarity.push(subItem.Value);
+      } else if(subItem.Name==="Card Condition") {
+        cardCondition.push(subItem.Value);
+      }
+    });
   });
 
   return {
@@ -21,6 +23,7 @@ function parseJSON(jsonData) {
     cardCondition,
   };
 }
+
 
 // Example usage
 const jsonData=`[
