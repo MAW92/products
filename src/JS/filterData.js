@@ -141,7 +141,7 @@ const jsonData=`{
     "ConditionID": 3000,
     "ConditionDisplayName": "Used",
     "ConditionDescription": "Lightly Played condition, kept sleeved and stored in a safe environment. Has a few impression marks on the center area of card if viewed from an angle on front side, however does not show on back side of the card."
-  },
+  
   {
     "ItemID": 354434274664,
     "EndTime": "2023-07-06T23:40:28.000Z",
@@ -259,7 +259,7 @@ const jsonData=`{
     "ConditionID": 3000,
     "ConditionDisplayName": "Used",
     "ConditionDescription": "Very Lightly Played condition, no noticeable scratches, creases, etc. Some very light edge wear due to previous use. Kept sleeved and stored in a safe environment."
-  },
+  
   {
     "ItemID": 354434274669,
     "EndTime": "2023-07-06T23:40:28.000Z",
@@ -379,7 +379,7 @@ const jsonData=`{
     "ConditionID": 3000,
     "ConditionDisplayName": "Used",
     "ConditionDescription": "Lightly Played condition, no noticeable scratches, creases, ect. Some very light edge wear due to previous use. Kept sleeved and stored in a safe environment."
-  },
+  }
   {
     "ItemID": 354434274671,
     "EndTime": "2023-07-06T23:40:28.000Z",
@@ -497,7 +497,7 @@ const jsonData=`{
     "ConditionID": 3000,
     "ConditionDisplayName": "Used",
     "ConditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-  },
+  }
   {
     "ItemID": 354588496313,
     "EndTime": "2023-06-15T21:34:16.000Z",
@@ -611,7 +611,7 @@ const jsonData=`{
     "ConditionID": 3000,
     "ConditionDisplayName": "Used",
     "ConditionDescription": "Near Mint condition, stored in a safe environment."
-  },
+  }
   {
     "ItemID": 354620966508,
     "EndTime": "2023-07-02T09:14:56.000Z",
@@ -739,7 +739,7 @@ const jsonData=`{
     "ConditionID": 3000,
     "ConditionDisplayName": "Used",
     "ConditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment."
-  },
+  }
   {
     "ItemID": 354677972833,
     "EndTime": "2023-06-27T21:59:30.000Z",
@@ -855,7 +855,7 @@ const jsonData=`{
     "ConditionID": 3000,
     "ConditionDisplayName": "Used",
     "ConditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment!"
-  },
+  }
   {
     "ItemID": 354677972834,
     "EndTime": "2023-06-27T21:59:30.000Z",
@@ -967,7 +967,7 @@ const jsonData=`{
     "ConditionID": 3000,
     "ConditionDisplayName": "Used",
     "ConditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment!"
-  },
+  }
   {
     "ItemID": 354677972835,
     "EndTime": "2023-06-27T21:59:30.000Z",
@@ -1079,7 +1079,7 @@ const jsonData=`{
     "ConditionID": 3000,
     "ConditionDisplayName": "Used",
     "ConditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment!"
-  },
+  }
   {
     "ItemID": 354677972838,
     "EndTime": "2023-06-27T21:59:30.000Z",
@@ -1191,7 +1191,7 @@ const jsonData=`{
     "ConditionID": 3000,
     "ConditionDisplayName": "Used",
     "ConditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment!"
-  },
+  }
   {
     "ItemID": 354677972839,
     "EndTime": "2023-06-27T21:59:30.000Z",
@@ -1291,7 +1291,7 @@ const jsonData=`{
     "ConditionID": 3000,
     "ConditionDisplayName": "Used",
     "ConditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment!"
-  },
+  }
   {
     "ItemID": 354677972840,
     "EndTime": "2023-06-06T06:41:39.000Z",
@@ -1407,7 +1407,7 @@ const jsonData=`{
     "ConditionID": 3000,
     "ConditionDisplayName": "Used",
     "ConditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment!"
-  },
+  }
   {
     "ItemID": 354677972843,
     "EndTime": "2023-06-27T21:59:30.000Z",
@@ -1519,7 +1519,7 @@ const jsonData=`{
     "ConditionID": 3000,
     "ConditionDisplayName": "Used",
     "ConditionDescription": "Lightly Played condition slight edgewear on left-hand side of card, kept sleeved and stored in a safe environment!"
-  },
+  }
   {
     "ItemID": 354677972844,
     "EndTime": "2023-06-27T21:59:30.000Z",
@@ -1627,7 +1627,7 @@ const jsonData=`{
     "ConditionID": 3000,
     "ConditionDisplayName": "Used",
     "ConditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment!"
-  },
+  }
   {
     "ItemID": 354677972845,
     "EndTime": "2023-06-27T21:59:30.000Z",
@@ -1743,7 +1743,7 @@ const jsonData=`{
     "ConditionID": 3000,
     "ConditionDisplayName": "Used",
     "ConditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment!"
-  },
+  }
     {
       "ItemID": 354677972845,
       "EndTime": "2023-06-27T21:59:30.000Z",
@@ -1859,7 +1859,7 @@ const jsonData=`{
       "ConditionID": 3000,
       "ConditionDisplayName": "Used",
       "ConditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment!"
-    },
+    }
     {
       "ItemID": 354677972846,
       "EndTime": "2023-06-27T21:59:30.000Z",
@@ -1970,7 +1970,7 @@ const jsonData=`{
       "ConditionID": 3000,
       "ConditionDisplayName": "Used",
       "ConditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment!"
-    },
+    }
     {
       "ItemID": 354677972848,
       "EndTime": "2023-06-27T21:59:30.000Z",
@@ -2086,7 +2086,7 @@ const jsonData=`{
       "ConditionID": 3000,
       "ConditionDisplayName": "Used",
       "ConditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment!"
-    },
+    }
     {
       "ItemID": 354677972849,
       "EndTime": "2023-06-27T21:59:30.000Z",
@@ -2202,7 +2202,7 @@ const jsonData=`{
       "ConditionID": 3000,
       "ConditionDisplayName": "Used",
       "ConditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment!"
-    },
+    }
     {
       "ItemID": 354677972852,
       "EndTime": "2023-06-27T21:59:30.000Z",
@@ -2306,7 +2306,7 @@ const jsonData=`{
       "ConditionID": 3000,
       "ConditionDisplayName": "Used",
       "ConditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment!"
-    },
+    }
     {
       "ItemID": 354677972854,
       "EndTime": "2023-06-01T20:44:36.000Z",
@@ -2422,7 +2422,7 @@ const jsonData=`{
       "ConditionID": 3000,
       "ConditionDisplayName": "Used",
       "ConditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment!"
-    },
+    }
     {
       "ItemID": 354677972855,
       "EndTime": "2023-06-27T21:59:30.000Z",
@@ -2538,7 +2538,7 @@ const jsonData=`{
       "ConditionID": 3000,
       "ConditionDisplayName": "Used",
       "ConditionDescription": "Very Lightly Played condition, slight corner wear, kept sleeved and stored in a safe environment!"
-    },
+    }
     {
       "ItemID": 354677972856,
       "EndTime": "2023-06-27T21:59:30.000Z",
@@ -2654,7 +2654,7 @@ const jsonData=`{
       "ConditionID": 3000,
       "ConditionDisplayName": "Used",
       "ConditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment!"
-    },
+    }
     {
       "ItemID": 354677972857,
       "EndTime": "2023-06-27T21:59:30.000Z",
@@ -2770,7 +2770,7 @@ const jsonData=`{
       "ConditionID": 3000,
       "ConditionDisplayName": "Used",
       "ConditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment!"
-    },
+    }
     {
       "ItemID": 354677972858,
       "EndTime": "2023-06-27T21:59:30.000Z",
@@ -2878,7 +2878,7 @@ const jsonData=`{
       "ConditionID": 3000,
       "ConditionDisplayName": "Used",
       "ConditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment!"
-    },
+    }
     {
       "ItemID": 354677972859,
       "EndTime": "2023-06-27T21:59:30.000Z",
@@ -2986,7 +2986,7 @@ const jsonData=`{
       "ConditionID": 3000,
       "ConditionDisplayName": "Used",
       "ConditionDescription": "Near Mint condition, kept sleeved and stored in a safe environment!"
-    },
+    }
     {
       "ItemID": 354774133306,
       "EndTime": "2023-06-10T02:05:12.000Z",
@@ -3126,7 +3126,7 @@ const jsonData=`{
       "ConditionID": 3000,
       "ConditionDisplayName": "Used",
       "ConditionDescription": "Lightly Played condition, light edgewear, no creases or damage, kept sleeved and stored in a safe environment."
-    },
+    }
     {
       "ItemID": 354788151309,
       "BuyItNowAvailable": true,
@@ -3244,7 +3244,7 @@ const jsonData=`{
       "ConditionID": 3000,
       "ConditionDisplayName": "Used",
       "ConditionDescription": "Assorted lot of 25 Near Mint Yugioh! cards, ranging from Super Rare on up. Cards are basically pack fresh, kept sleeved and stored in a safe environment."
-    },
+    }
     {
       "ItemID": 354788151310,
       "BuyItNowAvailable": true,
@@ -3362,7 +3362,7 @@ const jsonData=`{
       "ConditionID": 3000,
       "ConditionDisplayName": "Used",
       "ConditionDescription": "Assorted lot of 25 Near Mint Yugioh! cards, ranging from Super Rare on up. Cards are basically pack fresh, kept sleeved and stored in a safe environment."
-    },
+    }
     {
       "ItemID": 354788151311,
       "BuyItNowAvailable": true,
@@ -3479,7 +3479,7 @@ const jsonData=`{
       "ConditionID": 3000,
       "ConditionDisplayName": "Used",
       "ConditionDescription": "Assorted lot of 25 Near Mint Yugioh! cards, ranging from Super Rare on up. Cards are basically pack fresh, kept sleeved and stored in a safe environment."
-    },
+    }
     {
       "ItemID": 354788151312,
       "BuyItNowAvailable": true,
@@ -3597,7 +3597,7 @@ const jsonData=`{
       "ConditionID": 3000,
       "ConditionDisplayName": "Used",
       "ConditionDescription": "Assorted lot of 25 Near Mint Yugioh! cards, ranging from Super Rare on up. Cards are basically pack fresh, kept sleeved and stored in a safe environment."
-    },
+    }
     {
       "ItemID": 354788151313,
       "BuyItNowAvailable": true,
@@ -3715,7 +3715,7 @@ const jsonData=`{
       "ConditionID": 3000,
       "ConditionDisplayName": "Used",
       "ConditionDescription": "Assorted lot of 25 Near Mint Yugioh! cards, ranging from Super Rare on up. Cards are basically pack fresh, kept sleeved and stored in a safe environment."
-    },
+    }
     {
       "ItemID": 354618440477,
       "EndTime": "2023-07-01T08:41:45.000Z",
