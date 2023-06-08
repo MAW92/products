@@ -103,7 +103,7 @@
                                 class="inline mb-8 mt-4 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">Filters</button>
                   </div>
                   <!-- Product Grid -->
-                  <div id="productGrid"
+                  <!--<div id="productGrid"
                        class="grid grid-cols-1 mx-auto gap-4 py-10 sm:grid-cols-2 md:grid-cols-3 lg:mx-8 lg:grid-cols-4"></div>
                   <div id="productCardList"
                        class="mx-auto max-w-7xl p-2 my-10 flex-wrap text-ellipsis leading-5 hidden active:visible"></div>
@@ -163,16 +163,88 @@
                                           <option value="Moderately Played">Moderately Played</option>
                                           <option value="Heavily Played">Heavily Played</option>
                                     </select>
-                              </div>
-                              <div class="flex justify-end mt-6">
-                                    <button type="button"
-                                            id="applyButton"
-                                            class="bg-blue-500 hover:bg-blue-600 text-white text-shadow px-4 py-2 rounded-md">Apply</button>
-                              </div>
+                              </div>-->
+                  <style>
+                        .btn-filter {
+                              padding: 0.5rem 1rem;
+                              background-color: #e2e8f0;
+                              border-radius: 0.25rem;
+                              cursor: pointer;
+                              transition: background-color 0.3s ease;
+                        }
+
+                        .btn-filter:hover {
+                              background-color: #cbd5e0;
+                        }
+
+                        .grid {
+                              display: grid;
+                              grid-template-columns: repeat(3, minmax(0, 1fr));
+                              gap: 1rem;
+                        }
+
+                        .grid-item {
+                              padding: 1rem;
+                              background-color: #edf2f7;
+                              border-radius: 0.25rem;
+                              text-align: center;
+                        }
+                  </style>
+                  <div class="container mx-auto my-8">
+                        <div class="flex justify-center space-x-4">
+                              <button class="btn-filter"
+                                      data-filter=".1st-edition">1st Edition</button>
+                              <button class="btn-filter"
+                                      data-filter=".super-rare">Super Rare</button>
+                              <button class="btn-filter"
+                                      data-filter=".near-mint">Near Mint</button>
                         </div>
+
+                        <div class="grid grid-cols-3 gap-4 mt-8">
+                              <div class="grid-item 1st-edition super-rare near-mint">Item 1</div>
+                              <div class="grid-item 1st-edition super-rare">Item 2</div>
+                              <div class="grid-item 1st-edition near-mint">Item 3</div>
+                              <div class="grid-item super-rare near-mint">Item 4</div>
+                              <div class="grid-item 1st-edition">Item 5</div>
+                              <div class="grid-item super-rare">Item 6</div>
+                              <div class="grid-item near-mint">Item 7</div>
+                        </div>
+                  </div>
+                  <div class="flex justify-end mt-6">
+                        <button type="button"
+                                id="applyButton"
+                                class="bg-blue-500 hover:bg-blue-600 text-white text-shadow px-4 py-2 rounded-md">Apply</button>
+                  </div>
+                  </div>
                   </aside>
             </main>
+            <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+            <script>
+                  // Wait for the DOM to load
+                  document.addEventListener('DOMContentLoaded',() => {
+                        // Initialize Isotope
+                        const productGrid=document.getElementById('productGrid');
+                        let iso=new Isotope(productGrid,{
+                              itemSelector: '.product-card',
+                              layoutMode: 'fitRows',
+                        });
+
+                        // Get the filter buttons
+                        const filterButtons=document.querySelectorAll('.filter-btn');
+
+                        // Add click event listener to each filter button
+                        filterButtons.forEach((button) => {
+                              button.addEventListener('click',() => {
+                                    const filterValue=button.dataset.filter;
+
+                                    // Filter items using Isotope
+                                    iso.arrange({ filter: filterValue });
+                              });
+                        });
+                  });
+            </script>
             <script src="src/JS/populateProductCard.js"></script>
+            <script src="src/JS/filterData.js"></script>
             <script src="src/JS/filterAndDisplayItems.js"></script>
             <script src="src/JS/Buttons/filtersButton.js"></script>
             <script src="src/JS/Buttons/toggleView.js"></script>
@@ -181,3 +253,163 @@
       </body>
 
 </html>
+
+
+<!--
+<div id="form-ui">
+  <h3>Rarity</h3>
+<p>
+  <label><input type="checkbox" value="Secret" /> Secret Rare</label>
+  <label><input type="checkbox" value="Ultra" /> Ultra Rare</label>
+  <label><input type="checkbox" value="Super" /> Super Rare</label>
+  <label><input type="checkbox" value="Rare" /> Rare</label>
+  <label><input type="checkbox" value="Common" /> Common</label>
+  <label><input type="checkbox" value="Starfoil" /> Starfoil Rare</label>
+  <label><input type="checkbox" value="Mosaic" /> Mosaic Rare</label>
+</p>
+  <h3>Printing</h3>
+<p>
+  <label><input type="checkbox" value="1st" /> 1st Edition</label>
+  <label><input type="checkbox" value="Unlimited" /> Unlimited</label>
+  <label><input type="checkbox" value="Limited" /> Limited Edition</label>
+</p>
+  <h3>Condition</h3>
+<p>
+  <label><input type="checkbox" value=".NM" /> Near Mint</label>
+  <label><input type="checkbox" value=".LP" /> Lightly Played</label>
+  <label><input type="checkbox" value=".MP" /> Moderately Played</label>
+  <label><input type="checkbox" value=".HP" /> Heavily Played</label>
+  <label><input type="checkbox" value="DMG" /> Damaged</label>
+</p>
+  <p id="output">--</p>
+  
+</div>
+
+<div id="container">
+ 
+</div>
+
+
+--------------
+
+* { box-sizing: border-box; }
+
+body { font-family: sans-serif; }
+
+.item {
+width: 100px;
+height: 100px;
+float: left;
+
+margin: 5px;
+padding: 5px;
+}
+
+.item p {
+margin: 0;
+}
+
+.NM { background: #F33; }
+.LP { background: #88F; }
+.MP { background: #3A3; }
+.HP { background: orange;}
+
+select, label, input { font-size: 20px; }
+
+label { margin-right: 10px; }
+
+
+
+
+--------------
+
+
+// templating
+var rarity = [ 'Secret', 'Ultra', 'Super', 'Rare', 'Common', 'Starfoil', 'Mosaic'];
+var printing = [ '1st', 'Unlimited', 'Limited' ];
+var condition = [ 'NM', 'LP', 'MP', 'HP', 'DMG' ];
+
+createItems();
+
+// init Isotope
+var $container = $('#container').isotope({
+itemSelector: '.item'
+});
+
+var $output = $('#output');
+
+// filter with selects and checkboxes
+var $checkboxes = $('#form-ui input');
+
+$checkboxes.change( function() {
+// map input values to an array
+var inclusives = [];
+// inclusive filters from checkboxes
+$checkboxes.each( function( i, elem ) {
+// if checkbox, use value if checked
+if ( elem.checked ) {
+inclusives.push( elem.value );
+}
+});
+
+// combine inclusive filters
+var filterValue = inclusives.length ? inclusives.join(', ') : '*';
+
+$output.text( filterValue );
+$container.isotope({ filter: filterValue })
+});
+
+
+function createItems() {
+
+var $items;
+// loop over colors, sizes, prices
+// create one item for each
+for ( var i=0; i
+< rarity.length;
+  i++
+  )
+  {
+  for
+  (
+  var
+  j=0;
+  j
+  <
+  printing.length;
+  j++
+  )
+  {
+  for
+  (
+  var
+  k=0;
+  k
+  <
+  condition.length;
+  k++
+  )
+  {
+  var
+  rarities=rarity[i];
+  var
+  printings=printing[j];
+  var
+  conditions=condition[k];
+  var
+  $item=$('<div />', {
+'class': 'item ' + rarity + ' ' + printing + condition
+});
+$item.append( '<p>' + printing + '</p>
+<p>$' + condition + '</p>');
+// add to items
+$items = $items ? $items.add( $item ) : $item;
+}
+}
+}
+
+$items.appendTo( $('#container') );
+
+}
+
+-->
