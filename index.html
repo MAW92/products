@@ -94,6 +94,73 @@
                         </svg>
                   </button>
             </header>
+
+
+
+            <aside>
+                  <div id="filterMenu"
+                       class="fixed inset-y-0 right-0 z-50 w-72 px-4 py-6 bg-white shadow-lg will-change-transform transform translate-x-full transition-transform duration-300 ease-in-out">
+                        <div class="flex justify-between items-center px-4 py-3 bg-blue-500 text-shadow text-white">
+                              <h2 class="text-lg font-bold">Filters</h2>
+                              <button id="closeFilterBtn"
+                                      class="text-white hover:text-gray-200 focus:outline-none">
+                                    <svg class="h-6 w-6"
+                                         fill="none"
+                                         viewBox="0 0 24 24"
+                                         stroke="currentColor">
+                                          <path stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M6 18L18 6M6 6l12 12"></path>
+                                    </svg>
+                              </button>
+                        </div>
+                        <div class="mb-4">
+                              <label for="rarityFilter"
+                                     class="block font-medium text-gray-700">Rarity</label>
+                              <select id="rarityFilter"
+                                      class="form-select w-full rounded-lg border-gray-300 px-4 py-2">
+                                    <option value="all">All Rarities</option>
+                                    <option value="Common">Common</option>
+                                    <option value="Rare">Rare</option>
+                                    <option value="Super Rare">Super Rare</option>
+                                    <option value="Ultra Rare">Ultra Rare</option>
+                                    <option value="Secret Rare">Secret Rare</option>
+                                    <option value="Starfoil Rare">Starfoil Rare</option>
+                                    <option value="Mosaic Rare">Mosaic Rare</option>
+                              </select>
+                        </div>
+                        <div class="mb-4">
+                              <label for="printingFilter"
+                                     class="block font-medium text-gray-700">Printing</label>
+                              <select id="printingFilter"
+                                      class="form-select w-full rounded-lg border-gray-300 px-4 py-2">
+                                    <option value="All">All Printings</option>
+                                    <option value="1st Edition">1st Edition</option>
+                                    <option value="Unlimited">Unlimited</option>
+                                    <option value="Limited">Limited</option>
+                              </select>
+                        </div>
+                        <div class="mb-4">
+                              <label for="conditionFilter"
+                                     class="block font-medium text-gray-700">Condition</label>
+                              <select id="conditionFilter"
+                                      class="form-select w-full rounded-lg border-gray-300 px-4 py-2">
+                                    <option value="All">All Conditions</option>
+                                    <option value="Mint">Mint</option>
+                                    <option value="Near Mint">Near Mint</option>
+                                    <option value="Lightly Played">Lightly Played</option>
+                                    <option value="Moderately Played">Moderately Played</option>
+                                    <option value="Heavily Played">Heavily Played</option>
+                              </select>
+                        </div>
+                        <div class="flex justify-end mt-6">
+                              <button type="button"
+                                      id="applyButton"
+                                      class="bg-blue-500 hover:bg-blue-600 text-white text-shadow px-4 py-2 rounded-md">Apply</button>
+                        </div>
+                  </div>
+            </aside>
             <main class="px-5 min-h-screen bg-image bg-fixed bg-cover bg-center">
                   <div class="flex justify-center gap-5">
                         <button id="toggleButton"
@@ -103,72 +170,6 @@
                                 type="button"
                                 class="inline mb-8 mt-4 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">Filters</button>
                   </div>
-
-
-                  <aside>
-                        <div id="filterMenu"
-                             class="fixed inset-y-0 right-0 z-50 w-72 px-4 py-6 bg-white shadow-lg will-change-transform transform translate-x-full transition-transform duration-300 ease-in-out">
-                              <div class="flex justify-between items-center px-4 py-3 bg-blue-500 text-shadow text-white">
-                                    <h2 class="text-lg font-bold">Filters</h2>
-                                    <button id="closeFilterBtn"
-                                            class="text-white hover:text-gray-200 focus:outline-none">
-                                          <svg class="h-6 w-6"
-                                               fill="none"
-                                               viewBox="0 0 24 24"
-                                               stroke="currentColor">
-                                                <path stroke-linecap="round"
-                                                      stroke-linejoin="round"
-                                                      stroke-width="2"
-                                                      d="M6 18L18 6M6 6l12 12"></path>
-                                          </svg>
-                                    </button>
-                              </div>
-                              <div class="mb-4">
-                                    <label for="rarityFilter"
-                                           class="block font-medium text-gray-700">Rarity</label>
-                                    <select id="rarityFilter"
-                                            class="form-select w-full rounded-lg border-gray-300 px-4 py-2">
-                                          <option value="all">All Rarities</option>
-                                          <option value="Common">Common</option>
-                                          <option value="Rare">Rare</option>
-                                          <option value="Super Rare">Super Rare</option>
-                                          <option value="Ultra Rare">Ultra Rare</option>
-                                          <option value="Secret Rare">Secret Rare</option>
-                                          <option value="Starfoil Rare">Starfoil Rare</option>
-                                          <option value="Mosaic Rare">Mosaic Rare</option>
-                                    </select>
-                              </div>
-                              <div class="mb-4">
-                                    <label for="printingFilter"
-                                           class="block font-medium text-gray-700">Printing</label>
-                                    <select id="printingFilter"
-                                            class="form-select w-full rounded-lg border-gray-300 px-4 py-2">
-                                          <option value="All">All Printings</option>
-                                          <option value="1st Edition">1st Edition</option>
-                                          <option value="Unlimited">Unlimited</option>
-                                          <option value="Limited">Limited</option>
-                                    </select>
-                              </div>
-                              <div class="mb-4">
-                                    <label for="conditionFilter"
-                                           class="block font-medium text-gray-700">Condition</label>
-                                    <select id="conditionFilter"
-                                            class="form-select w-full rounded-lg border-gray-300 px-4 py-2">
-                                          <option value="All">All Conditions</option>
-                                          <option value="Mint">Mint</option>
-                                          <option value="Near Mint">Near Mint</option>
-                                          <option value="Lightly Played">Lightly Played</option>
-                                          <option value="Moderately Played">Moderately Played</option>
-                                          <option value="Heavily Played">Heavily Played</option>
-                                    </select>
-                              </div>
-                              <div class="flex justify-end mt-6">
-                                    <button type="button"
-                                            id="applyButton"
-                                            class="bg-blue-500 hover:bg-blue-600 text-white text-shadow px-4 py-2 rounded-md">Apply</button>
-                              </div>
-                        </div>
-                  </aside>
                   <!-- Product Grid -->
                   <div id="productGrid"
                        class="grid grid-cols-1 mx-auto gap-4 py-10 sm:grid-cols-2 md:grid-cols-3 lg:mx-8 lg:grid-cols-4"></div>
