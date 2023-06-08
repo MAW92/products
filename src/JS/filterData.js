@@ -3860,8 +3860,32 @@ function filterByCardCondition(cardCondition) {
     }
   });
 }
+// Display filtered items
+function displayFilteredItems(items) {
+  const grid=document.getElementById('productGrid');
+  const cardList=document.getElementById('productCardList');
+
+  // Clear previous items
+  grid.innerHTML='';
+  cardList.innerHTML='';
+
+  // Loop through filtered items and create HTML elements
+  items.forEach(item => {
+    const div=document.createElement('div');
+    div.className='grid-item';
+    div.innerHTML=item.Title;
+
+    grid.appendChild(div);
+
+    const p=document.createElement('p');
+    p.innerHTML=item.Title;
+
+    cardList.appendChild(p);
+  });
+}
 
 // Example usage
 filterByFeatures(['1st Edition']);
 filterByRarity(['Super Rare']);
 filterByCardCondition(['Near Mint or Better']);
+displayFilteredItems(items);

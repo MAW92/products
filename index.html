@@ -19,6 +19,33 @@
                   href="https://www.ebay.com/usr/gottasellemall69">
             <link rel="stylesheet"
                   href="./dist/output.css">
+            <style>
+                  .btn-filter {
+                        padding: 0.5rem 1rem;
+                        background-color: #e2e8f0;
+                        border-radius: 0.25rem;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease;
+                  }
+
+                  .btn-filter:hover {
+                        background-color: #cbd5e0;
+                  }
+
+                  .grid {
+                        display: grid;
+                        grid-template-columns: repeat(3, minmax(0, 1fr));
+                        gap: 1rem;
+                  }
+
+                  .grid-item {
+                        padding: 1rem;
+                        background-color: #edf2f7;
+                        border-radius: 0.25rem;
+                        text-align: center;
+                  }
+            </style>
+            <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
       </head>
 
       <body>
@@ -103,10 +130,11 @@
                                 class="inline mb-8 mt-4 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">Filters</button>
                   </div>
                   <!-- Product Grid -->
-                  <!--<div id="productGrid"
+                  <div id="productGrid"
                        class="grid grid-cols-1 mx-auto gap-4 py-10 sm:grid-cols-2 md:grid-cols-3 lg:mx-8 lg:grid-cols-4"></div>
                   <div id="productCardList"
                        class="mx-auto max-w-7xl p-2 my-10 flex-wrap text-ellipsis leading-5 hidden active:visible"></div>
+
                   <aside>
                         <div id="filterMenu"
                              class="fixed inset-y-0 right-0 z-50 w-72 px-4 py-6 bg-white shadow-lg will-change-transform transform translate-x-full transition-transform duration-300 ease-in-out">
@@ -163,62 +191,16 @@
                                           <option value="Moderately Played">Moderately Played</option>
                                           <option value="Heavily Played">Heavily Played</option>
                                     </select>
-                              </div>-->
-                  <style>
-                        .btn-filter {
-                              padding: 0.5rem 1rem;
-                              background-color: #e2e8f0;
-                              border-radius: 0.25rem;
-                              cursor: pointer;
-                              transition: background-color 0.3s ease;
-                        }
-
-                        .btn-filter:hover {
-                              background-color: #cbd5e0;
-                        }
-
-                        .grid {
-                              display: grid;
-                              grid-template-columns: repeat(3, minmax(0, 1fr));
-                              gap: 1rem;
-                        }
-
-                        .grid-item {
-                              padding: 1rem;
-                              background-color: #edf2f7;
-                              border-radius: 0.25rem;
-                              text-align: center;
-                        }
-                  </style>
-                  <div class="container mx-auto my-8">
-                        <div class="flex justify-center space-x-4">
-                              <button class="btn-filter"
-                                      data-filter=".1st-edition">1st Edition</button>
-                              <button class="btn-filter"
-                                      data-filter=".super-rare">Super Rare</button>
-                              <button class="btn-filter"
-                                      data-filter=".near-mint">Near Mint</button>
+                              </div>
+                              <div class="flex justify-end mt-6">
+                                    <button type="button"
+                                            id="applyButton"
+                                            class="bg-blue-500 hover:bg-blue-600 text-white text-shadow px-4 py-2 rounded-md">Apply</button>
+                              </div>
                         </div>
-
-                        <div class="grid grid-cols-3 gap-4 mt-8">
-                              <div class="grid-item 1st-edition super-rare near-mint">Item 1</div>
-                              <div class="grid-item 1st-edition super-rare">Item 2</div>
-                              <div class="grid-item 1st-edition near-mint">Item 3</div>
-                              <div class="grid-item super-rare near-mint">Item 4</div>
-                              <div class="grid-item 1st-edition">Item 5</div>
-                              <div class="grid-item super-rare">Item 6</div>
-                              <div class="grid-item near-mint">Item 7</div>
-                        </div>
-                  </div>
-                  <div class="flex justify-end mt-6">
-                        <button type="button"
-                                id="applyButton"
-                                class="bg-blue-500 hover:bg-blue-600 text-white text-shadow px-4 py-2 rounded-md">Apply</button>
-                  </div>
-                  </div>
                   </aside>
             </main>
-            <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+
             <script>
                   // Wait for the DOM to load
                   document.addEventListener('DOMContentLoaded',() => {
