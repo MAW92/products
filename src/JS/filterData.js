@@ -24,6 +24,7 @@ function parseJSON(jsonData) {
   };
 }
 
+// Example usage
 const jsonData=[
   {
     "ItemID": 354434182701,
@@ -3819,36 +3820,6 @@ const jsonData=[
     "ConditionDisplayName": "New/Factory Sealed"
   }
 ];
-
-function parseJSON(jsonData) {
-  const parsedData=JSON.parse(jsonData);
-
-  const features=[];
-  const rarity=[];
-  const cardCondition=[];
-
-  parsedData.forEach((item) => {
-    item.ItemSpecifics.NameValueList.forEach((subItem) => {
-      if(subItem.Name==="Features") {
-        features.push(subItem.Value);
-      } else if(subItem.Name==="Rarity") {
-        rarity.push(subItem.Value);
-      } else if(subItem.Name==="Card Condition") {
-        cardCondition.push(subItem.Value);
-      }
-    });
-  });
-
-  return {
-    features,
-    rarity,
-    cardCondition,
-  };
-}
-
-// Example usage
-// const jsonData = [/* Your JSON data goes here */];
-
 // Extract all the unique options for rarity, condition, and feature from the JSON data
 const uniqueRarities=[...new Set(jsonData.map((item) => item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Rarity").Value))];
 const uniqueConditions=[...new Set(jsonData.map((item) => item.ConditionDescription))];
@@ -3919,9 +3890,9 @@ function initializeIsotope() {
 
     // Filter the items based on the updated desired values
     const filteredItems=jsonData.filter((item) => {
-      const itemRarity=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Rarity").Value;
+      const itemRarity=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Rarity");
       const itemCondition=item.ConditionDescription;
-      const itemFeature=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Features").Value;
+      const itemFeature=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Features");
 
       return (
         (desiredRarities.length===0||desiredRarities.includes(itemRarity))&&
