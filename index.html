@@ -20,6 +20,25 @@
             <link rel="stylesheet"
                   href="./dist/output.css">
             <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <style>
+                  .grid {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 1rem;
+                  }
+
+                  .grid-item {
+                        background-color: #f2f2f2;
+                        padding: 1rem;
+                  }
+
+                  .filters {
+                        display: flex;
+                        gap: 1rem;
+                        margin-top: 1rem;
+                  }
+            </style>
       </head>
 
       <body>
@@ -96,20 +115,22 @@
             </header>
 
             <main class="px-5 min-h-screen bg-image bg-fixed bg-cover bg-center z-0">
-                  <div class="flex justify-center gap-5 z-50">
+                  <div class="container mx-auto px-4 py-8">
 
-                        <button id="toggleButton"
-                                type="button"
-                                class="mb-8 mt-4 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">Switch Layout</button>
-                        <button id="filterBtn"
-                                type="button"
-                                class="inline mb-8 mt-4 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">Filters</button>
-                  </div>
-                  <!-- Product Grid -->
-                  <div id="productGrid"
-                       class="grid grid-cols-1 mx-auto gap-4 py-10 sm:grid-cols-2 md:grid-cols-3 lg:mx-8 lg:grid-cols-4"></div>
-                  <div id="productCardList"
-                       class="mx-auto max-w-fit p-2 py-10 space-y-5 flex-wrap text-ellipsis leading-5 hidden active:visible"></div>
+                        <div class="flex justify-center gap-5 z-50">
+
+                              <button id="toggleButton"
+                                      type="button"
+                                      class="mb-8 mt-4 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">Switch Layout</button>
+                              <button id="filterBtn"
+                                      type="button"
+                                      class="inline mb-8 mt-4 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">Filters</button>
+                        </div>
+                        <!-- Product Grid -->
+                        <div id="productGrid"
+                             class="grid grid-cols-1 mx-auto gap-4 py-10 sm:grid-cols-2 md:grid-cols-3 lg:mx-8 lg:grid-cols-4"></div>
+                        <div id="productCardList"
+                             class="mx-auto max-w-fit p-2 py-10 space-y-5 flex-wrap text-ellipsis leading-5 hidden active:visible"></div>
 
 
 
@@ -178,8 +199,28 @@
                                       class="filter-btn bg-blue-500 hover:bg-blue-600 text-white text-shadow px-4 py-2 rounded-md">Apply</button>
                         </div>
                   </div>
-            </aside>
 
+
+                  <div class="filters">
+                        <div class="rarity">
+                              <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
+                                      data-rarity="">All Rarities</button>
+                              <!-- Filter buttons for rarities will be appended here -->
+                        </div>
+                        <div class="condition">
+                              <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
+                                      data-condition="">All Conditions</button>
+                              <!-- Filter buttons for conditions will be appended here -->
+                        </div>
+                        <div class="feature">
+                              <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
+                                      data-feature="">All Features</button>
+                              <!-- Filter buttons for features will be appended here -->
+                        </div>
+                  </div>
+                  </div>
+
+            </aside>
 
             <script>
                   // Wait for the DOM to load
