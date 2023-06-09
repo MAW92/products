@@ -3821,9 +3821,9 @@ const jsonData=[
   }
 ];
 // Extract all the unique options for rarity, condition, and feature from the JSON data
-const uniqueRarities=[...new Set(jsonData.map((item) => item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Rarity").Value))];
+const uniqueRarities=[...new Set(jsonData.map((item) => item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Rarity")))];
 const uniqueConditions=[...new Set(jsonData.map((item) => item.ConditionDescription))];
-const uniqueFeatures=[...new Set(jsonData.map((item) => item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Features").Value))];
+const uniqueFeatures=[...new Set(jsonData.map((item) => item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Features")))];
 
 // Define the desired values for filtering as all the unique options
 const desiredRarities=uniqueRarities;
@@ -3832,9 +3832,9 @@ const desiredFeatures=uniqueFeatures;
 
 // Filter the items based on the desired values
 const filteredItems=jsonData.filter((item) => {
-  const itemRarity=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Rarity").Value;
+  const itemRarity=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Rarity");
   const itemCondition=item.ConditionDescription;
-  const itemFeature=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Features").Value;
+  const itemFeature=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Features");
 
   return (
     (desiredRarities.length===0||desiredRarities.includes(itemRarity))&&
