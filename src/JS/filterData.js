@@ -3826,7 +3826,7 @@ const cardData=[
     "Rarity": "Secret Rare",
     "Set": "Forbidden Legacy",
     "Vintage": "No",
-    "galleryURL": "https://i.ebayimg.com/images/g/uw4AAOSwaOVj5pmE/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/uw4AAOSwaOVj5pmE/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-Kuriboh-FL1-EN003-Limited-Secret-Rare-/354434182701"
   },
   {
@@ -3859,7 +3859,7 @@ const cardData=[
     "Set": "Magician's Force",
     "Vintage": "Yes",
     "yearManufactured": "1996",
-    "galleryURL": "https://i.ebayimg.com/images/g/HSkAAOSwGDBkB~WK/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/HSkAAOSwGDBkB~WK/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-Double-Spell-MFC-106-1st-Edition-Ultra-Rare-Magicians-Force-/354434274664"
   },
   {
@@ -3893,7 +3893,7 @@ const cardData=[
     "Set": "Magic Ruler",
     "Vintage": "Yes",
     "yearManufactured": "1996",
-    "galleryURL": "https://i.ebayimg.com/images/g/YWcAAOSwxtpkB~Tg/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/YWcAAOSwxtpkB~Tg/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-Painful-Choice-MRL-049-1st-Edition-Super-Rare-Magic-Ruler-/354434274669"
   },
   {
@@ -3927,7 +3927,7 @@ const cardData=[
     "Rarity": "Super Rare",
     "Set": "Dark Revelation Volume 3",
     "Vintage": "No",
-    "galleryURL": "https://i.ebayimg.com/images/g/0asAAOSw3iti9DOn/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/0asAAOSw3iti9DOn/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-Winged-Kuriboh-DR3-EN185-Unlimited-Super-Rare-NM-/354434274671"
   },
   {
@@ -3960,7 +3960,7 @@ const cardData=[
     "Set": "King's Court",
     "Vintage": "No",
     "yearManufactured": "2020",
-    "galleryURL": "https://i.ebayimg.com/images/g/0bEAAOSw4NBjydCc/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/0bEAAOSw4NBjydCc/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-Rivalry-Warlords-KICO-EN058-Rare-1st-Edition-NM-/354588496313"
   },
   {
@@ -3995,7 +3995,7 @@ const cardData=[
     "Set": "Starter Deck: Yugi",
     "Vintage": "Yes",
     "yearManufactured": "1996",
-    "galleryURL": "https://i.ebayimg.com/images/g/O~QAAOSwQ8JkAHWf/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/O~QAAOSwQ8JkAHWf/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-Craneo-Convocado-Summoned-Skull-BIY-S004-1st-Edition-Common-Spanish-/354620966508"
   },
   {
@@ -4029,7 +4029,7 @@ const cardData=[
     "Set": "Battles of Legend: Hero's Revenge",
     "Vintage": "No",
     "yearManufactured": "2021",
-    "galleryURL": "https://i.ebayimg.com/images/g/7yEAAOSwF81kIhHF/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/7yEAAOSwF81kIhHF/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-Battlewasp-Pin-Bullseye-BLHR-EN031-1st-Edition-Ultra-Rare-NM-/354677972833"
   },
   {
@@ -4062,7 +4062,7 @@ const cardData=[
     "Rarity": "Super Rare",
     "Set": "2010 Collector&#39;s Tin",
     "Vintage": "No",
-    "galleryURL": "https://i.ebayimg.com/images/g/nS0AAOSw~9ZkIhHE/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/nS0AAOSw~9ZkIhHE/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-Red-Dragon-Archfiend-CT07-EN025-Limited-Edition-Super-Rare-NM-/354677972834"
   },
   {
@@ -4095,7 +4095,7 @@ const cardData=[
     "Rarity": "Ultra Rare",
     "Set": "The New Challengers",
     "Vintage": "No",
-    "galleryURL": "https://i.ebayimg.com/images/g/bk0AAOSwngpkIhHF/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/bk0AAOSwngpkIhHF/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-Zaborg-Mega-Monarch-NECH-EN037-1st-Edition-Ultra-Rare-NM-/354677972835"
   },
   {
@@ -4128,7 +4128,7 @@ const cardData=[
     "Rarity": "Super Rare",
     "Set": "Savage Strike Special Edition",
     "Vintage": "No",
-    "galleryURL": "https://i.ebayimg.com/images/g/zuEAAOSwbE9kIhHF/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/zuEAAOSwbE9kIhHF/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-Yuki-Musume-Ice-Mayakashi-SAST-ENSE2-Limited-Edition-Super-Rare-NM-/354677972838"
   },
   {
@@ -4158,7 +4158,7 @@ const cardData=[
     "Rarity": "Super Rare",
     "Set": "Mystic Fighters",
     "Vintage": "No",
-    "galleryURL": "https://i.ebayimg.com/images/g/A6gAAOSwmCVkIhHF/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/A6gAAOSwmCVkIhHF/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-Generaider-Boss-Fight-MYFI-EN037-1st-Edition-Super-Rare-NM-/354677972839"
   },
   {
@@ -4192,7 +4192,7 @@ const cardData=[
     "Set": "Battles of Legend: Light's Revenge",
     "Vintage": "No",
     "yearManufactured": "2018",
-    "galleryURL": "https://i.ebayimg.com/images/g/mCoAAOSw3GZkIhHF/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/mCoAAOSw3GZkIhHF/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-Spellbook-Magician-Prophecy-BLLR-EN050-1st-Edition-Ultra-Rare-NM-/354677972840"
   },
   {
@@ -4225,7 +4225,7 @@ const cardData=[
     "Rarity": "Starfoil Rare",
     "Set": "Battle Pack: Epic Dawn",
     "Vintage": "No",
-    "galleryURL": "https://i.ebayimg.com/images/g/QREAAOSwtmJkIhHF/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/QREAAOSwtmJkIhHF/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-Skull-Archfiend-Lightning-BP01-EN006-1st-Edition-Starfoil-Rare-LP-/354677972843"
   },
   {
@@ -4257,7 +4257,7 @@ const cardData=[
     "Set": "Premium Gold",
     "Vintage": "No",
     "yearManufactured": "2015",
-    "galleryURL": "https://i.ebayimg.com/images/g/zwgAAOSwlpNkIhHG/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/zwgAAOSwlpNkIhHG/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-Phoenix-Wing-Wind-Blast-PGLD-EN070-1st-Edition-Gold-Rare-NM-/354677972844"
   },
   {
@@ -4289,7 +4289,7 @@ const cardData=[
     "Material": "Card Stock",
     "Rarity": "Ultra Rare",
     "Vintage": "No",
-    "galleryURL": "https://i.ebayimg.com/images/g/zQkAAOSwqAFkIhHF/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/zQkAAOSwqAFkIhHF/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-Theinen-Great-Sphinx-EP1-EN001-Unlimited-Edition-Ultra-Rare-NM-/354677972846"
   },
   {
@@ -4323,7 +4323,7 @@ const cardData=[
     "Set": "Light of Destruction",
     "Vintage": "No",
     "yearManufactured": "2008",
-    "galleryURL": "https://i.ebayimg.com/images/g/rxkAAOSw-lZkIhHF/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/rxkAAOSw-lZkIhHF/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-Gladiator-Beast-Gyzarus-LODT-EN044-Unlimited-Edition-Super-Rare-NM-/354677972848"
   },
   {
@@ -4357,7 +4357,7 @@ const cardData=[
     "Set": "2019 Gold Sarcophagus Tin Mega Pack",
     "Vintage": "No",
     "yearManufactured": "2019",
-    "galleryURL": "https://i.ebayimg.com/images/g/~IgAAOSwKcVkIhHF/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/~IgAAOSwKcVkIhHF/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-Thunder-Dragonhawk-MP19-EN168-1st-Edition-Prismatic-Secret-Rare-NM-/354677972849"
   },
   {
@@ -4388,7 +4388,7 @@ const cardData=[
     "Rarity": "Gold Rare",
     "Set": "Premium Gold 2",
     "Vintage": "No",
-    "galleryURL": "https://i.ebayimg.com/images/g/nroAAOSwnD5kIhHF/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/nroAAOSwnD5kIhHF/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-Smashing-Ground-PGL2-EN075-Limited-Edition-Gold-Rare-NM-/354677972852"
   },
   {
@@ -4422,7 +4422,7 @@ const cardData=[
     "Set": "OTS Tournament Pack 15",
     "Vintage": "No",
     "yearManufactured": "2015",
-    "galleryURL": "https://i.ebayimg.com/images/g/EhcAAOSw20NkIhHF/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/EhcAAOSw20NkIhHF/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-Zoodiac-Boarbow-OP15-EN005-Unlimited-Edition-Super-Rare-NM-/354677972854"
   },
   {
@@ -4456,7 +4456,7 @@ const cardData=[
     "Set": "- Yugi -",
     "Vintage": "No",
     "yearManufactured": "2007",
-    "galleryURL": "https://i.ebayimg.com/images/g/q9YAAOSwv81kIhHF/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/q9YAAOSwv81kIhHF/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-Volcanic-Doomfire-CT04-EN004-Limited-Edition-Secret-Rare-/354677972855"
   },
   {
@@ -4490,7 +4490,7 @@ const cardData=[
     "Set": "2019 Gold Sarcophagus Tin Mega Pack",
     "Vintage": "No",
     "yearManufactured": "2019",
-    "galleryURL": "https://i.ebayimg.com/images/g/fhYAAOSw-xlkKG~n/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/fhYAAOSw-xlkKG~n/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-Crusadia-Arboria-MP19-EN078-1st-Edition-Super-Rare-NM-/354677972856"
   },
   {
@@ -4524,7 +4524,7 @@ const cardData=[
     "Set": "- Yugi -",
     "Vintage": "No",
     "yearManufactured": "2020",
-    "galleryURL": "https://i.ebayimg.com/images/g/lkUAAOSwFwZkIhHF/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/lkUAAOSwFwZkIhHF/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-Krystal-Dragon-MVP1-ENSV2-Limited-Edition-Ultra-Rare-NM-/354677972857"
   },
   {
@@ -4556,7 +4556,7 @@ const cardData=[
     "Set": "Dawn of Majesty",
     "Vintage": "No",
     "yearManufactured": "1996",
-    "galleryURL": "https://i.ebayimg.com/images/g/lHMAAOSw0PdkIhHF/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/lHMAAOSw0PdkIhHF/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-Live-Twin-Sunnys-Snitch-DAMA-EN062-1st-Edition-Super-Rare-NM-/354677972858"
   },
   {
@@ -4588,7 +4588,7 @@ const cardData=[
     "Set": "Phantom Rage",
     "Vintage": "No",
     "yearManufactured": "2020",
-    "galleryURL": "https://i.ebayimg.com/images/g/sOgAAOSwtQFkIhHF/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/sOgAAOSwtQFkIhHF/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-Tri-Brigade-Airborne-Assault-PHRA-EN053-1st-Edition-Secret-Rare-NM-/354677972859"
   },
   {
@@ -4628,7 +4628,7 @@ const cardData=[
     "Stage": "Stage 2",
     "Vintage": "Yes",
     "yearManufactured": "1998",
-    "galleryURL": "https://i.ebayimg.com/images/g/EvMAAOSwv1ZkAvT-/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/EvMAAOSwv1ZkAvT-/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Mistys-Tentacruel-Pokemon-73-Gym-Heroes-Japanese-Holo-Swirl-Missing-Rarity-/354774133306"
   },
   {
@@ -4659,7 +4659,7 @@ const cardData=[
     "Signed By": "United States",
     "Vintage": "Yes",
     "yearManufactured": "1996",
-    "galleryURL": "https://i.ebayimg.com/images/g/2sQAAOSwlyJkOYI3/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/2sQAAOSwlyJkOYI3/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-25-Card-Lot-Holo-Only-No-Commons-Lot-5-/354788151309"
   },
   {
@@ -4690,7 +4690,7 @@ const cardData=[
     "Signed By": "United States",
     "Vintage": "Yes",
     "yearManufactured": "1996",
-    "galleryURL": "https://i.ebayimg.com/images/g/x-cAAOSwcvNkOYKI/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/x-cAAOSwcvNkOYKI/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-25-Card-Lot-Holo-Only-No-Commons-Lot-6-/354788151310"
   },
   {
@@ -4721,7 +4721,7 @@ const cardData=[
     "Signed By": "United States",
     "Vintage": "Yes",
     "yearManufactured": "1996",
-    "galleryURL": "https://i.ebayimg.com/images/g/euMAAOSwxvVkOJtD/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/euMAAOSwxvVkOJtD/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-25-Card-Lot-Holo-Only-No-Commons-Lot-3-/354788151311"
   },
   {
@@ -4752,7 +4752,7 @@ const cardData=[
     "Signed By": "United States",
     "Vintage": "Yes",
     "yearManufactured": "1996",
-    "galleryURL": "https://i.ebayimg.com/images/g/p1IAAOSwl-1kOJkY/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/p1IAAOSwl-1kOJkY/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-25-Card-Lot-Holo-Only-No-Commons-Lot-2-/354788151312"
   },
   {
@@ -4783,7 +4783,7 @@ const cardData=[
     "Signed By": "United States",
     "Vintage": "Yes",
     "yearManufactured": "1996",
-    "galleryURL": "https://i.ebayimg.com/images/g/APsAAOSwE~5kOYHq/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/APsAAOSwE~5kOYHq/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/Yugioh-25-Card-Lot-Holo-Only-No-Commons-Lot-4-/354788151313"
   },
   {
@@ -4812,7 +4812,7 @@ const cardData=[
     "Set": "Anniversary Pack",
     "Vintage": "No",
     "yearManufactured": "2021",
-    "galleryURL": "https://i.ebayimg.com/images/g/-20AAOSwp5xj8g9~/s-w1600.webp",
+    "galleryURL": "https://i.ebayimg.com/images/g/-20AAOSwp5xj8g9~/s-w400.webp",
     "viewItemURL": "https://www.ebay.com/itm/2021-Pokemon-25th-Anniversary-McDonald-s-Booster-Pack-McDonalds-New-Sealed-/354618440477"
   }
 ];
