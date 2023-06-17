@@ -4912,19 +4912,19 @@ function renderItems() {
     if(card) {
       const itemElement=document.createElement('div');
       itemElement.id=`item-${item.ItemID}`;
-      itemElement.classList.add('gridCard','mt-2','hover:text-shadow','text-black');
+      itemElement.classList.add('gridCard','mt-2','hover:text-shadow','text-white');
       itemElement.dataset.rarity=card.Rarity.toLowerCase().replace(/\s/g,'-');
       itemElement.dataset.condition=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==='Card Condition').Value.toLowerCase().replace(/\s/g,'-');
       itemElement.dataset.features=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==='Features').Value.toLowerCase().replace(/\s/g,'-');
 
       itemElement.innerHTML=`
-        <div class="mx-auto w-96 border border-zinc-50 backdrop rounded-lg shadow-lg overflow-ellipsis will-change-transform hover:transform-gpu hover:duration-500 hover:ease-in-out hover:scale-105 hover:bg-gradient-to-b hover:from-transparent hover:to-transparent hover:via-black hover:text-shadow text-black">
+        <div class="mx-auto w-96 border border-zinc-50 backdrop rounded-lg shadow-lg overflow-ellipsis will-change-transform hover:transform-gpu hover:duration-500 hover:ease-in-out hover:scale-105 hover:bg-gradient-to-b hover:from-transparent hover:to-transparent hover:via-black hover:text-shadow text-white">
           <img src="${card.galleryURL}" alt="${card.Title}" class="inline mx-auto w-full h-52 object-scale-down object-top rounded-t-lg">
           <div class="flex-wrap">
-            <h3 class="text-lg font-black text-shadow text-black">${card.Name}</h3>
-            <p class="mt-2 text-shadow font-bold text-black">$${card.Price}</p>
-            <p class="text-shadow text-sm font-bold text-black">Shipping: $${card.Shipping}</p>
-            <p class="mt-5 text-sm italic font-semibold text-shadow text-black">${item.ItemSpecifics.NameValueList.find((spec) => spec.Name==='Card Condition').Value} condition, kept sleeved and stored in a safe environment.</p>
+            <h3 class="text-lg font-black text-shadow text-white">${card.Name}</h3>
+            <p class="mt-2 text-shadow font-bold text-white">$${card.Price}</p>
+            <p class="text-shadow text-sm font-bold text-white">Shipping: $${card.Shipping}</p>
+            <p class="mt-5 text-sm italic font-semibold text-shadow text-white">${item.ItemSpecifics.NameValueList.find((spec) => spec.Name==='Card Condition').Value} condition, kept sleeved and stored in a safe environment.</p>
           </div>
         </div>
       `;
