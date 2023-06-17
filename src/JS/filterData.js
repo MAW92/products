@@ -4893,7 +4893,6 @@ function applyFilters() {
   });
 
   // Apply Isotope filters
-  isotope.arrange();
 }
 
 function getFilterValues(filterId) {
