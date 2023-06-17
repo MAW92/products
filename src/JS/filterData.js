@@ -4912,7 +4912,7 @@ function renderItems() {
       const itemElement=document.createElement('div');
       itemElement.id=`item-${item.ItemID}`;
       itemElement.classList.add('gridCard','mt-2','hover:text-shadow','text-white');
-      itemElement.dataset.rarity=card.Rarity.toLowerCase().replace(/\s/g,'-');
+      itemElement.dataset.rarity=card.Rarity;
       itemElement.dataset.condition=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==='Card Condition').Value.toLowerCase().replace(/\s/g,'-');
       itemElement.dataset.features=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==='Features').Value;
 
