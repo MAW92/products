@@ -1,7 +1,7 @@
 // Function to fetch JSON data from an external file
 function fetchProducts() {
   try {
-    fetch("cardData.json")
+    fetch("./src/JS/cardData.json")
       .then(response => response.json())
       .then(data => {
         // Extract the listingData array from the JSON
