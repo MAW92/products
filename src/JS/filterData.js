@@ -4817,23 +4817,7 @@ const cardData=[
   }
 ];
 
-const filters=[
-  {
-    id: 'rarity-filter',
-    label: "Rarity",
-    values: ['Common','Rare','Super Rare','Ultra Rare','Secret Rare','Gold Rare','Premium Gold Rare','Starfoil Rare','Holo Rare','Prismatic Secret Rare','Other']
-  },
-  {
-    id: 'condition-filter',
-    label: "Card Condition",
-    values: ['Near Mint or Better','Lightly Played (Excellent)']
-  },
-  {
-    id: 'features-filter',
-    label: "Features",
-    values: ['1st Edition','Limited Edition','Unlimited']
-  }
-];
+let isotope; // Declare isotope variable
 
 function createCheckbox(id,label,value) {
   const checkbox=document.createElement('input');
@@ -4854,7 +4838,7 @@ function createCheckbox(id,label,value) {
   return checkboxContainer;
 }
 
-function renderFilters() {
+function renderFilters(filters) {
   const filtersContainer=document.getElementById('filters-container');
   filtersContainer.innerHTML='';
 
@@ -4876,8 +4860,6 @@ function renderFilters() {
     filtersContainer.appendChild(filterContainer);
   });
 }
-
-let isotope; // Declare isotope variable
 
 function applyFilters() {
   const rarityFilterValues=getFilterValues('rarity');
@@ -4968,5 +4950,23 @@ function renderItems() {
   }
 }
 
-renderFilters();
+const filters=[
+  {
+    id: 'rarity-filter',
+    label: 'Rarity',
+    values: ['Common','Rare','Super Rare','Ultra Rare','Secret Rare','Gold Rare','Starfoil Rare','Holo Rare'],
+  },
+  {
+    id: 'condition-filter',
+    label: 'Card Condition',
+    values: ['Near Mint or Better','Lightly Played (Excellent)'],
+  },
+  {
+    id: 'features-filter',
+    label: 'Features',
+    values: ['1st Edition','Limited Edition','Unlimited'],
+  },
+];
+
+renderFilters(filters);
 renderItems();
