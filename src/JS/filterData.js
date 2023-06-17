@@ -1,31 +1,4 @@
-function parseJSON(jsonData) {
-  const parsedData=JSON.parse(jsonData);
-
-  const features=[];
-  const rarity=[];
-  const cardCondition=[];
-
-  parsedData.forEach((item) => {
-    item.ItemSpecifics.NameValueList.forEach((subItem) => {
-      if(subItem.Name==="Features") {
-        features.push(subItem.Value);
-      } else if(subItem.Name==="Rarity") {
-        rarity.push(subItem.Value);
-      } else if(subItem.Name==="Card Condition") {
-        cardCondition.push(subItem.Value);
-      }
-    });
-  });
-
-  return {
-    features,
-    rarity,
-    cardCondition,
-  };
-}
-
-// Example usage
-const jsonData=[
+const items=[
   {
     "ItemID": 354434182701,
     "EndTime": "2023-07-06T22:17:02.000Z",
@@ -3820,99 +3793,1180 @@ const jsonData=[
     "ConditionDisplayName": "New/Factory Sealed"
   }
 ];
-// Extract all the unique options for rarity, condition, and feature from the JSON data
-const uniqueRarities=[...new Set(jsonData.map((item) => item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Rarity")))];
-const uniqueConditions=[...new Set(jsonData.map((item) => item.ConditionDescription))];
-const uniqueFeatures=[...new Set(jsonData.map((item) => item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Features")))];
 
-// Define the desired values for filtering as all the unique options
-const desiredRarities=uniqueRarities;
-const desiredConditions=uniqueConditions;
-const desiredFeatures=uniqueFeatures;
+const cardData=[
+  {
+    "ItemID": "354434182701",
+    "Site": "US",
+    "Category": "183454",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Individual Cards",
+    "Title": "Yugioh Kuriboh FL1-EN003 Limited Secret Rare",
+    "Format": "FixedPrice",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "9.03",
+    "Age": "6+",
+    "Attribute": "Dark",
+    "Autographed": "No",
+    "Condition": "Lightly Played",
+    "Name": "Kuriboh",
+    "Number": "FL1-EN003",
+    "cardSize": "Standard",
+    "cardType": "Effect",
+    "Character": "Yami Yugi",
+    "monsterType": "Fiend",
+    "Custom Bundle": "No",
+    "Printing": "Limited Edition",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Graded": "No",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Rarity": "Secret Rare",
+    "Set": "Forbidden Legacy",
+    "Vintage": "No",
+    "galleryURL": "https://i.ebayimg.com/images/g/uw4AAOSwaOVj5pmE/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-Kuriboh-FL1-EN003-Limited-Secret-Rare-/354434182701"
+  },
+  {
+    "ItemID": "354434274664",
+    "Site": "US",
+    "Category": "183454",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Individual Cards",
+    "Title": "Yugioh Double Spell MFC-106 1st Edition Ultra Rare Magician's Force",
+    "Format": "FixedPrice",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "16.69",
+    "Age": "6+",
+    "Autographed": "No",
+    "Condition": "Lightly Played",
+    "Name": "Double Spell",
+    "Number": "MFC-106",
+    "cardSize": "Standard",
+    "cardType": "Spell",
+    "Character": "Yami Yugi",
+    "Custom Bundle": "No",
+    "Printing": "1st Edition",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Graded": "No",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Rarity": "Ultra Rare",
+    "Set": "Magician's Force",
+    "Vintage": "Yes",
+    "yearManufactured": "1996",
+    "galleryURL": "https://i.ebayimg.com/images/g/HSkAAOSwGDBkB~WK/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-Double-Spell-MFC-106-1st-Edition-Ultra-Rare-Magicians-Force-/354434274664"
+  },
+  {
+    "ItemID": "354434274669",
+    "Site": "US",
+    "Category": "183454",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Individual Cards",
+    "Title": "Yugioh Painful Choice MRL-049 1st Edition Super Rare  Magic Ruler",
+    "Format": "FixedPrice",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "16.69",
+    "Age": "6+",
+    "Autographed": "No",
+    "Condition": "Lightly Played",
+    "Name": "Painful Choice",
+    "Number": "MRL-049",
+    "cardSize": "Standard",
+    "cardType": "Spell",
+    "Character": "Yami Yugi",
+    "monsterType": "Not Applicable",
+    "Custom Bundle": "No",
+    "Printing": "1st Edition",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Graded": "No",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Rarity": "Super Rare",
+    "Set": "Magic Ruler",
+    "Vintage": "Yes",
+    "yearManufactured": "1996",
+    "galleryURL": "https://i.ebayimg.com/images/g/YWcAAOSwxtpkB~Tg/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-Painful-Choice-MRL-049-1st-Edition-Super-Rare-Magic-Ruler-/354434274669"
+  },
+  {
+    "ItemID": "354434274671",
+    "Site": "US",
+    "Category": "183454",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Individual Cards",
+    "Title": "Yugioh Winged Kuriboh DR3-EN185 Unlimited Super Rare NM",
+    "Format": "FixedPrice",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "17.69",
+    "Age": "6+",
+    "Attribute": "Light",
+    "Autographed": "No",
+    "Condition": "Near Mint",
+    "Name": "Winged Kuriboh",
+    "Number": "DR3-EN185",
+    "cardSize": "Standard",
+    "cardType": "Effect",
+    "Character": "Yami Yugi",
+    "monsterType": "Fairy",
+    "Custom Bundle": "No",
+    "Printing": "Unlimited",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Graded": "No",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Rarity": "Super Rare",
+    "Set": "Dark Revelation Volume 3",
+    "Vintage": "No",
+    "galleryURL": "https://i.ebayimg.com/images/g/0asAAOSw3iti9DOn/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-Winged-Kuriboh-DR3-EN185-Unlimited-Super-Rare-NM-/354434274671"
+  },
+  {
+    "ItemID": "354588496313",
+    "Site": "US",
+    "Category": "183454",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Individual Cards",
+    "Title": "Yugioh Rivalry Of Warlords KICO-EN058 Rare 1st Edition NM",
+    "Format": "FixedPrice",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "2.71",
+    "Age": "6+",
+    "Autographed": "No",
+    "Condition": "Near Mint",
+    "Name": "Rivalry of Warlords",
+    "Number": "KICO-EN058",
+    "cardSize": "Standard",
+    "cardType": "Trap-Continuous",
+    "Character": "Yami Yugi",
+    "Custom Bundle": "No",
+    "Printing": "1st Edition",
+    "Finish": "Regular",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Graded": "No",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Rarity": "Rare",
+    "Set": "King's Court",
+    "Vintage": "No",
+    "yearManufactured": "2020",
+    "galleryURL": "https://i.ebayimg.com/images/g/0bEAAOSw4NBjydCc/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-Rivalry-Warlords-KICO-EN058-Rare-1st-Edition-NM-/354588496313"
+  },
+  {
+    "ItemID": "354620966508",
+    "Site": "US",
+    "Category": "183454",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Individual Cards",
+    "Title": "Yugioh Craneo Convocado (Summoned Skull) BIY-S004 1st Edition Common Spanish",
+    "Format": "FixedPrice",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "15.69",
+    "Age": "6+",
+    "Attribute": "Dark",
+    "Autographed": "No",
+    "Condition": "Near Mint",
+    "Name": "Summoned Skull",
+    "Number": "BIY-S004",
+    "cardSize": "Standard",
+    "cardType": "Normal",
+    "Character": "Yami Yugi|Yugi Muto",
+    "monsterType": "Fiend",
+    "Custom Bundle": "No",
+    "Printing": "1st Edition",
+    "Finish": "Regular",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Graded": "No",
+    "Language": "Spanish",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Rarity": "Common",
+    "Set": "Starter Deck: Yugi",
+    "Vintage": "Yes",
+    "yearManufactured": "1996",
+    "galleryURL": "https://i.ebayimg.com/images/g/O~QAAOSwQ8JkAHWf/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-Craneo-Convocado-Summoned-Skull-BIY-S004-1st-Edition-Common-Spanish-/354620966508"
+  },
+  {
+    "ItemID": "354677972833",
+    "Site": "US",
+    "Category": "183454",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Individual Cards",
+    "Title": "Yugioh Battlewasp - Pin the Bullseye BLHR-EN031 1st Edition Ultra Rare NM",
+    "Format": "FixedPrice",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "3.74",
+    "Age": "6+",
+    "Attribute": "Wind",
+    "Autographed": "No",
+    "Condition": "Near Mint",
+    "Name": "Battlewasp - Pin the Bullseye",
+    "Number": "BLHR-EN031",
+    "cardSize": "Standard",
+    "cardType": "Effect",
+    "Character": "Yugi Muto",
+    "monsterType": "Insect",
+    "Printing": "1st Edition",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Graded": "No",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Rarity": "Ultra Rare",
+    "Set": "Battles of Legend: Hero's Revenge",
+    "Vintage": "No",
+    "yearManufactured": "2021",
+    "galleryURL": "https://i.ebayimg.com/images/g/7yEAAOSwF81kIhHF/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-Battlewasp-Pin-Bullseye-BLHR-EN031-1st-Edition-Ultra-Rare-NM-/354677972833"
+  },
+  {
+    "ItemID": "354677972834",
+    "Site": "US",
+    "Category": "183454",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Individual Cards",
+    "Title": "Yugioh Red Dragon Archfiend CT07-EN025 Limited Edition Super Rare NM",
+    "Format": "FixedPrice",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "7.79",
+    "Age": "6+",
+    "Attribute": "Dark",
+    "Autographed": "No",
+    "Condition": "Near Mint",
+    "Name": "Red Dragon Archfiend",
+    "Number": "CT07-EN025",
+    "cardSize": "Standard",
+    "cardType": "Synchro/Effect Monster",
+    "Character": "Yugi Muto",
+    "monsterType": "Dragon",
+    "Printing": "Limited Edition",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Graded": "No",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Rarity": "Super Rare",
+    "Set": "2010 Collector&#39;s Tin",
+    "Vintage": "No",
+    "galleryURL": "https://i.ebayimg.com/images/g/nS0AAOSw~9ZkIhHE/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-Red-Dragon-Archfiend-CT07-EN025-Limited-Edition-Super-Rare-NM-/354677972834"
+  },
+  {
+    "ItemID": "354677972835",
+    "Site": "US",
+    "Category": "183454",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Individual Cards",
+    "Title": "Yugioh Zaborg the Mega Monarch NECH-EN037 1st Edition Ultra Rare NM",
+    "Format": "FixedPrice",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "3.85",
+    "Age": "6+",
+    "Attribute": "Light",
+    "Autographed": "No",
+    "Condition": "Near Mint",
+    "Name": "Zaborg the Mega Monarch",
+    "Number": "NECH-EN037",
+    "cardSize": "Standard",
+    "cardType": "Effect",
+    "Character": "Yugi Muto",
+    "monsterType": "Thunder",
+    "Printing": "1st Edition",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Graded": "No",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Rarity": "Ultra Rare",
+    "Set": "The New Challengers",
+    "Vintage": "No",
+    "galleryURL": "https://i.ebayimg.com/images/g/bk0AAOSwngpkIhHF/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-Zaborg-Mega-Monarch-NECH-EN037-1st-Edition-Ultra-Rare-NM-/354677972835"
+  },
+  {
+    "ItemID": "354677972838",
+    "Site": "US",
+    "Category": "183454",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Individual Cards",
+    "Title": "Yugioh Yuki-Musume, the Ice Mayakashi SAST-ENSE2 Limited Edition Super Rare NM",
+    "Format": "FixedPrice",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "3.69",
+    "Age": "6+",
+    "Attribute": "Water",
+    "Autographed": "No",
+    "Condition": "Near Mint",
+    "Name": "Yuki-Musume, the Ice Mayakashi",
+    "Number": "SAST-ENSE2",
+    "cardSize": "Standard",
+    "cardType": "Effect",
+    "Character": "Yugi Muto",
+    "monsterType": "Zombie",
+    "Printing": "Limited Edition",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Graded": "No",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Rarity": "Super Rare",
+    "Set": "Savage Strike Special Edition",
+    "Vintage": "No",
+    "galleryURL": "https://i.ebayimg.com/images/g/zuEAAOSwbE9kIhHF/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-Yuki-Musume-Ice-Mayakashi-SAST-ENSE2-Limited-Edition-Super-Rare-NM-/354677972838"
+  },
+  {
+    "ItemID": "354677972839",
+    "Site": "US",
+    "Category": "183454",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Individual Cards",
+    "Title": "Yugioh Generaider Boss Fight MYFI-EN037 1st Edition Super Rare NM",
+    "Format": "FixedPrice",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "3.51",
+    "Age": "6+",
+    "Autographed": "No",
+    "Condition": "Near Mint",
+    "Name": "Generaider Boss Fight",
+    "Number": "MYFI-EN037",
+    "cardSize": "Standard",
+    "Character": "Yugi Muto",
+    "Printing": "1st Edition",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Graded": "No",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Rarity": "Super Rare",
+    "Set": "Mystic Fighters",
+    "Vintage": "No",
+    "galleryURL": "https://i.ebayimg.com/images/g/A6gAAOSwmCVkIhHF/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-Generaider-Boss-Fight-MYFI-EN037-1st-Edition-Super-Rare-NM-/354677972839"
+  },
+  {
+    "ItemID": "354677972840",
+    "Site": "US",
+    "Category": "183454",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Individual Cards",
+    "Title": "Yugioh Spellbook Magician of Prophecy BLLR-EN050 1st Edition Ultra Rare NM",
+    "Format": "FixedPrice",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "3.02",
+    "Age": "6+",
+    "Attribute": "Water",
+    "Autographed": "No",
+    "Condition": "Near Mint",
+    "Name": "Spellbook Magician of Prophecy",
+    "Number": "BLLR-EN050",
+    "cardSize": "Standard",
+    "cardType": "Effect",
+    "Character": "Yugi Muto",
+    "monsterType": "Spellcaster",
+    "Printing": "1st Edition",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Graded": "No",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Rarity": "Ultra Rare",
+    "Set": "Battles of Legend: Light's Revenge",
+    "Vintage": "No",
+    "yearManufactured": "2018",
+    "galleryURL": "https://i.ebayimg.com/images/g/mCoAAOSw3GZkIhHF/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-Spellbook-Magician-Prophecy-BLLR-EN050-1st-Edition-Ultra-Rare-NM-/354677972840"
+  },
+  {
+    "ItemID": "354677972843",
+    "Site": "US",
+    "Category": "183454",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Individual Cards",
+    "Title": "Yugioh Skull Archfiend of Lightning BP01-EN006 1st Edition Starfoil Rare LP",
+    "Format": "FixedPrice",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "4.2",
+    "Age": "6+",
+    "Attribute": "Dark",
+    "Autographed": "No",
+    "Condition": "Lightly Played",
+    "Name": "Skull Archfiend of Lightning",
+    "Number": "BP01-EN006",
+    "cardSize": "Standard",
+    "cardType": "Effect",
+    "Character": "Yugi Muto",
+    "monsterType": "Fiend",
+    "Printing": "1st Edition",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Graded": "No",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Rarity": "Starfoil Rare",
+    "Set": "Battle Pack: Epic Dawn",
+    "Vintage": "No",
+    "galleryURL": "https://i.ebayimg.com/images/g/QREAAOSwtmJkIhHF/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-Skull-Archfiend-Lightning-BP01-EN006-1st-Edition-Starfoil-Rare-LP-/354677972843"
+  },
+  {
+    "ItemID": "354677972844",
+    "Site": "US",
+    "Category": "183454",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Individual Cards",
+    "Title": "Yugioh Phoenix Wing Wind Blast PGLD-EN070 1st Edition Gold Rare NM",
+    "Format": "FixedPrice",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "3.43",
+    "Age": "6+",
+    "Autographed": "No",
+    "Condition": "Near Mint",
+    "Name": "Phoenix Wing Wind Blast",
+    "Number": "PGLD-EN070",
+    "cardSize": "Standard",
+    "cardType": "Trap",
+    "Character": "Yugi Muto",
+    "Printing": "1st Edition",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Graded": "No",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Rarity": "Gold Rare",
+    "Set": "Premium Gold",
+    "Vintage": "No",
+    "yearManufactured": "2015",
+    "galleryURL": "https://i.ebayimg.com/images/g/zwgAAOSwlpNkIhHG/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-Phoenix-Wing-Wind-Blast-PGLD-EN070-1st-Edition-Gold-Rare-NM-/354677972844"
+  },
+  {
+    "ItemID": "354677972846",
+    "Site": "US",
+    "Category": "183454",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Individual Cards",
+    "Title": "Yugioh Theinen the Great Sphinx EP1-EN001 Unlimited Edition Ultra Rare NM",
+    "Format": "FixedPrice",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "3.75",
+    "Age": "6+",
+    "Attribute": "Light",
+    "Autographed": "No",
+    "Condition": "Near Mint",
+    "Name": "Theinen the Great Sphinx",
+    "Number": "EP1-EN001",
+    "cardSize": "Standard",
+    "cardType": "Effect",
+    "Character": "Yugi Muto",
+    "monsterType": "Beast",
+    "Printing": "Unlimited|Promo",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Graded": "No",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Rarity": "Ultra Rare",
+    "Vintage": "No",
+    "galleryURL": "https://i.ebayimg.com/images/g/zQkAAOSwqAFkIhHF/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-Theinen-Great-Sphinx-EP1-EN001-Unlimited-Edition-Ultra-Rare-NM-/354677972846"
+  },
+  {
+    "ItemID": "354677972848",
+    "Site": "US",
+    "Category": "183454",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Individual Cards",
+    "Title": "Yugioh Gladiator Beast Gyzarus LODT-EN044 Unlimited Edition Super Rare NM",
+    "Format": "FixedPrice",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "4.75",
+    "Age": "6+",
+    "Attribute": "Earth",
+    "Autographed": "No",
+    "Condition": "Near Mint",
+    "Name": "Gladiator Beast Gyzarus",
+    "Number": "LODT-EN044",
+    "cardSize": "Standard",
+    "cardType": "Fusion/Effect Monster",
+    "Character": "Yugi Muto",
+    "monsterType": "Winged Beast",
+    "Printing": "Unlimited",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Graded": "No",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Rarity": "Super Rare",
+    "Set": "Light of Destruction",
+    "Vintage": "No",
+    "yearManufactured": "2008",
+    "galleryURL": "https://i.ebayimg.com/images/g/rxkAAOSw-lZkIhHF/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-Gladiator-Beast-Gyzarus-LODT-EN044-Unlimited-Edition-Super-Rare-NM-/354677972848"
+  },
+  {
+    "ItemID": "354677972849",
+    "Site": "US",
+    "Category": "183454",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Individual Cards",
+    "Title": "Yugioh Thunder Dragonhawk MP19-EN168 1st Edition Prismatic Secret Rare NM",
+    "Format": "FixedPrice",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "5.21",
+    "Age": "6+",
+    "Attribute": "Light",
+    "Autographed": "No",
+    "Condition": "Near Mint",
+    "Name": "Thunder Dragonhawk",
+    "Number": "MP19-EN168",
+    "cardSize": "Standard",
+    "cardType": "Effect",
+    "Character": "Yugi Muto",
+    "monsterType": "Thunder",
+    "Printing": "1st Edition",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Graded": "No",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Rarity": "Prismatic Secret Rare",
+    "Set": "2019 Gold Sarcophagus Tin Mega Pack",
+    "Vintage": "No",
+    "yearManufactured": "2019",
+    "galleryURL": "https://i.ebayimg.com/images/g/~IgAAOSwKcVkIhHF/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-Thunder-Dragonhawk-MP19-EN168-1st-Edition-Prismatic-Secret-Rare-NM-/354677972849"
+  },
+  {
+    "ItemID": "354677972852",
+    "Site": "US",
+    "Category": "183454",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Individual Cards",
+    "Title": "Yugioh Smashing Ground PGL2-EN075 Limited Edition Gold Rare NM",
+    "Format": "FixedPrice",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "4.34",
+    "Age": "6+",
+    "Autographed": "No",
+    "Condition": "Near Mint",
+    "Name": "Smashing Ground",
+    "Number": "PGL2-EN075",
+    "cardSize": "Standard",
+    "cardType": "Spell",
+    "Character": "Yugi Muto",
+    "Printing": "Limited Edition",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Graded": "No",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Rarity": "Gold Rare",
+    "Set": "Premium Gold 2",
+    "Vintage": "No",
+    "galleryURL": "https://i.ebayimg.com/images/g/nroAAOSwnD5kIhHF/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-Smashing-Ground-PGL2-EN075-Limited-Edition-Gold-Rare-NM-/354677972852"
+  },
+  {
+    "ItemID": "354677972854",
+    "Site": "US",
+    "Category": "183454",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Individual Cards",
+    "Title": "Yugioh Zoodiac Boarbow OP15-EN005 Unlimited Edition Super Rare NM",
+    "Format": "FixedPrice",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "3.9",
+    "Age": "6+",
+    "Attribute": "Earth",
+    "Autographed": "No",
+    "Condition": "Near Mint",
+    "Name": "Zoodiac Boarbow",
+    "Number": "OP15-EN005",
+    "cardSize": "Standard",
+    "cardType": "Xyz/Effect Monster",
+    "Character": "Yugi Muto",
+    "monsterType": "Beast-Warrior",
+    "Printing": "Unlimited",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Graded": "No",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Rarity": "Super Rare",
+    "Set": "OTS Tournament Pack 15",
+    "Vintage": "No",
+    "yearManufactured": "2015",
+    "galleryURL": "https://i.ebayimg.com/images/g/EhcAAOSw20NkIhHF/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-Zoodiac-Boarbow-OP15-EN005-Unlimited-Edition-Super-Rare-NM-/354677972854"
+  },
+  {
+    "ItemID": "354677972855",
+    "Site": "US",
+    "Category": "183454",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Individual Cards",
+    "Title": "Yugioh Volcanic Doomfire CT04-EN004 Limited Edition Secret Rare",
+    "Format": "FixedPrice",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "5.69",
+    "Age": "6+",
+    "Attribute": "Fire",
+    "Autographed": "No",
+    "Condition": "Lightly Played",
+    "Name": "Volcanic Doomfire",
+    "Number": "CT04-EN004",
+    "cardSize": "Standard",
+    "cardType": "Effect",
+    "Character": "Yugi Muto",
+    "monsterType": "Pyro",
+    "Printing": "Limited Edition",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Graded": "No",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Rarity": "Secret Rare",
+    "Set": "- Yugi -",
+    "Vintage": "No",
+    "yearManufactured": "2007",
+    "galleryURL": "https://i.ebayimg.com/images/g/q9YAAOSwv81kIhHF/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-Volcanic-Doomfire-CT04-EN004-Limited-Edition-Secret-Rare-/354677972855"
+  },
+  {
+    "ItemID": "354677972856",
+    "Site": "US",
+    "Category": "183454",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Individual Cards",
+    "Title": "Yugioh Crusadia Arboria MP19-EN078 1st Edition Super Rare NM",
+    "Format": "FixedPrice",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "3.85",
+    "Age": "6+",
+    "Attribute": "Water",
+    "Autographed": "No",
+    "Condition": "Near Mint",
+    "Name": "Crusadia Arboria",
+    "Number": "MP19-EN078",
+    "cardSize": "Standard",
+    "cardType": "Effect",
+    "Character": "Yugi Muto",
+    "monsterType": "Warrior",
+    "Printing": "1st Edition",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Graded": "No",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Rarity": "Super Rare",
+    "Set": "2019 Gold Sarcophagus Tin Mega Pack",
+    "Vintage": "No",
+    "yearManufactured": "2019",
+    "galleryURL": "https://i.ebayimg.com/images/g/fhYAAOSw-xlkKG~n/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-Crusadia-Arboria-MP19-EN078-1st-Edition-Super-Rare-NM-/354677972856"
+  },
+  {
+    "ItemID": "354677972857",
+    "Site": "US",
+    "Category": "183454",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Individual Cards",
+    "Title": "Yugioh Krystal Dragon MVP1-ENSV2 Limited Edition Ultra Rare NM",
+    "Format": "FixedPrice",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "4.62",
+    "Age": "6+",
+    "Attribute": "Light",
+    "Autographed": "No",
+    "Condition": "Near Mint",
+    "Name": "Krystal Dragon",
+    "Number": "MVP1-ENSV2",
+    "cardSize": "Standard",
+    "cardType": "Effect",
+    "Character": "Yugi Muto",
+    "monsterType": "Dragon",
+    "Printing": "Limited Edition",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Graded": "No",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Rarity": "Ultra Rare",
+    "Set": "- Yugi -",
+    "Vintage": "No",
+    "yearManufactured": "2020",
+    "galleryURL": "https://i.ebayimg.com/images/g/lkUAAOSwFwZkIhHF/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-Krystal-Dragon-MVP1-ENSV2-Limited-Edition-Ultra-Rare-NM-/354677972857"
+  },
+  {
+    "ItemID": "354677972858",
+    "Site": "US",
+    "Category": "183454",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Individual Cards",
+    "Title": "Yugioh Live Twin Sunny's Snitch DAMA-EN062 1st Edition Super Rare NM",
+    "Format": "FixedPrice",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "2.69",
+    "Age": "6+",
+    "Autographed": "No",
+    "Condition": "Near Mint",
+    "Name": "Live Twin Sunnys Snitch",
+    "Number": "DAMA-EN062",
+    "cardSize": "Standard",
+    "cardType": "Spell-Continuous",
+    "Character": "Yugi Muto",
+    "Printing": "1st Edition",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Graded": "No",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Rarity": "Super Rare",
+    "Set": "Dawn of Majesty",
+    "Vintage": "No",
+    "yearManufactured": "1996",
+    "galleryURL": "https://i.ebayimg.com/images/g/lHMAAOSw0PdkIhHF/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-Live-Twin-Sunnys-Snitch-DAMA-EN062-1st-Edition-Super-Rare-NM-/354677972858"
+  },
+  {
+    "ItemID": "354677972859",
+    "Site": "US",
+    "Category": "183454",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Individual Cards",
+    "Title": "Yugioh Tri-Brigade Airborne Assault PHRA-EN053 1st Edition Secret Rare NM",
+    "Format": "FixedPrice",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "5.88",
+    "Age": "6+",
+    "Autographed": "No",
+    "Condition": "Near Mint",
+    "Name": "Tri-Brigade Airborne Assault",
+    "Number": "PHRA-EN053",
+    "cardSize": "Standard",
+    "cardType": "Spell-Quick Play",
+    "Character": "Yugi Muto",
+    "Printing": "1st Edition",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Graded": "No",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Rarity": "Secret Rare",
+    "Set": "Phantom Rage",
+    "Vintage": "No",
+    "yearManufactured": "2020",
+    "galleryURL": "https://i.ebayimg.com/images/g/sOgAAOSwtQFkIhHF/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-Tri-Brigade-Airborne-Assault-PHRA-EN053-1st-Edition-Secret-Rare-NM-/354677972859"
+  },
+  {
+    "ItemID": "354774133306",
+    "Site": "US",
+    "Category": "183454",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Individual Cards",
+    "Title": "Misty's Tentacruel Pokemon #73 Gym Heroes Japanese Holo Swirl Missing Rarity",
+    "Format": "FixedPrice",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "18.69",
+    "Age": "4+",
+    "Attack/Power": "30",
+    "Attribute": "Water",
+    "Autographed": "No",
+    "Condition": "Lightly Played",
+    "Name": "Misty's Tentacruel",
+    "Number": "73",
+    "cardSize": "Japanese",
+    "cardType": "Pokémon",
+    "Character": "Tentacruel",
+    "Country/Region of Manufacture": "Japan",
+    "monsterType": "Aqua",
+    "Custom Bundle": "No",
+    "Printing": "1st Edition",
+    "Finish": "Holo",
+    "Game": "Pokémon TCG",
+    "Graded": "No",
+    "HP": "70",
+    "Illustrator": "Ken Sugimori",
+    "Language": "Japanese",
+    "Manufacturer": "Nintendo",
+    "Material": "Card Stock",
+    "Rarity": "Holo Rare",
+    "Set": "Gym Heroes",
+    "Stage": "Stage 2",
+    "Vintage": "Yes",
+    "yearManufactured": "1998",
+    "galleryURL": "https://i.ebayimg.com/images/g/EvMAAOSwv1ZkAvT-/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Mistys-Tentacruel-Pokemon-73-Gym-Heroes-Japanese-Holo-Swirl-Missing-Rarity-/354774133306"
+  },
+  {
+    "ItemID": "354788151309",
+    "Site": "US",
+    "Category": "183455",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Mixed Card Lots",
+    "Title": "Yugioh 25 Card Lot Holo Only No Commons Lot 5",
+    "Format": "AuctionWithBIN",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "8.69",
+    "Age": "6+",
+    "Attribute": "Other",
+    "Autographed": "No",
+    "Condition": "Excellent",
+    "cardSize": "Standard",
+    "cardType": "Other",
+    "Character": "Yugi Muto",
+    "Printing": "Other",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Number of Cards": "25",
+    "Set": "- Yugi -",
+    "Signed By": "United States",
+    "Vintage": "Yes",
+    "yearManufactured": "1996",
+    "galleryURL": "https://i.ebayimg.com/images/g/2sQAAOSwlyJkOYI3/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-25-Card-Lot-Holo-Only-No-Commons-Lot-5-/354788151309"
+  },
+  {
+    "ItemID": "354788151310",
+    "Site": "US",
+    "Category": "183455",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Mixed Card Lots",
+    "Title": "Yugioh 25 Card Lot Holo Only No Commons Lot 6",
+    "Format": "AuctionWithBIN",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "8.69",
+    "Age": "6+",
+    "Attribute": "Other",
+    "Autographed": "No",
+    "Condition": "Excellent",
+    "cardSize": "Standard",
+    "cardType": "Other",
+    "Character": "Yugi Muto",
+    "Printing": "Other",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Number of Cards": "25",
+    "Set": "- Yugi -",
+    "Signed By": "United States",
+    "Vintage": "Yes",
+    "yearManufactured": "1996",
+    "galleryURL": "https://i.ebayimg.com/images/g/x-cAAOSwcvNkOYKI/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-25-Card-Lot-Holo-Only-No-Commons-Lot-6-/354788151310"
+  },
+  {
+    "ItemID": "354788151311",
+    "Site": "US",
+    "Category": "183455",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Mixed Card Lots",
+    "Title": "Yugioh 25 Card Lot Holo Only No Commons Lot 3",
+    "Format": "AuctionWithBIN",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "8.69",
+    "Age": "6+",
+    "Attribute": "Other",
+    "Autographed": "No",
+    "Condition": "Excellent",
+    "cardSize": "Standard",
+    "cardType": "Other",
+    "Character": "Yugi Muto",
+    "Printing": "Other",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Number of Cards": "25",
+    "Set": "- Yugi -",
+    "Signed By": "United States",
+    "Vintage": "Yes",
+    "yearManufactured": "1996",
+    "galleryURL": "https://i.ebayimg.com/images/g/euMAAOSwxvVkOJtD/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-25-Card-Lot-Holo-Only-No-Commons-Lot-3-/354788151311"
+  },
+  {
+    "ItemID": "354788151312",
+    "Site": "US",
+    "Category": "183455",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Mixed Card Lots",
+    "Title": "Yugioh 25 Card Lot Holo Only No Commons Lot 2",
+    "Format": "AuctionWithBIN",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "8.69",
+    "Age": "6+",
+    "Attribute": "Other",
+    "Autographed": "No",
+    "Condition": "Excellent",
+    "cardSize": "Standard",
+    "cardType": "Other",
+    "Character": "Yugi Muto",
+    "Printing": "Other",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Number of Cards": "25",
+    "Set": "- Yugi -",
+    "Signed By": "United States",
+    "Vintage": "Yes",
+    "yearManufactured": "1996",
+    "galleryURL": "https://i.ebayimg.com/images/g/p1IAAOSwl-1kOJkY/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-25-Card-Lot-Holo-Only-No-Commons-Lot-2-/354788151312"
+  },
+  {
+    "ItemID": "354788151313",
+    "Site": "US",
+    "Category": "183455",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Mixed Card Lots",
+    "Title": "Yugioh 25 Card Lot Holo Only No Commons Lot 4",
+    "Format": "AuctionWithBIN",
+    "ConditionID": "3000",
+    "Shipping": "0.60",
+    "Price": "8.69",
+    "Age": "6+",
+    "Attribute": "Other",
+    "Autographed": "No",
+    "Condition": "Excellent",
+    "cardSize": "Standard",
+    "cardType": "Other",
+    "Character": "Yugi Muto",
+    "Printing": "Other",
+    "Finish": "Holo",
+    "Game": "Yu-Gi-Oh! TCG",
+    "Language": "English",
+    "Manufacturer": "Konami",
+    "Material": "Card Stock",
+    "Number of Cards": "25",
+    "Set": "- Yugi -",
+    "Signed By": "United States",
+    "Vintage": "Yes",
+    "yearManufactured": "1996",
+    "galleryURL": "https://i.ebayimg.com/images/g/APsAAOSwE~5kOYHq/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/Yugioh-25-Card-Lot-Holo-Only-No-Commons-Lot-4-/354788151313"
+  },
+  {
+    "ItemID": "354618440477",
+    "Site": "US",
+    "Category": "183456",
+    "CategoryPath": "Toys & Hobbies:Collectible Card Games:CCG Sealed Packs",
+    "Title": "2021 Pokemon 25th Anniversary McDonald's Booster Pack McDonalds New Sealed",
+    "Format": "FixedPrice",
+    "ConditionID": "1000",
+    "Shipping": "0.60",
+    "Price": "10.01",
+    "Age": "4+",
+    "Autographed": "No",
+    "cardSize": "Standard",
+    "Character": "Bulbasaur|Pikachu|Squirtle",
+    "Configuration": "Pack",
+    "Convention/Event": "Pokémon 25th Anniversary",
+    "Printing": "Booster",
+    "Game": "Pokémon TCG",
+    "Language": "English",
+    "Manufacturer": "McDonald's",
+    "Material": "Card Stock",
+    "Number of Cards": "4",
+    "Number of Packs": "1",
+    "Set": "Anniversary Pack",
+    "Vintage": "No",
+    "yearManufactured": "2021",
+    "galleryURL": "https://i.ebayimg.com/images/g/-20AAOSwp5xj8g9~/s-w1600.webp",
+    "viewItemURL": "https://www.ebay.com/itm/2021-Pokemon-25th-Anniversary-McDonald-s-Booster-Pack-McDonalds-New-Sealed-/354618440477"
+  }
+];
 
-// Filter the items based on the desired values
-const filteredItems=jsonData.filter((item) => {
-  const itemRarity=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Rarity");
-  const itemCondition=item.ConditionDescription;
-  const itemFeature=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Features");
+const filters=[
+  {
+    id: 'rarity-filter',
+    label: "Rarity",
+    values: ['Common','Rare','Super Rare','Ultra Rare','Secret Rare','Gold Rare','Premium Gold Rare','Starfoil Rare','Holo Rare','Prismatic Secret Rare','Other']
+  },
+  {
+    id: 'condition-filter',
+    label: "Card Condition",
+    values: ['Near Mint or Better','Lightly Played (Excellent)']
+  },
+  {
+    id: 'features-filter',
+    label: "Features",
+    values: ['1st Edition','Limited Edition','Unlimited']
+  }
+];
 
-  return (
-    (desiredRarities.length===0||desiredRarities.includes(itemRarity))&&
-    (desiredConditions.length===0||desiredConditions.includes(itemCondition))&&
-    (desiredFeatures.length===0||desiredFeatures.includes(itemFeature))
-  );
-});
+function createCheckbox(id,label,value) {
+  const checkbox=document.createElement('input');
+  checkbox.id=id;
+  checkbox.type='checkbox';
+  checkbox.value=value;
+  checkbox.addEventListener('change',applyFilters);
 
-// Function to initialize Isotope and display the filters
-function initializeIsotope() {
-  // Initialize Isotope with your container selector
-  const $grid=$('.grid').isotope({
-    itemSelector: '.grid-item',
-    layoutMode: 'fitRows'
-  });
+  const checkboxLabel=document.createElement('label');
+  checkboxLabel.setAttribute('for',id);
+  checkboxLabel.innerText=label;
 
-  // Create the filter buttons
-  const $filters=$('.filters');
+  const checkboxContainer=document.createElement('div');
+  checkboxContainer.classList.add('mr-4');
+  checkboxContainer.appendChild(checkbox);
+  checkboxContainer.appendChild(checkboxLabel);
 
-  // Function to filter the items when a filter button is clicked
-  function filterItems() {
-    const rarity=$(this).data('rarity');
-    const condition=$(this).data('condition');
-    const feature=$(this).data('feature');
+  return checkboxContainer;
+}
 
-    // Update the desired values based on the clicked filter
-    if(rarity) {
-      const index=desiredRarities.indexOf(rarity);
-      if(index>-1) {
-        desiredRarities.splice(index,1);
-      } else {
-        desiredRarities.push(rarity);
-      }
-    }
+function renderFilters() {
+  const filtersContainer=document.getElementById('filters-container');
+  filtersContainer.innerHTML='';
 
-    if(condition) {
-      const index=desiredConditions.indexOf(condition);
-      if(index>-1) {
-        desiredConditions.splice(index,1);
-      } else {
-        desiredConditions.push(condition);
-      }
-    }
+  filters.forEach((filter) => {
+    const filterContainer=document.createElement('div');
+    filterContainer.classList.add('inline-block','items-center');
+    filterContainer.appendChild(document.createTextNode(filter.label+': '));
 
-    if(feature) {
-      const index=desiredFeatures.indexOf(feature);
-      if(index>-1) {
-        desiredFeatures.splice(index,1);
-      } else {
-        desiredFeatures.push(feature);
-      }
-    }
-
-    // Filter the items based on the updated desired values
-    const filteredItems=jsonData.filter((item) => {
-      const itemRarity=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Rarity");
-      const itemCondition=item.ConditionDescription;
-      const itemFeature=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Features");
-
-      return (
-        (desiredRarities.length===0||desiredRarities.includes(itemRarity))&&
-        (desiredConditions.length===0||desiredConditions.includes(itemCondition))&&
-        (desiredFeatures.length===0||desiredFeatures.includes(itemFeature))
+    filter.values.forEach((value) => {
+      filterContainer.appendChild(
+        createCheckbox(
+          `${filter.id}-${value.toLowerCase().replace(/\s/g,'-')}`,
+          value,
+          value
+        )
       );
     });
 
-    // Update the Isotope layout with the filtered items
-    $grid.isotope({ filter: filteredItems.map((item) => `.grid-item[data-id="${item.id}"]`).join(', ') });
-  }
-
-  // Bind the filter buttons click event to the filterItems function
-  $filters.on('click','button',filterItems);
-
-  // Display the filter buttons based on the unique options
-  uniqueRarities.forEach((rarity) => $filters.find('.rarity').append(`<button data-rarity="${rarity}">${rarity}</button>`));
-  uniqueConditions.forEach((condition) => $filters.find('.condition').append(`<button data-condition="${condition}">${condition}</button>`));
-  uniqueFeatures.forEach((feature) => $filters.find('.feature').append(`<button data-feature="${feature}">${feature}</button>`));
+    filtersContainer.appendChild(filterContainer);
+  });
 }
 
-// Call the initializeIsotope function when the page is ready
-$(document).ready(initializeIsotope);
+let isotope; // Declare isotope variable
+
+function applyFilters() {
+  const rarityFilterValues=getFilterValues('rarity');
+  const conditionFilterValues=getFilterValues('condition');
+  const featuresFilterValues=getFilterValues('features');
+
+  items.forEach((item) => {
+    const itemElement=document.getElementById(`item-${item.ItemID}`);
+
+    if(itemElement) {
+      const raritySpec=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==='Rarity');
+      const rarityValue=raritySpec? raritySpec.Value:'';
+
+      const conditionSpec=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==='Card Condition');
+      const conditionValue=conditionSpec? conditionSpec.Value:'';
+
+      const featuresSpec=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==='Features');
+      const featuresValue=featuresSpec? featuresSpec.Value:'';
+
+      const shouldShow=
+        (rarityFilterValues.length===0||rarityFilterValues.includes(rarityValue))&&
+        (conditionFilterValues.length===0||conditionFilterValues.includes(conditionValue))&&
+        (featuresFilterValues.length===0||featuresFilterValues.includes(featuresValue));
+
+      if(shouldShow) {
+        itemElement.classList.remove('hidden');
+      } else {
+        itemElement.classList.add('hidden');
+      }
+    }
+  });
+
+  // Apply Isotope filters
+  isotope.arrange();
+}
+
+function getFilterValues(filterId) {
+  const checkboxes=document.querySelectorAll(`input[id^="${filterId}"]:checked`);
+  const values=Array.from(checkboxes).map((checkbox) => checkbox.value);
+  return values;
+}
+
+function renderItems() {
+  const itemContainer=document.getElementById('item-container');
+  itemContainer.innerHTML='';
+
+  items.forEach((item) => {
+    const card=cardData.find((card) => card.ItemID.toString()===item.ItemID.toString());
+
+    if(card) {
+      const itemElement=document.createElement('div');
+      itemElement.id=`item-${item.ItemID}`;
+      itemElement.classList.add('gridCard','mt-2','hover:text-shadow','text-black');
+      itemElement.dataset.rarity=card.Rarity.toLowerCase().replace(/\s/g,'-');
+      itemElement.dataset.condition=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==='Card Condition').Value.toLowerCase().replace(/\s/g,'-');
+      itemElement.dataset.features=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==='Features').Value.toLowerCase().replace(/\s/g,'-');
+
+      itemElement.innerHTML=`
+        <div class="mx-auto w-96 border border-zinc-50 backdrop rounded-lg shadow-lg overflow-ellipsis will-change-transform hover:transform-gpu hover:duration-500 hover:ease-in-out hover:scale-105 hover:bg-gradient-to-b hover:from-transparent hover:to-transparent hover:via-black hover:text-shadow text-black">
+          <img src="${card.galleryURL}" alt="${card.Title}" class="inline mx-auto w-full h-52 object-scale-down object-top rounded-t-lg">
+          <div class="flex-wrap">
+            <h3 class="text-lg font-black text-shadow text-black">${card.Name}</h3>
+            <p class="mt-2 text-shadow font-bold text-black">$${card.Price}</p>
+            <p class="text-shadow text-sm font-bold text-black">Shipping: $${card.Shipping}</p>
+            <p class="mt-5 text-sm italic font-semibold text-shadow text-black">${item.ItemSpecifics.NameValueList.find((spec) => spec.Name==='Card Condition').Value} condition, kept sleeved and stored in a safe environment.</p>
+          </div>
+        </div>
+      `;
+
+      itemContainer.appendChild(itemElement);
+    }
+  });
+
+  // Initialize Isotope if not already initialized
+  if(!isotope) {
+    isotope=new Isotope(itemContainer,{
+      itemSelector: '.gridCard',
+      layoutMode: 'fitRows',
+      getSortData: {
+        rarity: '[data-rarity]',
+        condition: '[data-condition]',
+        features: '[data-features]',
+      },
+    });
+  } else {
+    // Update Isotope layout
+    isotope.layout();
+  }
+}
+
+renderFilters();
+renderItems();

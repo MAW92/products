@@ -19,6 +19,7 @@
                   href="https://www.ebay.com/usr/gottasellemall69">
             <link rel="stylesheet"
                   href="./dist/output.css">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
       </head>
 
       <body>
@@ -106,18 +107,19 @@
                                 type="button"
                                 class="inline mb-8 mt-4 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">Filters</button>
                   </div>
-                  <!-- Product Grid -->
-                  <div id="productGrid"
-                       class="grid grid-cols-1 mx-auto gap-4 py-10 sm:grid-cols-2 md:grid-cols-3 lg:mx-8 lg:grid-cols-4"></div>
-                  <div id="productCardList"
-                       class="mx-auto max-w-fit p-2 py-10 space-y-5 flex-wrap text-ellipsis leading-5 hidden active:visible"></div>
-
+                  <div id="item-container">
+                        <!-- Product Grid -->
+                        <div id="productGrid"
+                             class="grid grid-cols-1 mx-auto gap-4 py-10 sm:grid-cols-2 md:grid-cols-3 lg:mx-8 lg:grid-cols-4"></div>
+                        <div id="productCardList"
+                             class="mx-auto max-w-fit p-2 py-10 space-y-5 flex-wrap text-ellipsis leading-5 hidden active:visible"></div>
+                  </div>
 
 
             </main>
 
             <aside>
-                  <div id="filterMenu"
+                  <div id="filters-container"
                        class="fixed inset-y-0 right-0 z-50 w-72 px-4 py-6 bg-white shadow-lg will-change-transform transform translate-x-full transition-transform duration-300 ease-in-out">
                         <div class="flex justify-between items-center px-4 py-3 bg-blue-500 text-shadow text-white">
                               <h2 class="text-lg font-bold">Filters</h2>
@@ -135,42 +137,24 @@
                               </button>
                         </div>
                         <div class="mb-4">
-                              <label for="rarityFilter"
+                              <label for="rarity-filter"
                                      class="block font-medium text-gray-700">Rarity</label>
-                              <select id="rarityFilter"
+                              <select id="rarity-filter"
                                       class="form-select w-full rounded-lg border-gray-300 px-4 py-2">
-                                    <option value="all">All Rarities</option>
-                                    <option value="Common">Common</option>
-                                    <option value="Rare">Rare</option>
-                                    <option value="Super Rare">Super Rare</option>
-                                    <option value="Ultra Rare">Ultra Rare</option>
-                                    <option value="Secret Rare">Secret Rare</option>
-                                    <option value="Starfoil Rare">Starfoil Rare</option>
-                                    <option value="Mosaic Rare">Mosaic Rare</option>
                               </select>
                         </div>
                         <div class="mb-4">
-                              <label for="printingFilter"
+                              <label for="features-filter"
                                      class="block font-medium text-gray-700">Printing</label>
-                              <select id="printingFilter"
+                              <select id="features-Filter"
                                       class="form-select w-full rounded-lg border-gray-300 px-4 py-2">
-                                    <option value="All">All Printings</option>
-                                    <option value="1st Edition">1st Edition</option>
-                                    <option value="Unlimited">Unlimited</option>
-                                    <option value="Limited">Limited</option>
                               </select>
                         </div>
                         <div class="mb-4">
-                              <label for="conditionFilter"
+                              <label for="condition-filter"
                                      class="block font-medium text-gray-700">Condition</label>
-                              <select id="conditionFilter"
+                              <select id="condition-filter"
                                       class="form-select w-full rounded-lg border-gray-300 px-4 py-2">
-                                    <option value="All">All Conditions</option>
-                                    <option value="Mint">Mint</option>
-                                    <option value="Near Mint">Near Mint</option>
-                                    <option value="Lightly Played">Lightly Played</option>
-                                    <option value="Moderately Played">Moderately Played</option>
-                                    <option value="Heavily Played">Heavily Played</option>
                               </select>
                         </div>
                         <div class="flex justify-end mt-6">
@@ -181,6 +165,7 @@
                   </div>
 
             </aside>
+            <script src="src/JS/filterData.js"></script>
             <script src="src/JS/populateProductCard.js"></script>
             <script src="src/JS/filterAndDisplayItems.js"></script>
             <script src="src/JS/Buttons/filtersButton.js"></script>
