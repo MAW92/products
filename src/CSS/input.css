@@ -113,4 +113,25 @@
         background-color: rgba(0, 0, 0, 0.3);
       }
 
+
+.item-image {
+  width: 100%;
+  max-width: 200px;
+  height: 400px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.item-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.item-rarity,
+.item-condition,
+.item-features {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
 }
