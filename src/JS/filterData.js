@@ -4918,6 +4918,7 @@ function renderItems() {
       itemElement.dataset.features=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==='Features').Value.toLowerCase().replace(/\s/g,'-');
 
       itemElement.innerHTML=`
+      <a href="${card.viewItemURL}" title="View on eBay" target="_blank" rel="noopener">
         <div class="mx-auto w-96 border border-zinc-50 backdrop rounded-lg shadow-lg overflow-ellipsis will-change-transform hover:transform-gpu hover:duration-500 hover:ease-in-out hover:scale-105 hover:bg-gradient-to-b hover:from-transparent hover:to-transparent hover:via-black hover:text-shadow text-white">
           <img src="${card.galleryURL}" alt="${card.Title}" class="inline mx-auto w-full h-52 object-scale-down object-top rounded-t-lg">
           <div class="flex-wrap">
@@ -4927,6 +4928,7 @@ function renderItems() {
             <p class="mt-5 text-sm italic font-semibold text-shadow text-white">${item.ItemSpecifics.NameValueList.find((spec) => spec.Name==='Card Condition').Value} condition, kept sleeved and stored in a safe environment.</p>
           </div>
         </div>
+        </a>
       `;
 
       itemContainer.appendChild(itemElement);
