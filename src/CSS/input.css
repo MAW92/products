@@ -122,16 +122,4 @@
   border-radius: 4px;
 }
 
-.item-name {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-
-.item-rarity,
-.item-condition,
-.item-features {
-  font-size: 14px;
-  margin-bottom: 4px;
-}
 }
