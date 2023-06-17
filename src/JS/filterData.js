@@ -4913,7 +4913,7 @@ function renderItems() {
       itemElement.id=`item-${item.ItemID}`;
       itemElement.classList.add('gridCard','mt-2','hover:text-shadow','text-white');
       itemElement.dataset.rarity=card.Rarity;
-      itemElement.dataset.condition=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Card Condition");
+      itemElement.dataset.condition=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Card Condition").Value;
       itemElement.dataset.features=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Features").Value;
 
       itemElement.innerHTML=`
@@ -4924,7 +4924,7 @@ function renderItems() {
             <h3 class="text-lg font-black text-shadow text-white">${card.Name}</h3>
             <p class="mt-2 text-shadow font-bold text-white">$${card.Price}</p>
             <p class="text-shadow text-sm font-bold text-white">Shipping: $${card.Shipping}</p>
-            <p class="mt-5 text-sm italic font-semibold text-shadow text-white">${item.ItemSpecifics.NameValueList.find((spec) => spec.Name==='Card Condition')} condition, kept sleeved and stored in a safe environment.</p>
+            <p class="mt-5 text-sm italic font-semibold text-shadow text-white">${item.ItemSpecifics.NameValueList.find((spec) => spec.Name==='Card Condition').Value} condition, kept sleeved and stored in a safe environment.</p>
           </div>
         </div>
         </a>
