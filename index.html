@@ -94,9 +94,8 @@
                         </svg>
                   </button>
             </header>
-            <aside id="filters-container">
-                  <div id="filterMenu"
-                       class="fixed inset-y-0 right-0 z-50 w-72 px-4 py-6 bg-white shadow-lg will-change-transform transform translate-x-full transition-transform duration-300 ease-in-out">
+            <aside id="filterMenu">
+                  <div class="fixed inset-y-0 right-0 z-50 w-72 px-4 py-6 bg-white shadow-lg will-change-transform transform translate-x-full transition-transform duration-300 ease-in-out">
                         <div class="flex justify-between items-center px-4 py-3 bg-blue-500 text-shadow text-white">
                               <h2 class="text-lg font-bold">Filters</h2>
                               <button id="closeFilterBtn"
@@ -112,26 +111,28 @@
                                     </svg>
                               </button>
                         </div>
-                        <div class="mb-4">
-                              <label for="rarity-filter"
-                                     class="block font-medium text-gray-700">Rarity</label>
-                              <select id="rarity-filter"
-                                      class="form-select w-full rounded-lg border-gray-300 px-4 py-2">
-                              </select>
-                        </div>
-                        <div class="mb-4">
-                              <label for="features-filter"
-                                     class="block font-medium text-gray-700">Printing</label>
-                              <select id="features-Filter"
-                                      class="form-select w-full rounded-lg border-gray-300 px-4 py-2">
-                              </select>
-                        </div>
-                        <div class="mb-4">
-                              <label for="condition-filter"
-                                     class="block font-medium text-gray-700">Condition</label>
-                              <select id="condition-filter"
-                                      class="form-select w-full rounded-lg border-gray-300 px-4 py-2">
-                              </select>
+                        <div id="filters-container">
+                              <div class="mb-4">
+                                    <label for="rarity-filter"
+                                           class="block font-medium text-gray-700">Rarity</label>
+                                    <select id="rarity-filter"
+                                            class="form-select w-full rounded-lg border-gray-300 px-4 py-2">
+                                    </select>
+                              </div>
+                              <div class="mb-4">
+                                    <label for="features-filter"
+                                           class="block font-medium text-gray-700">Printing</label>
+                                    <select id="features-Filter"
+                                            class="form-select w-full rounded-lg border-gray-300 px-4 py-2">
+                                    </select>
+                              </div>
+                              <div class="mb-4">
+                                    <label for="condition-filter"
+                                           class="block font-medium text-gray-700">Condition</label>
+                                    <select id="condition-filter"
+                                            class="form-select w-full rounded-lg border-gray-300 px-4 py-2">
+                                    </select>
+                              </div>
                         </div>
                         <div class="flex justify-end mt-6">
                               <button type="button"
