@@ -4818,6 +4818,7 @@ const cardData=[
 ];
 
 let isotope; // Declare isotope variable
+let viewMode='grid'; // Initial view mode
 
 function createCheckbox(id,label,value) {
   const checkbox=document.createElement('input');
@@ -4891,8 +4892,6 @@ function applyFilters() {
       }
     }
   });
-
-  // Apply Isotope filters
 }
 
 function getFilterValues(filterId) {
@@ -4909,26 +4908,12 @@ function renderItems() {
     const card=cardData.find((card) => card.ItemID.toString()===item.ItemID.toString());
 
     if(card) {
-      const itemElement=document.createElement('div');
-      itemElement.id=`item-${item.ItemID}`;
-      itemElement.classList.add('gridCard','card','mt-2','hover:text-shadow','text-white','p-3','mx-auto');
-      itemElement.dataset.rarity=card.Rarity;
-      itemElement.dataset.condition=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Card Condition").Value;
-      itemElement.dataset.features=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Features").Value;
-
-      itemElement.innerHTML=`
-      <a href="${card.viewItemURL}" title="View on eBay" target="_blank" rel="noopener">
-        <div class="mx-auto w-64 h-56 border border-zinc-50 backdrop rounded-lg shadow-lg overflow-ellipsis will-change-transform hover:transform-gpu hover:duration-500 hover:ease-in-out hover:scale-105 hover:bg-gradient-to-b hover:from-transparent hover:to-transparent hover:via-black hover:text-shadow text-white">
-          <img src="${card.galleryURL}" alt="${card.Title}" class="w-full h-72 overflow-clip mx-auto object-cover object-top rounded-t-lg">
-          <div class="flex-wrap p-3">
-            <h3 class="pl-3 text-lg font-black text-shadow text-white"> ${card.Title}</h3>
-            <p class="pl-3 mt-2 text-shadow font-bold text-white"> $${card.Price}</p>
-            <p class="pl-3 text-shadow text-sm font-bold text-white"> Shipping: $${card.Shipping}</p>
-            <p class="pl-3 mt-5 text-sm italic font-semibold text-shadow text-white"> ${item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Card Condition").Value} condition, kept sleeved and stored in a safe environment.</p>
-          </div>
-        </div>
-        </a>
-      `;
+      let itemElement;
+      if(viewMode==='grid') {
+        itemElement=createProductCard(card);
+      } else if(viewMode==='list') {
+        itemElement=createProductListCard(card);
+      }
 
       itemContainer.appendChild(itemElement);
     }
@@ -4937,7 +4922,7 @@ function renderItems() {
   // Initialize Isotope if not already initialized
   if(!isotope) {
     isotope=new Isotope(itemContainer,{
-      itemSelector: '.gridCard',
+      itemSelector: '.gridCard, .listCard',
       layoutMode: 'fitRows',
       getSortData: {
         rarity: '[data-rarity]',
@@ -4951,23 +4936,76 @@ function renderItems() {
   }
 }
 
-const filters=[
-  {
-    id: 'rarity-filter',
-    label: 'Rarity',
-    values: ['Common','Rare',"Super Rare","Ultra Rare","Secret Rare","Gold Rare","Starfoil Rare","Holo Rare"],
-  },
-  {
-    id: 'condition-filter',
-    label: "Card Condition",
-    values: ["Near Mint or Better","Lightly Played (Excellent)"],
-  },
-  {
-    id: 'features-filter',
-    label: 'Printing',
-    values: ["1st Edition","Limited Edition","Unlimited"],
-  },
-];
+function createProductCard(product) {
 
+  const gridCard=document.createElement("div");
+  gridCard.innerHTML=`
+    <a href="${product.viewItemURL}" target="_blank" title="View on eBay" class="gridCard mt-2 hover:text-shadow text-white">
+      <div class="w-fit border border-zinc-50 backdrop rounded-lg shadow-lg overflow-ellipsis will-change-transform hover:transform-gpu hover:duration-500 hover:ease-in-out hover:scale-105 hover:bg-gradient-to-b hover:from-transparent hover:to-transparent hover:via-black hover:text-shadow text-white">
+        <img src="${product.galleryURL}" alt="${product.title}" class="w-full h-72 object-cover object-top rounded-t-lg">
+        <div class="p-2 flex-wrap">
+          <h3 class="text-lg font-black text-shadow text-white">${product.title}</h3>
+          <p class="mt-2 text-shadow font-bold text-white">$${product.Price}</p>
+          <p class="text-shadow text-sm font-bold text-white">Shipping: $${product.Shipping}</p>
+          <p class="mt-5 text-sm italic font-semibold text-shadow text-white">${product.Condition} condition, kept sleeved and stored in a safe environment.</p>
+        </div>
+      </div>
+    </a>
+  `;
+  return gridCard;
+}
+
+function createProductListCard(product) {
+  const listCard=document.createElement("div");
+  listCard.innerHTML=`
+    <a href="${product.viewItemURL}" target="_blank" title="View on eBay" class="listCard mt-2 hover:text-shadow text-white">
+      <div class="w-fit backdrop overflow-ellipsis hover:bg-gradient-to-b hover:from-transparent hover:to-transparent hover:via-black hover:text-shadow text-white">
+        <img src="${product.galleryURL}" alt="${product.title}" class="w-1/2 h-72 object-cover object-top rounded-t-lg">
+        <div class="p-2 inline-flex w-1/2 flex-wrap">
+          <h3 class="text-lg font-black text-shadow text-white">${product.title}</h3>
+          <p class="mt-2 text-shadow font-bold text-white">$${product.Price}</p>
+          <p class="text-shadow text-sm font-bold text-white">Shipping: $${product.Shipping}</p>
+          <p class="mt-5 text-sm italic font-semibold text-shadow text-white">${product.Condition} condition, kept sleeved and stored in a safe environment.</p>
+        </div>
+      </div>
+    </a>
+  `;
+  return listCard;
+}
+
+function displayProductCards(products) {
+  const productGrid=document.getElementById("productGrid");
+  const productCardList=document.getElementById("productCardList");
+  productGrid.innerHTML="";
+  productCardList.innerHTML="";
+
+  products.forEach((product) => {
+    let cardElement;
+    if(viewMode==='grid') {
+      cardElement=createProductCard(product);
+    } else if(viewMode==='list') {
+      cardElement=createProductListCard(product);
+    }
+
+    productGrid.appendChild(cardElement);
+    productCardList.appendChild(cardElement.cloneNode(true));
+  });
+}
+
+// Call the fetch function initially
+fetchProducts();
+
+// Event listeners
+document.getElementById('toggleButton').addEventListener('click',() => {
+  viewMode=viewMode==='grid'? 'list':'grid';
+  renderItems();
+});
+
+document.getElementById('filterBtn').addEventListener('click',() => {
+  const filterMenu=document.getElementById('filterMenu');
+  filterMenu.classList.toggle('translate-x-full');
+});
+
+// Initial rendering
 renderFilters(filters);
 renderItems();

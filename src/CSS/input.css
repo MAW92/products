@@ -112,7 +112,16 @@
         height: 0%;
         background-color: rgba(0, 0, 0, 0.3);
       }
+       /* Additional custom styles */
+      .gridCard {
+        width: 16rem;
+        height: 18rem;
+      }
 
+      .listCard {
+        display: flex;
+        align-items: left;
+      }
 
 
 }
