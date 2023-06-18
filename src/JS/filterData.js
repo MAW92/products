@@ -4921,10 +4921,10 @@ function renderItems() {
         <div class="mx-auto w-64 h-56 border border-zinc-50 backdrop rounded-lg shadow-lg overflow-ellipsis will-change-transform hover:transform-gpu hover:duration-500 hover:ease-in-out hover:scale-105 hover:bg-gradient-to-b hover:from-transparent hover:to-transparent hover:via-black hover:text-shadow text-white">
           <img src="${card.galleryURL}" alt="${card.Title}" class="w-full h-80 overflow-clip mx-auto object-cover object-top rounded-t-lg">
           <div class="flex-wrap p-3">
-            <h3 class="p-3 text-lg font-black text-shadow text-white">${card.Title}</h3>
-            <p class="p-3 mt-2 text-shadow font-bold text-white">$${card.Price}</p>
-            <p class="p-3 text-shadow text-sm font-bold text-white">Shipping: $${card.Shipping}</p>
-            <p class="p-3 mt-5 text-sm italic font-semibold text-shadow text-white">${item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Card Condition").Value} condition, kept sleeved and stored in a safe environment.</p>
+            <h3 class="p-3 text-lg font-black text-shadow text-white"> ${card.Title}</h3>
+            <p class="p-3 mt-2 text-shadow font-bold text-white">$ ${card.Price}</p>
+            <p class="p-3 text-shadow text-sm font-bold text-white"> Shipping: $${card.Shipping}</p>
+            <p class="p-3 mt-5 text-sm italic font-semibold text-shadow text-white"> ${item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Card Condition").Value} condition, kept sleeved and stored in a safe environment.</p>
           </div>
         </div>
         </a>
