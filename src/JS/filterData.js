@@ -4844,7 +4844,7 @@ function renderFilters(filters) {
 
   filters.forEach((filter) => {
     const filterContainer=document.createElement('div');
-    filterContainer.classList.add('inline-block','items-center');
+    filterContainer.classList.add('inline-block','items-center','font-black','text-lg','p-3','mx-auto');
     filterContainer.appendChild(document.createTextNode(filter.label+': '));
 
     filter.values.forEach((value) => {
@@ -4919,12 +4919,12 @@ function renderItems() {
       itemElement.innerHTML=`
       <a href="${card.viewItemURL}" title="View on eBay" target="_blank" rel="noopener">
         <div class="mx-auto w-96 border border-zinc-50 backdrop rounded-lg shadow-lg overflow-ellipsis will-change-transform hover:transform-gpu hover:duration-500 hover:ease-in-out hover:scale-105 hover:bg-gradient-to-b hover:from-transparent hover:to-transparent hover:via-black hover:text-shadow text-white">
-          <img src="${card.galleryURL}" alt="${card.Title}" class="w-full max-h-54 mx-auto object-cover object-top rounded-t-lg">
+          <img src="${card.galleryURL}" alt="${card.Title}" class="w-full h-54 mx-auto object-cover object-top rounded-t-lg">
           <div class="flex-wrap p-3">
-            <h3 class="text-lg font-black text-shadow text-white">${card.Name}</h3>
-            <p class="mt-2 text-shadow font-bold text-white">$${card.Price}</p>
-            <p class="text-shadow text-sm font-bold text-white">Shipping: $${card.Shipping}</p>
-            <p class="mt-5 text-sm italic font-semibold text-shadow text-white">${item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Card Condition").Value} condition, kept sleeved and stored in a safe environment.</p>
+            <h3 class="p-3 text-lg font-black text-shadow text-white">${card.Title}</h3>
+            <p class="p-3 mt-2 text-shadow font-bold text-white">$${card.Price}</p>
+            <p class="p-3 text-shadow text-sm font-bold text-white">Shipping: $${card.Shipping}</p>
+            <p class="p-3 mt-5 text-sm italic font-semibold text-shadow text-white">${item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Card Condition").Value} condition, kept sleeved and stored in a safe environment.</p>
           </div>
         </div>
         </a>
@@ -4955,17 +4955,17 @@ const filters=[
   {
     id: 'rarity-filter',
     label: 'Rarity',
-    values: ['Common','Rare','Super Rare','Ultra Rare','Secret Rare','Gold Rare','Starfoil Rare','Holo Rare'],
+    values: ['Common','Rare',"Super Rare","Ultra Rare","Secret Rare","Gold Rare","Starfoil Rare","Holo Rare"],
   },
   {
     id: 'condition-filter',
-    label: 'Card Condition',
-    values: ['Near Mint or Better','Lightly Played (Excellent)'],
+    label: "Card Condition",
+    values: ["Near Mint or Better","Lightly Played (Excellent)"],
   },
   {
     id: 'features-filter',
-    label: 'Features',
-    values: ['1st Edition','Limited Edition','Unlimited'],
+    label: 'Printing',
+    values: ["1st Edition","Limited Edition","Unlimited"],
   },
 ];
 
