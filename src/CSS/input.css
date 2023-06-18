@@ -69,7 +69,7 @@
       }
 
       .backdrop {
-        backdrop-filter: blur(6px);
+        backdrop-filter: blur(24px);
       }
 
       .text-shadow {

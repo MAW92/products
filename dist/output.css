@@ -812,8 +812,8 @@ html {
 }
 
 .backdrop {
-  -webkit-backdrop-filter: blur(6px);
-          backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(24px);
+          backdrop-filter: blur(24px);
 }
 
 .text-shadow {
