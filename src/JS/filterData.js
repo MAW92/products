@@ -4911,7 +4911,7 @@ function renderItems() {
     if(card) {
       const itemElement=document.createElement('div');
       itemElement.id=`item-${item.ItemID}`;
-      itemElement.classList.add('gridCard','mt-2','hover:text-shadow','text-white','p-3','mx-auto');
+      itemElement.classList.add('gridCard','card','mt-2','hover:text-shadow','text-white','p-3','mx-auto');
       itemElement.dataset.rarity=card.Rarity;
       itemElement.dataset.condition=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Card Condition").Value;
       itemElement.dataset.features=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Features").Value;
