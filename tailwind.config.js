@@ -4,7 +4,7 @@ module.exports={
 		[
 			"./index.html",
 			"./src/JS/menu.js",
-			"./src/JS/populateProductCard.js",
+			"./src/JS/filterData.js",
 			"./src/JS/Buttons/*.{html,js}"
 		],
 	theme: {
