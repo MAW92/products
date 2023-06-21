@@ -3,7 +3,7 @@ const productGrid=document.getElementById("productGrid");
 const productCardList=document.getElementById("productCardList");
 
 toggleButton.addEventListener("click",() => {
-  if(productGrid.classList.contains("hidden")) {
+  if(productGrid.contains("hidden")) {
     // Switch to grid view
     productGrid.classList.remove("hidden");
     productCardList.classList.add("hidden");
