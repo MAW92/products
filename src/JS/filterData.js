@@ -4913,15 +4913,16 @@ function renderItems() {
       itemElement.id=`item-${item.ItemID}`;
       itemElement.classList.add('gridCard','card','mt-2','hover:text-shadow','text-white','p-3','mx-auto');
       itemElement.dataset.rarity=card.Rarity;
+      itemElement.dataset.condition=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Card Condition").Value;
       itemElement.dataset.features=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Features").Value;
 
       itemElement.innerHTML=`
       <a href="${card.viewItemURL}" title="View on eBay" target="_blank" rel="noopener">
-        <div class="group flex-wrap overflow-hidden mx-auto w-64 h-56 border border-zinc-50 backdrop rounded-lg shadow-lg overflow-ellipsis will-change-transform hover:transform-gpu hover:duration-500 hover:ease-in-out hover:scale-105 hover:bg-gradient-to-b hover:from-transparent hover:to-transparent hover:via-black hover:text-shadow hover:backdrop:hidden text-white">
+        <div class="group relative flex flex-row overflow-hidden mx-auto w-64 h-56 border border-zinc-50 backdrop rounded-lg shadow-lg overflow-ellipsis will-change-transform hover:transform-gpu hover:duration-500 hover:ease-in-out hover:scale-105 hover:bg-gradient-to-b hover:from-transparent hover:to-transparent hover:via-black hover:text-shadow hover:backdrop:hidden text-white">
         <div class="aspect-h-4 aspect-w-3 bg-gray-200 sm:aspect-none group-hover:opacity-75 sm:h-96">
-          <img src="${card.galleryURL}" alt="${card.Title}" class="h-80 w-full object-cover object-center sm:h-full sm:w-full rounded-t-lg">
+          <img src="${card.galleryURL}" alt="${card.Title}" class="h-full w-full object-cover object-center sm:h-full sm:w-full rounded-t-lg">
         </div>
-          <div class="flex-wrap space-y-2 p-4">
+          <div class="flex flex-1 flex-row space-y-2 p-4">
             <h3 class="text-lg font-black text-shadow text-white">
             <span aria-hidden="true" class="absolute inset-0"></span>
             ${card.Title}
