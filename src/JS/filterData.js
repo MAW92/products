@@ -4926,11 +4926,9 @@ function renderItems() {
             <span aria-hidden="true" class="absolute inset-0"></span>
             ${card.Title}
             </h3>
-            <div class="p-3">
             <p class="mt-2 text-shadow font-bold text-white"> $${card.Price}</p>
             <p class="text-shadow text-sm font-bold text-white"> Shipping: $${card.Shipping}</p>
             <p class="mt-5 text-sm italic font-semibold text-shadow text-white"> ${item.ConditionDescription}</p>
-            </div>
           </div>
         </div>
         </a>
