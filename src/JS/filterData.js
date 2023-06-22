@@ -4922,11 +4922,12 @@ function renderItems() {
         <div class="bg-gray-200 group-hover:opacity-75 sm:h-96">
           <img src="${card.galleryURL}" alt="${card.Title}" class="h-full w-full overflow-clip object-cover object-top sm:h-full sm:w-full rounded-t-lg">
         </div>
-          <div class="flex flex-col space-y-2 p-4">
+          <div class="flex flex-col space-y-2 p-4 border border-zinc-50">
             <h3 class="text-lg font-black text-shadow text-white">
+            <span aria-hidden="true" class="absolute inset-0"></span>
             ${card.Title}
             </h3>
-            <p class="mt-2 text-shadow font-bold text-white"> $${card.Price}</p>
+            <p class="mt-5 text-shadow font-bold text-white"> $${card.Price}</p>
             <p class="text-shadow text-sm font-bold text-white"> Shipping: $${card.Shipping}</p>
             <p class="mt-5 text-sm italic font-semibold text-shadow text-white"> ${item.ConditionDescription}</p>
           </div>
