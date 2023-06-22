@@ -4924,7 +4924,6 @@ function renderItems() {
         </div>
           <div class="flex flex-col space-y-2 p-4">
             <h3 class="text-lg font-black text-shadow text-white">
-            <span aria-hidden="true" class="absolute inset-0"></span>
             ${card.Title}
             </h3>
             <p class="mt-2 text-shadow font-bold text-white"> $${card.Price}</p>
