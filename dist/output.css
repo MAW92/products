@@ -957,6 +957,10 @@ html {
   height: 100%;
 }
 
+.h-96 {
+  height: 24rem;
+}
+
 .max-h-80 {
   max-height: 20rem;
 }
