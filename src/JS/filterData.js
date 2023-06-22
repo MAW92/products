@@ -4920,7 +4920,7 @@ function renderItems() {
       <a href="${card.viewItemURL}" title="View on eBay" target="_blank" rel="noopener">
         <div class="group relative flex flex-wrap flex-col overflow-hidden mx-auto border border-zinc-50 backdrop rounded-lg shadow-lg overflow-ellipsis will-change-transform hover:transform-gpu hover:duration-500 hover:ease-in-out hover:scale-105 hover:bg-gradient-to-b hover:from-transparent hover:to-transparent hover:via-black hover:text-shadow hover:backdrop:hidden text-white">
         <div class="bg-gray-200 group-hover:opacity-75 sm:h-96">
-          <img src="${card.galleryURL}" alt="${card.Title}" class="h-full w-full object-cover object-top sm:h-full sm:w-full rounded-t-lg">
+          <img src="${card.galleryURL}" alt="${card.Title}" class="h-full max-h-80 w-full overflow-clip object-cover object-top sm:h-full sm:w-full rounded-t-lg">
         </div>
           <div class="flex flex-col space-y-2 p-4">
             <h3 class="text-lg font-black text-shadow text-white">
