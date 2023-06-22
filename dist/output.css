@@ -716,26 +716,6 @@ select {
   }
 }
 
-.aspect-h-4 {
-  --tw-aspect-h: 4;
-}
-
-.aspect-w-3 {
-  position: relative;
-  padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
-  --tw-aspect-w: 3;
-}
-
-.aspect-w-3 > * {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
 .form-input,.form-textarea,.form-select,.form-multiselect {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -867,10 +847,6 @@ html {
 
 /* Fading background when mobile menu is open */
 
-.visible {
-  visibility: visible;
-}
-
 .fixed {
   position: fixed;
 }
@@ -969,10 +945,6 @@ html {
   height: 4rem;
 }
 
-.h-56 {
-  height: 14rem;
-}
-
 .h-6 {
   height: 1.5rem;
 }
@@ -1001,16 +973,8 @@ html {
   width: 1.5rem;
 }
 
-.w-64 {
-  width: 16rem;
-}
-
 .w-72 {
   width: 18rem;
-}
-
-.w-full {
-  width: 100%;
 }
 
 .w-fit {
@@ -1018,13 +982,13 @@ html {
   width: fit-content;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .max-w-fit {
   max-width: -moz-fit-content;
   max-width: fit-content;
-}
-
-.flex-1 {
-  flex: 1 1 0%;
 }
 
 .translate-x-full {
@@ -1042,10 +1006,6 @@ html {
 
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-
-.flex-row {
-  flex-direction: row;
 }
 
 .flex-col {
@@ -1195,11 +1155,6 @@ html {
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.object-center {
-  -o-object-position: center;
-     object-position: center;
 }
 
 .object-top {
@@ -1383,21 +1338,6 @@ html {
 }
 
 @media (min-width: 640px) {
-  .sm\:aspect-none {
-    position: static;
-    padding-bottom: 0;
-  }
-
-  .sm\:aspect-none > * {
-    position: static;
-    height: auto;
-    width: auto;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
-  }
-
   .sm\:hidden.mobile-menu {
     transform: translateY(-70%);
     transition: transform 0.28s ease-linear;

@@ -55,19 +55,19 @@
                   </nav>
                   <!-- Non-Mobile -->
                   <nav class="place-content-evenly gap-x-5 gap-y-3 py-3 text-justify font-semibold hidden sm:flex sm:flex-wrap">
-                        <a href="#"
+                        <a href="https://www.ebay.com/cnt/IntermediatedFAQ?error_msg=false&seller_name=gottasellemall69&item_id="
                            title="Click to ask the seller a question"
                            rel="noopener"
                            class="link link-underline link-underline-black rounded-md py-1 px-4 text-xl text-white lg:px-6">Message</a>
-                        <a href="#"
+                        <a href="https://www.ebay.com/fdbk/feedback_profile/gottasellemall69?filter=feedback_page:All"
                            title="Click to view seller feedback"
                            rel="noopener"
                            class="link link-underline link-underline-black rounded-md py-1 px-4 text-xl text-white lg:px-6">Feedback</a>
-                        <a href="#"
+                        <a href="https://www.ebay.com/usr/gottasellemall69"
                            title="Click to save this seller to Favorites"
                            rel="noopener"
                            class="link link-underline link-underline-black rounded-md py-1 px-4 text-xl text-white lg:px-6">Follow</a>
-                        <a href="#"
+                        <a href="https://www.ebay.com/sch/gottasellemall69/m.html?_nkw=&amp;_armrs=1&amp;_ipg=&amp;_from="
                            title="Click to view other items"
                            rel="noopener"
                            class="link link-underline link-underline-black rounded-md py-1 px-4 text-xl text-white lg:px-6">More Items</a>
@@ -160,170 +160,9 @@
 
             </main>
 
-
             <script src="src/JS/filterData.js"></script>
+            <script src="src/JS/Buttons/menu.js"></script>
             <script src="src/JS/Buttons/filtersButton.js"></script>
-            <script src="src/JS/menu.js"></script>
       </body>
 
 </html>
-
-
-<!--
-<div id="form-ui">
-  <h3>Rarity</h3>
-<p>
-  <label><input type="checkbox" value="Secret" /> Secret Rare</label>
-  <label><input type="checkbox" value="Ultra" /> Ultra Rare</label>
-  <label><input type="checkbox" value="Super" /> Super Rare</label>
-  <label><input type="checkbox" value="Rare" /> Rare</label>
-  <label><input type="checkbox" value="Common" /> Common</label>
-  <label><input type="checkbox" value="Starfoil" /> Starfoil Rare</label>
-  <label><input type="checkbox" value="Mosaic" /> Mosaic Rare</label>
-</p>
-  <h3>Printing</h3>
-<p>
-  <label><input type="checkbox" value="1st" /> 1st Edition</label>
-  <label><input type="checkbox" value="Unlimited" /> Unlimited</label>
-  <label><input type="checkbox" value="Limited" /> Limited Edition</label>
-</p>
-  <h3>Condition</h3>
-<p>
-  <label><input type="checkbox" value=".NM" /> Near Mint</label>
-  <label><input type="checkbox" value=".LP" /> Lightly Played</label>
-  <label><input type="checkbox" value=".MP" /> Moderately Played</label>
-  <label><input type="checkbox" value=".HP" /> Heavily Played</label>
-  <label><input type="checkbox" value="DMG" /> Damaged</label>
-</p>
-  <p id="output">--</p>
-  
-</div>
-
-<div id="container">
- 
-</div>
-
-
---------------
-
-* { box-sizing: border-box; }
-
-body { font-family: sans-serif; }
-
-.item {
-width: 100px;
-height: 100px;
-float: left;
-
-margin: 5px;
-padding: 5px;
-}
-
-.item p {
-margin: 0;
-}
-
-.NM { background: #F33; }
-.LP { background: #88F; }
-.MP { background: #3A3; }
-.HP { background: orange;}
-
-select, label, input { font-size: 20px; }
-
-label { margin-right: 10px; }
-
-
-
-
---------------
-
-
-// templating
-var rarity = [ 'Secret', 'Ultra', 'Super', 'Rare', 'Common', 'Starfoil', 'Mosaic'];
-var printing = [ '1st', 'Unlimited', 'Limited' ];
-var condition = [ 'NM', 'LP', 'MP', 'HP', 'DMG' ];
-
-createItems();
-
-// init Isotope
-var $container = $('#container').isotope({
-itemSelector: '.item'
-});
-
-var $output = $('#output');
-
-// filter with selects and checkboxes
-var $checkboxes = $('#form-ui input');
-
-$checkboxes.change( function() {
-// map input values to an array
-var inclusives = [];
-// inclusive filters from checkboxes
-$checkboxes.each( function( i, elem ) {
-// if checkbox, use value if checked
-if ( elem.checked ) {
-inclusives.push( elem.value );
-}
-});
-
-// combine inclusive filters
-var filterValue = inclusives.length ? inclusives.join(', ') : '*';
-
-$output.text( filterValue );
-$container.isotope({ filter: filterValue })
-});
-
-
-function createItems() {
-
-var $items;
-// loop over colors, sizes, prices
-// create one item for each
-for ( var i=0; i
-< rarity.length;
-  i++
-  )
-  {
-  for
-  (
-  var
-  j=0;
-  j
-  <
-  printing.length;
-  j++
-  )
-  {
-  for
-  (
-  var
-  k=0;
-  k
-  <
-  condition.length;
-  k++
-  )
-  {
-  var
-  rarities=rarity[i];
-  var
-  printings=printing[j];
-  var
-  conditions=condition[k];
-  var
-  $item=$('<div />', {
-'class': 'item ' + rarity + ' ' + printing + condition
-});
-$item.append( '<p>' + printing + '</p>
-<p>$' + condition + '</p>');
-// add to items
-$items = $items ? $items.add( $item ) : $item;
-}
-}
-}
-
-$items.appendTo( $('#container') );
-
-}
-
--->

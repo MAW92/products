@@ -3,7 +3,6 @@ module.exports={
 	content:
 		[
 			"./index.html",
-			"./src/JS/menu.js",
 			"./src/JS/filterData.js",
 			"./src/JS/Buttons/*.{html,js}"
 		],
