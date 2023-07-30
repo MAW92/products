@@ -4831,7 +4831,7 @@ function createCheckbox(id,label,value) {
   checkboxLabel.innerText=label;
 
   const checkboxContainer=document.createElement('div');
-  checkboxContainer.classList.add('mr-4');
+  checkboxContainer.classList.add('mr-4','gap-3','space-3',);
   checkboxContainer.appendChild(checkbox);
   checkboxContainer.appendChild(checkboxLabel);
 
