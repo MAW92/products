@@ -4844,7 +4844,7 @@ function renderFilters(filters) {
 
   filters.forEach((filter) => {
     const filterContainer=document.createElement('div');
-    filterContainer.classList.add('inline-block','items-center','font-black','text-lg','p-3','mx-auto');
+    filterContainer.classList.add('inline-block','items-center','text-sm','p-1','mx-auto');
     filterContainer.appendChild(document.createTextNode(filter.label+': '));
 
     filter.values.forEach((value) => {
@@ -4960,7 +4960,7 @@ const filters=[
   {
     id: 'rarity-filter',
     label: 'Rarity',
-    values: ['Common','Rare',"Super Rare","Ultra Rare","Secret Rare","Gold Rare","Starfoil Rare","Holo Rare"],
+    values: ["Common","Rare","Super Rare","Ultra Rare","Secret Rare","Gold Rare","Starfoil Rare","Holo Rare"],
   },
   {
     id: 'condition-filter',
