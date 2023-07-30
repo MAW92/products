@@ -4844,7 +4844,7 @@ function renderFilters(filters) {
 
   filters.forEach((filter) => {
     const filterContainer=document.createElement('div');
-    filterContainer.classList.add('inline-block','items-center','text-sm','gap-3','space-3','mx-auto');
+    filterContainer.classList.add('inline-block','items-center','text-sm','pl-3','mx-auto');
     filterContainer.appendChild(document.createTextNode(filter.label+': '));
 
     filter.values.forEach((value) => {
