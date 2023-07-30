@@ -4870,13 +4870,13 @@ function applyFilters() {
     const itemElement=document.getElementById(`item-${item.ItemID}`);
 
     if(itemElement) {
-      const raritySpec=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==='Rarity');
+      const raritySpec=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Rarity");
       const rarityValue=raritySpec? raritySpec.Value:'';
 
-      const conditionSpec=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==='Card Condition');
+      const conditionSpec=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Condition");
       const conditionValue=conditionSpec? conditionSpec.Value:'';
 
-      const featuresSpec=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==='Features');
+      const featuresSpec=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Features");
       const featuresValue=featuresSpec? featuresSpec.Value:'';
 
       const shouldShow=
@@ -4913,7 +4913,7 @@ function renderItems() {
       itemElement.id=`item-${item.ItemID}`;
       itemElement.classList.add('gridCard','card','mt-2','hover:text-shadow','text-white','p-3','mx-auto');
       itemElement.dataset.rarity=card.Rarity;
-      itemElement.dataset.condition=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Card Condition").Value;
+      itemElement.dataset.condition=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Condition").Value;
       itemElement.dataset.features=item.ItemSpecifics.NameValueList.find((spec) => spec.Name==="Features").Value;
 
       itemElement.innerHTML=`
